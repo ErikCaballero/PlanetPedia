@@ -2,103 +2,174 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <style>
-    .contenedor-completo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      padding: 20px;
-      font-family: sans-serif;
-    }
-
-    .bloque-dificultad {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .dificultad-barra {
-      display: flex;
-      gap: 6px;
-      background: #1a1a1a;
-      padding: 10px;
-      border-radius: 8px;
-    }
-
-    .segmento {
-      width: 25px;
-      height: 10px;
-      background: #333;
-      border-radius: 2px;
-      transition: background 0.3s ease;
-    }
-
-    .texto-nivel {
-      font-weight: bold;
-      font-size: 1.1rem;
-      transition: color 0.3s ease;
-    }
-
-    #icono-dificultad {
-      width: 60px;
-      height: 60px;
-      object-fit: contain;
-    }
-  </style>
+  <title>Base de Datos Extraterrestre</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<style>
+  body {
+  background-color: #0b0f19;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
 
-  <div class="contenedor-completo">
-    <div class="bloque-dificultad">
-      <div class="dificultad-barra" id="barra">
-        <div class="segmento"></div>
-        <div class="segmento"></div>
-        <div class="segmento"></div>
-        <div class="segmento"></div>
-        <div class="segmento"></div>
-        <div class="segmento"></div>
-        <div class="segmento"></div>
-        <div class="segmento"></div>
-      </div>
-      <span id="texto-dificultad" class="texto-nivel"></span>
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.selector button {
+  background: #161f33;
+  border: 1px solid #00ffcc;
+  color: #00ffcc;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.selector button:hover {
+  background: #00ffcc;
+  color: #0b0f19;
+  box-shadow: 0 0 10px #00ffcc;
+}
+
+.alien-card {
+  background: #111827;
+  border: 2px solid #1f293d;
+  border-radius: 16px;
+  padding: 24px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.alien-card img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #00ffcc;
+  margin-bottom: 12px;
+}
+
+.planet {
+  color: #9ca3af;
+  font-size: 0.9em;
+  margin-top: -10px;
+}
+
+/* Barras de Estadísticas */
+.stats {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stat {
+  text-align: left;
+  font-size: 0.85em;
+}
+
+.bar-bg {
+  background: #1f293d;
+  height: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.bar-fill {
+  height: 100%;
+  width: 0%; /* Inicia en 0 para ser animado por JS */
+  background: linear-gradient(90deg, #00ffcc, #00b8ff);
+  border-radius: 6px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+</style>
+  <div class="card-container">
+    <div class="selector">
+      <button onclick="mostrarAlien('xenomorfo')">Xenomorfo</button>
+      <button onclick="mostrarAlien('zorg')">Zorg</button>
+      <button onclick="mostrarAlien('pyro')">Pyrosiano</button>
     </div>
-    <img id="icono-dificultad" src="" alt="Icono">
+
+    <div class="alien-card" id="alienCard">
+      <img id="alienImage" src="" alt="Alien">
+      <h2 id="alienName">Selecciona un Alien</h2>
+      <p id="alienPlanet" class="planet"></p>
+
+      <div class="stats">
+        <div class="stat">
+          <span>Fuerza</span>
+          <div class="bar-bg"><div class="bar-fill" id="statFuerza"></div></div>
+        </div>
+        <div class="stat">
+          <span>Agilidad</span>
+          <div class="bar-bg"><div class="bar-fill" id="statAgilidad"></div></div>
+        </div>
+        <div class="stat">
+          <span>Inteligencia</span>
+          <div class="bar-bg"><div class="bar-fill" id="statInteligencia"></div></div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <script>
-    const configuracion = {
-      1: { texto: "Muy fácil", icono: "https://genesistoxical.com/wp-content/uploads/2021/05/Dibujo_de_calavera_animada_png.png" },
-      2: { texto: "Fácil", icono: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7KuYLac7FMhahoJZvZYeAN7YJxtiLe0NsOKkjPihqRg&s=10" },
-      3: { texto: "Medio", icono: "medio.png" },
-      4: { texto: "Alto", icono: "alto.png" },
-      5: { texto: "Muy alto", icono: "calavera.png" },
-      6: { texto: "Difícil", icono: "https://stickerapp.es/cdn-assets/images/preview/2015/09/19/design-4968/template-sticker-300x300.png" },
-      7: { texto: "Extremo", icono: "extremo.png" },
-      8: { texto: "Imposible", icono: "imposible.png" }
-    };
-
-    function actualizarDificultad(nivel) {
-      const segmentos = document.querySelectorAll('.segmento');
-      const texto = document.getElementById('texto-dificultad');
-      const img = document.getElementById('icono-dificultad');
-
-      // Colores: 1-3 Verde, 4-6 Amarillo, 7-8 Rojo
-      let color = nivel <= 3 ? '#2ecc71' : (nivel <= 6 ? '#f1c40f' : '#e74c3c');
-
-      segmentos.forEach((seg, index) => {
-        seg.style.background = index < nivel ? color : '#333';
-      });
-
-      texto.innerText = configuracion[nivel].texto;
-      texto.style.color = color;
-      img.src = configuracion[nivel].icono;
-    }
-
-    // Ejemplo: Llama a esta función para cambiar el nivel (del 1 al 8)
-    actualizarDificultad(2);
-  </script>
-
+  <script src="script.js"></script>
 </body>
+<script>
+  const alienData = {
+  xenomorfo: {
+    nombre: "Xenomorfo Prime",
+    planeta: "Origen: LV-426",
+    imagen: "https://placehold.co/150x150/000/00ffcc?text=Xeno",
+    fuerza: 95,
+    agilidad: 85,
+    inteligencia: 60
+  },
+  zorg: {
+    nombre: "Zorg El Viscoso",
+    planeta: "Origen: Neptuno B",
+    imagen: "https://placehold.co/150x150/000/00b8ff?text=Zorg",
+    fuerza: 40,
+    agilidad: 50,
+    inteligencia: 98
+  },
+  pyro: {
+    nombre: "Ignis Pyros",
+    planeta: "Origen: Solis-9",
+    imagen: "https://placehold.co/150x150/000/ff5500?text=Pyro",
+    fuerza: 80,
+    agilidad: 70,
+    inteligencia: 75
+  }
+};
+
+function mostrarAlien(id) {
+  const alien = alienData[id];
+
+  // Actualizar textos e imagen
+  document.getElementById("alienName").innerText = alien.nombre;
+  document.getElementById("alienPlanet").innerText = alien.planeta;
+  document.getElementById("alienImage").src = alien.imagen;
+
+  // Actualizar ancho de barras de stats
+  document.getElementById("statFuerza").style.width = alien.fuerza + "%";
+  document.getElementById("statAgilidad").style.width = alien.agilidad + "%";
+  document.getElementById("statInteligencia").style.width = alien.inteligencia + "%";
+}
+
+// Cargar el primero por defecto
+mostrarAlien("xenomorfo");
+</script>
 </html>
