@@ -186,3 +186,96 @@
             audio{
                 margin-top: 2%;
             }
+            /* --- BOTÓN DESPLEGABLE DE ESTADÍSTICAS --- */
+            .btn-desplegar-stats {
+                background-color: #161b2c;
+                color: #33ff99;
+                border: 2px solid #4ffbdf;
+                border-radius: 6px;
+                padding: 10px 18px;
+                font-family: 'Courier New', monospace;
+                font-size: 1rem;
+                font-weight: bold;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                margin-top: 15px;
+                transition: all 0.3s ease;
+            }
+
+            .btn-desplegar-stats:hover {
+                background-color: #4ffbdf;
+                color: #0b0d17;
+                box-shadow: 0 0 10px rgba(79, 251, 223, 0.4);
+            }
+
+            .flecha {
+                transition: transform 0.3s ease;
+            }
+
+            .flecha.rotada {
+                transform: rotate(180deg);
+            }
+
+            /* --- CONTENEDOR Y BARRAS --- */
+            .stats-container {
+                background: #0b0d17;
+                border: 1px solid #333;
+                border-left: 3px solid #4ffbdf;
+                padding: 15px;
+                border-radius: 6px;
+                margin-top: 10px;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                max-height: 500px;
+                opacity: 1;
+                overflow: hidden;
+                transition: all 0.4s ease-in-out;
+            }
+
+            /* Estado Oculto (Por defecto) */
+            .stats-container.oculto {
+                max-height: 0;
+                opacity: 0;
+                padding-top: 0;
+                padding-bottom: 0;
+                margin-top: 0;
+                border: none;
+            }
+
+            .stat-item {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            .stat-label {
+                display: flex;
+                justify-content: space-between;
+                font-size: 0.9rem;
+                color: #d1d5db;
+            }
+
+            .stat-value {
+                color: #4ffbdf;
+                font-weight: bold;
+            }
+
+            .stat-bar-bg {
+                background-color: #1a1a1a;
+                height: 10px;
+                border-radius: 4px;
+                overflow: hidden;
+                border: 1px solid #333;
+            }
+
+            .stat-bar-fill {
+                height: 100%;
+                width: 0%;
+                background: linear-gradient(90deg, #33ff99, #4ffbdf);
+                border-radius: 3px;
+                transition: width 0.8s ease-in-out;
+            }

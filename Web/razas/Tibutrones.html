@@ -75,6 +75,67 @@
             </a>
             <figcaption class="texto-fotos">Tibutron resistiendo disparos</figcaption>
             </div>
+            <div class="container" data-especie="Tibutrones">
+        <!-- Botón para desplegar/ocultar estadísticas -->
+        <button type="button" class="btn-desplegar-stats" id="btnStats">
+            <span>Ver Estadísticas de la Especie</span>
+            <span class="flecha" id="flechaStats">▼</span>
+        </button>
+
+        <!-- Contenedor oculto por defecto mediante la clase 'oculto' -->
+        <div class="stats-container oculto" id="panelStats">
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Fuerza</span>
+                    <span class="stat-value" id="val-fuerza">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-fuerza"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Resistencia</span>
+                    <span class="stat-value" id="val-resistencia">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-resistencia"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Velocidad</span>
+                    <span class="stat-value" id="val-velocidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-velocidad"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Inteligencia</span>
+                    <span class="stat-value" id="val-inteligencia">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-inteligencia"></div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Habilidades</span>
+                    <span class="stat-value" id="val-habilidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-habilidad"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- Enlace al archivo JavaScript externo (Asegúrate de ajustar la ruta si es necesario) -->
+        <script src="Stats.js"></script>
         <h2>Dificultad de derrotar</h2>
         <div class="contenedor-completo">
             <div class="bloque-dificultad">
