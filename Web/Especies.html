@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Especies - Planet Pedia</title>
+    <link rel="stylesheet" href="plantilla.css">
+    <style>
+        /* Variables y diseño base heredados de la página principal */
+        
+
+        body {
+            background-color: var(--bg-space);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-image: 
+                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px);
+            background-size: 550px 550px, 350px 350px;
+            background-position: 0 0, 40px 60px;
+        }
+
+      
+        /* Cuadrícula de Cartas de Especies */
+        .species-grid {
+            max-width: 1200px;
+            margin: 0 auto 4rem auto;
+            padding: 0 2rem;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Estilo de la Carta Individual */
+        .species-card {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            height: 400px; /* Altura fija para uniformidad */
+        }
+
+        /* Contenedor de la imagen */
+        .card-img-wrapper {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .species-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.6s ease;
+        }
+
+        /* Información superpuesta (Nombre y Botón) */
+        .card-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem 1.5rem 1.5rem 1.5rem;
+            background: linear-gradient(to top, rgba(11, 13, 23, 1) 0%, rgba(11, 13, 23, 0.8) 50%, transparent 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            transition: transform 0.4s ease;
+        }
+
+        .card-info h2 {
+            color: var(--text-main);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .card-info .homeworld {
+            color: var(--accent-purple);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        /* Botón oculto que aparece en Hover */
+        .view-btn {
+            background-color: var(--accent-neon);
+            color: var(--bg-space);
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            opacity: 0; /* Oculto por defecto */
+            transform: translateY(20px); /* Desplazado hacia abajo */
+            transition: all 0.4s ease;
+        }
+
+        /* Animación de la raya verde que se mueve */
+        @keyframes scanline-move {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(400px); }
+        }
+
+        /* Base de la carta */
+        .species-card {
+            background-color: var(--bg-card);
+            border-radius: 4px; /* Un poco más cuadrado, estilo retro */
+            overflow: hidden;
+            position: relative;
+            border: 2px solid #333;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: block;
+            height: 400px;
+        }
+
+        /* La capa de "Interferencia" (las rayas verdes) */
+        .species-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 20px; /* Altura de la franja */
+            background: rgba(4, 134, 32, 0.3);
+            box-shadow: 0 0 10px rgba(3, 156, 49, 0.5);
+            opacity: 0;
+            z-index: 3;
+            pointer-events: none;
+            transition: opacity 0.2s;
+        }
+
+        /* Efecto al hacer hover */
+        .species-card:hover {
+            border-color: var(--accent-neon);
+            box-shadow: 0 0 15px rgba(3, 114, 31, 0.2);
+        }
+
+        .species-card:hover::before {
+            opacity: 1;
+            animation: scanline-move 1.5s linear infinite; /* La raya recorre la tarjeta */
+        }
+
+        /* Efecto de "ruido" estático en la imagen al hacer hover */
+        
+
+        /* Efecto opcional: Líneas de escaneo estáticas (para que parezca una pantalla) */
+        .species-card::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                rgba(114, 231, 4, 0.082) 50%, 
+                rgba(6, 59, 1, 0.062) 50%
+            );
+            background-size: 100% 4px; /* El tamaño de las líneas */
+            pointer-events: none;
+            z-index: 2;
+        }
+        .search-container {
+            max-width: 400px;
+            margin: 0 auto 2rem auto;
+            padding: 0 2rem;
+        }
+
+        #species-search {
+            width: 100%;
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: var(--bg-card);
+            color: var(--text-main);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        #species-search:focus {
+            border-color: var(--accent-neon);
+        }
+
+        #species-search::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="PlanetPedia.html" class="logo">PLANET<span>PEDIA</span></a>
+            <nav>
+                <a href="PlanetPedia.html">Inicio</a>
+                <a href="Planetas.html">Planetas</a>
+                <a href="Especies.html" class="active">Especies</a>
+                <a href="Línea Temporal.html">Línea Temporal</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="section-header">
+        <h1>Catálogo de Especies</h1>
+        <p>Índice biológico y cultural de las formas de vida conocidas en la galaxia.</p>
+    </div>
+    <div class="search-container">
+        <input type="text" id="species-search" placeholder="Buscar especie..." onkeyup="filtrarEspecies()">
+    </div>
+    <main class="species-grid">
+        
+        <!-- CARTA DE ESPECIE 1 -->
+        <a href="razas/Brainiacs.html" class="species-card">
+            <div class="card-img-wrapper">
+                <!-- Cambia el 'src' por la ruta de tus propias imágenes -->
+                <img src="../Especies alienigenas/Los Brainiac/Los Brainiac.png" alt="Especie 1">
+            </div>
+            <div class="card-info">
+                <h2>Los Brainiac</h2>
+                <span class="homeworld">Planeta: Neuron Prime</span>
+                <span class="view-btn">Ver Expediente</span>
+            </div>
+        </a>
+
+        <!-- CARTA DE ESPECIE 2 -->
+        <a href="razas/Invasores X.html" class="species-card">
+            <div class="card-img-wrapper">
+                <img src="../Especies alienigenas/Invasores X/Invasores X.png" alt="Especie 2">
+            </div>
+            <div class="card-info">
+                <h2>Invasores X</h2>
+                <span class="homeworld">Planeta: Xilthor</span>
+                <span class="view-btn">Ver Expediente</span>
+            </div>
+        </a>
+
+        <!-- CARTA DE ESPECIE 3 -->
+        <a href="razas/Enjambre Vork.html" class="species-card">
+            <div class="card-img-wrapper">
+                <img src="../Especies alienigenas/Enjambre Vork/Enjambre Vork.png" alt="Especie 3">
+            </div>
+            <div class="card-info">
+                <h2>Enjambre Vork</h2>
+                <span class="homeworld">Planeta: Planeta X</span>
+                <span class="view-btn">Ver Expediente</span>
+            </div>
+        </a>
+
+        <!-- CARTA DE ESPECIE 4 -->
+        <a href="razas/Foxers.html" class="species-card">
+            <div class="card-img-wrapper">
+                <img src="../Especies alienigenas/Los Foxers/Los Foxers.png" alt="Especie 4">
+            </div>
+            <div class="card-info">
+                <h2>Los Foxers</h2>
+                <span class="homeworld">Planeta: Aetheria</span>
+                <span class="view-btn">Ver Expediente</span>
+            </div>
+        </a>
+        
+        <a href="razas/Grolux.html" class="species-card">
+            <div class="card-img-wrapper">
+                <img src="../Especies alienigenas/Los Grolux/Los Grolux.png" alt="Especie 4">
+            </div>
+            <div class="card-info">
+                <h2>Los Grolux</h2>
+                <span class="homeworld">Planeta: Planeta X</span>
+                <span class="view-btn">Ver Expediente</span>
+            </div>
+        </a>
+
+        <a href="razas/Kaelish.html" class="species-card">
+            <div class="card-img-wrapper">
+                <img src="../Especies alienigenas/Los Kaelish/Kaelish (verde).png" alt="Especie 4">
+            </div>
+            <div class="card-info">
+                <h2>Los Kaelish</h2>
+                <span class="homeworld">Planeta: Zenith Kael</span>
+                <span class="view-btn">Ver Expediente</span>
+            </div>
+        </a>
+
+        <a href="razas/Ultramitas.html" class="species-card">
+            <div class="card-img-wrapper">
+                <img src="../Especies alienigenas/Ultramitas/Ultramita.jpeg" alt="Especie 4">
+            </div>
+            <div class="card-info">
+                <h2>Ultramitas</h2>
+                <span class="homeworld">Planeta: Ultra Prime</span>
+                <span class="view-btn">Ver Expediente</span>
+            </div>
+        </a>
+
+        <a href="razas/Ceruleanos.html" class="species-card">
+            <div class="card-img-wrapper">
+                <img src="../Especies alienigenas/Ceruleanos/Ceruleano.jpeg" alt="Especie 4">
+            </div>
+            <div class="card-info">
+                <h2>Ceruleanos</h2>
+                <span class="homeworld">Planeta: Sapphire Crest</span>
+                <span class="view-btn">Ver Expediente</span>
+            </div>
+        </a>
+
+        <a href="razas/Garbilos.html" class="species-card">
+            <div class="card-img-wrapper">
+                <img src="../Especies alienigenas/Garbilos/Garbilo.jpeg" alt="Especie 4">
+            </div>
+            <div class="card-info">
+                <h2>Garbilos</h2>
+                <span class="homeworld">Planeta: Mertacost</span>
+                <span class="view-btn">Ver Expediente</span>
+            </div>
+        </a>
+        <a href="razas/Klagors.html" class="species-card">
+            <div class="card-img-wrapper">
+                <img src="../Especies alienigenas/Klagors/Klagor.jpeg" alt="Especie 4">
+            </div>
+            <div class="card-info">
+                <h2>Klagors</h2>
+                <span class="homeworld">Planeta: Kalagor</span>
+                <span class="view-btn">Ver Expediente</span>
+            </div>
+        </a>
+        <a href="razas/Garguleans.html" class="species-card">
+            <div class="card-img-wrapper">
+                <img src="../Especies alienigenas/Garguleans/Garguleano.jpeg" alt="Especie 4">
+            </div>
+            <div class="card-info">
+                <h2>Garguleans</h2>
+                <span class="homeworld">Planeta: Sapphire Crest</span>
+                <span class="view-btn">Ver Expediente</span>
+            </div>
+        </a>
+        <a href="razas/Xel'thorianos.html" class="species-card">
+            <div class="card-img-wrapper">
+                <img src="../Especies alienigenas/Xel'thorianos/Xel'thoriano.jpeg" alt="Especie 4">
+            </div>
+            <div class="card-info">
+                <h2>Xel'thorianos</h2>
+                <span class="homeworld">Planeta: Sapphire Dom</span>
+                <span class="view-btn">Ver Expediente</span>
+            </div>
+        </a>
+        <a href="razas/Velorians.html" class="species-card">
+            <div class="card-img-wrapper">
+                <img src="../Especies alienigenas/Velorians/Velorian.jpeg" alt="Especie 4">
+            </div>
+            <div class="card-info">
+                <h2>Velorians</h2>
+                <span class="homeworld">Planeta: Kalagor</span>
+                <span class="view-btn">Ver Expediente</span>
+            </div>
+        </a>
+        <a href="razas/" class="species-card">
+            <div class="card-img-wrapper">
+                <img src="../Especies alienigenas/Sterons/Steron.png" alt="Especie 4">
+            </div>
+            <div class="card-info">
+                <h2>Sterons</h2>
+                <span class="homeworld">Planeta: Gradius 4</span>
+                <span class="view-btn">Ver Expediente</span>
+            </div>
+        </a>
+        <a href="razas/Bazofios.html" class="species-card">
+            <div class="card-img-wrapper">
+                <img src="../Especies alienigenas/Bazofios/Bazofio.png" alt="Especie 4">
+            </div>
+            <div class="card-info">
+                <h2>Bazofios</h2>
+                <span class="homeworld">Planeta: Metacost</span>
+                <span class="view-btn">Ver Expediente</span>
+            </div>
+        </a>
+        <a href="razas/Gigantodones.html" class="species-card">
+            <div class="card-img-wrapper">
+                <img src="../Especies alienigenas/Gigantodones/Gigantodon.png" alt="Especie 4">
+            </div>
+            <div class="card-info">
+                <h2>Gigantodones</h2>
+                <span class="homeworld">Planeta: Kalagor</span>
+                <span class="view-btn">Ver Expediente</span>
+            </div>
+        </a>
+        <a href="razas/Tibutrones.html" class="species-card">
+            <div class="card-img-wrapper">
+                <img src="../Especies alienigenas/Tibutrones/Tibutron.png" alt="Especie 4">
+            </div>
+            <div class="card-info">
+                <h2>Tibutron</h2>
+                <span class="homeworld">Planeta: Thalassa Prime</span>
+                <span class="view-btn">Ver Expediente</span>
+            </div>
+        </a>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Planet Pedia. Archivo de Lore del Universo en construcción.</p>
+    </footer>
+
+</body>
+<script>
+    function filtrarEspecies() {
+        const input = document.getElementById('species-search');
+        const filtro = input.value.toLowerCase().trim();
+        const cartas = document.querySelectorAll('.species-card');
+
+        cartas.forEach(carta => {
+            const nombre = carta.querySelector('h2').textContent.toLowerCase();
+            if (nombre.includes(filtro)) {
+                carta.style.display = 'block';
+            } else {
+                carta.style.display = 'none';
+            }
+        });
+    }
+</script>
+</html>

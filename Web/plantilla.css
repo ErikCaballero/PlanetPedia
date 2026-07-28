@@ -1,0 +1,91 @@
+:root {
+            --bg-space: #0b0d17;
+            --bg-card: #161b2c;
+            --text-main: #f4f5f6;
+            --text-muted: #9fa4b4;
+            --accent-neon: #4ffbdf;
+            --accent-purple: #7952b3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+          /* Barra de navegación */
+        header {
+            background-color: rgba(22, 27, 44, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(79, 251, 223, 0.2);
+            
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-main);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--accent-neon);
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-neon);
+        }
+
+        /* Encabezado de la sección */
+        .section-header {
+            max-width: 1200px;
+            margin: 3rem auto 2rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .section-header h1 {
+            font-size: 2.5rem;
+            color: var(--accent-neon);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+        }
+
+        @font-face {
+            font-family: 'Sangrefont'; /* Pon aquí el nombre que quieras darle */
+            src: url('Fuentes/bitten.ttf') format('truetype'); /* Cambia la ruta por la de tu archivo */
+        }
+
+        footer {
+            margin-top: auto;
+            background-color: rgba(11, 13, 23, 0.9);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }

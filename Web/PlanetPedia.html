@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet Pedia - Enciclopedia Galáctica</title>
+    <link rel="stylesheet" href="plantilla.css">
+    <style>
+        /* Variables de diseño para cambiar colores fácilmente */
+ 
+        
+
+        /* Sección Hero (Bienvenida) */
+        .hero {
+            max-width: 800px;
+            margin: 4rem auto;
+            text-align: center;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #fff, var(--accent-neon));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        /* Contenedor de Secciones Principales */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto 4rem auto;
+            padding: 0 2rem;
+            width: 100%;
+        }
+
+        .grid-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Tarjetas de Categoría */
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-neon);
+            box-shadow: 0 10px 20px rgba(79, 251, 223, 0.1);
+        }
+
+        .card-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h2 {
+            color: var(--text-main);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--accent-neon);
+            border: 1px solid var(--accent-neon);
+            padding: 0.6rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .card:hover .btn {
+            background-color: var(--accent-neon);
+            color: var(--bg-space);
+        }
+
+        /* Pie de página */
+        
+    </style>
+</head>
+<body>
+
+    <!-- Barra de navegación superior -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">PLANET<span>PEDIA</span></a>
+            <nav>
+                <a href="#" class="active">Inicio</a>
+                <a href="Planetas.html">Planetas</a>
+                <a href="Especies.html">Especies</a>
+                <a href="LineaTemporal.html">Línea Temporal</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mensaje de bienvenida del universo -->
+    <section class="hero">
+        <h1>Explora el Cosmos Conocido</h1>
+        <p>Bienvenido a la base de datos oficial de Planet Pedia. Aquí encontrarás registros detallados sobre los mundos inexplorados, las civilizaciones que los habitan y los misterios que aguardan en los confines del universo.</p>
+    </section>
+
+    <!-- Bloques de acceso a las secciones -->
+    <main class="main-content">
+        <div class="grid-categories">
+            
+            <!-- Tarjeta de Planetas -->
+            <a href="Planetas.html" class="card">
+                <div>
+                    <div class="card-icon">🪐</div>
+                    <h2>Planetas y Sistemas</h2>
+                    <p>Desde gigantes gaseosos con anillos de cristal hasta mundos desérticos prohibidos. Explora la geografía, atmósfera y recursos de cada sector astrológico.</p>
+                </div>
+                <div>
+                    <span class="btn">Ver Archivos</span>
+                </div>
+            </a>
+
+            <!-- Tarjeta de Especies -->
+            <a href="Especies.html" class="card">
+                <div>
+                    <div class="card-icon">👽</div>
+                    <h2>Especies y Culturas</h2>
+                    <p>Descubre las diversas formas de vida inteligente, organismos exóticos y facciones galácticas. Revisa su biología, tecnología e historia.</p>
+                </div>
+                <div>
+                    <span class="btn">Ver Archivos</span>
+                </div>
+            </a>
+
+            <!-- Tarjeta de Línea Temporal -->
+            <a href="LineaTemporal.html" class="card">
+                <div>
+                    <div class="card-icon">⏳</div>
+                    <h2>Línea Temporal</h2>
+                    <p>Recorre los hitos clave del universo con una línea de sucesos que se desplaza desde los primeros registros hasta las grandes conquistas galácticas.</p>
+                </div>
+                <div>
+                    <span class="btn">Ver Línea</span>
+                </div>
+            </a>
+
+            <!-- Tarjeta de Información Adicional -->
+            <a href="InformacionAdicional.html" class="card">
+                <div>
+                    <div class="card-icon">🛰️</div>
+                    <h2>Información Adicional</h2>
+                    <p>Accede a datos complementarios, curiosidades y referencias extra para ampliar la lectura de cada civilización y descubrimiento.</p>
+                </div>
+                <div>
+                    <span class="btn">Abrir Sección</span>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 Planet Pedia. Archivo de Lore del Universo en construcción.</p>
+    </footer>
+
+</body>
+</html>

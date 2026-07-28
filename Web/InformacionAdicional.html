@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet Pedia - Información Adicional</title>
+    <link rel="stylesheet" href="plantilla.css">
+    <style>
+        :root {
+            --bg-space: #0b0d17;
+            --bg-card: #161b2c;
+            --text-main: #f4f5f6;
+            --text-muted: #9fa4b4;
+            --accent-neon: #4ffbdf;
+            --accent-purple: #7952b3;
+        }
+
+        body {
+            background-color: var(--bg-space);
+            color: var(--text-main);
+            min-height: 100vh;
+            background-image:
+                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px);
+            background-size: 550px 550px, 350px 350px;
+            background-position: 0 0, 40px 60px;
+        }
+
+        .info-page {
+            max-width: 1000px;
+            margin: 3rem auto 4rem;
+            padding: 0 2rem;
+        }
+
+        .info-card {
+            background: rgba(22, 27, 44, 0.95);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+        }
+
+        .info-card h1 {
+            color: var(--accent-neon);
+            margin-bottom: 1rem;
+            font-size: 2.2rem;
+        }
+
+        .info-card h2 {
+            color: var(--accent-purple);
+        }
+        .info-card p, .info-card li {
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .info-card ul {
+            margin: 1rem 0 0 1.2rem;
+        }
+        .info-card img{
+            width: 45%;
+            margin-left: 27.5%;
+            border-radius: 70%;
+            margin-top: 2%;
+            border: #4ffbdf 1px solid;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="PlanetPedia.html" class="logo">PLANET<span>PEDIA</span></a>
+            <nav>
+                <a href="PlanetPedia.html">Inicio</a>
+                <a href="Planetas.html">Planetas</a>
+                <a href="Especies.html">Especies</a>
+                <a href="InformacionAdicional.html" class="active">Información Adicional</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="info-page">
+        <section class="info-card">
+            <h1>Metales</h1>
+            <h2>Coralto</h2>
+            <p>El Coralto es un metal muy resistente y util para maquinaría pesada, estructuras con necesidad de alta resistencia o protección contra impactos.</p>
+            <ul>
+                <li>3 veces más resistente que cualquier otro metal de la tierra</li>
+                <li>Densidad: 5.23 g/cm³</li>
+                <li>Punto de fusión: 3,500 °C</li>
+                <li>Manipulabilidad: Media (relativamente sencillo de trabajar)</li>
+            </ul>
+            <img src="img/informacion adicional/Coralto.jpeg" alt="">
+            <h2>Marcilio</h2>
+            <p>El Marcilio es un metal extremadamente resistente, aunque el contra es que es un metal bastante pesado, por lo que solo se usa para fabricar objetos o estructuras que requieren de aguantar grandes cantidades de daño y no será necesario mover mucho.</p>
+            <ul>
+                <li>5 veces más resistente que cualquier otro metal de la tierra</li>
+                <li>Densidad: 19 g/cm³</li>
+                <li>Punto de fusión: 4,200 °C</li>
+                <li>Manipulabilidad: Baja (relativamente difícil de trabajar)</li>
+            </ul>
+            <img src="img/informacion adicional/Marcilio.jpeg" alt="">
+            <h2>Pesatrono</h2>
+            <p>El Pesatrono es un metal extremadamente pesado.</p>
+            <ul>
+                <li>5 veces más resistente que cualquier otro metal de la tierra</li>
+                <li>Densidad: 300 g/cm³</li>
+                <li>Punto de fusión: 4,200 °C</li>
+                <li>Manipulabilidad: Baja (relativamente difícil de trabajar)</li>
+            </ul>
+            <img src="img/informacion adicional/Pesatrono.jpeg" alt="">
+        </section>
+        <section class="info-card">
+            <h1>Fenómenos naturales</h1>
+            <h2 id="protorrayo">Proto-rayos</h2>
+            <p>Los proto-rayos son unos potentes rayos de energía que caen en algunos planetas, son muy frecuentes en el sistema Sapphire.</p>
+            <p>Estos fenómenos tienen mucha más energía y poder destructivo que los rayos de la tierra, teniendo 5 veces más fuerza y capacidad energética, si uno de estos rayos impactara a un humano lo desintegraría al instante totalmente, incluyendo sus huesos.</p>
+        </section>
+    </main>
+</body>
+</html>
