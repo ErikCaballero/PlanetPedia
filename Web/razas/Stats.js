@@ -105,7 +105,7 @@ const baseDatosEspecies = {
         resistencia: 2,
         velocidad: 2,
         inteligencia: 5,
-        habilidad: 1
+        habilidad: 0
     }
     
     // Puedes ir agregando aquí todas las especies nuevas que crees
