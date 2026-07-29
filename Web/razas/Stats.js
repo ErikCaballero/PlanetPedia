@@ -70,7 +70,8 @@ const baseDatosEspecies = {
         fuerza: 6,
         resistencia: 7,
         velocidad: 4,
-        inteligencia: 4
+        inteligencia: 4,
+        habilidad: 3
     },
     Ultramitas: {
         fuerza: 10,
