@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Expediente Klagors</title>
+    <link favicon rel="icon" type="image/png" href="../../Especies alienigenas/Klagors/Klagors icono.png">
+        <title>Expediente Klagors</title>
+        <link favicon rel="icon" type="image/png" href="../../Especies alienigenas/Klagors/Klagors icono.png">
+    <link rel="stylesheet" href="../plantilla.css">
+    <link rel="stylesheet" href="especiesindiv.css">
+</head>
+
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">PLANET<span>PEDIA</span></a>
+            <nav>
+                <a href="../../index.html" class="active">Inicio</a>
+                <a href="../Planetas.html">Planetas</a>
+                <a href="../Especies.html">Especies</a>
+                <a href="../LineaTemporal.html">Línea Temporal</a>
+            </nav>
+        </div>
+    </header>
+<div class="container">
+    <!-- Bloque superior: Imagen + Nombre + Características -->
+    <div class="top-section">
+        <div class="img-box">
+            <!-- Aquí irá tu imagen -->
+            <a href="../../Especies alienigenas/Klagors/Klagor.jpeg">
+                <img src="../../Especies alienigenas/Klagors/Klagor.jpeg" style="width:100%; height:100%; object-fit:cover;">
+            </a>
+        </div>
+        <div class="header-box">
+            <h1>Los Klagors</h1>
+            <h2>Características físicas</h2>
+            <p>Los Klagors son una raza de aspecto reptiliano, con una piel escamosa y resistente que proporciona una ligera protección tienen 2 brazos terminados en 4 dedos y dos piernas terminados en grandes dedos. Sus cuerpos tienden a ser musculosos. Sus cabezas tienen una especie de cuernos además de tener una boca grande con unos dientes duros que les permiten masticar la carne de forma sencilla, además de unos ojos de color naranja.</p>
+            <p>Su cuerpo tiene termorregulación lo que le permite.</p>
+            <p>Miden entre 1.7 y 2 metros.</p>
+            <p>Esta especie puede vivir entre 70 y 100 años.</p>
+            <h2>Planeta de origen</h2>
+            <p>Kalagor</p>
+            <h2>Idioma</h2>
+            <p><i>Klagorio</i></p>
+        </div>
+    </div>
+
+    <!-- Bloque inferior: Habilidades y otros -->
+    <div class="bottom-section">
+        <h2>Alimentación</h2>
+        <p>Los Klagors son principalmente carnívoros aunque también pueden consumir algunas plantas, pero no suele ser lo común, pues necesitan los nutrientes de la carne.</p>
+        <h2>Características sociales</h2>
+        <p>Los Klagors son una raza guerrera que ama la guerra y el combate, ven el combate como la forma más digna de morir y de vivir, siempre tratan de pelear entre ellos de forma honorable. Adoran a los buenos guerreros y los respetan aún siendo de otras razas. No son agresivos por naturaleza, al menos no como otras especies pero, aman combatir y no suelen rehuir una pelea.</p>
+        <div class="foto1">
+            <div class="fotos-div1">
+            <a href="../../Especies alienigenas/Klagors/Klagors.jpeg">
+                <img src="../../Especies alienigenas/Klagors/Klagors.jpeg" alt="Grupo de Klagors" class="species-image">
+            </a>
+            <figcaption class="texto-fotos">Grupo de Klagors</figcaption>
+            </div>
+            <p>Los Klagors no solo van en solitario, si no que también van en grupo, en clanes o incluso forman ejércitos, son soldados que obedecen órdenes y luchan en equipo. Disponen además de una gran variedad de armas tanto de fuego como de armas cuerpo a cuerpo. Además su gran cantidad de masa muscular les permite cargar con armas a distancia y cuerpo a cuerpo pesadas.</p>
+        </div>
+        
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Regularización de temperatura corporal</li>
+            <li>Talento innato para el combate cuerpo a cuerpo</li>
+            <li>Regeneración mejorada</li>
+        </ul>
+        <div class="container" data-especie="Klagors">
+        <!-- Botón para desplegar/ocultar estadísticas -->
+        <button type="button" class="btn-desplegar-stats" id="btnStats">
+            <span>Ver Estadísticas de la Especie</span>
+            <span class="flecha" id="flechaStats">▼</span>
+        </button>
+
+        <!-- Contenedor oculto por defecto mediante la clase 'oculto' -->
+        <div class="stats-container oculto" id="panelStats">
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Fuerza</span>
+                    <span class="stat-value" id="val-fuerza">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-fuerza"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Resistencia</span>
+                    <span class="stat-value" id="val-resistencia">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-resistencia"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Velocidad</span>
+                    <span class="stat-value" id="val-velocidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-velocidad"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Inteligencia</span>
+                    <span class="stat-value" id="val-inteligencia">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-inteligencia"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Habilidades</span>
+                    <span class="stat-value" id="val-habilidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-habilidad"></div>
+                </div>
+            </div>
+            
+        </div>
+        </div>
+        <!-- Enlace al archivo JavaScript externo (Asegúrate de ajustar la ruta si es necesario) -->
+        <script src="Stats.js"></script>
+        
+        <h2>Dificultad de derrotar</h2>
+        <div class="contenedor-completo">
+            <div class="bloque-dificultad">
+            <div class="dificultad-barra" id="barra">
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+            </div>
+            <span id="texto-dificultad" class="texto-nivel"></span>
+            </div>
+            <img id="icono-dificultad" src="" alt="Icono">
+        </div>
+        <h2>Creencias</h2>
+        <p>Los Klagors creen principal en el honor detrás del combate y la gloria en la muerte en una lucha. Odian los traidores y los innobles que utilizan cosas como el veneno o los ataques a la espalda, de hecho, muchas de las peleas y combates</p>
+        <h3>Dioses</h3>
+        <p>Kalinor: Dios de la guerra</p>
+        <p>Kleinox: Dios del combate y el honor</p>
+        <p>Milania: Diosa de la caza</p>
+        <p>Milibas: Diosa de la vida</p>
+        <p>Klantox: Dios de la muerte</p>
+        <div class="fotos-div1">
+            <a href="../../Especies alienigenas/Klagors/Klagors luchando en una arena.png">
+                <img src="../../Especies alienigenas/Klagors/Klagors luchando en una arena.png" alt="Klagors luchando en la arena" class="species-image">
+            </a>
+            <figcaption class="texto-fotos">Klagor luchando en una arena</figcaption>
+            </div>
+        <h2>Jerarquía</h2>
+        <ul>
+            <li class="emperador"> Rey</li>
+            <li>Jinetes de la guerra</li>
+            <li>Guerreros élite</li>
+            <li>Guerreros</li>
+            <li>Ciudadanos</li>
+        </ul>
+        <p>La jerarquía de los Klagors se basa en el reconocimiento por victorias y logros en combate en los cuales se valora la complejidad de la victoria y la cantidad de victorias y en base a eso puedes eleguir que rango ocupar dentro de la especie. La complejidad del combate se basa en las armas que se utilizan, las armas del rival, la cantidad de enemigos a los que se enfrenta o el tipo de enemigo que se enfrenta.</p>
+        
+        <h2>Historia</h2>
+        <p>Los Klagors tienen una historia rica en combates, guerras y luchas. Dado su profundo amor por ello, desde el inicio de la especie han combatido, aunque antes no valoraban el combate como un arte si no que eran agresivos y peleaban por cualquier cosa. Al principio esta raza únicamente utilizaba sus propias manos para pelear, se peleaban a puños entre sí y con otras especies, incluso con las criaturas que los acechaban. Pero, todo cambió con la primera arma cuerpo a cuerpo.</p>
+        <h3>Las primeras armas</h3>
+        <p>Los Klagors desarrollaron armas cuerpo a cuerpo que les ayudaron a enfrentar a las criaturas de este mundo. Y a defenderse muy bien, de hecho desde el primer momento mostraron una especie de talento en el manejo de armas y en el combate cuerpo a cuerpo. Con estas armas en sus manos los Klagors resultaron en una amenaza para el resto de razas, salvo las razas que eran muy superiores en habilidades como los <a href="Velorians.html">Velorians</a> o los <a href="Gigantodones.html">Gigantodones</a> pero, el resto de razas que vivían en ese planeta descubrieron la amenaza que suponían los Klagors a partir de ese momento. Ya que esta raza no era como las dos antes mencionadas, las cuales evitaban el conflicto si no que los Klagors empezaban a amar el combate y adoraban buscar rivales.</p>
+        <div class="fotos-div1">
+            <a href="../../Especies alienigenas/Klagors/Arsenal Klagor.png">
+                <img src="../../Especies alienigenas/Klagors/Arsenal Klagor.png" alt="Arsenal Klagor" class="species-image">
+            </a>
+            <figcaption class="texto-fotos">Arsenal Klagor</figcaption>
+        </div>
+        <h3>La guerra civil de clanes</h3>
+        <p>Los clanes de los Klagors tuvieron un encontronazo muy grande pues el que era el terreno de caza de uno de ellos se vió profanado por otro lo que inició una revuelta que poco a poco escalaría hasta una gran guerra. Una guerra que afectaría a un total de 12 clanes, una guerra que involucro a más de 120.000 Klagors, una autentica masacre de ellos hasta que solo 3 quedaron en pie y esos 3 clanes fueron considerados a partir de ahí como los más poderosos de todos e instauró una regla, nunca más habrían más guerras así de grandes entre clanes y a partir de ese momento los clanes solucionarían los conflictos en la arena de combate en combates que variaban entre 1 y 10 guerreros.</p>
+    </div>
+
+</body>
+<script>
+    const configuracion = {
+      1: { texto: "Muy fácil", icono: "https://genesistoxical.com/wp-content/uploads/2021/05/Dibujo_de_calavera_animada_png.png" },
+      2: { texto: "Fácil", icono: "https://genesistoxical.com/wp-content/uploads/2021/05/Calavera_con_huesos_cruzados_png.png" },
+      3: { texto: "Medio", icono: "https://cdn.creazilla.com/cliparts/38354/skull-clipart-xl.png" },
+      4: { texto: "Alto", icono: "https://marketplace.canva.com/qEZpA/MAHN2PqEZpA/1/tl/canva-illustration-of-a-white-skull-MAHN2PqEZpA.png" },
+      5: { texto: "Muy alto", icono: "https://stickerapp.es/cdn-assets/images/preview/2015/09/19/design-4968/template-sticker-300x300.png" },
+      6: { texto: "Difícil", icono: "https://static.vecteezy.com/system/resources/thumbnails/054/984/062/small/detailed-illustration-of-a-skull-and-crossbones-symbolizing-danger-piracy-and-rebellion-commonly-associated-with-warning-signs-png.png" },
+      7: { texto: "Extremo", icono: "https://cdn.pixabay.com/photo/2025/10/21/08/43/drawing-9907092_640.png" },
+      8: { texto: "Imposible", icono: "https://cdn.pixabay.com/photo/2025/09/16/09/08/scull-9837501_1280.png" }
+    };
+
+    function actualizarDificultad(nivel) {
+      const segmentos = document.querySelectorAll('.segmento');
+      const texto = document.getElementById('texto-dificultad');
+      const img = document.getElementById('icono-dificultad');
+
+      // Colores: 1-3 Verde, 4-6 Amarillo, 7-8 Rojo
+      let color = nivel <= 3 ? '#2ecc71' : (nivel <= 6 ? '#f1c40f' : '#e74c3c');
+
+      segmentos.forEach((seg, index) => {
+        seg.style.background = index < nivel ? color : '#333';
+      });
+
+      texto.innerText = configuracion[nivel].texto;
+      texto.style.color = color;
+      img.src = configuracion[nivel].icono;
+    }
+
+    // Ejemplo: Llama a esta función para cambiar el nivel (del 1 al 8)
+    actualizarDificultad(3);
+  </script>
+</html>

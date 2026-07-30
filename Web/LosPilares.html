@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Pilares de la Creación - Planet Pedia</title>
+    <link rel="stylesheet" href="plantilla.css">
+    <style>
+        body {
+            background: radial-gradient(circle at top, rgba(79, 251, 223, 0.12), transparent 25%),
+                        radial-gradient(circle at bottom right, rgba(121, 82, 179, 0.2), transparent 22%),
+                        linear-gradient(180deg, #07090f 0%, #0b0d17 45%, #09101d 100%);
+        }
+        .pilares-hero {
+            max-width: 1100px;
+            margin: 4rem auto 2rem;
+            padding: 0 2rem;
+            text-align: center;
+        }
+        .pilares-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            letter-spacing: 0.18em;
+            color: #9bf2ff;
+            text-shadow: 0 0 30px rgba(79, 251, 223, 0.65), 0 0 60px rgba(121, 82, 179, 0.35);
+            margin-bottom: 0.5rem;
+        }
+        .pilares-hero p {
+            max-width: 780px;
+            margin: 0 auto;
+            color: #cfd8ff;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.8rem;
+            max-width: 1180px;
+            margin: 3rem auto 4rem;
+            padding: 0 2rem;
+        }
+        .pillar-card {
+            background: rgba(18, 20, 34, 0.92);
+            border: 1px solid rgba(79, 251, 223, 0.18);
+            border-radius: 26px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+            transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+        }
+        .pillar-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(79, 251, 223, 0.35);
+            box-shadow: 0 30px 80px rgba(25, 39, 79, 0.45);
+        }
+        .pillar-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+            filter: saturate(1.1) contrast(1.05);
+        }
+        .pillar-card .pillar-content {
+            padding: 1.8rem 1.6rem 2rem;
+        }
+        .pillar-card h2 {
+            margin-bottom: 0.75rem;
+            font-size: 1.8rem;
+            color: #d4f8ff;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+        .pillar-card p {
+            color: #aab9d4;
+            line-height: 1.8;
+            font-size: 0.98rem;
+        }
+        .pillar-badge {
+            display: inline-flex;
+            margin-top: 1.2rem;
+            padding: 0.55rem 1rem;
+            border-radius: 999px;
+            background: rgba(79, 251, 223, 0.14);
+            color: #d4f8ff;
+            font-size: 0.92rem;
+            letter-spacing: 0.08em;
+        }
+        .legend-note {
+            max-width: 1100px;
+            margin: 0 auto 4rem;
+            padding: 0 2rem;
+            color: #8d9ac7;
+            text-align: center;
+            font-size: 0.98rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="logo">PLANET<span>PEDIA</span></a>
+            <nav>
+                <a href="../index.html">Inicio</a>
+                <a href="Planetas.html">Planetas</a>
+                <a href="Especies.html">Especies</a>
+                <a href="LineaTemporal.html">Línea Temporal</a>
+                <a href="LosPilares.html" class="active">Los Pilares</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="pilares-hero">
+        <h1>Los Pilares de la Creación</h1>
+        <p>Las fuerzas ancestrales que sostienen el cosmos. Cada pilar es una presencia inmensa, un guardián de equilibrio y un destino imposible de ignorar.</p>
+    </section>
+
+    <main class="pillar-grid">
+        <article class="pillar-card">
+            <img src="pilares/Muerte.png" alt="Pilar de la Muerte">
+            <div class="pillar-content">
+                <h2>Muerte</h2>
+                <p>La Sombra eterna que gobierna el final de todos los ciclos. Su presencia fría u mortal para los seres débiles como las plantas o los insectos. Si su guadaña te toca estás condenado en el acto a morir y tu alma se guarda en su guadaña.</p>
+                <span class="pillar-badge">Poder absoluto</span>
+            </div>
+        </article>
+
+        <article class="pillar-card">
+            <img src="pilares/Universe.png" alt="Pilar del Universo">
+            <div class="pillar-content">
+                <h2>Universe</h2>
+                <p>Es el encargado de manejar el universo, evita que los seres de otros universos entren al suyo y tiene la capacidad de crear, eliminar o modificar planetas, estrellas o agujeros negros enteros.</p>
+                <span class="pillar-badge">Energía cósmica</span>
+            </div>
+        </article>
+
+        <article class="pillar-card">
+            <img src="pilares/Life.png" alt="Pilar de la Vida">
+            <div class="pillar-content">
+                <h2>Life</h2>
+                <p>La entidad que maneja la vida, capaz de revivir o crear todo tipo de seres vivos, si no existiese, me temo que todos los seres que vivimos desaparecerían.</p>
+                <span class="pillar-badge">Esencia vital</span>
+            </div>
+        </article>
+
+        <article class="pillar-card">
+            <img src="pilares/TimeGuardian.png" alt="Pilar Guardián del Tiempo">
+            <div class="pillar-content">
+                <h2>Guardián del Tiempo</h2>
+                <p>Este pilar es muy diferente al resto, es una energía y esencia que se pasa de guardian a guardian. Poseen todas las habilidades relacionadas con el tiempo que puedas imaginar vigilan y pueden ver el pasado, el presente y el futuro.</p>
+                <span class="pillar-badge">Control temporal</span>
+            </div>
+        </article>
+    </main>
+
+    <p class="legend-note">Estos pilares no son simples nombres: son fuerzas que forjan mundos, despiertan leyendas y mantienen el equilibrio entre el caos y la creación.</p>
+
+    <footer>
+        <p>&copy; 2026 Planet Pedia. Archivo de Lore del Universo en construcción.</p>
+    </footer>
+</body>
+</html>

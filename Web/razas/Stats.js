@@ -31,6 +31,13 @@ const baseDatosEspecies = {
         inteligencia: 8,
         habilidad: 3
     },
+    Garbilos: {
+        fuerza: 2,
+        resistencia: 2,
+        velocidad: 2,
+        inteligencia: 5,
+        habilidad: 3
+    },
     Garguleans: {
         fuerza: 4,
         resistencia: 3,
@@ -65,6 +72,13 @@ const baseDatosEspecies = {
         velocidad: 2,
         inteligencia: 4,
         habilidad: 10
+    },
+    Klagors: {
+        fuerza: 4,
+        resistencia: 4,
+        velocidad: 3,
+        inteligencia: 5,
+        habilidad: 1
     },
     Tibutrones: {
         fuerza: 6,
