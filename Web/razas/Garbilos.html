@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Expediente Garbilos</title>
+    <link favicon rel="icon" type="image/png" href="../../Especies alienigenas/Garbilos/Garbilos icono.png">
+        <title>Expediente Garbilos</title>
+        <link favicon rel="icon" type="image/png" href="../../Especies alienigenas/Garbilos/Garbilos icono.png">
+    <link rel="stylesheet" href="../plantilla.css">
+    <link rel="stylesheet" href="especiesindiv.css">
+</head>
+
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">PLANET<span>PEDIA</span></a>
+            <nav>
+                <a href="../../index.html" class="active">Inicio</a>
+                <a href="../Planetas.html">Planetas</a>
+                <a href="../Especies.html">Especies</a>
+                <a href="../LineaTemporal.html">Línea Temporal</a>
+            </nav>
+        </div>
+    </header>
+<div class="container">
+    <!-- Bloque superior: Imagen + Nombre + Características -->
+    <div class="top-section">
+        <div class="img-box">
+            <!-- Aquí irá tu imagen -->
+            <a href="../../Especies alienigenas/Garbilos/Garbilo.jpeg">
+                <img src="../../Especies alienigenas/Garbilos/Garbilo.jpeg" style="width:100%; height:100%; object-fit:cover;">
+            </a>
+        </div>
+        <div class="header-box">
+            <h1>Los Garbilos</h1>
+            <h2>Características físicas</h2>
+            <p>Los Garbilos son pequeños alienígenas de color gris con cabezas grandes y ojos grandes de color negro, tienen pequeñas extensiones en la cabeza que se asemejan como a una especie de reemplazo del pelo, tienen dos brazos y dos piernas acabados en pies de tres dedos y manos de cuatro dedos. Tienen una apariencia pacífica.</p>
+            <p>Su cuerpo tiene termorregulación lo que le permite.</p>
+            <p>Miden entre 0.85 y 1.15 metros.</p>
+            <p>Esta especie puede vivir entre 60 y 95 años.</p>
+            <h2>Planeta de origen</h2>
+            <p>Metacost</p>
+            <h2>Idioma</h2>
+            <p><i>Garbiliano</i></p>
+        </div>
+    </div>
+
+    <!-- Bloque inferior: Habilidades y otros -->
+    <div class="bottom-section">
+        <h2>Alimentación</h2>
+        <p>Los Garbilos son omnívoros aunque sus alimentos favoritos son las frutas, especialmente la fruta carpina, un fruto especialmente dulce de su planeta.</p>
+        <h2>Características sociales</h2>
+        <p>Los Garbilos son una raza pacífica, lo único que buscan y desean es la paz aunque tras haber descubierto otros planetas tratan de conseguir la mayor riqueza posible, pues los créditos galácticos pueden comprar muchas ventajas. Entre ellas, la seguridad y la comodidad, dos cosas que valoran mucho.</p>
+        <div class="foto1">
+            <div class="fotos-div1">
+            <a href="../../Especies alienigenas/Garbilos/Garbilos.jpeg">
+                <img src="../../Especies alienigenas/Garbilos/Garbilos.jpeg" alt="Grupo de Garbilos" class="species-image">
+            </a>
+            <figcaption class="texto-fotos">Grupo de Garbilos</figcaption>
+            </div>
+            <p>Y es qué la historia de los Garbilos ha sido triste desde el principio, pues al ser una raza débil se han visto obligados a esconderse en todo tipo de sitios, como por ejemplo en cuevas, en las que tuvieron que adaptarse y construyeron sus propias ciudades para garantizar su seguridad frente a otras especies.</p>
+        </div>
+        
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Curación mediante el contacto físico</li>
+            <li>Visión nocturna parcial</li>
+            <li>Ayuda de crecimiento de la flora</li>
+        </ul>
+        <div class="container" data-especie="Garbilos">
+        <!-- Botón para desplegar/ocultar estadísticas -->
+        <button type="button" class="btn-desplegar-stats" id="btnStats">
+            <span>Ver Estadísticas de la Especie</span>
+            <span class="flecha" id="flechaStats">▼</span>
+        </button>
+
+        <!-- Contenedor oculto por defecto mediante la clase 'oculto' -->
+        <div class="stats-container oculto" id="panelStats">
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Fuerza</span>
+                    <span class="stat-value" id="val-fuerza">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-fuerza"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Resistencia</span>
+                    <span class="stat-value" id="val-resistencia">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-resistencia"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Velocidad</span>
+                    <span class="stat-value" id="val-velocidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-velocidad"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Inteligencia</span>
+                    <span class="stat-value" id="val-inteligencia">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-inteligencia"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Habilidades</span>
+                    <span class="stat-value" id="val-habilidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-habilidad"></div>
+                </div>
+            </div> 
+        </div>
+        </div>
+        <!-- Enlace al archivo JavaScript externo (Asegúrate de ajustar la ruta si es necesario) -->
+        <script src="Stats.js"></script>
+        
+        <h2>Dificultad de derrotar</h2>
+        <div class="contenedor-completo">
+            <div class="bloque-dificultad">
+            <div class="dificultad-barra" id="barra">
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+            </div>
+            <span id="texto-dificultad" class="texto-nivel"></span>
+            </div>
+            <img id="icono-dificultad" src="" alt="Icono">
+        </div>
+        <h2>Creencias</h2>
+        <p>Los Garbilos solo han rezado a un dios en su historia a Garlon, el dios absoluto de los Garbilos.</p>
+        <div class="fotos-div1">
+            <a href="../../Especies alienigenas/Garbilos/Garbilos luchando en una arena.png">
+                <img src="../../Especies alienigenas/Garbilos/Garbilos luchando en una arena.png" alt="Garbilos luchando en la arena" class="species-image">
+            </a>
+            <figcaption class="texto-fotos">Garbilos luchando en una arena</figcaption>
+            </div>
+        <h2>Jerarquía</h2>
+        <ul>
+            <li class="emperador"> Gobernador</li>
+            <li>Consejeros</li>
+            <li>Presidentes</li>
+            <li>Portavoces del pueblo</li>
+            <li>Ciudadanos</li>
+        </ul>
+        <p>La jerarquía de los Garbilos se basa la inteligecia y la capacidad de liderar a la raza.</p>
+        
+        <h2>Historia</h2>
+        <p>Los Garbilos tienen una triste historia repleta de tragedias y terror por la supervivencia.</p>
+        <h3>Los duros comienzos</h3>
+        <p>El comienzo de los Garbilos fue sin duda duro, pues a diferencia del resto de razas los Garbilos no eran fuertes, rápidos, resistentes o buenos en combate cuerpo a cuerpo, si no que todo lo contrario, eran débiles, muy fáciles de herir y aún más fáciles de vencer, alguna de las especies les dió caza y los obligó a buscar refugio, una zona segura que los ayudara a sobrevivir sin necesidad de tener que luchar.</p>
+        <div class="fotos-div1">
+            <a href="../../Especies alienigenas/Garbilos/Arsenal Garbilo.png">
+                <img src="../../Especies alienigenas/Garbilos/Arsenal Garbilo.png" alt="Arsenal Garbilo" class="species-image">
+            </a>
+            <figcaption class="texto-fotos">Arsenal Garbilo</figcaption>
+        </div>
+        <h3>La guerra civil de clanes</h3>
+    </div>
+
+</body>
+<script>
+    const configuracion = {
+      1: { texto: "Muy fácil", icono: "https://genesistoxical.com/wp-content/uploads/2021/05/Dibujo_de_calavera_animada_png.png" },
+      2: { texto: "Fácil", icono: "https://genesistoxical.com/wp-content/uploads/2021/05/Calavera_con_huesos_cruzados_png.png" },
+      3: { texto: "Medio", icono: "https://cdn.creazilla.com/cliparts/38354/skull-clipart-xl.png" },
+      4: { texto: "Alto", icono: "https://marketplace.canva.com/qEZpA/MAHN2PqEZpA/1/tl/canva-illustration-of-a-white-skull-MAHN2PqEZpA.png" },
+      5: { texto: "Muy alto", icono: "https://stickerapp.es/cdn-assets/images/preview/2015/09/19/design-4968/template-sticker-300x300.png" },
+      6: { texto: "Difícil", icono: "https://static.vecteezy.com/system/resources/thumbnails/054/984/062/small/detailed-illustration-of-a-skull-and-crossbones-symbolizing-danger-piracy-and-rebellion-commonly-associated-with-warning-signs-png.png" },
+      7: { texto: "Extremo", icono: "https://cdn.pixabay.com/photo/2025/10/21/08/43/drawing-9907092_640.png" },
+      8: { texto: "Imposible", icono: "https://cdn.pixabay.com/photo/2025/09/16/09/08/scull-9837501_1280.png" }
+    };
+
+    function actualizarDificultad(nivel) {
+      const segmentos = document.querySelectorAll('.segmento');
+      const texto = document.getElementById('texto-dificultad');
+      const img = document.getElementById('icono-dificultad');
+
+      // Colores: 1-3 Verde, 4-6 Amarillo, 7-8 Rojo
+      let color = nivel <= 3 ? '#2ecc71' : (nivel <= 6 ? '#f1c40f' : '#e74c3c');
+
+      segmentos.forEach((seg, index) => {
+        seg.style.background = index < nivel ? color : '#333';
+      });
+
+      texto.innerText = configuracion[nivel].texto;
+      texto.style.color = color;
+      img.src = configuracion[nivel].icono;
+    }
+
+    // Ejemplo: Llama a esta función para cambiar el nivel (del 1 al 8)
+    actualizarDificultad(1);
+  </script>
+</html>
