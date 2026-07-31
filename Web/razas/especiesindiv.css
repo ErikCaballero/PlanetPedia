@@ -279,3 +279,38 @@
                 border-radius: 3px;
                 transition: width 0.8s ease-in-out;
             }
+
+            .tippy-box[data-theme~="wiki"] {
+                background-color: #1a1a1a;
+                color: #202122;
+                box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+                border: 1px solid #a2a9b1;
+                border-radius: 4px;
+                text-align: left;
+                font-size: 14px;
+            }
+            .tippy-box[data-theme~="wiki"] .tippy-content {
+                padding: 12px;
+            }
+            .wiki-popup {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                max-width: 280px;
+            }
+            .wiki-popup img {
+                width: 70px;
+                height: 70px;
+                object-fit: cover;
+                border-radius: 3px;
+            }
+            .wiki-popup p {
+                margin: 0;
+                font-size: 12px;
+                color: #fff;
+            }
+            .wiki-popup strong {
+                color: #4ffbdf;
+                display: block;
+                margin-bottom: 3px;
+            }

@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <title>Expediente Garbilos</title>
     <link favicon rel="icon" type="image/png" href="../../Especies alienigenas/Garbilos/Garbilos icono.png">
-        <title>Expediente Garbilos</title>
-        <link favicon rel="icon" type="image/png" href="../../Especies alienigenas/Garbilos/Garbilos icono.png">
     <link rel="stylesheet" href="../plantilla.css">
     <link rel="stylesheet" href="especiesindiv.css">
+
+    <!-- 1. IMPORTAR LOS ESTILOS DE TIPPY.JS (Opcional: tema de Wikipedia/Light) -->
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
+    
 </head>
 
 <body>
@@ -26,7 +28,6 @@
     <!-- Bloque superior: Imagen + Nombre + Características -->
     <div class="top-section">
         <div class="img-box">
-            <!-- Aquí irá tu imagen -->
             <a href="../../Especies alienigenas/Garbilos/Garbilo.jpeg">
                 <img src="../../Especies alienigenas/Garbilos/Garbilo.jpeg" style="width:100%; height:100%; object-fit:cover;">
             </a>
@@ -67,6 +68,12 @@
             <li>Visión nocturna parcial</li>
             <li>Ayuda de crecimiento de la flora</li>
         </ul>
+        <div class="fotos-div1">
+            <a href="../../Especies alienigenas/Garbilos/Garbilo curando.jpeg">
+                <img src="../../Especies alienigenas/Garbilos/Garbilo curando.jpeg" alt="Garbilos luchando en la arena" class="species-image">
+            </a>
+            <figcaption class="texto-fotos">Garbilo sanando herida</figcaption>
+        </div>
         <div class="container" data-especie="Garbilos">
         <!-- Botón para desplegar/ocultar estadísticas -->
         <button type="button" class="btn-desplegar-stats" id="btnStats">
@@ -127,7 +134,6 @@
             </div> 
         </div>
         </div>
-        <!-- Enlace al archivo JavaScript externo (Asegúrate de ajustar la ruta si es necesario) -->
         <script src="Stats.js"></script>
         
         <h2>Dificultad de derrotar</h2>
@@ -149,12 +155,6 @@
         </div>
         <h2>Creencias</h2>
         <p>Los Garbilos solo han rezado a un dios en su historia a Garlon, el dios absoluto de los Garbilos.</p>
-        <div class="fotos-div1">
-            <a href="../../Especies alienigenas/Garbilos/Garbilos luchando en una arena.png">
-                <img src="../../Especies alienigenas/Garbilos/Garbilos luchando en una arena.png" alt="Garbilos luchando en la arena" class="species-image">
-            </a>
-            <figcaption class="texto-fotos">Garbilos luchando en una arena</figcaption>
-            </div>
         <h2>Jerarquía</h2>
         <ul>
             <li class="emperador"> Gobernador</li>
@@ -169,17 +169,32 @@
         <p>Los Garbilos tienen una triste historia repleta de tragedias y terror por la supervivencia.</p>
         <h3>Los duros comienzos</h3>
         <p>El comienzo de los Garbilos fue sin duda duro, pues a diferencia del resto de razas los Garbilos no eran fuertes, rápidos, resistentes o buenos en combate cuerpo a cuerpo, si no que todo lo contrario, eran débiles, muy fáciles de herir y aún más fáciles de vencer, alguna de las especies les dió caza y los obligó a buscar refugio, una zona segura que los ayudara a sobrevivir sin necesidad de tener que luchar.</p>
+        <h3>La vida en las cuevas</h3>
+        <p>La vida en las cuevas tampoco era fácil, habían criaturas peligrosas y los recursos tampoco eran abundantes, además habían gases tóxicos, derrumbamientos y otros peligros en las cuevas, aún con estas cosas, las cuevas son mas seguras que la superficie ya que en la superficie hay muchas razas y mucha guerra además de otros tantos peligros. La diferencia vital entre las cuevas y la superficie era que en las cuevas no habían razas inteligentes que les dieran caza, entonces, era relativamente fácil mantenerse a salvo de los peligros de la cueva. Aunque los Garbilos debían tener mucho cuidado con los depredadores subterráneos que allí habitaban. Sobre todo por una en concreto, el Greimork, una criatura resistente, fuerte, ágil y rápida, parece un depredador casi perfecto, sobre todo para el territorio en el que vive y caza.</p>
         <div class="fotos-div1">
-            <a href="../../Especies alienigenas/Garbilos/Arsenal Garbilo.png">
-                <img src="../../Especies alienigenas/Garbilos/Arsenal Garbilo.png" alt="Arsenal Garbilo" class="species-image">
+            <a href="../../Especies alienigenas/Garbilos/Depredador de cuevas de Metacost.jpeg">
+                <img src="../../Especies alienigenas/Garbilos/Depredador de cuevas de Metacost.jpeg" alt="Arsenal Garbilo" class="species-image">
             </a>
-            <figcaption class="texto-fotos">Arsenal Garbilo</figcaption>
+            <figcaption class="texto-fotos">Depredador de cuevas Greimork</figcaption>
         </div>
-        <h3>La guerra civil de clanes</h3>
+        <h3>El avance tecnológico</h3>
+        <p>Cuando tuvieron un momento de paz pudieron desarrollarse tecnológicamente hicieron múltiples herramientas y armas para defenderse de los depredadores de la cueva y otros peligros, esto hizo que las criaturas que antes eran invencibles ahora fueran heribles, lo que hacía que los depredadores ya no los viesen como una presa fácil si no como un peligro asequible, que no era mucho pero, por lo menos mejoraba las cosas de cara a la supervivencia.</p>
+        <h3>El espacio exterior</h3>
+        <p>Los Garbilos desarrollaron la tecnología suficiente para desbloquear los viajes espaciales y para tener naves espaciales. Con ellas exploraron otros mundos en busca de armas u objetos con los que defenderse de las criaturas de su planeta y del resto de razas que habitaban Metacost, encontraron armas pero solo se vendían y no disponían de créditos galácticos para pagarlos, por lo que regresaron con las manos vacías, pero, al formarse ciudades y al forarse residuos y montones de desechos en su planeta descubrieron una pequeña raza que lo cambiaría todo.</p>
+        <h3>La salvación hecha criatura</h3>
+        <p>Los Garbilos descubrieron a unas pequeñas criaturas muy útiles; los <a href="Bazofios.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Bazofios/Bazofio.png"><div><strong>Los Bazofios</strong><p>Pequeña raza devoradora de todo tipo de desechos, orgánicos y tecnológicos.</p></div></div>'>Bazofios</a> esta raza los salvó, porque tras alquilar a un pequeño grupo de esta especie a otras razas del universo para vaciar los montones enormes de residuos que tengan, ellos les daban grandes cantidades de dinero con los que pudieron comprar torretas y defensas que les hicieron la vida más sencilla al mantener a las criaturas subterráneas que los amenazaban bajo control.</p>
     </div>
 
-</body>
+</div>
+
+<!-- 2. IMPORTAR LOS SCRIPTS DE POOPER Y TIPPY.JS -->
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+<script src="wikilink.js"></script>
 <script>
+    // Inicializar Tippy.js en los enlaces con la clase .especie-link
+    
+
     const configuracion = {
       1: { texto: "Muy fácil", icono: "https://genesistoxical.com/wp-content/uploads/2021/05/Dibujo_de_calavera_animada_png.png" },
       2: { texto: "Fácil", icono: "https://genesistoxical.com/wp-content/uploads/2021/05/Calavera_con_huesos_cruzados_png.png" },
@@ -196,7 +211,6 @@
       const texto = document.getElementById('texto-dificultad');
       const img = document.getElementById('icono-dificultad');
 
-      // Colores: 1-3 Verde, 4-6 Amarillo, 7-8 Rojo
       let color = nivel <= 3 ? '#2ecc71' : (nivel <= 6 ? '#f1c40f' : '#e74c3c');
 
       segmentos.forEach((seg, index) => {
@@ -208,7 +222,6 @@
       img.src = configuracion[nivel].icono;
     }
 
-    // Ejemplo: Llama a esta función para cambiar el nivel (del 1 al 8)
     actualizarDificultad(1);
-  </script>
+</script>
 </html>
