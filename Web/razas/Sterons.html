@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Expediente Sterons</title>
+    <link favicon rel="icon" type="image/png" href="../../Especies alienigenas/Sterons/Steron icono.png">
+    <link rel="stylesheet" href="../plantilla.css">
+    <link rel="stylesheet" href="especiesindiv.css">
+</head>
+
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">PLANET<span>PEDIA</span></a>
+            <nav>
+                <a href="../../index.html" class="active">Inicio</a>
+                <a href="../Planetas.html">Planetas</a>
+                <a href="../Especies.html">Especies</a>
+                <a href="../LineaTemporal.html">Línea Temporal</a>
+            </nav>
+        </div>
+    </header>
+<div class="container">
+    <!-- Bloque superior: Imagen + Nombre + Características -->
+    <div class="top-section">
+        <div class="img-box">
+            <!-- Aquí irá tu imagen -->
+            <a href="../../Especies alienigenas/Sterons/Steron.png">
+                <img src="../../Especies alienigenas/Sterons/Steron.png" style="width:100%; height:100%; object-fit:cover;">
+            </a>
+        </div>
+        <div class="header-box">
+            <h1>Los Sterons</h1>
+            <h2>Características físicas</h2>
+            <p>Esta raza es una raza de piel parecida a la humana, pero más fuertes y altos, en fisiología se aparentan relativamente pero si te fijas en sus rostros notas que son diferentes a los humanos.</p>
+            <p>Miden entre 1.85 y 2.20 metros de altura y su peso ronda los 100Kg o incluso los superan en algunos casos.</p>
+            <p>Su esperanza de vida es de al rededor de 100 años.</p>
+            <h2>Planeta de origen</h2>
+            <p>Gradius 4</p>
+            <h2>Idioma</h2>
+            <p><i>Sterio</i></p>
+        </div>
+    </div>
+
+    <!-- Bloque inferior: Habilidades y otros -->
+    <div class="bottom-section">
+        <h2>Alimentación</h2>
+        <p>Esta especie es omnívora.</p>
+        <h2>Características sociales</h2>
+        <p>Esta es una raza guerrera, aman la conquista y esclavizan a otras especies, aman tener sirvientes que hagan las tareas pesadas por ellos, son una especie muy cruel, pues la tortura, la esclavitud y el dolor forman parte de su día a día.</p>
+        <div class="foto1">
+            <div class="fotos-div1">
+            <a href="../../Especies alienigenas/Sterons/Sterons.jpeg">
+                <img src="../../Especies alienigenas/Sterons/Sterons.jpeg" alt="Sterons" class="species-image">
+            </a>
+            <figcaption class="texto-fotos">Sterons</figcaption>
+            </div>
+            <p>Esta raza es querida por toda la galaxia dada su curiosa habilidad de comer casi cualquier cosa, usándola para limpiar las ciudades o las zonas de residuos de naves o planetas. Es muy usada por razas inteligentes como los <!-- WikiLinks --> <a href="Foxers.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Los Foxers/Los Foxers.png"><div><strong>Los Foxers</strong><p>Pequeña raza de expertos en ingeniería y robótica, una raza muy avanzada e inteligente.</p></div></div>'>Foxers</a>.</p>
+        </div>
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Alimentación de residuos</li>
+            <li>Generación de mucosa tóxica</li>
+            <li>Escupir bolas de residuos tóxicos</li>
+        </ul>
+        <div class="fotos-div1">
+            <a href="../../Especies alienigenas/Sterons/Sterons escupiendo.png    ">
+                <img src="../../Especies alienigenas/Sterons/Sterons escupiendo.png" alt="Sterons escupiendo" class="species-image">
+            </a>
+            <figcaption class="texto-fotos">Steron escupiendo una bola de residuos tóxica</figcaption>
+            </div>
+        <div class="container" data-especie="Sterons">
+        <!-- Botón para desplegar/ocultar estadísticas -->
+        <button type="button" class="btn-desplegar-stats" id="btnStats">
+            <span>Ver Estadísticas de la Especie</span>
+            <span class="flecha" id="flechaStats">▼</span>
+        </button>
+
+        <!-- Contenedor oculto por defecto mediante la clase 'oculto' -->
+        <div class="stats-container oculto" id="panelStats">
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Fuerza</span>
+                    <span class="stat-value" id="val-fuerza">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-fuerza"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Resistencia</span>
+                    <span class="stat-value" id="val-resistencia">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-resistencia"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Velocidad</span>
+                    <span class="stat-value" id="val-velocidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-velocidad"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Inteligencia</span>
+                    <span class="stat-value" id="val-inteligencia">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-inteligencia"></div>
+                </div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Habilidades</span>
+                    <span class="stat-value" id="val-habilidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-habilidad"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- Enlace al archivo JavaScript externo (Asegúrate de ajustar la ruta si es necesario) -->
+        <script src="Stats.js"></script>
+        <h2>Dificultad de derrotar</h2>
+        <div class="contenedor-completo">
+            <div class="bloque-dificultad">
+            <div class="dificultad-barra" id="barra">
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+            </div>
+            <span id="texto-dificultad" class="texto-nivel"></span>
+            </div>
+            <img id="icono-dificultad" src="" alt="Icono">
+        </div>
+        <h2>Creencias</h2>
+        <p>Ninguna</p>
+        <h2>Jerarquía</h2>
+        <ul>
+            <li class="emperador">Líder</li>
+            <li>Seguidores</li>
+        </ul>
+        <p>Su jerarquía se basa en que uno es el líder y el resto lo siguen, no tienen mucha complicación ni discusión por el liderazgo.</p>
+        
+        <h2>Historia</h2>
+        <h3>El comienzo</h3>
+        <p>No se sabe el comienzo de estás criaturas pero, se cree que estas aparecieron cuando las primeras ciudades emergieron en Metacost. Vivían en las zonas de residuos escondiendose del resto de especies.</p>
+        <h3>El descubrimiento</h3>
+        <p>Cuando otras especies de su planeta los descubrieron estos los trataron con mucho cuidado y cariño dado a que esta especie literalmente solucionaba uno de los mayores problemas, el exceso de basura.</p>
+        <h3>Aumentando territorio</h3>
+        <p>Al ver lo buenos que eran solucionando este problema <!-- WikiLinks --> <a href="Garbilos.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Garbilos/Garbilo.jpeg"><div><strong>Los Garbilos</strong><p>Una pequeña raza con la habilidad de curar. Que se hizo famosa gracias a comerciar con Sterons.</p></div></div>'>Garbilos</a> se aprovecharon de esta raza vendiéndola por toda la galaxia y a ellos les decían que tendrían grandes cantidades de alimento que disfrutar de todos los tipos y tamaños. Por lo que sin saberlo los Sterons estaban siendo utilizados por otras especies, aunque tampoco les importaría, dado a que para ellos su mayor placer es alimentarse y disfrutan mucho haciéndolo.</p> 
+    </div>
+
+</body>
+<!-- WikiLinks -->
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+<script src="wikilink.js"></script>
+<script>
+    const configuracion = {
+      1: { texto: "Muy fácil", icono: "https://genesistoxical.com/wp-content/uploads/2021/05/Dibujo_de_calavera_animada_png.png" },
+      2: { texto: "Fácil", icono: "https://genesistoxical.com/wp-content/uploads/2021/05/Calavera_con_huesos_cruzados_png.png" },
+      3: { texto: "Medio", icono: "https://cdn.creazilla.com/cliparts/38354/skull-clipart-xl.png" },
+      4: { texto: "Alto", icono: "https://marketplace.canva.com/qEZpA/MAHN2PqEZpA/1/tl/canva-illustration-of-a-white-skull-MAHN2PqEZpA.png" },
+      5: { texto: "Muy alto", icono: "https://stickerapp.es/cdn-assets/images/preview/2015/09/19/design-4968/template-sticker-300x300.png" },
+      6: { texto: "Difícil", icono: "https://static.vecteezy.com/system/resources/thumbnails/054/984/062/small/detailed-illustration-of-a-skull-and-crossbones-symbolizing-danger-piracy-and-rebellion-commonly-associated-with-warning-signs-png.png" },
+      7: { texto: "Extremo", icono: "https://cdn.pixabay.com/photo/2025/10/21/08/43/drawing-9907092_640.png" },
+      8: { texto: "Imposible", icono: "https://cdn.pixabay.com/photo/2025/09/16/09/08/scull-9837501_1280.png" }
+    };
+
+    function actualizarDificultad(nivel) {
+      const segmentos = document.querySelectorAll('.segmento');
+      const texto = document.getElementById('texto-dificultad');
+      const img = document.getElementById('icono-dificultad');
+
+      // Colores: 1-3 Verde, 4-6 Amarillo, 7-8 Rojo
+      let color = nivel <= 3 ? '#2ecc71' : (nivel <= 6 ? '#f1c40f' : '#e74c3c');
+
+      segmentos.forEach((seg, index) => {
+        seg.style.background = index < nivel ? color : '#333';
+      });
+
+      texto.innerText = configuracion[nivel].texto;
+      texto.style.color = color;
+      img.src = configuracion[nivel].icono;
+    }
+
+    // Ejemplo: Llama a esta función para cambiar el nivel (del 1 al 8)
+    actualizarDificultad(1);
+  </script>
+</html>
