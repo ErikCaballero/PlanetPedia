@@ -5,13 +5,23 @@ const baseDatosEspecies = {
     
     Bazofios: {
         fuerza: 1,
+        agilidad: 1,
         resistencia: 1,
         velocidad: 1,
         inteligencia: 1,
         habilidad: 3
     },
+    Brinix: {
+        fuerza: 2,
+        agilidad: 5,
+        resistencia: 3,
+        velocidad: 6,
+        inteligencia: 6,
+        habilidad: 3
+    },
     Ceruleanos: {
         fuerza: 4,
+        agilidad: 3,
         resistencia: 5,
         velocidad: 4,
         inteligencia: 5,
@@ -19,6 +29,7 @@ const baseDatosEspecies = {
     },
     EnjambreVork: {
         fuerza: 1,
+        agilidad: 2,
         resistencia: 1,
         velocidad: 3,
         inteligencia: 1,
@@ -26,6 +37,7 @@ const baseDatosEspecies = {
     },
     Foxers: {
         fuerza: 1,
+        agilidad: 7,
         resistencia: 2,
         velocidad: 2,
         inteligencia: 8,
@@ -33,6 +45,7 @@ const baseDatosEspecies = {
     },
     Garbilos: {
         fuerza: 2,
+        agilidad: 1,
         resistencia: 2,
         velocidad: 2,
         inteligencia: 5,
@@ -40,6 +53,7 @@ const baseDatosEspecies = {
     },
     Garguleans: {
         fuerza: 4,
+        agilidad: 3,
         resistencia: 3,
         velocidad: 5,
         inteligencia: 3,
@@ -47,6 +61,7 @@ const baseDatosEspecies = {
     },
     Gigantodones: {
         fuerza: 9,
+        agilidad: 0,
         resistencia: 8,
         velocidad: 2,
         inteligencia: 4,
@@ -54,6 +69,7 @@ const baseDatosEspecies = {
     },
     Grolux: {
         fuerza: 5,
+        agilidad: 3,
         resistencia: 6,
         velocidad: 4,
         inteligencia: 4,
@@ -61,6 +77,7 @@ const baseDatosEspecies = {
     },
     InvasoresX: {
         fuerza: 6,
+        agilidad: 8,
         resistencia: 8,
         velocidad: 8,
         inteligencia: 10,
@@ -68,6 +85,7 @@ const baseDatosEspecies = {
     },
     Kaelish: {
         fuerza: 2,
+        agilidad: 5,
         resistencia: 2,
         velocidad: 2,
         inteligencia: 4,
@@ -75,6 +93,7 @@ const baseDatosEspecies = {
     },
     Klagors: {
         fuerza: 4,
+        agilidad: 3,
         resistencia: 4,
         velocidad: 3,
         inteligencia: 5,
@@ -82,6 +101,7 @@ const baseDatosEspecies = {
     },
     Tibutrones: {
         fuerza: 6,
+        agilidad: 5,
         resistencia: 7,
         velocidad: 4,
         inteligencia: 4,
@@ -89,6 +109,7 @@ const baseDatosEspecies = {
     },
     Ultramitas: {
         fuerza: 10,
+        agilidad: 10,
         resistencia: 10,
         velocidad: 10,
         inteligencia: 6,
@@ -96,13 +117,16 @@ const baseDatosEspecies = {
     },
     Brainiacs: {
         fuerza: 2,
+        agilidad: 2,
         resistencia: 2,
         velocidad: 2,
-        inteligencia: 10
+        inteligencia: 10,
+        habilidad: 1
     },
     
     Velorians: {
         fuerza: 3,
+        agilidad: 9,
         resistencia: 5,
         velocidad: 10,
         inteligencia: 5,
@@ -110,6 +134,7 @@ const baseDatosEspecies = {
     },
     Xelthorianos: {
         fuerza: 3,
+        agilidad: 4,
         resistencia: 3,
         velocidad: 3,
         inteligencia: 6,
@@ -117,6 +142,7 @@ const baseDatosEspecies = {
     },
     Humanos: {
         fuerza: 3,
+        agilidad: 2,
         resistencia: 2,
         velocidad: 2,
         inteligencia: 5,
