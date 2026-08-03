@@ -2,7 +2,15 @@
 // 1. BASE DE DATOS DE TODAS LAS ESPECIES
 // ==========================================
 const baseDatosEspecies = {
-    
+
+    AracnoSephus: {
+        fuerza: 3,
+        agilidad: 7,
+        resistencia: 3,
+        velocidad: 4,
+        inteligencia: 7,
+        habilidad: 5
+    },
     Bazofios: {
         fuerza: 1,
         agilidad: 1,
@@ -139,6 +147,14 @@ const baseDatosEspecies = {
         velocidad: 3,
         inteligencia: 6,
         habilidad: 8
+    },
+    Xilvath: {
+        fuerza: 3,
+        agilidad: 3,
+        resistencia: 6,
+        velocidad: 3,
+        inteligencia: 7,
+        habilidad: 10
     },
     Humanos: {
         fuerza: 3,

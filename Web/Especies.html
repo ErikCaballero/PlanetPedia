@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="plantilla.css">
     <style>
         /* Variables y diseño base heredados de la página principal */
-        
-
         body {
             background-color: var(--bg-space);
             color: var(--text-main);
@@ -21,7 +19,6 @@
             background-size: 550px 550px, 350px 350px;
             background-position: 0 0, 40px 60px;
         }
-
       
         /* Cuadrícula de Cartas de Especies */
         .species-grid {
@@ -37,15 +34,15 @@
         /* Estilo de la Carta Individual */
         .species-card {
             background-color: var(--bg-card);
-            border-radius: 12px;
+            border-radius: 4px;
             overflow: hidden;
             position: relative;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s ease;
+            border: 2px solid #333;
+            transition: all 0.3s ease;
             cursor: pointer;
-            text-decoration: none;
             display: block;
-            height: 400px; /* Altura fija para uniformidad */
+            height: 400px;
+            text-decoration: none;
         }
 
         /* Contenedor de la imagen */
@@ -101,8 +98,8 @@
             border-radius: 4px;
             font-weight: bold;
             font-size: 0.9rem;
-            opacity: 0; /* Oculto por defecto */
-            transform: translateY(20px); /* Desplazado hacia abajo */
+            opacity: 0;
+            transform: translateY(20px);
             transition: all 0.4s ease;
         }
 
@@ -112,19 +109,6 @@
             100% { transform: translateY(400px); }
         }
 
-        /* Base de la carta */
-        .species-card {
-            background-color: var(--bg-card);
-            border-radius: 4px; /* Un poco más cuadrado, estilo retro */
-            overflow: hidden;
-            position: relative;
-            border: 2px solid #333;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            display: block;
-            height: 400px;
-        }
-
         /* La capa de "Interferencia" (las rayas verdes) */
         .species-card::before {
             content: "";
@@ -132,7 +116,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 20px; /* Altura de la franja */
+            height: 20px;
             background: rgba(4, 134, 32, 0.3);
             box-shadow: 0 0 10px rgba(3, 156, 49, 0.5);
             opacity: 0;
@@ -149,13 +133,9 @@
 
         .species-card:hover::before {
             opacity: 1;
-            animation: scanline-move 1.5s linear infinite; /* La raya recorre la tarjeta */
+            animation: scanline-move 1.5s linear infinite;
         }
 
-        /* Efecto de "ruido" estático en la imagen al hacer hover */
-        
-
-        /* Efecto opcional: Líneas de escaneo estáticas (para que parezca una pantalla) */
         .species-card::after {
             content: "";
             position: absolute;
@@ -167,18 +147,25 @@
                 rgba(114, 231, 4, 0.082) 50%, 
                 rgba(6, 59, 1, 0.062) 50%
             );
-            background-size: 100% 4px; /* El tamaño de las líneas */
+            background-size: 100% 4px;
             pointer-events: none;
             z-index: 2;
         }
-        .search-container {
-            max-width: 400px;
+
+        /* Contenedor de Filtros y Búsqueda */
+        .filters-container {
+            max-width: 800px;
             margin: 0 auto 2rem auto;
             padding: 0 2rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
-        #species-search {
-            width: 100%;
+        #species-search, #category-filter {
+            flex: 1;
+            min-width: 250px;
             padding: 0.8rem 1.2rem;
             border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -189,7 +176,7 @@
             transition: border-color 0.3s ease;
         }
 
-        #species-search:focus {
+        #species-search:focus, #category-filter:focus {
             border-color: var(--accent-neon);
         }
 
@@ -216,16 +203,26 @@
         <h1>Catálogo de Especies</h1>
         <p>Índice biológico y cultural de las formas de vida conocidas en la galaxia.</p>
     </div>
-    <div class="search-container">
+    
+    <!-- Controles de búsqueda y filtrado -->
+    <div class="filters-container">
         <input type="text" id="species-search" placeholder="Buscar especie..." onkeyup="filtrarEspecies()">
+        <select id="category-filter" onchange="filtrarEspecies()">
+            <option value="todos">Todas las categorías</option>
+            <option value="salvaje">Salvaje</option>
+            <option value="primitiva">Primitiva</option>
+            <option value="estandar">Estandar</option>
+            <option value="avanzada">Avanzada</option>
+            <option value="tecnologica">Tecnológica</option>
+            <option value="superior">Superior</option>
+        </select>
     </div>
-    <main class="species-grid">
-        
-        <!-- CARTA DE ESPECIE 1 -->
-        <a href="razas/Brainiacs.html" class="species-card">
+    
+    <main class="species-grid" id="species-grid">
+        <!-- CARTA DE ESPECIE 1 (Añade el atributo data-category="tipo") -->
+        <a href="razas/Brainiacs.html" class="species-card" data-category="tecnologica">
             <div class="card-img-wrapper">
-                <!-- Cambia el 'src' por la ruta de tus propias imágenes -->
-                <img src="../Especies alienigenas/Los Brainiac/Los Brainiac.png" alt="Especie 1">
+                <img src="../Especies alienigenas/Los Brainiac/Brainiac.jpeg" alt="Especie 1">
             </div>
             <div class="card-info">
                 <h2>Brainiacs</h2>
@@ -235,7 +232,7 @@
         </a>
 
         <!-- CARTA DE ESPECIE 2 -->
-        <a href="razas/Invasores X.html" class="species-card">
+        <a href="razas/Invasores X.html" class="species-card" data-category="tecnologica">
             <div class="card-img-wrapper">
                 <img src="../Especies alienigenas/Invasores X/Invasores X (1).jpeg" alt="Especie 2">
             </div>
@@ -247,7 +244,7 @@
         </a>
 
         <!-- CARTA DE ESPECIE 3 -->
-        <a href="razas/Enjambre Vork.html" class="species-card">
+        <a href="razas/Enjambre Vork.html" class="species-card" data-category="salvaje">
             <div class="card-img-wrapper">
                 <img src="../Especies alienigenas/Enjambre Vork/Enjambre Vork.png" alt="Especie 3">
             </div>
@@ -259,7 +256,7 @@
         </a>
 
         <!-- CARTA DE ESPECIE 4 -->
-        <a href="razas/Foxers.html" class="species-card">
+        <a href="razas/Foxers.html" class="species-card" data-category="tecnologica">
             <div class="card-img-wrapper">
                 <img src="../Especies alienigenas/Los Foxers/Los Foxers.png" alt="Especie 4">
             </div>
@@ -270,7 +267,7 @@
             </div>
         </a>
         
-        <a href="razas/Grolux.html" class="species-card">
+        <a href="razas/Grolux.html" class="species-card" data-category="primitiva">
             <div class="card-img-wrapper">
                 <img src="../Especies alienigenas/Los Grolux/Los Grolux.png" alt="Especie 4">
             </div>
@@ -281,7 +278,7 @@
             </div>
         </a>
 
-        <a href="razas/Kaelish.html" class="species-card">
+        <a href="razas/Kaelish.html" class="species-card" data-category="estandar">
             <div class="card-img-wrapper">
                 <img src="../Especies alienigenas/Los Kaelish/Kaelish (verde).png" alt="Especie 4">
             </div>
@@ -292,7 +289,7 @@
             </div>
         </a>
 
-        <a href="razas/Ultramitas.html" class="species-card">
+        <a href="razas/Ultramitas.html" class="species-card" data-category="superior">
             <div class="card-img-wrapper">
                 <img src="../Especies alienigenas/Ultramitas/Ultramita.jpeg" alt="Especie 4">
             </div>
@@ -303,7 +300,7 @@
             </div>
         </a>
 
-        <a href="razas/Ceruleanos.html" class="species-card">
+        <a href="razas/Ceruleanos.html" class="species-card" data-category="estandar">
             <div class="card-img-wrapper">
                 <img src="../Especies alienigenas/Ceruleanos/Ceruleano.jpeg" alt="Especie 4">
             </div>
@@ -314,7 +311,7 @@
             </div>
         </a>
 
-        <a href="razas/Garbilos.html" class="species-card">
+        <a href="razas/Garbilos.html" class="species-card" data-category="estandar">
             <div class="card-img-wrapper">
                 <img src="../Especies alienigenas/Garbilos/Garbilo.jpeg" alt="Especie 4">
             </div>
@@ -324,7 +321,8 @@
                 <span class="view-btn">Ver Expediente</span>
             </div>
         </a>
-        <a href="razas/Klagors.html" class="species-card">
+        
+        <a href="razas/Klagors.html" class="species-card" data-category="estandar">
             <div class="card-img-wrapper">
                 <img src="../Especies alienigenas/Klagors/Klagor.jpeg" alt="Especie 4">
             </div>
@@ -334,7 +332,8 @@
                 <span class="view-btn">Ver Expediente</span>
             </div>
         </a>
-        <a href="razas/Garguleans.html" class="species-card">
+        
+        <a href="razas/Garguleans.html" class="species-card" data-category="salvaje">
             <div class="card-img-wrapper">
                 <img src="../Especies alienigenas/Garguleans/Garguleano.jpeg" alt="Especie 4">
             </div>
@@ -344,7 +343,8 @@
                 <span class="view-btn">Ver Expediente</span>
             </div>
         </a>
-        <a href="razas/Xel'thorianos.html" class="species-card">
+        
+        <a href="razas/Xel'thorianos.html" class="species-card" data-category="estandar">
             <div class="card-img-wrapper">
                 <img src="../Especies alienigenas/Xel'thorianos/Xel'thoriano.jpeg" alt="Especie 4">
             </div>
@@ -354,7 +354,8 @@
                 <span class="view-btn">Ver Expediente</span>
             </div>
         </a>
-        <a href="razas/Velorians.html" class="species-card">
+        
+        <a href="razas/Velorians.html" class="species-card" data-category="estandar">
             <div class="card-img-wrapper">
                 <img src="../Especies alienigenas/Velorians/Velorian.jpeg" alt="Especie 4">
             </div>
@@ -364,7 +365,8 @@
                 <span class="view-btn">Ver Expediente</span>
             </div>
         </a>
-        <a href="razas/Sterons.html" class="species-card">
+        
+        <a href="razas/Sterons.html" class="species-card" data-category="estandar">
             <div class="card-img-wrapper">
                 <img src="../Especies alienigenas/Sterons/Steron.png" alt="Especie 4">
             </div>
@@ -374,7 +376,8 @@
                 <span class="view-btn">Ver Expediente</span>
             </div>
         </a>
-        <a href="razas/Bazofios.html" class="species-card">
+        
+        <a href="razas/Bazofios.html" class="species-card" data-category="primitiva">
             <div class="card-img-wrapper">
                 <img src="../Especies alienigenas/Bazofios/Bazofio.png" alt="Especie 4">
             </div>
@@ -384,7 +387,8 @@
                 <span class="view-btn">Ver Expediente</span>
             </div>
         </a>
-        <a href="razas/Gigantodones.html" class="species-card">
+        
+        <a href="razas/Gigantodones.html" class="species-card" data-category="primitiva">
             <div class="card-img-wrapper">
                 <img src="../Especies alienigenas/Gigantodones/Gigantodon.png" alt="Especie 4">
             </div>
@@ -394,7 +398,8 @@
                 <span class="view-btn">Ver Expediente</span>
             </div>
         </a>
-        <a href="razas/Sharkinors.html" class="species-card">
+        
+        <a href="razas/Sharkinors.html" class="species-card" data-category="primitiva">
             <div class="card-img-wrapper">
                 <img src="../Especies alienigenas/Sharkinors/Sharkinor.png" alt="Especie 4">
             </div>
@@ -404,7 +409,8 @@
                 <span class="view-btn">Ver Expediente</span>
             </div>
         </a>
-        <a href="razas/AracnoSephus.html" class="species-card">
+        
+        <a href="razas/AracnoSephus.html" class="species-card" data-category="avanzada">
             <div class="card-img-wrapper">
                 <img src="../Especies alienigenas/AracnoSephus/AracnoSephus.png" alt="Especie 4">
             </div>
@@ -414,12 +420,24 @@
                 <span class="view-btn">Ver Expediente</span>
             </div>
         </a>
-        <a href="razas/Brinix.html" class="species-card">
+        
+        <a href="razas/Brinix.html" class="species-card" data-category="avanzada">
             <div class="card-img-wrapper">
                 <img src="../Especies alienigenas/Brinix/Brinix.png" alt="Especie 4">
             </div>
             <div class="card-info">
                 <h2>Brinix</h2>
+                <span class="homeworld">Planeta: Therabitia</span>
+                <span class="view-btn">Ver Expediente</span>
+            </div>
+        </a>
+
+        <a href="razas/Xil'vath.html" class="species-card" data-category="superior">
+            <div class="card-img-wrapper">
+                <img src="../Especies alienigenas/Xil'vath/Xil vath.png" alt="Especie 4">
+            </div>
+            <div class="card-info">
+                <h2>Xil'vath</h2>
                 <span class="homeworld">Planeta: Therabitia</span>
                 <span class="view-btn">Ver Expediente</span>
             </div>
@@ -430,16 +448,35 @@
         <p>&copy; 2026 Planet Pedia. Archivo de Lore del Universo en construcción.</p>
     </footer>
 
-</body>
 <script>
+    // Ordenar alfabéticamente al cargar la página
+    document.addEventListener("DOMContentLoaded", () => {
+        const grid = document.getElementById('species-grid');
+        const cartas = Array.from(grid.querySelectorAll('.species-card'));
+
+        cartas.sort((a, b) => {
+            const nombreA = a.querySelector('h2').textContent.trim().toLowerCase();
+            const nombreB = b.querySelector('h2').textContent.trim().toLowerCase();
+            return nombreA.localeCompare(nombreB, 'es');
+        });
+
+        cartas.forEach(carta => grid.appendChild(carta));
+    });
+
+    // Función combinada para filtrar por texto y por categoría seleccionada
     function filtrarEspecies() {
-        const input = document.getElementById('species-search');
-        const filtro = input.value.toLowerCase().trim();
+        const inputTexto = document.getElementById('species-search').value.toLowerCase().trim();
+        const categoriaSeleccionada = document.getElementById('category-filter').value;
         const cartas = document.querySelectorAll('.species-card');
 
         cartas.forEach(carta => {
             const nombre = carta.querySelector('h2').textContent.toLowerCase();
-            if (nombre.includes(filtro)) {
+            const categoriaCarta = carta.getAttribute('data-category');
+
+            const coincideTexto = nombre.includes(inputTexto);
+            const coincideCategoria = (categoriaSeleccionada === 'todos' || categoriaCarta === categoriaSeleccionada);
+
+            if (coincideTexto && coincideCategoria) {
                 carta.style.display = 'block';
             } else {
                 carta.style.display = 'none';
