@@ -314,3 +314,9 @@
                 display: block;
                 margin-bottom: 3px;
             }
+            .eterno {
+                background: linear-gradient(90deg, #d9ff03, #00e1ff, #b804b2);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-weight: bold;
+            }
