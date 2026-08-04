@@ -11,6 +11,14 @@ const baseDatosEspecies = {
         inteligencia: 7,
         habilidad: 5
     },
+    AracnoSephusGoliath: {
+        fuerza: 6,
+        agilidad: 4,
+        resistencia: 6,
+        velocidad: 3,
+        inteligencia: 5,
+        habilidad: 5
+    },
     Bazofios: {
         fuerza: 1,
         agilidad: 1,
