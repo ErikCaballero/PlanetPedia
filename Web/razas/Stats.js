@@ -59,6 +59,14 @@ const baseDatosEspecies = {
         inteligencia: 8,
         habilidad: 3
     },
+    Friggits: {
+        fuerza: 1,
+        agilidad: 6,
+        resistencia: 1,
+        velocidad: 1,
+        inteligencia: 4,
+        habilidad: 1
+    },
     Garbilos: {
         fuerza: 2,
         agilidad: 1,
@@ -113,6 +121,14 @@ const baseDatosEspecies = {
         resistencia: 4,
         velocidad: 3,
         inteligencia: 5,
+        habilidad: 1
+    },
+    Permians: {
+        fuerza: 4,
+        agilidad: 5,
+        resistencia: 5,
+        velocidad: 4,
+        inteligencia: 4,
         habilidad: 1
     },
     Tibutrones: {
