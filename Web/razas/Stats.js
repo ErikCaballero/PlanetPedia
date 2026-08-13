@@ -133,11 +133,19 @@ const baseDatosEspecies = {
     },
     Tibutrones: {
         fuerza: 6,
-        agilidad: 5,
+        agilidad: 3,
         resistencia: 7,
         velocidad: 4,
-        inteligencia: 4,
+        inteligencia: 3,
         habilidad: 3
+    },
+    Tortanks: {
+        fuerza: 6,
+        agilidad: 2,
+        resistencia: 8,
+        velocidad: 2,
+        inteligencia: 3,
+        habilidad: 1
     },
     Ultramitas: {
         fuerza: 10,

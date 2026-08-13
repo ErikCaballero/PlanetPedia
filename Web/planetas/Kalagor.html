@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Planeta Kalagor</title>
+    <link favicon rel="icon" type="image/png" href="../../Especies alienigenas/Klagors/Klagor icono.png">
+    <link rel="stylesheet" href="../plantilla.css">
+    <link rel="stylesheet" href="planetasindiv.css">
+    <style>
+        .species-link {
+            display: block;
+            flex: 1 1 calc(33.333% - 14px);
+            min-width: 250px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .species-link .fotos-div1 {
+            height: 100%;
+        }
+
+        .species-link:hover .fotos-div1,
+        .species-link:focus-visible .fotos-div1 {
+            border-color: var(--accent-cyan);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .species-link:visited,
+        .species-link:active {
+            color: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">PLANET<span>PEDIA</span></a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden />
+            <label for="nav-toggle" class="menu-toggle" aria-label="Abrir menú">≡</label>
+            <nav>
+                <a href="../../index.html" class="active">Inicio</a>
+                <a href="../Planetas.html">Planetas</a>
+                <a href="../Especies.html">Especies</a>
+                <a href="../LineaTemporal.html">Línea Temporal</a>
+            </nav>
+        </div>
+    </header>
+
+<div class="container">
+    <!-- Bloque superior: Imagen + Datos Principales -->
+    <div class="top-section">
+        <div class="img-box">
+            <img src="../../Planetas/Kalagor/Kalagor.png" style="width:100%; height:100%; object-fit:cover;" alt="Planeta Kalagor">
+        </div>
+        <div class="header-box">
+            <h1>Kalagor</h1>
+            <h2>Nombre del sistema</h2>
+            <p>Sistema Klaimiian</p>
+            
+            <h2>Tamaño del planeta</h2>
+            <p>12,742 km de diámetro (Tamaño estándar)</p>
+            
+            <h2>Número de lunas</h2>
+            <p>2 Lunas (Phobos-K y Deimos-K)</p>
+
+            <h2>Tipo de planeta</h2>
+            <p>Planeta terrestre, mayormente rocoso o desértico</p>
+        </div>
+    </div>
+
+    <!-- Bloque inferior: Biomas, Razas y Desplegables -->
+    <div class="bottom-section">
+        <h2>Temperatura</h2>
+        <p>De día en la mayoría de Kalagor hace una temperatura extremadamente alta de entre 43 y 60 grados Celsius. </p>
+        <p>De noche la temperatura baja drásticamente, llegando a entre 5 y -10 grados Celsius. </p>
+        <h2>Fenómeno meteorológico</h2>
+        <h3>Tormentas de Sílice y Cristal</h3>
+        <p>Vientos de más de 120 km/h en la superficie exterior que arrastran polvo abrasivo y espinas cargadas de energía. Un fenómeno peligroso por las púas de Cactús de Cristal Kalarianos que viajan a 120 km/h, ya que al impactar el daño pueede ser devastador.</p>
+        <h3>Nieblas de Inversión en Cráteres</h3>
+        <p>Durante la madrugada, el vapor de Dilugua se condensa en los bordes de los cráteres formando murallas de niebla que protegen los ecosistemas cerrados del calor del mediodía.</p>
+        <h3>Maelstroms Térmicos</h3>
+        <p>Corrientes ascendentes de aire caliente provocadas por la roca Kalmario, utilizadas por el Dragon Cratalock para desplazarse sin gastar energía. Un momento idóneo para ascender utilizando parapentes o cualquier objeto o nave aéreos.</p>
+        <h2>Biomas</h2>
+        <p>Kalagor está formado mayoritariamente por un bioma, bioma desértico. Está compuesto principalmente por extensos desiertos rocosos y grandes cráteres que, en su interior, ocultan vastos oasis y ecosistemas marinos cerrados. La superficie exterior es árida y castigada por vientos intensos, mientras que las depresiones geográficas rebosan de vida y humedad. </p>
+
+        <!-- Razas Alienígenas Residentes con Imagen, Nombre y Descripción -->
+        <h2>Razas alienígenas residentes</h2>
+        <div class="grid-cards">
+            <a href="../razas/Klagors.html" class="species-link">
+                <div class="fotos-div1">
+                    <img src="../../Especies alienigenas/Klagors/Klagor.jpeg" alt="Klagors" class="species-image">
+                    <h3 class="titulo-fotos">Klagors</h3>
+                    <p class="descripcion-fotos">Raza de categoría estándar nativa de este mundo. Son buenos cazadores y guerreros, son la única raza que ha salido del planeta.</p>
+                </div>
+            </a>
+            <a href="../razas/Velorians.html" class="species-link">
+                <div class="fotos-div1">
+                    <img src="../../Especies alienigenas/Velorians/Velorian.jpeg" alt="Velorians" class="species-image">
+                    <h3 class="titulo-fotos">Velorians</h3>
+                    <p class="descripcion-fotos">Raza de gran velocidad, nunca han tenido problemas dada su elevada velocidad que les permite alcanzar y superar con creces a vehículos terrestres.</p>
+                </div>
+            </a>
+            <a href="../razas/Gigantodones.html" class="species-link">
+                <div class="fotos-div1">
+                    <img src="../../Especies alienigenas/Gigantodones/Gigantodon.png " alt="Gigantodones" class="species-image">
+                    <h3 class="titulo-fotos">Gigantodones</h3>
+                    <p class="descripcion-fotos">Raza pacífica de gran tamaño y fuerza, adaptada para sobrevivir en las condiciones extremas del planeta. Pese a su gran tamaño no requieren cantidadews ingentes de alimento.</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- Sección Desplegable: Fauna -->
+        <button type="button" class="btn-desplegar-stats btn-toggle" onclick="toggleSection('panel-fauna', 'flecha-fauna')">
+            <span>Ver Fauna</span>
+            <span class="flecha" id="flecha-fauna">▼</span>
+        </button>
+        <div class="stats-container oculto" id="panel-fauna">
+            <div class="grid-cards">
+                <div class="fotos-div1">
+                    <img src="../../Planetas/Kalagor/Xenoblion.png" alt="Xenoblion" class="species-image">
+                    <h3 class="titulo-fotos">Xenoblion</h3>
+                    <p class="descripcion-fotos">Gran depredador adaptado tanto a las cavernas como a la superficie, el Xenoblion es una criatura feroz y poderosa que domina sobre todo los entornos subterráneos de Kalagor, es un depredador muy peligroso dada su gran resistencia física que lo permite aguantar disparos y golpes de gran potencia.</p>
+                </div>
+                <div class="fotos-div1">
+                    <img src="../../Planetas/Kalagor/Arimio.png" alt="Arimio" class="species-image">
+                    <h3 class="titulo-fotos">Arimio</h3>
+                    <p class="descripcion-fotos">Criatura grande, de unos 2 metros de altura y 7 de longitud, muy resistente y adaptada a las condiciones extremas del planeta. Tiene la capacidad de rodar sobre si mismo alcanzando velocidades de hasta 140 kilometros por hora. Una gran criatura contra la que es muy complicado luchar.</p>
+                </div>
+                <div class="fotos-div1">
+                    <img src="../../Planetas/Kalagor/Dragon Cratalock.png" alt="Dragon Cratalock" class="species-image">
+                    <h3 class="titulo-fotos">Dragon Cratalock</h3>
+                    <p class="descripcion-fotos">Criatura alada gigante y poderosa, con una piel resistente y garras afiladas. una ciatura voladora que alcanza los 20 metros de envergadura, 4 de altura y 12 de longitud.</p>
+                </div>
+                <div class="fotos-div1">
+                    <img src="../../Planetas/Kalagor/Watalon.png" alt="Watalon" class="species-image">
+                    <h3 class="titulo-fotos">Watalon</h3>
+                    <p class="descripcion-fotos">Criatura de unos 1.8 metros de altura, pacífica. Esta criatura la utilizan los Klagors para recoger agua y poder transportarla, dado a que esta criatura puede almacenar grandes cantidades de dilugua, un tipo de agua que hidrata muchísimo más que la que nosotros conocemos.</p>
+                </div>
+                <div class="fotos-div1">
+                    <img src="../../Planetas/Kalagor/Grilyx.png" alt="Grilyx" class="species-image">
+                    <h3 class="titulo-fotos">Grilyx</h3>
+                    <p class="descripcion-fotos">Criatura de unos 35 centímetros de longitud, es pequeña y escurridiza, se alimentan de insectos, siendo una excelente criatura a tener cerca dada la peligrosidad de algunos insectos del planeta. Su larga y rápida lengua le da la capacidad de cazar en pleno vuelo a los insectos que merodean por la zona. </p>
+                </div>
+                <div class="fotos-div1">
+                    <img src="../../Planetas/Kalagor/Chinis Kalagorianas.png" alt="Chinis Kalagorianas" class="species-image">
+                    <h3 class="titulo-fotos">Chinis Kalagorianas</h3>
+                        <p class="descripcion-fotos">Criatura insectoide pequeña de unos 5 centimetros, muy peligrosa dado su veneno que es capaz de paralizar un cuerpo humano en cuestión de segundos y dejándolo inmóvil por unas 27 horas. Sin duda una pequeña amenaza de la que es mejor alejarse.</p>
+                </div>
+                <div class="fotos-div1">
+                    <img src="../../Planetas/Kalagor/Scormix.png" alt="Scormix" class="species-image">
+                    <h3 class="titulo-fotos">Scormix</h3>
+                    <p class="descripcion-fotos">Criatura nocturna de unos 12 metros de longitud, es un depredador nocturno extremadamente peligroso dado a su potente veneno que puede llegar a incluso matar a un Gigantodon, su único depredador natural es el Dragon Cratalock. Viven en cuevas, donde pueden resguardarse de sus depredadores naturales.</p>
+                </div>
+                <div class="fotos-div1">
+                    <img src="../../Planetas/Kalagor/Lagarto Kalariano.png" alt="Lagarto Kalariano" class="species-image">
+                    <h3 class="titulo-fotos">Lagarto Kalariano</h3>
+                    <p class="descripcion-fotos">Criatura de unos 55 centímetros de longitud, es el depredador natural de las Chinchis Kalarianas, este lagarto no ataca a criaturas más grandes que ella misma, es pacífica con el resto, de hecho es la mascota favorita de los Klagors.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección Desplegable: Flora -->
+        <button type="button" class="btn-desplegar-stats btn-toggle" onclick="toggleSection('panel-flora', 'flecha-flora')">
+            <span>Ver Flora</span>
+            <span class="flecha" id="flecha-flora">▼</span>
+        </button>
+        <div class="stats-container oculto" id="panel-flora">
+            <div class="grid-cards">
+                <div class="fotos-div1">
+                    <img src="../../Planetas/Kalagor/Cactus de cristal Kalariano.png" alt="Cactus de Cristal" class="species-image">
+                    <h3 class="titulo-fotos">Cactus de Cristal Kalariano</h3>
+                    <p class="descripcion-fotos">Cactus capaz de almacenar grandes cantidades de energía y reflejar la radiación estelar mediante espinas de cuarzo, además en el centro de la planta se encuentra un núcleo energético que le permite almacenar y liberar grandes cantidades de energía. Sus púas son prácticamente explosivos, pues al golpear bruscamente una superficie explotan liberando el cristal del exterior y la energía del interior.</p>
+                </div>
+                <div class="fotos-div1">
+                    <img src="../../Planetas/Kalagor/Bomba acuifera.png" alt="Bomba acuifera" class="species-image">
+                    <h3 class="titulo-fotos">Bomba acuifera</h3>
+                    <p class="descripcion-fotos">Planta exótica capaz de almacenar grandes cantidades de agua en unas "bolsas" que pueden tener agua concentrada capaza de hidratar hasta un 80% más que el agua corriente de la tierra. Además la resistencia de esta planta permite llevar estos contenedores de agua encima sin problemas. Sin duda una planta que puede salvarte la vida de morir de deshidratación.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección Desplegable: Recursos -->
+        <button type="button" class="btn-desplegar-stats btn-toggle" onclick="toggleSection('panel-recursos', 'flecha-recursos')">
+            <span>Ver Recursos</span>
+            <span class="flecha" id="flecha-recursos">▼</span>
+        </button>
+        <div class="stats-container oculto" id="panel-recursos">
+            <div class="grid-cards">
+                <div class="fotos-div1">
+                    <img src="../../Planetas/Kalagor/Cristales Kalarianos.png" alt="Cristales Kalarianos" class="species-image">
+                    <h3 class="titulo-fotos">Cristales Kalarianos</h3>
+                    <p class="descripcion-fotos">Estos cristales pueden almacenar una gran cantidad de energía, pueden ser utilizaros para transportarla o como arma, dado a que al ser golpeados estos cristales explotan brutamente lanzado pedazos de cristales por todas partes y desplegando una gran ola de energía.</p>
+                </div>
+                <div class="fotos-div1">
+                    <img src="../../Planetas/Kalagor/Kalmario.png" alt="Kalmario" class="species-image">
+                    <h3 class="titulo-fotos">Kalmario</h3>
+                    <p class="descripcion-fotos">Tiene una gran resistencia para ser una roca, tiene una resistencia al daño tan elevada que las balas de armas convencionales rebotan en su superficie y balas de armas como el barret simplemente marcan el material, sin duda un excelente material de contrucción.</p>
+                </div>
+                <div class="fotos-div1">
+                    <img src="../../Planetas/Kalagor/Nucleo Deserticron.png" alt="Nucleo Deserticron" class="species-image">
+                    <h3 class="titulo-fotos">Nucleo Deserticron</h3>
+                    <p class="descripcion-fotos">Una esfera que contiene una cantidad de energía ridículamente alta, capaz de mantener naves, instalaciones y vehículos en funcionamiento durante períodos prolongados. Se calcula que puede proporcionar energía suficiente para mantener una ciudad pequeña durante unos 16 meses. Es muy buscado pero, su aparición en el planeta es tan escasa que se suele recurrir a otras fuentes de energía.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Script para la funcionalidad de desplegar/plegar -->
+<script>
+    function toggleSection(panelId, flechaId) {
+        const panel = document.getElementById(panelId);
+        const flecha = document.getElementById(flechaId);
+        
+        if (panel.classList.contains('oculto')) {
+            // Desplegar
+            panel.classList.remove('oculto');
+            flecha.classList.add('rotada');
+            
+            // Forzar estilos inline para sobreescribir la clase .oculto suavemente
+            panel.style.maxHeight = panel.scrollHeight + 100 + "px";
+            panel.style.opacity = "1";
+            panel.style.padding = "15px";
+            panel.style.marginTop = "10px";
+            panel.style.border = "1px solid #333";
+            panel.style.borderLeft = "3px solid #4ffbdf";
+        } else {
+            // Plegar
+            panel.classList.add('oculto');
+            flecha.classList.remove('rotada');
+            
+            // Revertir estilos inline
+            panel.style.maxHeight = "0";
+            panel.style.opacity = "0";
+            panel.style.padding = "0";
+            panel.style.marginTop = "0";
+            panel.style.border = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
