@@ -239,6 +239,37 @@
     padding-left: 10px;
 }
 
+.poblacion-fotos {
+    margin-top: auto;        /* Empuja el elemento al fondo del div */
+    padding-top: 12px;       /* Margen de separación con la descripción */
+    font-size: 0.82rem;      /* Tamaño de letra discreto */
+    color: var(--accent-cyan); /* Color destacado acorde al diseño */
+    opacity: 0.85;           /* Ligera transparencia para jerarquía visual */
+    font-weight: 500;
+    text-align: left;        /* Alineado a la izquierda */
+}
+.species-link {
+    display: block;
+    flex: 1 1 calc(33.333% - 14px);
+    min-width: 250px;
+    text-decoration: none;
+    color: inherit;
+}
+.species-link .fotos-div1 {
+    height: 100%;
+}
+
+.species-link:hover .fotos-div1,
+.species-link:focus-visible .fotos-div1 {
+    border-color: var(--accent-cyan);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.species-link:visited,
+.species-link:active {
+        color: inherit;
+}
 /* ==========================================================================
    Adaptabilidad / Diseño Responsivo
    ========================================================================== */

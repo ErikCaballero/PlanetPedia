@@ -13,6 +13,13 @@
             --text-muted: #9fa4b4;
             --accent-neon: #4ffbdf;
             --accent-purple: #7952b3;
+            --accent-blue: #1e90ff;
+            --accent-lightblue: #06b9f0;
+            --accent-green: #32cd32;
+            --accent-red: #ff4500;
+            --accent-yellow: #ffd700;
+            --accent-orange: #ff8c00;
+            --accent-pink: #ff69b4;
         }
 
         body {
@@ -49,6 +56,13 @@
 
         .info-card h2 {
             color: var(--accent-purple);
+            margin: 0;
+        }
+        .info-card h3 {
+            color: var(--accent-blue);
+        }
+        .info-card h4 {
+            color: var(--accent-pink);
         }
         .info-card p, .info-card li {
             color: var(--text-muted);
@@ -66,6 +80,73 @@
             border: #4ffbdf 1px solid;
         }
 
+        /* ESTILOS DE LOS BOTONES Y ACORDEÓN */
+        .stat-group {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .stat-group:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .stat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .toggle-btn {
+            background: rgba(121, 82, 179, 0.2);
+            color: var(--accent-neon);
+            border: 1px solid var(--accent-purple);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-btn:hover {
+            background: var(--accent-purple);
+            color: #fff;
+            box-shadow: 0 0 10px rgba(121, 82, 179, 0.5);
+        }
+
+        .arrow {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .toggle-btn.active .arrow {
+            transform: rotate(180deg);
+        }
+
+        .stat-levels {
+            display: none;
+            margin-top: 1rem;
+            padding-left: 1rem;
+            border-left: 2px solid var(--accent-purple);
+        }
+
+        .stat-levels.show {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
     </style>
 </head>
 <body>
@@ -73,7 +154,7 @@
         <div class="nav-container">
             <a href="../index.html" class="logo">PLANET<span>PEDIA</span></a>
             <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden />
-            <label for="nav-toggle" class="menu-toggle" aria-label="Abrir men�">≡</label>
+            <label for="nav-toggle" class="menu-toggle" aria-label="Abrir menú">≡</label>
             <nav>
                 <a href="../index.html">Inicio</a>
                 <a href="Planetas.html">Planetas</a>
@@ -94,7 +175,7 @@
                 <li>Punto de fusión: 3,500 °C</li>
                 <li>Manipulabilidad: Media (relativamente sencillo de trabajar)</li>
             </ul>
-            <img src="img/informacion adicional/Coralto.jpeg" alt="">
+            <img src="img/informacion adicional/Coralto.jpeg" alt="Coralto">
             <h2 id="marcilio">Marcilio</h2>
             <p>El Marcilio es un metal extremadamente resistente, aunque el contra es que es un metal bastante pesado, por lo que solo se usa para fabricar objetos o estructuras que requieren de aguantar grandes cantidades de daño y no será necesario mover mucho.</p>
             <ul>
@@ -103,7 +184,7 @@
                 <li>Punto de fusión: 4,200 °C</li>
                 <li>Manipulabilidad: Baja (relativamente difícil de trabajar)</li>
             </ul>
-            <img src="img/informacion adicional/Marcilio.jpeg" alt="">
+            <img src="img/informacion adicional/Marcilio.jpeg" alt="Marcilio">
             <h2 id="pesatrono">Pesatrono</h2>
             <p>El Pesatrono es un metal extremadamente pesado.</p>
             <ul>
@@ -112,14 +193,16 @@
                 <li>Punto de fusión: 4,200 °C</li>
                 <li>Manipulabilidad: Baja (relativamente difícil de trabajar)</li>
             </ul>
-            <img src="img/informacion adicional/Pesatrono.jpeg" alt="">
+            <img src="img/informacion adicional/Pesatrono.jpeg" alt="Pesatrono">
         </section>
+
         <section class="info-card">
             <h1>Fenómenos naturales</h1>
             <h2 id="protorrayo">Proto-rayos</h2>
             <p>Los proto-rayos son unos potentes rayos de energía que caen en algunos planetas, son muy frecuentes en el sistema Sapphire.</p>
             <p>Estos fenómenos tienen mucha más energía y poder destructivo que los rayos de la tierra, teniendo 5 veces más fuerza y capacidad energética, si uno de estos rayos impactara a un humano lo desintegraría al instante totalmente, incluyendo sus huesos.</p>
         </section>
+
         <section class="info-card">
             <h1>Habilidades</h1>
             <h2 id="visionsangrienta">Visión Sangrienta</h2>
@@ -132,9 +215,234 @@
             <p>Esta habilidad es una de las mejores que una criatura chupasangre puede tener.</p>
             <p>Otorga a la criatura que haya absorvido la sangre tomar las características y habilidades genéticas del ser del que haya consumido la sangre.</p>
         </section>
+
+        <section class="info-card">
+            <h1 id="stats">Estadísticas</h1>
+
+            <!-- FUERZA -->
+            <div class="stat-group">
+                <div class="stat-header">
+                    <h2>Fuerza</h2>
+                    <button class="toggle-btn" aria-expanded="false">
+                        <span>Desplegar niveles</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                </div>
+                <div class="stat-levels">
+                    <h3>Nivel 1</h3>
+                    <p>La fuerza de nivel 1 significa que puede cargar hasta 200 Kg con todo su cuerpo.</p>
+                    <h3>Nivel 2</h3>
+                    <p>La fuerza de nivel 2 significa que puede cargar hasta 500 Kg con todo su cuerpo.</p>
+                    <h3>Nivel 3</h3>
+                    <p>La fuerza de nivel 3 significa que puede cargar hasta 1.000 Kg con todo su cuerpo.</p>
+                    <h3>Nivel 4</h3>
+                    <p>La fuerza de nivel 4 significa que puede cargar hasta 5.000 Kg con todo su cuerpo.</p>
+                    <h3>Nivel 5</h3>
+                    <p>La fuerza de nivel 5 significa que puede cargar hasta 10.000 Kg con todo su cuerpo.</p>
+                    <h3>Nivel 6</h3>
+                    <p>La fuerza de nivel 6 significa que puede cargar hasta 20.000 Kg con todo su cuerpo.</p>
+                    <h3>Nivel 7</h3>
+                    <p>La fuerza de nivel 7 significa que puede cargar hasta 50.000 Kg con todo su cuerpo.</p>
+                    <h3>Nivel 8</h3>
+                    <p>La fuerza de nivel 8 significa que puede cargar hasta 100.000 Kg con todo su cuerpo.</p>
+                    <h3>Nivel 9</h3>
+                    <p>La fuerza de nivel 9 significa que puede cargar hasta 500.000 Kg con todo su cuerpo.</p>
+                    <h3>Nivel 10</h3>
+                    <p>La fuerza de nivel 10 significa que se desconoce el límite de peso que puede cargar o que es extremadamente elevado.</p>
+                </div>
+            </div>
+
+            <!-- AGILIDAD -->
+            <div class="stat-group">
+                <div class="stat-header">
+                    <h2>Agilidad</h2>
+                    <button class="toggle-btn" aria-expanded="false">
+                        <span>Desplegar niveles</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                </div>
+                <div class="stat-levels">
+                    <h3>Nivel 1</h3>
+                    <p>La agilidad de nivel 1 significa que le cuesta mucho realizar cada movimiento.</p>
+                    <h3>Nivel 2</h3>
+                    <p>La agilidad de nivel 2 significa que le cuesta realizar cada movimiento.</p>
+                    <h3>Nivel 3</h3>
+                    <p>La agilidad de nivel 3 significa que puede moverse con facilidad.</p>
+                    <h3>Nivel 4</h3>
+                    <p>La agilidad de nivel 4 significa que puede moverse rápidamente y/o que puede realizar saltos o movimientos rápidos.</p>
+                    <h3>Nivel 5</h3>
+                    <p>La agilidad de nivel 5 significa que puede esquivar ataques y objetos arrojadizos lentos con gran velocidad y precisión.</p>
+                    <h3>Nivel 6</h3>
+                    <p>La agilidad de nivel 6 significa que puede llegar a moverse con agilidad de un lado a otro, de manera consecutiva.</p>
+                    <h3>Nivel 7</h3>
+                    <p>La agilidad de nivel 7 significa que puede esquivar ataques mientras que se mueve.</p>
+                    <h3>Nivel 8</h3>
+                    <p>La agilidad de nivel 8 significa que puede esquivar ataques con una precisión casi perfecta y que pueden realizar múltiples movimientos consecutivos.</p>
+                    <h3>Nivel 9</h3>
+                    <p>La agilidad de nivel 9 significa que puede llegar a esquivar balas o proyectiles de gran velocidad.</p>
+                    <h3>Nivel 10</h3>
+                    <p>La agilidad de nivel 10 significa que se desconoce el límite de su agilidad/velocidad de reacción.</p>
+                </div>
+            </div>
+
+            <!-- RESISTENCIA -->
+            <div class="stat-group">
+                <div class="stat-header">
+                    <h2>Resistencia</h2>
+                    <button class="toggle-btn" aria-expanded="false">
+                        <span>Desplegar niveles</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                </div>
+                <div class="stat-levels">
+                    <h3>Nivel 1</h3>
+                    <p>La resistencia de nivel 1 significa que se hieren prácticamente con cualquier cosa.</p>
+                    <h3>Nivel 2</h3>
+                    <p>La resistencia de nivel 2 significa que son extremadamente fáciles de herir.</p>
+                    <h3>Nivel 3</h3>
+                    <p>La resistencia de nivel 3 significa que soportan impactos leves.</p>
+                    <h3>Nivel 4</h3>
+                    <p>La resistencia de nivel 4 significa que pueden aguantar daños moderados.</p>
+                    <h3>Nivel 5</h3>
+                    <p>La resistencia de nivel 5 significa que soportan golpes pesados o proyectiles como balas.</p>
+                    <h3>Nivel 6</h3>
+                    <p>La resistencia de nivel 6 significa que aguantan proyectiles blásters.</p>
+                    <h3>Nivel 7</h3>
+                    <p>La resistencia de nivel 7 significa que resisten explosiones de gran escala.</p>
+                    <h3>Nivel 8</h3>
+                    <p>La resistencia de nivel 8 significa que pueden soportar impactos devastadores.</p>
+                    <h3>Nivel 9</h3>
+                    <p>La resistencia de nivel 9 significa que soportan daños a gran escala como bombas nucleares.</p>
+                    <h3>Nivel 10</h3>
+                    <p>La resistencia de nivel 10 significa que son casi imposibles de herir.</p>
+                </div>
+            </div>
+
+            <!-- VELOCIDAD -->
+            <div class="stat-group">
+                <div class="stat-header">
+                    <h2>Velocidad</h2>
+                    <button class="toggle-btn" aria-expanded="false">
+                        <span>Desplegar niveles</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                </div>
+                <div class="stat-levels">
+                    <h3>Nivel 1</h3>
+                    <p>La velocidad de nivel 1 significa que alcanzan hasta 10 km/h.</p>
+                    <h3>Nivel 2</h3>
+                    <p>La velocidad de nivel 2 significa que alcanzan hasta 20 km/h.</p>
+                    <h3>Nivel 3</h3>
+                    <p>La velocidad de nivel 3 significa que alcanzan hasta 50 km/h.</p>
+                    <h3>Nivel 4</h3>
+                    <p>La velocidad de nivel 4 significa que alcanzan hasta 100 km/h.</p>
+                    <h3>Nivel 5</h3>
+                    <p>La velocidad de nivel 5 significa que alcanzan hasta 200 km/h.</p>
+                    <h3>Nivel 6</h3>
+                    <p>La velocidad de nivel 6 significa que alcanzan hasta 500 km/h.</p>
+                    <h3>Nivel 7</h3>
+                    <p>La velocidad de nivel 7 significa que alcanzan hasta 1000 km/h.</p>
+                    <h3>Nivel 8</h3>
+                    <p>La velocidad de nivel 8 significa que alcanzan hasta 2000 km/h.</p>
+                    <h3>Nivel 9</h3>
+                    <p>La velocidad de nivel 9 significa que alcanzan hasta 5000 km/h.</p>
+                    <h3>Nivel 10</h3>
+                    <p>La velocidad de nivel 10 significa que se desconoce el límite de su velocidad.</p>
+                </div>
+            </div>
+
+            <!-- INTELIGENCIA -->
+            <div class="stat-group">
+                <div class="stat-header">
+                    <h2>Inteligencia</h2>
+                    <button class="toggle-btn" aria-expanded="false">
+                        <span>Desplegar niveles</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                </div>
+                <div class="stat-levels">
+                    <h3>Nivel 1</h3>
+                    <p>La inteligencia de nivel 1 significa que tiene la inteligencia justa para comunicarse entre si.</p>
+                    <h3>Nivel 2</h3>
+                    <p>La inteligencia de nivel 2 significa que tiene la inteligencia para resolver problemas simples.</p>
+                    <h3>Nivel 3</h3>
+                    <p>La inteligencia de nivel 3 significa que tiene la inteligencia para fabricar herramientas.</p>
+                    <h3>Nivel 4</h3>
+                    <p>La inteligencia de nivel 4 significa que tiene la inteligencia para desarrollar armas y vehículos.</p>
+                    <h3>Nivel 5</h3>
+                    <p>La inteligencia de nivel 5 significa que tiene la inteligencia para desarrollar tecnología como bombas núcleares, energía eléctrica y computación.</p>
+                    <h3>Nivel 6</h3>
+                    <p>La inteligencia de nivel 6 significa que tiene la inteligencia para desarrollar tecnología avanzada como naves espaciales, armas de energía y computadoras super avanzadas.</p>
+                    <h3>Nivel 7</h3>
+                    <p>La inteligencia de nivel 7 significa que tiene la inteligencia para desarrollar tecnología futurista como robótica avanzada, campos de energía protectores y viajes espaciales ultralumínicos.</p>
+                    <h3>Nivel 8</h3>
+                    <p>La inteligencia de nivel 8 significa que tiene la inteligencia para desarrollar tecnología futurista como teletransportación y armas de destrucción masiva, además de nacer con habilidades de desarrollo de problemas complejos.</p>
+                    <h3>Nivel 9</h3>
+                    <p>La inteligencia de nivel 9 significa que tiene la inteligencia para desarrollar tecnología futurista como viajes interdimensionales y la capacidad de resucitar a los muertos.</p>
+                    <h3>Nivel 10</h3>
+                    <p>La inteligencia de nivel 10 significa que tiene la inteligencia para desarrollar tecnología futurista como viajes en el tiempo y la capacidad de crear vida o alterar la genética de los seres vivos a escala molecular.</p>
+                </div>
+            </div>
+
+            <!-- HABILIDADES -->
+            <div class="stat-group">
+                <div class="stat-header">
+                    <h2>Habilidades</h2>
+                    <button class="toggle-btn" aria-expanded="false">
+                        <span>Desplegar niveles</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                </div>
+                <div class="stat-levels">
+                    <h3>Nivel 1</h3>
+                    <p>La habilidad de nivel 1 significa que tiene una habilidad muy básica.</p>
+                    <h3>Nivel 2</h3>
+                    <p>La habilidad de nivel 2 significa que tiene una o varias habilidades básicas.</p>
+                    <h3>Nivel 3</h3>
+                    <p>La habilidad de nivel 3 significa que tiene habilidades que ayudan en la supervivencia.</p>
+                    <h3>Nivel 4</h3>
+                    <p>La habilidad de nivel 4 significa que tiene habilidades que facilitan tareas complejas o la supervivencia.</p>
+                    <h3>Nivel 5</h3>
+                    <p>La habilidad de nivel 5 significa que tiene habilidades peligrosas para el resto en caso de enfrentarlo.</p>
+                    <h3>Nivel 6</h3>
+                    <p>La habilidad de nivel 6 significa que tiene habilidades que lo hacen muy peligroso.</p>
+                    <h3>Nivel 7</h3>
+                    <p>La habilidad de nivel 7 significa que tiene habilidades extraordinarias que lo hacen un peligro para un grupo grande de individuos.</p>
+                    <h3>Nivel 8</h3>
+                    <p>La habilidad de nivel 8 significa que tiene habilidades que lo hacen destruir ejércitos enteros.</p>
+                    <h3>Nivel 9</h3>
+                    <p>La habilidad de nivel 9 significa que tiene habilidades que lo hacen peligroso a nivel planetario.</p>
+                    <h3>Nivel 10</h3>
+                    <p>La habilidad de nivel 10 significa que tiene habilidades que lo hacen peligroso a nivel galáctico.</p>
+                </div>
+            </div>
+
+        </section>
     </main>
+
+    <!-- SCRIPT INTERACTIVO -->
+    <script>
+        document.querySelectorAll('.toggle-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const statGroup = button.closest('.stat-group');
+                const levels = statGroup.querySelector('.stat-levels');
+                const textSpan = button.querySelector('span');
+
+                const isExpanded = levels.classList.contains('show');
+
+                if (isExpanded) {
+                    levels.classList.remove('show');
+                    button.classList.remove('active');
+                    button.setAttribute('aria-expanded', 'false');
+                    textSpan.textContent = 'Desplegar niveles';
+                } else {
+                    levels.classList.add('show');
+                    button.classList.add('active');
+                    button.setAttribute('aria-expanded', 'true');
+                    textSpan.textContent = 'Ocultar niveles';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
-
-
-

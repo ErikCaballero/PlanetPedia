@@ -4,39 +4,39 @@
 const baseDatosEspecies = {
 
     AracnoSephus: {
-        fuerza: 3,
-        agilidad: 7,
+        fuerza: 2,
+        agilidad: 4,
         resistencia: 3,
         velocidad: 4,
-        inteligencia: 7,
+        inteligencia: 6,
         habilidad: 5
     },
     AracnoSephusGoliath: {
         fuerza: 6,
-        agilidad: 4,
+        agilidad: 2,
         resistencia: 6,
         velocidad: 3,
         inteligencia: 5,
         habilidad: 5
     },
     Bazofios: {
-        fuerza: 1,
+        fuerza: 0,
         agilidad: 1,
-        resistencia: 1,
+        resistencia: 2,
         velocidad: 1,
         inteligencia: 1,
         habilidad: 3
     },
     Brinix: {
         fuerza: 2,
-        agilidad: 5,
-        resistencia: 3,
+        agilidad: 4,
+        resistencia: 4,
         velocidad: 6,
         inteligencia: 6,
         habilidad: 3
     },
-    Ceruleanos: {
-        fuerza: 4,
+    Ceruleans: {
+        fuerza: 3,
         agilidad: 3,
         resistencia: 5,
         velocidad: 4,
@@ -44,7 +44,7 @@ const baseDatosEspecies = {
         habilidad: 1
     },
     EnjambreVork: {
-        fuerza: 1,
+        fuerza: 0,
         agilidad: 2,
         resistencia: 1,
         velocidad: 3,
@@ -52,7 +52,7 @@ const baseDatosEspecies = {
         habilidad: 3
     },
     Foxers: {
-        fuerza: 1,
+        fuerza: 0,
         agilidad: 7,
         resistencia: 2,
         velocidad: 2,
@@ -60,7 +60,7 @@ const baseDatosEspecies = {
         habilidad: 3
     },
     Friggits: {
-        fuerza: 1,
+        fuerza: 0,
         agilidad: 6,
         resistencia: 1,
         velocidad: 1,
@@ -68,7 +68,7 @@ const baseDatosEspecies = {
         habilidad: 1
     },
     Garbilos: {
-        fuerza: 2,
+        fuerza: 0,
         agilidad: 1,
         resistencia: 2,
         velocidad: 2,
@@ -76,7 +76,7 @@ const baseDatosEspecies = {
         habilidad: 3
     },
     Garguleans: {
-        fuerza: 4,
+        fuerza: 1,
         agilidad: 3,
         resistencia: 3,
         velocidad: 5,
@@ -84,7 +84,7 @@ const baseDatosEspecies = {
         habilidad: 4
     },
     Gigantodones: {
-        fuerza: 9,
+        fuerza: 7,
         agilidad: 0,
         resistencia: 8,
         velocidad: 2,
@@ -100,7 +100,7 @@ const baseDatosEspecies = {
         habilidad: 5
     },
     InvasoresX: {
-        fuerza: 6,
+        fuerza: 4,
         agilidad: 8,
         resistencia: 8,
         velocidad: 8,
@@ -108,7 +108,7 @@ const baseDatosEspecies = {
         habilidad: 9
     },
     Kaelish: {
-        fuerza: 2,
+        fuerza: 0,
         agilidad: 5,
         resistencia: 2,
         velocidad: 2,
@@ -116,7 +116,7 @@ const baseDatosEspecies = {
         habilidad: 10
     },
     Klagors: {
-        fuerza: 4,
+        fuerza: 3,
         agilidad: 3,
         resistencia: 4,
         velocidad: 3,
@@ -124,7 +124,7 @@ const baseDatosEspecies = {
         habilidad: 1
     },
     Permians: {
-        fuerza: 4,
+        fuerza: 2,
         agilidad: 5,
         resistencia: 5,
         velocidad: 4,
@@ -132,7 +132,7 @@ const baseDatosEspecies = {
         habilidad: 1
     },
     Tibutrones: {
-        fuerza: 6,
+        fuerza: 4,
         agilidad: 3,
         resistencia: 7,
         velocidad: 4,
@@ -140,7 +140,7 @@ const baseDatosEspecies = {
         habilidad: 3
     },
     Tortanks: {
-        fuerza: 6,
+        fuerza: 3,
         agilidad: 2,
         resistencia: 8,
         velocidad: 2,
@@ -156,7 +156,7 @@ const baseDatosEspecies = {
         habilidad: 9
     },
     Brainiacs: {
-        fuerza: 2,
+        fuerza: 1,
         agilidad: 2,
         resistencia: 2,
         velocidad: 2,
@@ -165,7 +165,7 @@ const baseDatosEspecies = {
     },
     
     Velorians: {
-        fuerza: 3,
+        fuerza: 1,
         agilidad: 9,
         resistencia: 5,
         velocidad: 10,
@@ -173,7 +173,7 @@ const baseDatosEspecies = {
         habilidad: 3
     },
     Xelthorianos: {
-        fuerza: 3,
+        fuerza: 1,
         agilidad: 4,
         resistencia: 3,
         velocidad: 3,
@@ -181,7 +181,7 @@ const baseDatosEspecies = {
         habilidad: 8
     },
     Xilvath: {
-        fuerza: 3,
+        fuerza: 2,
         agilidad: 3,
         resistencia: 6,
         velocidad: 3,
@@ -189,7 +189,7 @@ const baseDatosEspecies = {
         habilidad: 10
     },
     Humanos: {
-        fuerza: 3,
+        fuerza: 1,
         agilidad: 2,
         resistencia: 2,
         velocidad: 2,
