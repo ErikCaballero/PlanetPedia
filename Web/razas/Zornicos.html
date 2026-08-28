@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Expediente Zornico</title>
+    <link favicon rel="icon" type="image/png" href="../../Especies alienigenas/Tortanks/Tortank icono.png">
+    <link rel="stylesheet" href="../plantilla.css">
+    <link rel="stylesheet" href="especiesindiv.css">
+</head>
+
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">PLANET<span>PEDIA</span></a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden />
+            <label for="nav-toggle" class="menu-toggle" aria-label="Abrir men�">≡</label>
+            <nav>
+                <a href="../../index.html" class="active">Inicio</a>
+                <a href="../Planetas.html">Planetas</a>
+                <a href="../Especies.html">Especies</a>
+                <a href="../LineaTemporal.html">Línea Temporal</a>
+            </nav>
+        </div>
+    </header>
+<div class="container">
+    <!-- Bloque superior: Imagen + Nombre + Características -->
+    <div class="top-section">
+        <div class="img-box">
+            <!-- Aquí irá tu imagen -->
+            <a href="../../Especies alienigenas/Zornicos/Zornico.png">
+                <img src="../../Especies alienigenas/Zornicos/Zornico.png" style="width:100%; height:100%; object-fit:cover;">
+            </a>
+        </div>
+        <div class="header-box">
+            <h1>Los Zornicos</h1>
+            <h2>Características físicas</h2>
+            <p>Los Zornicos son una raza humanoide con las únicas diferencias de el color de piel, el cual es dorado y los pinchos que tienen en la cabeza, los cuales reemplazan el pelo.</p>
+            <p>Miden entre 1.5 y 2 metros y pesan entre 60kg y 90kg.</p>
+            <p>Esperanza de vida: 115 años.</p>
+            <h2>Planeta de origen</h2>
+            <p>Zorn 1</p>
+            <h2>Idioma</h2>
+            <p><i>Zornico</i></p>
+        </div>
+    </div>
+    <!-- Bloque inferior: Habilidades y otros -->
+    <div class="bottom-section">
+        <h2>Alimentación</h2>
+        <p>Omnívora.</p>
+        <h2>Características sociales</h2>
+        <p>Los Zornicos son una raza de sociedad parecida a la humana, con la única diferencia que no se atacan entre sí, si no que ellos trabajan en conjunto a nivel planetario y no a nivel país e individual.</p>
+        <h3>Áreas de especialización</h3>
+        <ul>
+            <li>Caza</li>
+            <li>Lucha cuerpo a cuerpo</li>
+            <li>Gran puntería</li>
+        </ul>
+        <div class="foto1">
+            <div class="fotos-div1">
+                <a href="../../Especies alienigenas/Zornicos/Zornicos.png">
+                    <img src="../../Especies alienigenas/Zornicos/Zornicos.png" alt="Aldea Zornico" class="species-image">
+                </a>
+                <figcaption class="texto-fotos">Zornico</figcaption>
+            </div>
+            <p>Los Zornicos aman cazar, ya que les resulta muy satísfactorio el tema de perseguir a sus presas y capturarlas, usualmente forman pequeños grupos de cazadores e investigan el planeta en busca de criaturas para capturar.</p>
+        </div>
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Buenos luchadores cuerpo a cuerpo</li>
+            <li>Gran manejo de armas a distancia</li>
+            <li>Absorción de energía solar para aumentar sus capacidades físicas y regenerarse</li>
+        </ul>
+        <p>Los Zornicos tienen una increíble capacidad de absorción de la energía estelar o como los humanos la conocen, luz solar, para aumentar sus capacidades físicas, como resistencia al daño y fuerza y obtener una gran habilidad de regeneración.</p><br>
+        
+        <div class="container" data-especie="Zornicos">
+        <!-- Botón para desplegar/ocultar estadísticas -->
+        <button type="button" class="btn-desplegar-stats" id="btnStats">
+            <span>Ver Estadísticas de la Especie</span>
+            <span class="flecha" id="flechaStats">▼</span>
+        </button>
+
+        <!-- Contenedor oculto por defecto mediante la clase 'oculto' -->
+        <div class="stats-container oculto" id="panelStats">
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Fuerza</span>
+                    <span class="stat-value" id="val-fuerza">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-fuerza"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Agilidad</span>
+                    <span class="stat-value" id="val-agilidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-agilidad"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Resistencia</span>
+                    <span class="stat-value" id="val-resistencia">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-resistencia"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Velocidad</span>
+                    <span class="stat-value" id="val-velocidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-velocidad"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Inteligencia</span>
+                    <span class="stat-value" id="val-inteligencia">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-inteligencia"></div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Habilidades</span>
+                    <span class="stat-value" id="val-habilidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-habilidad"></div>
+                </div>
+            </div>
+            <br>
+        </div>
+        </div>
+        <!-- Enlace al archivo JavaScript externo (Asegúrate de ajustar la ruta si es necesario) -->
+        <script src="Stats.js"></script>
+        <h2>Dificultad de derrotar</h2>
+        <div class="contenedor-completo">
+            <div class="bloque-dificultad">
+            <div class="dificultad-barra" id="barra">
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+            </div>
+            <span id="texto-dificultad" class="texto-nivel"></span>
+            </div>
+            <img id="icono-dificultad" src="" alt="Icono">
+        </div>
+        <h2>Creencias</h2>
+        <p>Los Zornicos creen en un dios llamado Zorn, el Dios que lo creó todo para ellos, y que les otorgó la habilidad de absorber energía estelar.</p>
+        <h3>Dioses principales</h3>
+        <p>Zorn: Dios de las estrellas y la luz.</p>
+        <h2>Jerarquía</h2>
+        <ul>
+            <li class="emperador">Gobernador</li>
+            <li>Presidentes</li>
+            <li>Comandantes</li>
+            <li>Ciudadanos</li>
+        </ul>
+        <p>Esta raza es democrática y eligen al mejor representante del planeta para representarlos de cara al resto de razas en las asambeas y reuniones de la Unión de planetas independientes de la que forman parte.</p>
+        <div class="fotos-div1">
+            <a href="../../Especies alienigenas/Zornicos/Ciudad Zornica.png">
+                <img src="../../Especies alienigenas/Zornicos/Ciudad Zornica.png" alt="Ciudad Zornica" class="species-image">
+            </a>
+            <figcaption class="texto-fotos">Ciudad Zornica</figcaption>
+        </div>
+        <h2>Historia</h2>
+        <h3>Origen</h3>
+        <p>El origen de los Zornicos se remonta a hace mucho tiempo, ellos tenían dificultad para sobrevivir en su planeta dada la gran temperatura del planeta y las criaturas que allí vivían, ya que hay algunas criaturas extremadamente peligrosas y sus temperaturas en el máximo punto de calor del año podían alcanzar la terrorífica cantidad de 62 grados.</p>
+        <h3>La evolución </h3>
+        <p>Los Zornicos evolucionaron para poder adaptarse y sobrevivir en las condiciones extremas de su planeta y el modo en el que lo hicieron era tan inesperado como impresionante y efectivo, ya que se adaptaron para que sus cuerpos fueran mejores al exponerse a la energía de su estrella, haciendo que las temperaturas elevadas de su planeta pase a ser un simple clima normal y que todas las horas que la estrella iluminaba sus ciudades pasara a ser un aumento de sus capacidades.</p>
+        <h3>Una amenaza del espacio exterior</h3>
+        <p>Un imperio, un temor común de toda la galaxia acercaría su territorio al planeta de los Zornicos, lo que los harían sentir una profunda desesperación y terror por el hecho de que el peligrosisimo imperio <!-- WikiLinks --> <a href="Ultramitas.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Ultramitas/Ultramita.jpeg"><div><strong>Los Ultramitas</strong><p>Una raza super poderoso que se comportan como conquistadores y destructores. Calificada como las más peligrosa de la galaxia.</p></div></div>'>Ultramitas</a> conquiste su planeta como hicieron con tantos otros, sumiendo su luminoso planeta en una destrucción inminente, por ello trataron de conseguir algún método para protegerse de los <!-- WikiLinks --> <a href="Ultramitas.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Ultramitas/Ultramita.jpeg"><div><strong>Los Ultramitas</strong><p>Una raza super poderoso que se comportan como conquistadores y destructores. Calificada como las más peligrosa de la galaxia.</p></div></div>'>Ultramitas</a> y poder sobrevivir a ellos, pero, al igual que el resto de la galaxia no tenían armas capaces de el eliminarlos de forma efectiva, entonces sus científicos empezaron a investigar y trabajar día y noche, sin un solo minuto en el que al menos 1 científico estuviese buscando una forma de defenderse de ellos. Entonces, uno tubo una idea, tan difícil como peligrosa de llevar a cabo, una idea que podía resultar en su salvación o dejarlos peor de lo que ya estaban.</p>
+        <h3>El suero dorado</h3>
+        <p>La idea millonaria era un suero, un suero que pudiese convertir a un integrante de su especie en un dios, en un ser con las habilidades suficientes para enfrentarse a un <!-- WikiLinks --> <a href="Ultramitas.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Ultramitas/Ultramita.jpeg"><div><strong>Los Ultramitas</strong><p>Una raza super poderoso que se comportan como conquistadores y destructores. Calificada como las más peligrosa de la galaxia.</p></div></div>'>Ultramita</a> y no solo eso, si no que poder exterminarlos, pero, era muy muy muy caro llevar a cabo el intento de un único vial de este suero, ya que necesitaban un corazón estelar, un material que solo se encuentra en las estrellas y obtenerlo es tan difícil como peligroso, ya que al acercarse tanto a una estrella se podría destruir la nave de forma muy sencilla, por lo que los ingenieros se pusieron manos a la obra pero, no había forma de crear una nave así, pero, tras pedir ayuda a los <!-- WikiLinks --> <a href="Foxers.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Los Foxers/Los Foxers.png"><div><strong>Los Foxers</strong><p>Pequeña raza de expertos en ingeniería y robótica, una raza muy avanzada e inteligente.</p></div></div>'>Foxers</a>, en conjunto pudieron conseguir crear una nave que resistiese al menos 1 único viaje de ida a una estrella y teletransportar este material directo al planeta para poder trabajar con él, obviamente a cambio, los <!-- WikiLinks --> <a href="Foxers.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Los Foxers/Los Foxers.png"><div><strong>Los Foxers</strong><p>Pequeña raza de expertos en ingeniería y robótica, una raza muy avanzada e inteligente.</p></div></div>'>Foxers</a> se llevarían parte de los corazones estelares, y las naves no tenían la capacidad de regresar de las estrellas, por lo que explotaban en la estrella, haciendo morir a todos los tripulantes de las naves, tras esto consiguieron desarrollar tres sueros dorados.</p>
+        <div class="fotos-div1">
+            <a href="../../Especies alienigenas/Zornicos/Suero dorado.png">
+                <img style="width: 60%; height: auto;" src="../../Especies alienigenas/Zornicos/Suero dorado.png" alt="Suero dorado" class="species-image">
+            </a>
+            <figcaption class="texto-fotos">Suero dorado</figcaption>
+        </div>
+        <h3>El héroe</h3>
+        <p>Se hicieron pruebas en tres pruebas con los tres sueros finales, la primera prueba falló completamente, matando al sujeto de prueba en el proceso, el mismo destino le esperaba al segundo sujeto, pero, el tercer sujeto, su historia fue muy diferente, Zornicus fue el tercer elegido por la raza para recibir el suero dorado, tras recibirlo, sus capacidades y su físico mejoró considerablemente, dándole habilidades inéditas en su raza como la capacidad de volar o lanzar energía estelar por las manos. Aunque este individuo sí recibió una mejora considerable, no recibió la mejora esperada, ya que lo calculado por los científicos era mayor a lo recibido, pues Zornicus recibió por así deciro una efectividad del 70% del suero, aún así, se consideró un éxito tras el primer enfrentamiento contra un invasor <!-- WikiLinks --> <a href="Ultramitas.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Ultramitas/Ultramita.jpeg"><div><strong>Los Ultramitas</strong><p>Una raza super poderoso que se comportan como conquistadores y destructores. Calificada como las más peligrosa de la galaxia.</p></div></div>'>Ultramita</a>, el invasor tuvo que retirarse, dándole la victoria a Zornicus y dando así más tiempo a su raza, aunque tras el enfrentamiento, Zornicus salió gravemente herido, teniendo que ser atendido de inmediato para poder sobrevivir, y como este enfrentamiento hubieron otros dos con el mismo resultado, una victoria por la mínima, ya que cada vez era más difícil derrotar al <!-- WikiLinks --> <a href="Ultramitas.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Ultramitas/Ultramita.jpeg"><div><strong>Los Ultramitas</strong><p>Una raza super poderoso que se comportan como conquistadores y destructores. Calificada como las más peligrosa de la galaxia.</p></div></div>'>Ultramita</a> que iba al planeta.</p>
+        <div class="fotos-div1">
+            <a href="../../Especies alienigenas/Zornicos/Zornicus.png">
+                <img src="../../Especies alienigenas/Zornicos/Zornicus.png" alt="Suero dorado" class="species-image">
+            </a>
+            <figcaption class="texto-fotos">Suero dorado</figcaption>
+        </div>
+    </div>
+
+
+    <!-- WikiLinks -->
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+<script src="wikilink.js"></script>
+</body>
+<script>
+    const configuracion = {
+      1: { texto: "Muy fácil", icono: "https://genesistoxical.com/wp-content/uploads/2021/05/Dibujo_de_calavera_animada_png.png" },
+      2: { texto: "Fácil", icono: "https://genesistoxical.com/wp-content/uploads/2021/05/Calavera_con_huesos_cruzados_png.png" },
+      3: { texto: "Medio", icono: "https://cdn.creazilla.com/cliparts/38354/skull-clipart-xl.png" },
+      4: { texto: "Alto", icono: "https://marketplace.canva.com/qEZpA/MAHN2PqEZpA/1/tl/canva-illustration-of-a-white-skull-MAHN2PqEZpA.png" },
+      5: { texto: "Muy alto", icono: "https://stickerapp.es/cdn-assets/images/preview/2015/09/19/design-4968/template-sticker-300x300.png" },
+      6: { texto: "Difícil", icono: "https://static.vecteezy.com/system/resources/thumbnails/054/984/062/small/detailed-illustration-of-a-skull-and-crossbones-symbolizing-danger-piracy-and-rebellion-commonly-associated-with-warning-signs-png.png" },
+      7: { texto: "Extremo", icono: "https://cdn.pixabay.com/photo/2025/10/21/08/43/drawing-9907092_640.png" },
+      8: { texto: "Imposible", icono: "https://cdn.pixabay.com/photo/2025/09/16/09/08/scull-9837501_1280.png" }
+    };
+
+    function actualizarDificultad(nivel) {
+      const segmentos = document.querySelectorAll('.segmento');
+      const texto = document.getElementById('texto-dificultad');
+      const img = document.getElementById('icono-dificultad');
+
+      // Colores: 1-3 Verde, 4-6 Amarillo, 7-8 Rojo
+      let color = nivel <= 3 ? '#2ecc71' : (nivel <= 6 ? '#f1c40f' : '#e74c3c');
+
+      segmentos.forEach((seg, index) => {
+        seg.style.background = index < nivel ? color : '#333';
+      });
+
+      texto.innerText = configuracion[nivel].texto;
+      texto.style.color = color;
+      img.src = configuracion[nivel].icono;
+    }
+
+    // Ejemplo: Llama a esta función para cambiar el nivel (del 1 al 8)
+    actualizarDificultad(3);
+  </script>
+</html>

@@ -163,9 +163,7 @@
             justify-content: center;
         }
 
-        #species-search, #category-filter {
-            flex: 1;
-            min-width: 250px;
+        #species-search, #category-filter, #sort-planet-btn {
             padding: 0.8rem 1.2rem;
             border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -173,10 +171,28 @@
             color: var(--text-main);
             font-size: 1rem;
             outline: none;
-            transition: border-color 0.3s ease;
+            transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
         }
 
-        #species-search:focus, #category-filter:focus {
+        #species-search, #category-filter {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        #sort-planet-btn {
+            flex: 0 0 auto;
+            min-width: 190px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        #sort-planet-btn:hover,
+        #sort-planet-btn.active {
+            border-color: var(--accent-neon);
+            color: var(--accent-neon);
+        }
+
+        #species-search:focus, #category-filter:focus, #sort-planet-btn:focus {
             border-color: var(--accent-neon);
         }
 
@@ -218,6 +234,9 @@
             <option value="tecnologica">Tecnológica</option>
             <option value="superior">Superior</option>
         </select>
+        <button type="button" id="sort-planet-btn" onclick="alternarOrden()">
+            Ordenar: Nombre
+        </button>
     </div>
     
     <main class="species-grid" id="species-grid">
@@ -499,6 +518,60 @@
                 <span class="view-btn">Ver Expediente</span>
             </div>
         </a>
+        <a href="razas/Thanatofos.html" class="species-card" data-category="superior">
+            <div class="card-img-wrapper">
+                <img src="../Especies alienigenas/Thanatofos/Thanatofo.png" alt="Especie 4">
+            </div>
+            <div class="card-info">
+                <h2>Thanatofos</h2>
+                <span class="homeworld">Planeta: Radium 7</span>
+                <span class="view-btn">Ver Expediente</span>
+            </div>
+        </a>
+
+        <a href="razas/Hongers.html" class="species-card" data-category="primitiva">
+            <div class="card-img-wrapper">
+                <img src="../Especies alienigenas/Hongers/Honger.png" alt="Especie 4">
+            </div>
+            <div class="card-info">
+                <h2>Hongers</h2>
+                <span class="homeworld">Planeta: Zenith Kael</span>
+                <span class="view-btn">Ver Expediente</span>
+            </div>
+        </a>
+
+        <a href="razas/Zornicos.html" class="species-card" data-category="primitiva">
+            <div class="card-img-wrapper">
+                <img src="../Especies alienigenas/Zornicos/Zornico.png" alt="Especie 4">
+            </div>
+            <div class="card-info">
+                <h2>Zornicos</h2>
+                <span class="homeworld">Planeta: Zorn 1</span>
+                <span class="view-btn">Ver Expediente</span>
+            </div>
+        </a>
+
+        <a href="razas/Malerianos.html" class="species-card" data-category="primitiva">
+            <div class="card-img-wrapper">
+                <img src="../Especies alienigenas/Malerianos/Maleriano.png" alt="Especie 4">
+            </div>
+            <div class="card-info">
+                <h2>Malerianos</h2>
+                <span class="homeworld">Planeta: Radium 7</span>
+                <span class="view-btn">Ver Expediente</span>
+            </div>
+        </a>
+
+        <a href="razas/Orrs.html" class="species-card" data-category="primitiva">
+            <div class="card-img-wrapper">
+                <img src="../Especies alienigenas/Orrs/Orr.png" alt="Especie 4">
+            </div>
+            <div class="card-info">
+                <h2>Orrs</h2>
+                <span class="homeworld">Planeta: Sapphire Crest</span>
+                <span class="view-btn">Ver Expediente</span>
+            </div>
+        </a>
     </main>
 
     <footer>
@@ -506,19 +579,69 @@
     </footer>
 
 <script>
-    // Ordenar alfabéticamente al cargar la página
-    document.addEventListener("DOMContentLoaded", () => {
+    let ordenarPorPlaneta = false;
+
+    // Normaliza texto para ordenar de forma consistente en español.
+    function normalizarTexto(texto) {
+        return texto.trim().toLocaleLowerCase('es');
+    }
+
+    function obtenerNombre(carta) {
+        return normalizarTexto(carta.querySelector('h2').textContent);
+    }
+
+    function obtenerPlaneta(carta) {
+        const textoPlaneta = carta.querySelector('.homeworld').textContent;
+        return normalizarTexto(textoPlaneta.replace(/^Planeta:\s*/i, ''));
+    }
+
+    function ordenarEspecies() {
         const grid = document.getElementById('species-grid');
         const cartas = Array.from(grid.querySelectorAll('.species-card'));
 
         cartas.sort((a, b) => {
-            const nombreA = a.querySelector('h2').textContent.trim().toLowerCase();
-            const nombreB = b.querySelector('h2').textContent.trim().toLowerCase();
-            return nombreA.localeCompare(nombreB, 'es');
+            const nombreA = obtenerNombre(a);
+            const nombreB = obtenerNombre(b);
+
+            // Modo planeta: primero planeta y, si coinciden, nombre de especie.
+            if (ordenarPorPlaneta) {
+                const planetaA = obtenerPlaneta(a);
+                const planetaB = obtenerPlaneta(b);
+
+                const comparacionPlaneta = planetaA.localeCompare(planetaB, 'es', {
+                    sensitivity: 'base',
+                    numeric: true
+                });
+
+                if (comparacionPlaneta !== 0) {
+                    return comparacionPlaneta;
+                }
+            }
+
+            // Orden por nombre (también funciona como desempate).
+            return nombreA.localeCompare(nombreB, 'es', {
+                sensitivity: 'base',
+                numeric: true
+            });
         });
 
         cartas.forEach(carta => grid.appendChild(carta));
-    });
+    }
+
+    function alternarOrden() {
+        ordenarPorPlaneta = !ordenarPorPlaneta;
+
+        const boton = document.getElementById('sort-planet-btn');
+        boton.textContent = ordenarPorPlaneta
+            ? 'Ordenar: Planeta → Nombre'
+            : 'Ordenar: Nombre';
+
+        boton.classList.toggle('active', ordenarPorPlaneta);
+        ordenarEspecies();
+    }
+
+    // Al cargar, se mantiene el comportamiento original: orden alfabético por nombre.
+    document.addEventListener('DOMContentLoaded', ordenarEspecies);
 
     // Función combinada para filtrar por texto y por categoría seleccionada
     function filtrarEspecies() {

@@ -320,3 +320,163 @@
                 -webkit-text-fill-color: transparent;
                 font-weight: bold;
             }
+
+            /* =========================================
+            ÁREAS DE ESPECIALIZACIÓN
+            ========================================= */
+
+            .especializaciones {
+                width: 100%;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+
+            /* BOTÓN PRINCIPAL */
+            .especializaciones-btn {
+                width: 100%;
+                padding: 13px 18px;
+
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                background-color: #161b2c;
+
+                color: #33ff99;
+
+                border: 2px solid #4ffbdf;
+                border-radius: 7px;
+
+                font-family: 'Courier New', monospace;
+                font-size: 1rem;
+                font-weight: bold;
+
+                cursor: pointer;
+
+                transition:
+                    background-color 0.3s ease,
+                    color 0.3s ease,
+                    box-shadow 0.3s ease;
+            }
+
+
+            .especializaciones-btn:hover {
+                background-color: #4ffbdf;
+                color: #0b0d17;
+
+                box-shadow:
+                    0 0 8px rgba(79, 251, 223, 0.5),
+                    0 0 18px rgba(79, 251, 223, 0.15);
+            }
+
+
+            /* + / - */
+            .especializaciones-icono {
+                font-size: 1.5rem;
+                font-weight: bold;
+                line-height: 1;
+
+                transition: transform 0.3s ease;
+            }
+
+
+            /* CONTENEDOR DESPLEGABLE */
+            .especializaciones-contenido {
+                max-height: 0;
+                overflow: hidden;
+                opacity: 0;
+
+                transition:
+                    max-height 0.4s ease,
+                    opacity 0.3s ease,
+                    padding 0.3s ease;
+
+                background-color: #0b0d17;
+
+                border-left: 3px solid #4ffbdf;
+                border-radius: 0 0 7px 7px;
+            }
+
+
+            /* Cuando está abierto */
+            .especializaciones.abierto .especializaciones-contenido {
+                max-height: 500px;
+                opacity: 1;
+
+                padding: 18px;
+            }
+
+
+            /* GRID DE ESPECIALIZACIONES */
+            .especializaciones-grid {
+                display: grid;
+
+                /* MÁXIMO 4 POR FILA */
+                grid-template-columns: repeat(4, 1fr);
+
+                gap: 12px;
+            }
+
+
+            /* RECTÁNGULO INDIVIDUAL */
+            .especializacion {
+                min-height: 50px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                padding: 10px;
+
+                text-align: center;
+
+                color: #d1d5db;
+
+                background-color: #161b2c;
+
+                border: 1px solid #333;
+                border-left: 3px solid #33ff99;
+
+                border-radius: 5px;
+
+                font-family: 'Courier New', monospace;
+                font-weight: bold;
+
+                transition:
+                    transform 0.2s ease,
+                    border-color 0.2s ease,
+                    color 0.2s ease,
+                    box-shadow 0.2s ease;
+            }
+
+
+            /* EFECTO AL PASAR EL RATÓN */
+            .especializacion:hover {
+                transform: translateY(-2px);
+
+                color: #4ffbdf;
+                border-color: #4ffbdf;
+
+                box-shadow: 0 0 10px rgba(79, 251, 223, 0.2);
+            }
+
+
+            /* TABLETS */
+            @media (max-width: 900px) {
+
+                .especializaciones-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+            }
+
+
+            /* MÓVILES */
+            @media (max-width: 500px) {
+
+                .especializaciones-grid {
+                    grid-template-columns: 1fr;
+                }
+
+            }

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amenazas - Planet Pedia</title>
+    <link rel="stylesheet" href="plantilla.css">
+    <link rel="stylesheet" href="amenazas.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="logo">PLANET<span>PEDIA</span></a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden />
+            <label for="nav-toggle" class="menu-toggle" aria-label="Abrir menú">≡</label>
+            <nav>
+                <a href="../index.html">Inicio</a>
+                <a href="Planetas.html">Planetas</a>
+                <a href="Especies.html">Especies</a>
+                <a href="LineaTemporal.html">Línea Temporal</a>
+                <a href="Amenazas.html" class="active">Amenazas</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="threat-hero">
+        <div class="threat-hero__badge">ARCHIVO DE SEGURIDAD GALÁCTICA</div>
+        <h1>Amenazas del Universo</h1>
+        <p>Registro clasificado de entidades, fenómenos y fuerzas de gran peligrosidad que amenazan la galaxia o incluso el universo.</p>
+        <div class="alert-strip">
+            <span class="pulse-dot"></span>
+            <strong>PROTOCOLO DE ALERTA:</strong> Algunos expedientes contienen información de riesgo extremo.
+        </div>
+    </section>
+
+    <section class="controls" aria-label="Filtros de amenazas">
+        <input type="text" id="threat-search" placeholder="Buscar amenaza..." oninput="filtrarAmenazas()">
+        <select id="type-filter" onchange="filtrarAmenazas()">
+            <option value="todos">Todos los tipos</option>
+            <option value="entidad">Criatura</option>
+            <option value="especie">Bactería</option>
+            <option value="tecnologia">Tecnología</option>
+            <option value="cosmica">Amenaza cósmica</option>
+        </select>
+        <select id="level-filter" onchange="filtrarAmenazas()">
+            <option value="todos">Todos los niveles</option>
+            <option value="3">Nivel III</option>
+            <option value="4">Nivel IV</option>
+            <option value="5">Nivel V</option>
+        </select>
+        <button type="button" id="sort-btn" onclick="alternarOrden()">Ordenar: Nombre</button>
+    </section>
+
+    <main class="threat-grid" id="threat-grid">
+        <article class="threat-card" data-type="entidad" data-level="5" data-name="La Singularidad Carmesí">
+            <div class="threat-card__visual visual-singularity">
+                <img src="amenazas/imgAmenazas/CROPT bacteria.png" alt="Imagen de el CROPT">
+            </div>
+            <div class="scanlines"></div>
+            <div class="threat-card__content">
+                <div class="threat-meta">
+                    <span class="threat-type">Bactería</span>
+                    <span class="danger danger-5">NIVEL III</span>
+                </div>
+                <h2>El CROPT</h2>
+                <p>Una bactería capaz de adueñarse de sistemas biológicos y manipular su funcionamiento, además de contar con una mente colmena super desarrollada que no cuenta con debilidades.</p>
+                <div class="threat-stats"><span>Alcance: Galáctico</span><span>Estado: Activa</span></div>
+                <a href="amenazas/CROPT.html" class="view-btn">Acceder al expediente</a>
+            </div>
+        </article>
+
+        <article class="threat-card" data-type="especie" data-level="4" data-name="Enjambre Devorador Vork">
+            <div class="threat-card__visual visual-swarm"><div class="sigil">✦</div></div>
+            <div class="scanlines"></div>
+            <div class="threat-card__content">
+                <div class="threat-meta"><span class="threat-type">ESPECIE HOSTIL</span><span class="danger danger-4">NIVEL IV</span></div>
+                <h2>Enjambre Devorador Vork</h2>
+                <p>Oleadas biológicas capaces de consumir ecosistemas enteros y convertir recursos planetarios en nueva biomasa.</p>
+                <div class="threat-stats"><span>Alcance: Planetario</span><span>Estado: Expansión</span></div>
+                <a href="#" class="view-btn">Acceder al expediente</a>
+            </div>
+        </article>
+
+        <article class="threat-card" data-type="fenomeno" data-level="4" data-name="Tormenta de Vacío N-77">
+            <div class="threat-card__visual visual-storm"><div class="sigil">ϟ</div></div>
+            <div class="scanlines"></div>
+            <div class="threat-card__content">
+                <div class="threat-meta"><span class="threat-type">FENÓMENO</span><span class="danger danger-4">NIVEL IV</span></div>
+                <h2>Tormenta de Vacío N-77</h2>
+                <p>Frente energético errante que inutiliza sistemas de navegación, comunicaciones y escudos a su paso.</p>
+                <div class="threat-stats"><span>Alcance: Sectorial</span><span>Estado: Móvil</span></div>
+                <a href="#" class="view-btn">Acceder al expediente</a>
+            </div>
+        </article>
+
+        <article class="threat-card" data-type="tecnologia" data-level="3" data-name="Protocolo Obsidiana">
+            <div class="threat-card__visual visual-tech"><div class="sigil">⌬</div></div>
+            <div class="scanlines"></div>
+            <div class="threat-card__content">
+                <div class="threat-meta"><span class="threat-type">TECNOLOGÍA</span><span class="danger danger-3">NIVEL III</span></div>
+                <h2>Protocolo Obsidiana</h2>
+                <p>Red autónoma de guerra capaz de infiltrarse en infraestructura orbital y tomar control de defensas planetarias.</p>
+                <div class="threat-stats"><span>Alcance: Regional</span><span>Estado: Contenida</span></div>
+                <a href="#" class="view-btn">Acceder al expediente</a>
+            </div>
+        </article>
+
+        <article class="threat-card" data-type="cosmica" data-level="5" data-name="El Hambre entre Estrellas">
+            <div class="threat-card__visual visual-cosmic"><div class="sigil">◉</div></div>
+            <div class="scanlines"></div>
+            <div class="threat-card__content">
+                <div class="threat-meta"><span class="threat-type">AMENAZA CÓSMICA</span><span class="danger danger-5">NIVEL V</span></div>
+                <h2>El Hambre entre Estrellas</h2>
+                <p>Anomalía de origen desconocido que reduce lentamente la emisión energética de estrellas cercanas hasta su colapso.</p>
+                <div class="threat-stats"><span>Alcance: Estelar</span><span>Estado: Desconocido</span></div>
+                <a href="#" class="view-btn">Acceder al expediente</a>
+            </div>
+        </article>
+
+        <article class="threat-card" data-type="entidad" data-level="3" data-name="Los Observadores Negros">
+            <div class="threat-card__visual visual-watchers"><div class="sigil">△</div></div>
+            <div class="scanlines"></div>
+            <div class="threat-card__content">
+                <div class="threat-meta"><span class="threat-type">ENTIDAD</span><span class="danger danger-3">NIVEL III</span></div>
+                <h2>Los Observadores Negros</h2>
+                <p>Figuras silenciosas detectadas en los límites de sistemas habitados antes de eventos políticos y militares de gran escala.</p>
+                <div class="threat-stats"><span>Alcance: Variable</span><span>Estado: Vigilancia</span></div>
+                <a href="#" class="view-btn">Acceder al expediente</a>
+            </div>
+        </article>
+    </main>
+
+    <div id="empty-state" class="empty-state" hidden>No se han encontrado amenazas que coincidan con los filtros.</div>
+
+    <footer>
+        <p>&copy; 2026 Planet Pedia. Archivo de Lore del Universo en construcción.</p>
+    </footer>
+
+    <script>
+        let ordenarPorNivel = false;
+
+        function normalizar(texto) {
+            return texto.trim().toLocaleLowerCase('es');
+        }
+
+        function filtrarAmenazas() {
+            const texto = normalizar(document.getElementById('threat-search').value);
+            const tipo = document.getElementById('type-filter').value;
+            const nivel = document.getElementById('level-filter').value;
+            const cards = [...document.querySelectorAll('.threat-card')];
+            let visibles = 0;
+
+            cards.forEach(card => {
+                const coincideTexto = normalizar(card.dataset.name).includes(texto);
+                const coincideTipo = tipo === 'todos' || card.dataset.type === tipo;
+                const coincideNivel = nivel === 'todos' || card.dataset.level === nivel;
+                const visible = coincideTexto && coincideTipo && coincideNivel;
+                card.style.display = visible ? 'flex' : 'none';
+                if (visible) visibles++;
+            });
+
+            document.getElementById('empty-state').hidden = visibles !== 0;
+        }
+
+        function ordenarAmenazas() {
+            const grid = document.getElementById('threat-grid');
+            const cards = [...grid.querySelectorAll('.threat-card')];
+
+            cards.sort((a, b) => {
+                if (ordenarPorNivel) {
+                    const nivel = Number(b.dataset.level) - Number(a.dataset.level);
+                    if (nivel !== 0) return nivel;
+                }
+                return a.dataset.name.localeCompare(b.dataset.name, 'es', { sensitivity: 'base' });
+            });
+
+            cards.forEach(card => grid.appendChild(card));
+        }
+
+        function alternarOrden() {
+            ordenarPorNivel = !ordenarPorNivel;
+            const boton = document.getElementById('sort-btn');
+            boton.textContent = ordenarPorNivel ? 'Ordenar: Peligro ↓' : 'Ordenar: Nombre';
+            boton.classList.toggle('active', ordenarPorNivel);
+            ordenarAmenazas();
+        }
+
+        document.addEventListener('DOMContentLoaded', ordenarAmenazas);
+    </script>
+</body>
+</html>

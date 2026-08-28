@@ -123,6 +123,14 @@ const baseDatosEspecies = {
         inteligencia: 5,
         habilidad: 1
     },
+    Orrs: {
+        fuerza: 8,
+        agilidad: 3,
+        resistencia: 5,
+        velocidad: 3,
+        inteligencia: 3,
+        habilidad: 1
+    },
     Permians: {
         fuerza: 2,
         agilidad: 5,
@@ -187,6 +195,14 @@ const baseDatosEspecies = {
         velocidad: 3,
         inteligencia: 7,
         habilidad: 10
+    },
+    Zornicos: {
+        fuerza: 1,
+        agilidad: 4,
+        resistencia: 4,
+        velocidad: 3,
+        inteligencia: 6,
+        habilidad: 3
     },
     Humanos: {
         fuerza: 1,
