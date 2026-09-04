@@ -7,108 +7,108 @@ const baseDatosEspecies = {
         fuerza: 2,
         agilidad: 4,
         resistencia: 3,
-        velocidad: 4,
+        velocidad: 3,
         inteligencia: 6,
-        habilidad: 5
+        habilidad: 4
     },
     AracnoSephusGoliath: {
         fuerza: 6,
         agilidad: 2,
         resistencia: 6,
         velocidad: 3,
-        inteligencia: 5,
-        habilidad: 5
+        inteligencia: 3,
+        habilidad: 4
     },
     Bazofios: {
         fuerza: 0,
-        agilidad: 1,
+        agilidad: 2,
         resistencia: 2,
-        velocidad: 1,
+        velocidad: 0,
         inteligencia: 1,
-        habilidad: 3
+        habilidad: 2
     },
     Brinix: {
-        fuerza: 2,
-        agilidad: 4,
-        resistencia: 4,
-        velocidad: 6,
+        fuerza: 1,
+        agilidad: 5,
+        resistencia: 5,
+        velocidad: 5,
         inteligencia: 6,
-        habilidad: 3
+        habilidad: 5
     },
     Ceruleans: {
         fuerza: 3,
-        agilidad: 3,
-        resistencia: 5,
-        velocidad: 4,
-        inteligencia: 5,
-        habilidad: 1
+        agilidad: 4,
+        resistencia: 4,
+        velocidad: 1,
+        inteligencia: 4,
+        habilidad: 0
     },
     EnjambreVork: {
         fuerza: 0,
-        agilidad: 2,
-        resistencia: 1,
-        velocidad: 3,
+        agilidad: 4,
+        resistencia: 3,
+        velocidad: 4,
         inteligencia: 1,
         habilidad: 3
     },
     Foxers: {
         fuerza: 0,
-        agilidad: 7,
+        agilidad: 5,
         resistencia: 2,
-        velocidad: 2,
+        velocidad: 1,
         inteligencia: 8,
-        habilidad: 3
+        habilidad: 0
     },
     Friggits: {
         fuerza: 0,
         agilidad: 6,
-        resistencia: 1,
-        velocidad: 1,
-        inteligencia: 4,
-        habilidad: 1
+        resistencia: 2,
+        velocidad: 2,
+        inteligencia: 3,
+        habilidad: 0
     },
     Garbilos: {
         fuerza: 0,
-        agilidad: 1,
+        agilidad: 3,
         resistencia: 2,
-        velocidad: 2,
-        inteligencia: 5,
+        velocidad: 1,
+        inteligencia: 4,
         habilidad: 3
     },
     Garguleans: {
         fuerza: 1,
-        agilidad: 3,
+        agilidad: 4,
         resistencia: 3,
-        velocidad: 5,
-        inteligencia: 3,
-        habilidad: 4
+        velocidad: 4,
+        inteligencia: 1,
+        habilidad: 6
     },
     Gigantodones: {
-        fuerza: 7,
-        agilidad: 0,
-        resistencia: 8,
-        velocidad: 2,
-        inteligencia: 4,
-        habilidad: 2
+        fuerza: 8,
+        agilidad: 2,
+        resistencia: 6,
+        velocidad: 3,
+        inteligencia: 1,
+        habilidad: 0
     },
     Grolux: {
         fuerza: 5,
-        agilidad: 3,
-        resistencia: 6,
+        agilidad: 4,
+        resistencia: 5,
         velocidad: 4,
-        inteligencia: 4,
+        inteligencia: 1,
         habilidad: 5
     },
     InvasoresX: {
-        fuerza: 4,
+        fuerza: 5,
         agilidad: 8,
         resistencia: 8,
-        velocidad: 8,
+        velocidad: 7,
         inteligencia: 10,
         habilidad: 9
     },
     Kaelish: {
-        fuerza: 0,
+        fuerza: 1,
         agilidad: 5,
         resistencia: 2,
         velocidad: 2,
@@ -119,9 +119,17 @@ const baseDatosEspecies = {
         fuerza: 3,
         agilidad: 3,
         resistencia: 4,
-        velocidad: 3,
-        inteligencia: 5,
-        habilidad: 1
+        velocidad: 1,
+        inteligencia: 4,
+        habilidad: 0
+    },
+    Legionarios: {
+        fuerza: 6,
+        agilidad: 7,
+        resistencia: 8,
+        velocidad: 4,
+        inteligencia: 6,
+        habilidad: 4
     },
     Orrs: {
         fuerza: 8,
@@ -133,27 +141,35 @@ const baseDatosEspecies = {
     },
     Permians: {
         fuerza: 2,
-        agilidad: 5,
+        agilidad: 6,
         resistencia: 5,
-        velocidad: 4,
-        inteligencia: 4,
+        velocidad: 3,
+        inteligencia: 5,
+        habilidad: 0
+    },
+    Porvils: {
+        fuerza: 2,
+        agilidad: 3,
+        resistencia: 4,
+        velocidad: 2,
+        inteligencia: 3,
         habilidad: 1
     },
     Tibutrones: {
         fuerza: 4,
         agilidad: 3,
-        resistencia: 7,
-        velocidad: 4,
+        resistencia: 6,
+        velocidad: 3,
         inteligencia: 3,
-        habilidad: 3
+        habilidad: 2
     },
     Tortanks: {
         fuerza: 3,
         agilidad: 2,
-        resistencia: 8,
+        resistencia: 6,
         velocidad: 2,
-        inteligencia: 3,
-        habilidad: 1
+        inteligencia: 2,
+        habilidad: 0
     },
     Ultramitas: {
         fuerza: 10,
@@ -165,11 +181,11 @@ const baseDatosEspecies = {
     },
     Brainiacs: {
         fuerza: 1,
-        agilidad: 2,
-        resistencia: 2,
-        velocidad: 2,
+        agilidad: 3,
+        resistencia: 3,
+        velocidad: 1,
         inteligencia: 10,
-        habilidad: 1
+        habilidad: 0
     },
     
     Velorians: {
@@ -177,7 +193,7 @@ const baseDatosEspecies = {
         agilidad: 9,
         resistencia: 5,
         velocidad: 10,
-        inteligencia: 5,
+        inteligencia: 3,
         habilidad: 3
     },
     Xelthorianos: {

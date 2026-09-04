@@ -461,7 +461,82 @@
                 box-shadow: 0 0 10px rgba(79, 251, 223, 0.2);
             }
 
+            .btn-brainiac {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
 
+                padding: 12px 22px;
+
+                background-color: #161b2c;
+                color: #33ff99;
+
+                border: 2px solid #4ffbdf;
+                border-radius: 6px;
+
+                font-family: 'Courier New', monospace;
+                font-size: 1rem;
+                font-weight: bold;
+
+                text-decoration: none;
+                cursor: pointer;
+
+                transition:
+                    background-color 0.3s ease,
+                    color 0.3s ease,
+                    box-shadow 0.3s ease,
+                    transform 0.2s ease;
+            }
+
+
+            /* Al pasar el ratón */
+
+            .btn-brainiac:hover {
+                background-color: #4ffbdf;
+                color: #0b0d17;
+
+                box-shadow:
+                    0 0 8px rgba(79, 251, 223, 0.6),
+                    0 0 20px rgba(79, 251, 223, 0.2);
+
+                transform: translateY(-2px);
+            }
+
+
+            /* Al pulsarlo */
+
+            .btn-brainiac:active {
+                transform: translateY(0);
+
+                box-shadow:
+                    0 0 5px rgba(79, 251, 223, 0.5);
+            }
+
+
+            /* Accesibilidad al navegar con teclado */
+
+            .btn-brainiac:focus-visible {
+                outline: 2px solid #33ff99;
+                outline-offset: 4px;
+            }
+            .subrazasDiv {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-top: 15px;
+            }
+            .subrazasDiv a{
+                max-width: 360px;
+                max-height: 360px;
+                object-fit: cover;
+                border-radius: 5px;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                
+            }
+            .subrazasDiv a div {
+                text-align: center;
+            }
             /* TABLETS */
             @media (max-width: 900px) {
 

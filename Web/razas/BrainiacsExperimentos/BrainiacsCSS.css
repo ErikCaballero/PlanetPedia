@@ -1,0 +1,842 @@
+/* ==========================================
+   VARIABLES
+========================================== */
+
+:root {
+
+    --exp-bg: #0b0d17;
+
+    --exp-card: #161b2c;
+
+    --exp-neon: #4ffbdf;
+
+    --exp-green: #33ff99;
+
+    --exp-text: #d1d5db;
+
+    --exp-border: #333;
+
+}
+
+
+/* ==========================================
+   BODY
+========================================== */
+
+body {
+
+    background-color: var(--exp-bg);
+
+    color: #f4f5f6;
+
+    font-family: 'Courier New', monospace;
+
+    min-height: 100vh;
+
+}
+
+
+/* ==========================================
+   CONTENEDOR GENERAL
+========================================== */
+
+.experimentos-page {
+
+    width: min(1500px, 96%);
+
+    margin: 0 auto;
+
+    padding: 34px 0 70px;
+
+}
+
+
+/* ==========================================
+   CABECERA
+========================================== */
+
+.experimentos-hero {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(22, 27, 44, .98),
+            rgba(11, 13, 23, .96)
+        );
+
+    border: 2px solid var(--exp-border);
+
+    border-left: 4px solid var(--exp-neon);
+
+    padding: 28px;
+
+    margin-bottom: 24px;
+
+    
+
+}
+
+
+.experimentos-hero h1 {
+
+    color: var(--exp-neon);
+
+    margin: 4px 0 12px;
+
+    font-size: clamp(
+        2rem,
+        4vw,
+        3.2rem
+    );
+
+}
+
+
+.experimentos-hero p {
+
+    color: var(--exp-text);
+
+    max-width: 900px;
+
+    line-height: 1.7;
+
+}
+
+
+.codigo-archivo {
+
+    color: var(--exp-green) !important;
+
+    font-size: .9rem;
+
+    letter-spacing: 2px;
+
+    font-weight: bold;
+
+}
+
+
+.volver-especie {
+
+    display: inline-block;
+
+    margin-top: 10px;
+
+    color: var(--exp-green);
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+}
+
+
+.volver-especie:hover {
+
+    color: var(--exp-neon);
+
+}
+
+
+/* ==========================================
+   DISTRIBUCIÓN
+========================================== */
+
+.experimentos-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(320px, 430px)
+        minmax(0, 1fr);
+
+    gap: 24px;
+
+    align-items: start;
+
+}
+
+
+/* ==========================================
+   BLOQUES
+========================================== */
+
+.experimentos-listado,
+.detalle-experimento {
+
+    background: var(--exp-card);
+
+    border: 2px solid var(--exp-border);
+
+}
+
+
+/* ==========================================
+   LISTADO IZQUIERDO
+========================================== */
+
+.experimentos-listado {
+
+    padding: 18px;
+
+    position: sticky;
+
+    top: 18px;
+
+}
+
+
+.listado-titulo {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    color: var(--exp-green);
+
+    border-bottom:
+        1px solid var(--exp-border);
+
+    padding: 0 2px 14px;
+
+    margin-bottom: 16px;
+
+    font-weight: bold;
+
+}
+
+
+/* ==========================================
+   GRID DE EXPERIMENTOS
+========================================== */
+
+.experimentos-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+
+}
+
+
+/* ==========================================
+   TARJETA EXPERIMENTO
+========================================== */
+
+.experimento-card {
+
+    position: relative;
+
+    min-height: 190px;
+
+    overflow: hidden;
+
+    border:
+        2px solid var(--exp-border);
+
+    background: #080a10;
+
+    cursor: pointer;
+
+    padding: 0;
+
+    text-align: left;
+
+    font-family: inherit;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+
+}
+
+
+/* Hover y experimento seleccionado */
+
+.experimento-card:hover,
+.experimento-card.activo {
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        var(--exp-neon);
+
+    box-shadow:
+        0 0 14px
+        rgba(79, 251, 223, .25);
+
+}
+
+
+/* Rayas estilo pantalla */
+
+.experimento-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+
+            transparent 0,
+
+            transparent 3px,
+
+            rgba(51, 255, 153, .035) 4px
+        );
+
+    pointer-events: none;
+
+}
+
+
+/* Imagen */
+
+.experimento-card img {
+
+    width: 100%;
+
+    height: 190px;
+
+    object-fit: cover;
+
+    display: block;
+
+    filter:
+        saturate(.82)
+        contrast(1.06);
+
+    transition:
+        transform .4s ease,
+        filter .3s ease;
+
+}
+
+
+.experimento-card:hover img,
+.experimento-card.activo img {
+
+    transform: scale(1.04);
+
+    filter:
+        saturate(1)
+        contrast(1.08);
+
+}
+
+
+/* ==========================================
+   TEXTO ENCIMA DE LA IMAGEN
+========================================== */
+
+.experimento-card-info {
+
+    position: absolute;
+
+    z-index: 2;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    padding:
+        42px
+        11px
+        11px;
+
+    background:
+        linear-gradient(
+            to top,
+
+            #0b0d17 15%,
+
+            rgba(11, 13, 23, .78) 64%,
+
+            transparent
+        );
+
+}
+
+
+.experimento-card-info strong {
+
+    display: block;
+
+    color: #fff;
+
+    font-size: .94rem;
+
+    line-height: 1.25;
+
+}
+
+
+.experimento-card-info small {
+
+    color: var(--exp-neon);
+
+    font-size: .72rem;
+
+}
+
+
+/* ==========================================
+   PANEL DE INFORMACIÓN
+========================================== */
+
+.detalle-experimento {
+
+    min-height: 620px;
+
+    padding: 0;
+
+    overflow: hidden;
+
+}
+
+
+/* ==========================================
+   PORTADA DEL EXPERIMENTO
+========================================== */
+
+.detalle-portada {
+
+    position: relative;
+
+    min-height: 340px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    overflow: hidden;
+
+    border-bottom:
+        2px solid var(--exp-neon);
+
+}
+
+
+.detalle-portada img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* CAMBIAR cover POR contain */
+    background-color: #0b0d17;
+}
+
+
+/* Oscurecimiento de la imagen */
+
+.detalle-portada::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+
+            #0b0d17 5%,
+
+            rgba(11, 13, 23, .76) 50%,
+
+            rgba(11, 13, 23, .18)
+        );
+
+}
+
+
+/* ==========================================
+   CABECERA DETALLE
+========================================== */
+
+.detalle-cabecera {
+
+    position: relative;
+
+    z-index: 2;
+
+    padding: 28px;
+
+    width: 100%;
+
+}
+
+
+.detalle-cabecera .exp-id {
+
+    display: inline-block;
+
+    color: #0b0d17;
+
+    background:
+        var(--exp-neon);
+
+    padding: 5px 9px;
+
+    font-size: .8rem;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+
+}
+
+
+.detalle-cabecera h2 {
+
+    color: #fff;
+
+    font-size:
+        clamp(
+            1.8rem,
+            4vw,
+            3rem
+        );
+
+    margin: 0;
+
+    text-shadow:
+        0 3px 10px #000;
+
+}
+
+
+/* ==========================================
+   CONTENIDO DEL EXPERIMENTO
+========================================== */
+
+.detalle-contenido {
+
+    padding: 28px;
+
+}
+
+
+.detalle-resumen {
+
+    color: var(--exp-text);
+
+    font-size: 1.05rem;
+
+    line-height: 1.75;
+
+    margin:
+        0 0 24px;
+
+}
+
+
+/* ==========================================
+   DATOS RÁPIDOS
+========================================== */
+
+.ficha-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    gap: 12px;
+
+    margin-bottom: 28px;
+
+}
+
+
+.ficha-dato {
+
+    background:
+        var(--exp-bg);
+
+    border:
+        1px solid var(--exp-border);
+
+    border-left:
+        3px solid var(--exp-green);
+
+    padding: 14px;
+
+}
+
+
+.ficha-dato span {
+
+    display: block;
+
+    color: #8f98a8;
+
+    font-size: .72rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 6px;
+
+}
+
+
+.ficha-dato strong {
+
+    color:
+        var(--exp-neon);
+
+}
+
+
+/* ==========================================
+   BLOQUES TEXTO
+========================================== */
+
+.detalle-bloque {
+
+    margin-top: 20px;
+
+}
+
+
+.detalle-bloque h3 {
+
+    color:
+        var(--exp-green);
+
+    border-bottom:
+        1px solid
+        var(--exp-border);
+
+    padding-bottom: 7px;
+
+}
+
+
+.detalle-bloque p {
+
+    color:
+        var(--exp-text);
+
+    line-height: 1.75;
+
+}
+
+
+/* ==========================================
+   RESULTADO CORTO
+========================================== */
+
+.resultado-corto {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+}
+
+/* ==========================================
+   ÉXITO EXCEPCIONAL
+========================================== */
+
+.texto-exito-excepcional {
+    color: #ffd700 !important;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    text-shadow:
+        0 0 4px rgba(255, 215, 0, 0.9),
+        0 0 10px rgba(255, 215, 0, 0.6),
+        0 0 20px rgba(255, 170, 0, 0.3);
+}
+
+
+/* Símbolo especial */
+
+.texto-exito-excepcional::before {
+    content: "★ ";
+
+    color: #ffd700;
+
+    text-shadow:
+        0 0 6px rgba(255, 215, 0, 0.9);
+}
+
+/* ÉXITO */
+.texto-exito {
+    color: #33ff99 !important;
+    font-weight: bold;
+
+    text-shadow:
+        0 0 5px rgba(51, 255, 153, 0.6),
+        0 0 12px rgba(51, 255, 153, 0.25);
+}
+
+
+/* ÉXITO PARCIAL */
+.texto-parcial {
+    color: #c7a109 !important;
+    font-weight: bold;
+
+    text-shadow:
+        0 0 5px rgba(172, 146, 45, 0.6),
+        0 0 12px rgba(241, 196, 15, 0.25);
+}
+
+
+/* FRACASO */
+.texto-fracaso {
+    color: #ff4d4d !important;
+    font-weight: bold;
+
+    text-shadow:
+        0 0 5px rgba(255, 77, 77, 0.6),
+        0 0 12px rgba(255, 77, 77, 0.25);
+}
+
+
+/* Por si algún experimento no tiene
+   uno de los resultados anteriores */
+
+.resultado-desconocido {
+    color: #d1d5db;
+}
+
+.resultado-desconocido::before {
+    content: "●";
+    color: #d1d5db;
+}
+
+
+/* ==========================================
+   RESPONSIVE - TABLET
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .experimentos-layout {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .experimentos-listado {
+
+        position: static;
+
+    }
+
+
+    .experimentos-grid {
+
+        grid-template-columns:
+            repeat(
+                4,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .experimento-card,
+    .experimento-card img {
+
+        min-height: 165px;
+
+        height: 165px;
+
+    }
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 760px) {
+
+    .experimentos-grid {
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .ficha-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .detalle-portada {
+
+        min-height: 280px;
+
+    }
+
+}
+
+
+/* ==========================================
+   MÓVIL
+========================================== */
+
+@media (max-width: 460px) {
+
+    .experimentos-page {
+
+        width: 94%;
+
+    }
+
+
+    .experimentos-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .experimento-card,
+    .experimento-card img {
+
+        min-height: 210px;
+
+        height: 210px;
+
+    }
+
+}

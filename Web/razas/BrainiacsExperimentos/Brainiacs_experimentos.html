@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Experimentos Brainiacs - Planet Pedia</title>
+
+    <link rel="icon" type="image/png"
+        href="../../Especies alienigenas/Los Brainiac/Brainiac icono.png">
+
+    <!-- Tus estilos generales -->
+    <link rel="stylesheet" href="../../plantilla.css">
+    <link rel="stylesheet" href="../especiesindiv.css">
+
+    <!-- Estilos de esta página -->
+    <link rel="stylesheet" href="BrainiacsCSS.css">
+</head>
+
+<body>
+
+    <!-- ==============================
+         MENÚ SUPERIOR
+    =============================== -->
+    <header>
+        <div class="nav-container">
+
+            <a href="../../index.html" class="logo">
+                PLANET<span>PEDIA</span>
+            </a>
+
+            <input
+                type="checkbox"
+                id="nav-toggle"
+                class="nav-toggle"
+                hidden
+            >
+
+            <label
+                for="nav-toggle"
+                class="menu-toggle"
+                aria-label="Abrir menú"
+            >
+                ≡
+            </label>
+
+            <nav>
+                <a href="../../../index.html">Inicio</a>
+                <a href="../../Planetas.html">Planetas</a>
+                <a href="../../Especies.html" class="active">Especies</a>
+                <a href="../../LineaTemporal.html">Línea Temporal</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- ==============================
+         CONTENIDO
+    =============================== -->
+    <main class="experimentos-page">
+
+
+        <!-- CABECERA -->
+        <section class="experimentos-hero">
+
+            <p class="codigo-archivo">
+                ARCHIVO CIENTÍFICO // BRAINIACS
+            </p>
+
+            <h1>
+                Registro de Experimentos
+            </h1>
+
+            <p>
+                Base de datos de proyectos, criaturas y prototipos
+                desarrollados por científicos Brainiacs.
+                Selecciona un expediente para cargar sus datos
+                en el panel de análisis.
+            </p>
+
+            <a
+                class="volver-especie"
+                href="../../razas/Brainiacs.html"
+            >
+                ← Volver al expediente de los Brainiacs
+            </a>
+
+        </section>
+
+
+        <!-- ==============================
+             ZONA EXPERIMENTOS
+        =============================== -->
+        <section class="experimentos-layout">
+
+
+            <!-- ==============================
+                 LISTA DE EXPERIMENTOS
+            =============================== -->
+            <aside
+                class="experimentos-listado"
+                aria-label="Lista de experimentos"
+            >
+
+                <div class="listado-titulo">
+
+                    <span>
+                        EXPERIMENTOS CONOCIDOS
+                    </span>
+
+                    <span id="contadorExperimentos">
+                        00
+                    </span>
+
+                </div>
+
+
+                <!--
+                    JavaScript mete aquí automáticamente
+                    todas las tarjetas.
+                -->
+                <div
+                    id="listaExperimentos"
+                    class="experimentos-grid"
+                >
+                </div>
+
+            </aside>
+
+
+
+            <!-- ==============================
+                 DETALLE DEL EXPERIMENTO
+            =============================== -->
+
+            <!--
+                ESTE ES EL DIV IMPORTANTE.
+
+                Todos los experimentos se cargan aquí.
+
+                Cuando pulsas otro experimento,
+                JavaScript borra el contenido anterior
+                y mete el nuevo dentro de este mismo div.
+            -->
+
+            <section
+                id="detalleExperimento"
+                class="detalle-experimento"
+                aria-live="polite"
+            >
+            </section>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="BrainiacsJS.js"></script>
+
+</body>
+</html>
