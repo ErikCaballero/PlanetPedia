@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Desafío de Especies</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+</head>
+
+
+<body>
+
+  <main class="game-container">
+
+
+    <!-- =========================================
+         PANTALLA DE INICIO
+    ========================================== -->
+
+    <section
+      id="startScreen"
+      class="start-screen"
+    >
+
+      <p class="subtitle">
+        ARCHIVO XENOLÓGICO
+      </p>
+
+
+      <h1>
+        Desafío de Especies
+      </h1>
+
+
+      <p class="start-description">
+        Pon a prueba tus conocimientos sobre las especies de este universo.
+        En cada ronda aparecerá una categoría y tendrás que seleccionar
+        todas las especies que pertenezcan a ella antes de que termine
+        el tiempo.
+      </p>
+
+
+      <div class="start-rules">
+
+        <article class="rule-card">
+
+          <span class="rule-number">
+            5
+          </span>
+
+          <span class="rule-text">
+            rondas
+          </span>
+
+        </article>
+
+
+        <article class="rule-card">
+
+          <span class="rule-number">
+            60
+          </span>
+
+          <span class="rule-text">
+            segundos por ronda
+          </span>
+
+        </article>
+
+
+        <article class="rule-card">
+
+          <span class="rule-number">
+            ✓
+          </span>
+
+          <span class="rule-text">
+            selecciona todas las correctas
+          </span>
+
+        </article>
+
+      </div>
+
+
+      <button
+        id="startButton"
+        class="primary-button"
+        type="button"
+      >
+        Iniciar juego
+      </button>
+
+    </section>
+
+
+
+    <!-- =========================================
+         PANTALLA DEL JUEGO
+    ========================================== -->
+
+    <section
+      id="gameScreen"
+      class="hidden"
+    >
+
+
+      <header class="game-header">
+
+        <div class="title-area">
+
+          <p class="subtitle">
+            ARCHIVO XENOLÓGICO
+          </p>
+
+          <h1>
+            Desafío de Especies
+          </h1>
+
+        </div>
+
+
+        <div class="game-info">
+
+
+          <div class="info-box">
+
+            <span>
+              Ronda
+            </span>
+
+            <strong>
+              <span id="roundNumber">1</span>
+              / 5
+            </strong>
+
+          </div>
+
+
+          <div class="info-box">
+
+            <span>
+              Tiempo
+            </span>
+
+            <strong id="timer">
+              60
+            </strong>
+
+          </div>
+
+
+          <div class="info-box">
+
+            <span>
+              Puntos
+            </span>
+
+            <strong id="score">
+              0
+            </strong>
+
+          </div>
+
+
+        </div>
+
+      </header>
+
+
+
+      <!-- =========================================
+           PREGUNTA
+      ========================================== -->
+
+      <section class="question-box">
+
+        <p class="question-label">
+          MISIÓN ACTUAL
+        </p>
+
+
+        <h2 id="question">
+          Preparando categoría...
+        </h2>
+
+
+        <p class="question-description">
+          Selecciona todas las especies que pertenezcan
+          a esta categoría.
+        </p>
+
+      </section>
+
+
+
+      <!-- =========================================
+           ESPECIES
+      ========================================== -->
+
+      <section
+        id="speciesGrid"
+        class="species-grid"
+        aria-live="polite"
+      >
+      </section>
+
+
+
+      <!-- =========================================
+           RESULTADO DE LA RONDA
+      ========================================== -->
+
+      <section
+        id="resultPanel"
+        class="result-panel hidden"
+      >
+
+        <h2 id="resultTitle">
+          Resultado
+        </h2>
+
+
+        <p id="resultText">
+        </p>
+
+
+        <div class="result-stats">
+
+
+          <article>
+
+            <span>
+              Aciertos
+            </span>
+
+            <strong id="correctCount">
+              0
+            </strong>
+
+          </article>
+
+
+          <article>
+
+            <span>
+              Errores
+            </span>
+
+            <strong id="wrongCount">
+              0
+            </strong>
+
+          </article>
+
+
+          <article>
+
+            <span>
+              Olvidadas
+            </span>
+
+            <strong id="missedCount">
+              0
+            </strong>
+
+          </article>
+
+
+          <article>
+
+            <span>
+              Precisión
+            </span>
+
+            <strong id="accuracy">
+              0%
+            </strong>
+
+          </article>
+
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =========================================
+           BOTONES DEL JUEGO
+      ========================================== -->
+
+      <div class="buttons">
+
+        <button
+          id="confirmButton"
+          class="primary-button"
+          type="button"
+        >
+          Confirmar selección
+        </button>
+
+
+        <button
+          id="nextButton"
+          class="secondary-button hidden"
+          type="button"
+        >
+          Siguiente ronda
+        </button>
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =========================================
+         PANTALLA FINAL
+    ========================================== -->
+
+    <section
+      id="endScreen"
+      class="start-screen hidden"
+    >
+
+      <p class="subtitle">
+        PARTIDA FINALIZADA
+      </p>
+
+
+      <h1>
+        Resultado final
+      </h1>
+
+
+      <p class="start-description">
+        Has completado las cinco rondas del Desafío de Especies.
+      </p>
+
+
+      <div class="final-score">
+
+        <span>
+          Puntuación total
+        </span>
+
+        <strong id="finalScore">
+          0
+        </strong>
+
+      </div>
+
+
+      <div class="end-buttons">
+
+        <button
+          id="restartButton"
+          class="primary-button"
+          type="button"
+        >
+          Jugar de nuevo
+        </button>
+
+
+        <button
+          id="homeButton"
+          class="secondary-button"
+          type="button"
+        >
+          Volver al inicio
+        </button>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================================
+       DATOS + JUEGO
+
+       IMPORTANTE:
+       Deben cargarse en este orden.
+  ========================================== -->
+
+  <script src="species.js"></script>
+
+  <script src="categories.js"></script>
+
+  <script src="app.js"></script>
+
+
+</body>
+
+</html>
