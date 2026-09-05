@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Expediente Samyati</title>
+    <link favicon rel="icon" type="image/png" href="../../Especies alienigenas/Los Foxers/Foxer icono.png">
+    <link rel="stylesheet" href="../plantilla.css">
+    <link rel="stylesheet" href="especiesindiv.css">
+</head>
+
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">PLANET<span>PEDIA</span></a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden />
+            <label for="nav-toggle" class="menu-toggle" aria-label="Abrir men�">≡</label>
+            <nav>
+                <a href="../../index.html" class="active">Inicio</a>
+                <a href="../Planetas.html">Planetas</a>
+                <a href="../Especies.html">Especies</a>
+                <a href="../LineaTemporal.html">Línea Temporal</a>
+            </nav>
+        </div>
+    </header>
+<div class="container">
+    <!-- Bloque superior: Imagen + Nombre + Características -->
+    <div class="top-section">
+        <div class="img-box">
+            <!-- Aquí irá tu imagen -->
+            <a href="../../Especies alienigenas/Samyatis/Samyati.png">
+                <img src="../../Especies alienigenas/Samyatis/Samyati.png" style="width:100%; height:100%; object-fit:cover;">
+            </a>
+        </div>
+        <div class="header-box">
+            <h1>Las Samyatis</h1>
+            <h2>Características físicas</h2>
+            <p>Las Samyatis son una raza humanoide que se parece al dios Buda, son de color dorado con un color de piel que recuerda a una especie de mármol, tienen dos brazos y dos piernas, no tienen pelo y tienen orejas largas con una parte colgante extensa, la nariz, ojos y boca en cambio son pequeñas y tienen una pequeña cresta en la cabeza.</p>
+            <p>Miden entre 1.6 y 1.7 metros y pesan al rededor de 65 kg.</p>
+            <p>Esperanza de vida: 750 años</p>
+            <h2>Planeta de origen</h2>
+            <p>Marius</p>
+            <h2>Idioma</h2>
+            <p><i>Galáctico estándar</i></p>
+        </div>
+    </div>
+
+    <!-- Bloque inferior: Habilidades y otros -->
+    <div class="bottom-section">
+        <h2>Alimentación</h2>
+        <p>No necesario.</p>
+        <h2>Características sociales</h2>
+        <p>Son de naturaleza pacífica, no recurren a la violencia prácticamente en ningún caso, son monjes que creen en la paz, la armonía y el equilibrio. Se pasan la mayoría del tiempo meditando, de hecho, la meditación es tan profunda en ellos que pueden meditar en vez de dormir. Su alma es muy pura y poderosa, hasta el punto de que no tienen ninguna necesidad fisiológica, pues lo único que necesitan es meditar. </p>
+        <div class="especializaciones">
+
+        <button class="especializaciones-btn" type="button">
+            <span>Áreas de especialización</span>
+            <span class="especializaciones-icono">+</span>
+        </button>
+
+        <div class="especializaciones-contenido">
+            <div class="especializaciones-grid">
+
+                <div class="especializacion">Agrícultura</div>
+                <div class="especializacion">Agronomía</div>
+                <div class="especializacion">Botánica</div>
+                <div class="especializacion">Hidrocultura</div>
+
+            </div>
+        </div>
+
+    </div>
+        <div class="foto1">
+            <div class="fotos-div1">
+            <a href="../../Especies alienigenas/Samyatis/Samyati meditando.png">
+                <img src="../../Especies alienigenas/Samyatis/Samyati meditando.png" alt="Samyati meditando" class="species-image">
+            </a>
+            <figcaption class="texto-fotos">Samyati meditando</figcaption>
+            </div>
+            <p>La meditación, a parte de dejar de necesitar: alimento, agua o dormir, también mejoran sus habilidades y su conexión espiritual con lo que ellos llaman: Chi o energía vital, pudiendo también mejorar a los demás. Para ellos meditar es su forma de mantenerse con vida, de ahí que puedan alargar tanto sus vidas sin consumir ningún tipo de recurso.</p>
+        </div>
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Lectura de mentes</li>
+            <li>Aura de paz</li>
+            <li>Telepatía</li>
+            <li>Autosuficiencia</li>
+            <li>Empatía psíquica</li>
+            <li>Meditación de mejora física</li>
+            <li>Meditación sanadora</li>
+        </ul>
+        <p>Sus habilidades les permiten hacer que quienes quieren atacarles no puedan hacerlo, gracias a que eliminan ese deseo de la mente y el alma, volviéndolos muy difíciles de matar si estás cerca de ellos.</p>
+        <div class="container" data-especie="Samyatis">
+        <!-- Botón para desplegar/ocultar estadísticas -->
+        <button type="button" class="btn-desplegar-stats" id="btnStats">
+            <span>Ver Estadísticas de la Especie</span>
+            <span class="flecha" id="flechaStats">▼</span>
+        </button>
+
+        <!-- Contenedor oculto por defecto mediante la clase 'oculto' -->
+        <div class="stats-container oculto" id="panelStats">
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Fuerza</span>
+                    <span class="stat-value" id="val-fuerza">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-fuerza"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Agilidad</span>
+                    <span class="stat-value" id="val-agilidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-agilidad"></div>
+                </div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Resistencia</span>
+                    <span class="stat-value" id="val-resistencia">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-resistencia"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Velocidad</span>
+                    <span class="stat-value" id="val-velocidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-velocidad"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Inteligencia</span>
+                    <span class="stat-value" id="val-inteligencia">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-inteligencia"></div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Habilidades</span>
+                    <span class="stat-value" id="val-habilidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-habilidad"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- Enlace al archivo JavaScript externo (Asegúrate de ajustar la ruta si es necesario) -->
+        <script src="Stats.js"></script>
+        <h2>Dificultad de derrotar</h2>
+        <div class="contenedor-completo">
+            <div class="bloque-dificultad">
+            <div class="dificultad-barra" id="barra">
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+            </div>
+            <span id="texto-dificultad" class="texto-nivel"></span>
+            </div>
+            <img id="icono-dificultad" src="" alt="Icono">
+        </div>
+        <h2>Creencias</h2>
+        <p>Las Samyatis creen en la paz, la armonía y la conexión espiritual .</p>
+        <h3>Dioses</h3>
+        <ul>
+            <li>Bundi: Diosa de la paz, la tranquilidad y la serenidad</li>
+            <li>Friant: Diosa de la meditación y la sabiduría</li>
+            <li>Survia: Diosa del alma y el espíritu</li>
+            <li>Vlaria: Diosa de la vida y la salud</li>
+        </ul>
+        <h2>Jerarquía</h2>
+        <ul>
+            <li class="emperador">Gran Meditadora</li>
+            <li>Meditadoras sábias</li>
+            <li>Meditadora madre</li>
+            <li>Meditadoras</li>
+        </ul>
+        <p>Las Samyatis sigen a la gran meditadora, la cual es la líder espiritual de su raza.</p>
+        
+        <div class="foto1">
+            <div class="fotos-div1">
+            <a href="../../Especies alienigenas/Samyatis/Samyatis meditando.png">
+                <img src="../../Especies alienigenas/Samyatis/Samyatis meditando.png" alt="Samyatis meditando" class="species-image">
+            </a>
+            <figcaption class="texto-fotos">Samyatis meditando</figcaption>
+            </div>
+            <p>Al meditar en grupo, las Samyatis logran alcanzar un estado de profunda conexión espiritual, hasta tal punto que aumentan las capacidades físicas y mentales las unas de las otras, volviéndose con el número suficiente invulnerables incluso a ataques orbitales, una habilidad que impresiona e intriga a muchos.</p>
+        </div>
+        <h2>Historia</h2>
+        <h3>El comienzo</h3>
+        <p>El comienzo de esta raza no dista mucho de el estado actual, ya que llevan teniendo la misma filosofía de vida desde el comienzo de su raza, no tienen peligros, ya que los peligros no quieren atacarlas, no se acercan a ellas, no son agresivas.</p>
+        <h3>El primer contacto y la primera decepción</h3>
+        <p>Las Samyatis recibieron a una raza vecina los <!-- WikiLinks --> <a href="Varyths.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Varyths/Varyth.png"><div><strong>Los Varyths</strong><p>Una habilidosa raza guerrera, que adora el combate como arte, como forma de vida y como modo de medir el valor.</p></div></div>'>Varyths</a> una raza que desde que se encontraron quisieron matarlos, pero, al acercarse a ellas, ese deseo de guerra, muerte y combate desapareció, cosa que les perturbó mucho, dado a que ellos, eran adoradores de la guerra, por esa razón, los <!-- WikiLinks --> <a href="Varyths.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Varyths/Varyth.png"><div><strong>Los Varyths</strong><p>Una habilidosa raza guerrera, que adora el combate como arte, como forma de vida y como modo de medir el valor.</p></div></div>'>Varyths</a> se marcharon y no quisiero volver a toparse con ellas, pues no tener ese deseo de luchar, combatir y la guerra les generaba un vacío que no podían soportar. Las Samyatis se decepcionaron mucho, pues deseaban compartir su filosofía de vida con otras razas, para que la paz pueda llegar más lejos.</p>
+    </div>
+</div>
+
+<script src="especialidad.js"></script>
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+<script src="wikilink.js"></script>
+    <script>
+        const configuracion = {
+        1: { texto: "Muy fácil", icono: "https://genesistoxical.com/wp-content/uploads/2021/05/Dibujo_de_calavera_animada_png.png" },
+        2: { texto: "Fácil", icono: "https://genesistoxical.com/wp-content/uploads/2021/05/Calavera_con_huesos_cruzados_png.png" },
+        3: { texto: "Medio", icono: "https://cdn.creazilla.com/cliparts/38354/skull-clipart-xl.png" },
+        4: { texto: "Alto", icono: "https://marketplace.canva.com/qEZpA/MAHN2PqEZpA/1/tl/canva-illustration-of-a-white-skull-MAHN2PqEZpA.png" },
+        5: { texto: "Muy alto", icono: "https://stickerapp.es/cdn-assets/images/preview/2015/09/19/design-4968/template-sticker-300x300.png" },
+        6: { texto: "Difícil", icono: "https://static.vecteezy.com/system/resources/thumbnails/054/984/062/small/detailed-illustration-of-a-skull-and-crossbones-symbolizing-danger-piracy-and-rebellion-commonly-associated-with-warning-signs-png.png" },
+        7: { texto: "Extremo", icono: "https://cdn.pixabay.com/photo/2025/10/21/08/43/drawing-9907092_640.png" },
+        8: { texto: "Imposible", icono: "https://cdn.pixabay.com/photo/2025/09/16/09/08/scull-9837501_1280.png" }
+        };
+
+        function actualizarDificultad(nivel) {
+        const segmentos = document.querySelectorAll('.segmento');
+        const texto = document.getElementById('texto-dificultad');
+        const img = document.getElementById('icono-dificultad');
+
+        // Colores: 1-3 Verde, 4-6 Amarillo, 7-8 Rojo
+        let color = nivel <= 3 ? '#2ecc71' : (nivel <= 6 ? '#f1c40f' : '#e74c3c');
+
+        segmentos.forEach((seg, index) => {
+            seg.style.background = index < nivel ? color : '#333';
+        });
+
+        texto.innerText = configuracion[nivel].texto;
+        texto.style.color = color;
+        img.src = configuracion[nivel].icono;
+        }
+
+        // Ejemplo: Llama a esta función para cambiar el nivel (del 1 al 8)
+        actualizarDificultad(3);
+  </script>
+</html>
