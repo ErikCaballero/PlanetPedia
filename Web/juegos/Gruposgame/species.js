@@ -284,7 +284,8 @@ window.SPECIES_DATA = {
       "image": "../../../Especies alienigenas/Bazofios/Bazofio.png",
       "tags": [
         "primitiva",
-        "pequeños"
+        "pequeños",
+        "pacifica"
         
       ]
     }
