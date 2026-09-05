@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Expediente Varyth</title>
+    <link favicon rel="icon" type="image/png" href="../../Especies alienigenas/Varyths/Varyth icono.png">
+    <link rel="stylesheet" href="../plantilla.css">
+    <link rel="stylesheet" href="especiesindiv.css">
+</head>
+
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">PLANET<span>PEDIA</span></a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden />
+            <label for="nav-toggle" class="menu-toggle" aria-label="Abrir men�">≡</label>
+            <nav>
+                <a href="../../index.html" class="active">Inicio</a>
+                <a href="../Planetas.html">Planetas</a>
+                <a href="../Especies.html">Especies</a>
+                <a href="../LineaTemporal.html">Línea Temporal</a>
+            </nav>
+        </div>
+    </header>
+<div class="container">
+    <!-- Bloque superior: Imagen + Nombre + Características -->
+    <div class="top-section">
+        <div class="img-box">
+            <!-- Aquí irá tu imagen -->
+            <a href="../../Especies alienigenas/Varyths/Varyth.png">
+                <img src="../../Especies alienigenas/Varyths/Varyth.png" style="width:100%; height:100%; object-fit:cover;">
+            </a>
+        </div>
+        <div class="header-box">
+            <h1>Los Varyths</h1>
+            <h2>Características físicas</h2>
+            <p>Los Varyths son una raza guerrera de aspecto humanoide, hecha con un tejido semi-biológico semi-artificial de color azul oscuro con epqueños patrones dorados, tienen cabezas grandes con cuatro pequeños ojos negros, unos horificios que actuan como nariz y una pequeña boca.</p>
+            <p>Miden entre 1.7 y 2.0 metros de altura y 80 kg de peso.</p>
+            <p>Esperanza de vida: 110 años.</p>
+            <h2>Planeta de origen</h2>
+            <p>Sabaya</p>
+            <h2>Idioma</h2>
+            <p><i>Varythian</i></p>
+        </div>
+    </div>
+
+    <!-- Bloque inferior: Habilidades y otros -->
+    <div class="bottom-section">
+        <h2>Características sociales</h2>
+        <p>Los Varyths son una raza guerrera, ven el combate como algo ceremonial, como un ritual que se debe llevar a cabo varias veces para venerar sus poderosos cuerpos, y su fé a los dioses que beneran.</p>
+        
+        <div class="especializaciones">
+        <button class="especializaciones-btn" type="button">
+            <span>Áreas de especialización</span>
+            <span class="especializaciones-icono">+</span>
+        </button>
+
+        <div class="especializaciones-contenido">
+            <div class="especializaciones-grid">
+
+                <div class="especializacion">Combate cuerpo a cuerpo</div>
+                <div class="especializacion">Guerra</div>
+            </div>
+        </div>
+
+    </div>
+        <div class="foto1">
+            <div class="fotos-div1">
+            <a href="../../Especies alienigenas/Varyths/Ejercito Varyth.png">
+                <img src="../../Especies alienigenas/Varyths/Ejercito Varyth.png" alt="Ejército de Varyths" class="species-image">
+            </a>
+            <figcaption class="texto-fotos">Ejército de Varyths.</figcaption>
+            </div>
+            <p>Los Varyths son una raza que no repugna la guerra, son una raza preparada para ello, tanto físicamente como mentalmente, pues ven la guerra como una forma de honrar a sus dioses y a ellos mismos, por ello, muchas veces combaten en guerras para defender a débiles solo por el hecho de poder enfrentarse a los fuertes comvirtiéndolos accidentalmente en héroes.</p>        
+        </div>
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Expertos en combate cuerpo a cuerpo</li>
+            <li>Gran agilidad</li>
+            <li>Alma de guerra</li>
+        </ul>
+        <div class="foto1">
+            <div class="fotos-div1">
+            <a href="../../Especies alienigenas/Varyths/Varyth entrenando.png">
+                <img src="../../Especies alienigenas/Varyths/Varyth entrenando.png" alt="Varyth entrenando" class="species-image">
+            </a>
+            <figcaption class="texto-fotos">Varyth entrenando.</figcaption>
+            </div>
+            <p>Los Varyths suelen entrenar con robots de combate que están diseñados para aprender en cada entrenamiento, cada soldado de alto rango tienen el suyo y cada combate les hace mejorar más pues si ganan contra el robot, el robot aprende su patrón de movimientos para el próximo entrenamiento y si pierden, ellos aprenden de sus errores. Estos robots, por el gran uso que tienen se vuelven en expertos en el combate y podrían ser usados también como armas, pero, esto le quitaría el honor y el alma que tiene para ellos el combate.</p>
+        </div>
+        <div class="container" data-especie="Varyths">
+        <!-- Botón para desplegar/ocultar estadísticas -->
+        <button type="button" class="btn-desplegar-stats" id="btnStats">
+            <span>Ver Estadísticas de la Especie</span>
+            <span class="flecha" id="flechaStats">▼</span>
+        </button>
+
+        <!-- Contenedor oculto por defecto mediante la clase 'oculto' -->
+        <div class="stats-container oculto" id="panelStats">
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Fuerza</span>
+                    <span class="stat-value" id="val-fuerza">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-fuerza"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Agilidad</span>
+                    <span class="stat-value" id="val-agilidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-agilidad"></div>
+                </div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Resistencia</span>
+                    <span class="stat-value" id="val-resistencia">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-resistencia"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Velocidad</span>
+                    <span class="stat-value" id="val-velocidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-velocidad"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Inteligencia</span>
+                    <span class="stat-value" id="val-inteligencia">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-inteligencia"></div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Habilidades</span>
+                    <span class="stat-value" id="val-habilidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-habilidad"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- Enlace al archivo JavaScript externo (Asegúrate de ajustar la ruta si es necesario) -->
+        <script src="Stats.js"></script>
+        <h2>Dificultad de derrotar</h2>
+        <div class="contenedor-completo">
+            <div class="bloque-dificultad">
+            <div class="dificultad-barra" id="barra">
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+            </div>
+            <span id="texto-dificultad" class="texto-nivel"></span>
+            </div>
+            <img id="icono-dificultad" src="" alt="Icono">
+        </div>
+        <h2>Creencias</h2>
+        <p>Creen en la guerra y el combate como algo ceremonial y honorable, algo que les hace crecer como individuos y que les hace conectar con una energía que no sabrían explicar, cada victoria, cada combate real aumenta esa energía y los hace más poderosos y habilidosos.</p>
+        <h3>Dioses</h3>
+        <p>Zadio: Dios de la guerra, el combate y la lucha.</p>
+        <h2>Jerarquía</h2>
+        <ul>
+            <li class="emperador">Emperador</li>
+            <li>Maestros de la guerra</li>
+            <li>Guerreros de élite</li>
+            <li>Guerreros</li>
+            <li>Ciudadanos</li>
+        </ul>
+        
+        <h2>Historia</h2>
+        <h3>El origen</h3>
+        <p>SeLos Varyths, son una raza demasiado enfocada a la guerra y el combate, y es que, no nacieron como cualquier otra raza, si no que fueron creados, nada más y nada menos que por los <!-- WikiLinks --> <a href="Brainiacs.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Los Brainiac/Brainiac.jpeg"><div><strong>Los Brainiacs</strong><p>Una raza super inteligente, experta en todas las ramas de la ciencia. Investigadores y creadores de muchas cosas.</p></div></div>'>Brainiacs</a>, fueron la novena raza guerrera del proyecto Soldados Perfectos, un proyecto que buscaba crear a la raza perfecta, los que conocen esta información no se atreven a revelársela, ya que destruirían todo en lo que creen, pero, según los informes, esta raza era mejor que los <!-- WikiLinks --> <a href="Permians.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Permians/Permian.png"><div><strong>Los Permians</strong><p>Una raza guerrera, que se especializan en la guerra y el combate, son resistentes y muy ágiles, siendo consideradas una de las razas más especializadas en el combate 1 vs 1.</p></div></div>'>Permians</a>, los cuales fueron el sexto intento de este proyecto.</p>
+        <h3>El comienzo</h3>
+        <p>Los Varyths comenzaron como una raza de cazadores y guerreros, sus habilidades innatas les dieron los cuerpos perfectos para antepasar cualquier desafío que pudieran tener, daban igual las criaturas, las otras razas o las condiciones del planeta que enfrentaran, pues sus cuerpos les permitían completar cualquier desafío, por ello, su comienzo fue fácil.</p>
+        <h3>El tratado galáctico</h3>
+        <p>La Unión de Planetas Independientes conocía el potencial de esta raza, pues eran guerreros muy bien formados y preparados para enfrentar a cualquier otro ejército, por lo que la Unión los contactó con la idea de hacer un trato, que la raza se uniera a ellos a cambio de informarles dónde había una guerra o un conflicto al que pudieran ir y disfrutar así de su tan amado pasatiempo, luchando y enfrentando a cualquier enemigo que la Unión de Planetas señalara. Un ejército perfecto, que desea luchar y adoran hacerlo.</p>
+        <a href="../../Especies alienigenas/Varyths/Varyth diplomacia.png">
+            <img src="../../Especies alienigenas/Varyths/Varyth diplomacia.png" alt="Varyth en una reunión diplomática" class="species-image">
+        </a>
+        <figcaption class="texto-fotos">Varyth en una reunión diplomática</figcaption>
+        <h3>La gran guerra</h3>
+        <p>La Unión de Planetas Independientes tuvo un gran conflicto para frenar el avance de uno de los mayores imperios en la historia, el imperio de los <!-- WikiLinks --> <a href="Invasores X.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Invasores X/Invasores X (1).jpeg"><div><strong>Los Invasores X</strong><p>Una raza de conquistadores avanzados que utilizaban a las especies conquistadas mejoradas por ellos para conquistar a otras.</p></div></div>'>Invasores X</a>, este imperio era practicamente imposible de derrotar, ya que se desconocía la localización de sus altos cargos y era muy difícil desmantelar el bloqueo hecho en cada planeta, tras que los héroes de la tierra destruyeran a los soberanos la Unión se encontró en la tarea de desmantelar los restos del imperio y derrocar a cada "Señor de la guerra" que salía del imperio para tomar el poder, en esta tarea la raza de los Varyths fue crucial, ya que fueron los principales encargados de ir de planeta en planeta limpiando cada rastro del el anterior imperio, ellos, estaban super conformes y contentos con la misión ya que iban de combate en combate, y cada vez, sin saberlo, aumentaban sus propias fuerzas, ellos, se ganaron el respeto del resto de planetas por una hazaña que pocas razas habrían estado tan dispuestas a cumplir y ellos se sintieron cada batalla más contentos y más llenos pues cumplían sin cesar el que para ellos era su propósito.</p>
+        <a href="../../Especies alienigenas/Varyths/Varyths guerra.png">
+            <img src="../../Especies alienigenas/Varyths/Varyths guerra.png" alt="Varyths en una batalla" class="species-image">
+        </a>
+        <figcaption class="texto-fotos">Varyth en la gran guerra</figcaption>
+    </div>
+
+</div>
+
+</body>
+<script src="especialidad.js"></script>
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+<script src="wikilink.js"></script>
+<script>
+    const configuracion = {
+      1: { texto: "Muy fácil", icono: "https://genesistoxical.com/wp-content/uploads/2021/05/Dibujo_de_calavera_animada_png.png" },
+      2: { texto: "Fácil", icono: "https://genesistoxical.com/wp-content/uploads/2021/05/Calavera_con_huesos_cruzados_png.png" },
+      3: { texto: "Medio", icono: "https://cdn.creazilla.com/cliparts/38354/skull-clipart-xl.png" },
+      4: { texto: "Alto", icono: "https://marketplace.canva.com/qEZpA/MAHN2PqEZpA/1/tl/canva-illustration-of-a-white-skull-MAHN2PqEZpA.png" },
+      5: { texto: "Muy alto", icono: "https://stickerapp.es/cdn-assets/images/preview/2015/09/19/design-4968/template-sticker-300x300.png" },
+      6: { texto: "Difícil", icono: "https://static.vecteezy.com/system/resources/thumbnails/054/984/062/small/detailed-illustration-of-a-skull-and-crossbones-symbolizing-danger-piracy-and-rebellion-commonly-associated-with-warning-signs-png.png" },
+      7: { texto: "Extremo", icono: "https://cdn.pixabay.com/photo/2025/10/21/08/43/drawing-9907092_640.png" },
+      8: { texto: "Imposible", icono: "https://cdn.pixabay.com/photo/2025/09/16/09/08/scull-9837501_1280.png" }
+    };
+
+    function actualizarDificultad(nivel) {
+      const segmentos = document.querySelectorAll('.segmento');
+      const texto = document.getElementById('texto-dificultad');
+      const img = document.getElementById('icono-dificultad');
+
+      // Colores: 1-3 Verde, 4-6 Amarillo, 7-8 Rojo
+      let color = nivel <= 3 ? '#2ecc71' : (nivel <= 6 ? '#f1c40f' : '#e74c3c');
+
+      segmentos.forEach((seg, index) => {
+        seg.style.background = index < nivel ? color : '#333';
+      });
+
+      texto.innerText = configuracion[nivel].texto;
+      texto.style.color = color;
+      img.src = configuracion[nivel].icono;
+    }
+
+    // Ejemplo: Llama a esta función para cambiar el nivel (del 1 al 8)
+    actualizarDificultad(3);
+  </script>
+</html>

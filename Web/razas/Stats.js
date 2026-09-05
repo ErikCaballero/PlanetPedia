@@ -91,6 +91,14 @@ const baseDatosEspecies = {
         inteligencia: 1,
         habilidad: 0
     },
+    Grimoriums: {
+        fuerza: 1,
+        agilidad: 3,
+        resistencia: 10,
+        velocidad: 2,
+        inteligencia: 6,
+        habilidad: 10
+    },
     Grolux: {
         fuerza: 5,
         agilidad: 4,
@@ -187,7 +195,14 @@ const baseDatosEspecies = {
         inteligencia: 10,
         habilidad: 0
     },
-    
+    Varyths: {
+        fuerza: 1,
+        agilidad: 8,
+        resistencia: 6,
+        velocidad: 3,
+        inteligencia: 3,
+        habilidad: 0
+    },
     Velorians: {
         fuerza: 1,
         agilidad: 9,

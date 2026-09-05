@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Project Nexus</title>
+
+  <link
+    rel="stylesheet"
+    href="main.css"
+  >
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       =====================================================
+       SELECCIÓN DE CIVILIZACIÓN
+       =====================================================
+       ===================================================== -->
+
+  <section
+    id="raceSelection"
+    class="race-selection"
+  >
+
+    <div class="race-selection-header">
+
+      <p class="section-label">
+        PROJECT NEXUS
+      </p>
+
+      <h1>
+        Elige tu civilización
+      </h1>
+
+      <p>
+        Cada civilización posee diferentes capacidades,
+        recursos iniciales y ventajas estratégicas.
+      </p>
+
+    </div>
+
+
+    <!--
+      game.js genera aquí automáticamente
+      las tarjetas de todas las razas.
+    -->
+
+    <div
+      id="raceGrid"
+      class="race-grid"
+    >
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       =====================================================
+       PANTALLA PRINCIPAL DEL JUEGO
+       =====================================================
+       ===================================================== -->
+
+  <div
+    id="gameScreen"
+    class="game-screen hidden"
+  >
+
+
+    <!-- ===================================================
+         BARRA SUPERIOR
+
+         IMPORTANTE:
+         Se recuperan las clases originales:
+
+         .topbar
+         .logo
+         .resources
+         .resource
+         .resource-label
+         .resource-value
+         .turn-box
+         =================================================== -->
+
+    <header class="topbar">
+
+
+      <!-- LOGO -->
+
+      <div class="logo">
+
+        <h1>
+          PROJECT NEXUS
+        </h1>
+
+        <p>
+          COMANDO INTERESTELAR
+        </p>
+
+      </div>
+
+
+
+      <!-- ===============================================
+           RECURSOS
+           =============================================== -->
+
+      <div class="resources">
+
+
+        <!-- CRÉDITOS -->
+
+        <div class="resource">
+
+          <span class="resource-label">
+            Créditos
+          </span>
+
+          <span
+            id="credits"
+            class="resource-value"
+          >
+            0
+          </span>
+
+        </div>
+
+
+
+        <!-- MINERALES -->
+
+        <div class="resource">
+
+          <span class="resource-label">
+            Minerales
+          </span>
+
+          <span
+            id="minerals"
+            class="resource-value"
+          >
+            0
+          </span>
+
+        </div>
+
+
+
+        <!-- ENERGÍA -->
+
+        <div class="resource">
+
+          <span class="resource-label">
+            Energía
+          </span>
+
+          <span
+            id="energy"
+            class="resource-value"
+          >
+            0
+          </span>
+
+        </div>
+
+
+
+        <!-- CIENCIA -->
+
+        <div class="resource">
+
+          <span class="resource-label">
+            Ciencia
+          </span>
+
+          <span
+            id="science"
+            class="resource-value"
+          >
+            0
+          </span>
+
+        </div>
+
+
+
+        <!-- PODER MILITAR -->
+
+        <div class="resource">
+
+          <span class="resource-label">
+            Poder militar
+          </span>
+
+          <span
+            id="military"
+            class="resource-value"
+          >
+            0
+          </span>
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- ===============================================
+           TURNO
+           =============================================== -->
+
+      <div class="turn-box">
+
+        <span>
+          Turno
+        </span>
+
+        <strong id="turn">
+          1
+        </strong>
+
+      </div>
+
+
+    </header>
+
+
+
+    <!-- ===================================================
+         ZONA INFERIOR
+         =================================================== -->
+
+    <div class="game-layout">
+
+
+      <!-- =================================================
+           MENÚ LATERAL
+           ================================================= -->
+
+      <aside class="sidebar">
+
+
+        <p class="sidebar-title">
+          Navegación
+        </p>
+
+
+
+        <!-- CENTRO DE MANDO -->
+
+        <button
+          type="button"
+          class="menu-button active"
+          data-screen="commandScreen"
+        >
+
+          <span class="menu-icon">
+            ◎
+          </span>
+
+          Centro de mando
+
+        </button>
+
+
+
+        <!-- GALAXIA -->
+
+        <button
+          type="button"
+          class="menu-button"
+          data-screen="galaxyScreen"
+        >
+
+          <span class="menu-icon">
+            ◉
+          </span>
+
+          Galaxia
+
+        </button>
+
+
+
+        <!-- EXPLORACIÓN -->
+
+        <button
+          type="button"
+          class="menu-button"
+          data-screen="explorationScreen"
+        >
+
+          <span class="menu-icon">
+            ⌁
+          </span>
+
+          Exploración
+
+        </button>
+
+
+
+        <!-- INVESTIGACIÓN -->
+
+        <button
+          type="button"
+          class="menu-button"
+          data-screen="researchScreen"
+        >
+
+          <span class="menu-icon">
+            △
+          </span>
+
+          Investigación
+
+        </button>
+
+
+
+        <!-- FLOTA -->
+
+        <button
+          type="button"
+          class="menu-button"
+          data-screen="fleetScreen"
+        >
+
+          <span class="menu-icon">
+            ◈
+          </span>
+
+          Flota
+
+        </button>
+
+
+
+        <!-- DIPLOMACIA -->
+
+        <button
+          type="button"
+          class="menu-button"
+          data-screen="diplomacyScreen"
+        >
+
+          <span class="menu-icon">
+            ◇
+          </span>
+
+          Diplomacia
+
+        </button>
+
+
+
+        <!-- MERCADO -->
+
+        <button
+          type="button"
+          class="menu-button"
+          data-screen="marketScreen"
+        >
+
+          <span class="menu-icon">
+            ◫
+          </span>
+
+          Mercado
+
+        </button>
+
+
+
+        <!-- AMENAZAS -->
+
+        <button
+          type="button"
+          class="menu-button"
+          data-screen="threatsScreen"
+        >
+
+          <span class="menu-icon">
+            ⚠
+          </span>
+
+          Amenazas
+
+        </button>
+
+
+      </aside>
+
+
+
+      <!-- =================================================
+           CONTENIDO PRINCIPAL
+           ================================================= -->
+
+      <main class="main-content">
+
+
+        <!-- =================================================
+             =================================================
+             1. CENTRO DE MANDO
+             =================================================
+             ================================================= -->
+
+        <section
+          id="commandScreen"
+          class="game-section"
+        >
+
+
+          <!-- CABECERA -->
+
+          <section class="section-header">
+
+            <p>
+              Centro estratégico
+            </p>
+
+            <h2 id="currentRaceName">
+              Civilización
+            </h2>
+
+            <div class="description">
+
+              Administra tu civilización, supervisa
+              su desarrollo y dirige la expansión
+              interestelar.
+
+            </div>
+
+          </section>
+
+
+
+          <!-- ===============================================
+               DASHBOARD
+
+               IMPORTANTE:
+               Recuperamos .dashboard, que era
+               parte del diseño original.
+               =============================================== -->
+
+          <section class="dashboard">
+
+
+            <!-- =============================================
+                 PLANETA NATAL
+                 ============================================= -->
+
+            <article class="panel">
+
+
+              <div class="panel-header">
+
+                <h3>
+                  Mundo capital
+                </h3>
+
+                <span class="status">
+                  ESTABLE
+                </span>
+
+              </div>
+
+
+
+              <!--
+                IMPORTANTE:
+
+                .planet-area
+                .planet
+                .planet-name
+                .planet-info
+
+                son las clases que hacen aparecer
+                correctamente el planeta.
+              -->
+
+              <div class="panel-content planet-area">
+
+
+                <div class="planet">
+                </div>
+
+
+                <h3
+                  id="homeworldName"
+                  class="planet-name"
+                >
+                  PLANETA NATAL
+                </h3>
+
+
+                <p class="planet-info">
+
+                  Población estable · Sistema natal
+
+                </p>
+
+
+              </div>
+
+
+            </article>
+
+
+
+            <!-- =============================================
+                 ACCIONES DISPONIBLES
+                 ============================================= -->
+
+            <article class="panel">
+
+
+              <div class="panel-header">
+
+                <h3>
+                  Acciones disponibles
+                </h3>
+
+              </div>
+
+
+
+              <!--
+                IMPORTANTE:
+
+                Recuperamos:
+
+                panel-content actions
+
+                en lugar de action-grid.
+              -->
+
+              <div class="panel-content actions">
+
+
+                <!-- EXPLORAR -->
+
+                <button
+                  id="exploreButton"
+                  type="button"
+                  class="action-card"
+                >
+
+                  <h4>
+                    Explorar espacio cercano
+                  </h4>
+
+                  <p>
+
+                    Coste: 25 de energía.
+
+                    Puede descubrir planetas,
+                    recursos y civilizaciones.
+
+                  </p>
+
+                </button>
+
+
+
+                <!-- INVESTIGACIÓN -->
+
+                <button
+                  id="researchButton"
+                  type="button"
+                  class="action-card"
+                >
+
+                  <h4>
+                    Investigación científica
+                  </h4>
+
+                  <p>
+
+                    Invierte créditos para obtener
+                    nuevos puntos de ciencia.
+
+                  </p>
+
+                </button>
+
+
+
+                <!-- FLOTA -->
+
+                <button
+                  id="fleetButton"
+                  type="button"
+                  class="action-card"
+                >
+
+                  <h4>
+                    Expandir la flota
+                  </h4>
+
+                  <p>
+
+                    Construye nuevas naves para
+                    expediciones y futuras
+                    operaciones militares.
+
+                  </p>
+
+                </button>
+
+
+              </div>
+
+
+            </article>
+
+
+          </section>
+
+
+
+          <!-- ===============================================
+               CAPACIDADES DE LA CIVILIZACIÓN
+               =============================================== -->
+
+          <section class="panel">
+
+
+            <div class="panel-header">
+
+              <h3>
+                Capacidades de la civilización
+              </h3>
+
+              <span>
+                Perfil estratégico
+              </span>
+
+            </div>
+
+
+
+            <div class="panel-content civilization-stats">
+
+
+              <!-- TECNOLOGÍA -->
+
+              <div class="civilization-stat">
+
+                <div class="civilization-stat-top">
+
+                  <span>
+                    Tecnología
+                  </span>
+
+                  <strong id="technologyLevel">
+                    0/10
+                  </strong>
+
+                </div>
+
+                <div class="stat-bar">
+
+                  <div
+                    id="technologyBar"
+                    class="stat-bar-fill"
+                  >
+                  </div>
+
+                </div>
+
+              </div>
+
+
+
+              <!-- MILITAR -->
+
+              <div class="civilization-stat">
+
+                <div class="civilization-stat-top">
+
+                  <span>
+                    Militar
+                  </span>
+
+                  <strong id="militaryLevel">
+                    0/10
+                  </strong>
+
+                </div>
+
+                <div class="stat-bar">
+
+                  <div
+                    id="militaryBar"
+                    class="stat-bar-fill"
+                  >
+                  </div>
+
+                </div>
+
+              </div>
+
+
+
+              <!-- ECONOMÍA -->
+
+              <div class="civilization-stat">
+
+                <div class="civilization-stat-top">
+
+                  <span>
+                    Economía
+                  </span>
+
+                  <strong id="economyLevel">
+                    0/10
+                  </strong>
+
+                </div>
+
+                <div class="stat-bar">
+
+                  <div
+                    id="economyBar"
+                    class="stat-bar-fill"
+                  >
+                  </div>
+
+                </div>
+
+              </div>
+
+
+
+              <!-- DEFENSA -->
+
+              <div class="civilization-stat">
+
+                <div class="civilization-stat-top">
+
+                  <span>
+                    Defensa
+                  </span>
+
+                  <strong id="defenseLevel">
+                    0/10
+                  </strong>
+
+                </div>
+
+                <div class="stat-bar">
+
+                  <div
+                    id="defenseBar"
+                    class="stat-bar-fill"
+                  >
+                  </div>
+
+                </div>
+
+              </div>
+
+
+            </div>
+
+
+          </section>
+
+
+
+          <!-- ===============================================
+               REGISTRO GALÁCTICO
+               =============================================== -->
+
+          <section class="panel log">
+
+
+            <div class="panel-header">
+
+              <h3>
+                Registro galáctico
+              </h3>
+
+            </div>
+
+
+            <div
+              id="gameLog"
+              class="panel-content"
+            >
+            </div>
+
+
+          </section>
+
+
+
+          <!-- ===============================================
+               FINALIZAR TURNO
+               =============================================== -->
+
+          <div class="bottom-actions">
+
+            <button
+              id="endTurnButton"
+              type="button"
+              class="end-turn"
+            >
+
+              Finalizar turno
+
+            </button>
+
+          </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             =================================================
+             2. GALAXIA
+             =================================================
+             ================================================= -->
+
+        <section
+          id="galaxyScreen"
+          class="game-section hidden"
+        >
+
+
+          <section class="section-header">
+
+            <p>
+              Espacio conocido
+            </p>
+
+            <h2>
+              Galaxia
+            </h2>
+
+            <div class="description">
+
+              Aquí podremos representar posteriormente
+              sistemas estelares, rutas, colonias,
+              territorios y civilizaciones.
+
+            </div>
+
+          </section>
+
+
+          <section class="panel">
+
+            <div class="panel-header">
+
+              <h3>
+                Mapa galáctico
+              </h3>
+
+            </div>
+
+            <div class="panel-content">
+
+              <div class="empty-message">
+
+                El mapa de la galaxia todavía
+                no está disponible.
+
+              </div>
+
+            </div>
+
+          </section>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             =================================================
+             3. EXPLORACIÓN
+             =================================================
+             ================================================= -->
+
+        <section
+          id="explorationScreen"
+          class="game-section hidden"
+        >
+
+
+          <section class="section-header">
+
+            <p>
+              Exploración interestelar
+            </p>
+
+            <h2>
+              Exploración
+            </h2>
+
+            <div class="description">
+
+              Lanza expediciones, descubre nuevos mundos
+              y analiza posibles amenazas, recursos
+              o civilizaciones.
+
+            </div>
+
+          </section>
+
+
+
+          <!-- RESUMEN -->
+
+          <section class="exploration-summary">
+
+
+            <div class="exploration-summary-card">
+
+              <span class="exploration-summary-label">
+                Energía disponible
+              </span>
+
+              <strong
+                id="explorationEnergy"
+                class="exploration-summary-value"
+              >
+                0
+              </strong>
+
+            </div>
+
+
+
+            <div class="exploration-summary-card">
+
+              <span class="exploration-summary-label">
+                Coste por expedición
+              </span>
+
+              <strong
+                id="explorationCost"
+                class="exploration-summary-value"
+              >
+                25
+              </strong>
+
+            </div>
+
+
+
+            <div class="exploration-summary-card">
+
+              <span class="exploration-summary-label">
+                Mundos descubiertos
+              </span>
+
+              <strong
+                id="explorationPlanetCount"
+                class="exploration-summary-value"
+              >
+                0
+              </strong>
+
+            </div>
+
+
+          </section>
+
+
+
+          <!-- NUEVA EXPEDICIÓN -->
+
+          <section class="panel exploration-launch-panel">
+
+
+            <div class="panel-header">
+
+              <h3>
+                Nueva expedición
+              </h3>
+
+              <span>
+                Reconocimiento interestelar
+              </span>
+
+            </div>
+
+
+
+            <div class="panel-content">
+
+
+              <div class="exploration-launch-content">
+
+
+                <div>
+
+                  <h3>
+                    Explorar espacio cercano
+                  </h3>
+
+                  <p>
+
+                    Envía una misión de reconocimiento
+                    para localizar un nuevo mundo.
+
+                  </p>
+
+                  <p class="exploration-warning">
+
+                    Coste actual: 25 de energía.
+
+                  </p>
+
+                </div>
+
+
+
+                <button
+                  id="exploreButtonSecondary"
+                  type="button"
+                  class="exploration-launch-button"
+                >
+
+                  Lanzar expedición
+
+                </button>
+
+
+              </div>
+
+
+            </div>
+
+
+          </section>
+
+
+
+          <!--
+            game.js coloca aquí automáticamente
+            "Misiones activas".
+          -->
+
+
+
+          <!-- PLANETAS -->
+
+          <section class="panel discovered-section">
+
+
+            <div class="panel-header">
+
+              <h3>
+                Mundos descubiertos
+              </h3>
+
+              <span id="planetCount">
+                0 detectados
+              </span>
+
+            </div>
+
+
+
+            <div
+              id="planetGrid"
+              class="planet-grid"
+            >
+
+              <div class="empty-message">
+
+                Ningún planeta descubierto todavía.
+
+                Envía una expedición para comenzar
+                la exploración.
+
+              </div>
+
+            </div>
+
+
+          </section>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             =================================================
+             4. INVESTIGACIÓN
+             =================================================
+             ================================================= -->
+
+        <section
+          id="researchScreen"
+          class="game-section hidden"
+        >
+
+
+          <section class="section-header">
+
+            <p>
+              Desarrollo científico
+            </p>
+
+            <h2>
+              Investigación
+            </h2>
+
+            <div class="description">
+
+              Aquí construiremos posteriormente
+              el árbol tecnológico de tu civilización.
+
+            </div>
+
+          </section>
+
+
+          <section class="panel">
+
+            <div class="panel-header">
+
+              <h3>
+                Programa científico
+              </h3>
+
+            </div>
+
+            <div class="panel-content">
+
+              <div class="empty-message">
+
+                El árbol tecnológico se desarrollará
+                más adelante.
+
+              </div>
+
+            </div>
+
+          </section>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             =================================================
+             5. FLOTA
+             =================================================
+             ================================================= -->
+
+        <section
+          id="fleetScreen"
+          class="game-section hidden"
+        >
+
+          <!--
+            game.js genera esta sección automáticamente.
+          -->
+
+        </section>
+
+
+
+        <!-- =================================================
+             =================================================
+             6. DIPLOMACIA
+             =================================================
+             ================================================= -->
+
+        <section
+          id="diplomacyScreen"
+          class="game-section hidden"
+        >
+
+          <!--
+            game.js genera aquí las civilizaciones conocidas,
+            relaciones y acuerdos mineros.
+          -->
+
+        </section>
+
+
+
+        <!-- =================================================
+             =================================================
+             7. MERCADO
+             =================================================
+             ================================================= -->
+
+        <section
+          id="marketScreen"
+          class="game-section hidden"
+        >
+
+          <!--
+            game.js genera aquí el Mercado.
+          -->
+
+        </section>
+
+
+
+        <!-- =================================================
+             =================================================
+             8. AMENAZAS
+             =================================================
+             ================================================= -->
+
+        <section
+          id="threatsScreen"
+          class="game-section hidden"
+        >
+
+
+          <section class="section-header">
+
+            <p>
+              Seguridad galáctica
+            </p>
+
+            <h2>
+              Amenazas
+            </h2>
+
+            <div class="description">
+
+              Aquí aparecerán crisis, rebeliones,
+              epidemias, invasiones y otros
+              peligros persistentes.
+
+            </div>
+
+          </section>
+
+
+
+          <section class="panel">
+
+
+            <div class="panel-header">
+
+              <h3>
+                Amenazas activas
+              </h3>
+
+            </div>
+
+
+            <div class="panel-content">
+
+              <div class="empty-message">
+
+                No existen amenazas activas.
+
+              </div>
+
+            </div>
+
+
+          </section>
+
+
+        </section>
+
+
+      </main>
+
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- =====================================================
+       =====================================================
+       MODAL DE DESCUBRIMIENTO
+       =====================================================
+       ===================================================== -->
+
+  <div
+    id="discoveryModal"
+    class="modal"
+  >
+
+
+    <div class="modal-card">
+
+
+      <div class="modal-label">
+
+        Nuevo mundo descubierto
+
+      </div>
+
+
+      <h2 id="modalPlanetName">
+
+        PLANETA
+
+      </h2>
+
+
+      <p
+        id="modalDescription"
+        class="modal-description"
+      >
+      </p>
+
+
+
+      <div class="modal-stats">
+
+
+        <div class="modal-stat">
+
+          <span>
+            Tipo
+          </span>
+
+          <strong id="modalType">
+          </strong>
+
+        </div>
+
+
+
+        <div class="modal-stat">
+
+          <span>
+            Peligro
+          </span>
+
+          <strong id="modalDanger">
+          </strong>
+
+        </div>
+
+
+
+        <div class="modal-stat">
+
+          <span>
+            Minerales
+          </span>
+
+          <strong id="modalMinerals">
+          </strong>
+
+        </div>
+
+
+
+        <div class="modal-stat">
+
+          <span>
+            Energía
+          </span>
+
+          <strong id="modalEnergy">
+          </strong>
+
+        </div>
+
+
+      </div>
+
+
+
+      <div
+        id="modalCivilization"
+        class="modal-civilization"
+      >
+      </div>
+
+
+
+      <button
+        type="button"
+        class="modal-button"
+        onclick="closeDiscoveryModal()"
+      >
+
+        Añadir a los archivos galácticos
+
+      </button>
+
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
+
+  <script src="game.js"></script>
+
+
+</body>
+
+</html>

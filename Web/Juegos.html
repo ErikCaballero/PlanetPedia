@@ -1,0 +1,380 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos - Planet Pedia</title>
+
+    <link rel="stylesheet" href="plantilla.css">
+
+    <style>
+        /* =========================
+           PÁGINA DE JUEGOS
+        ========================== */
+
+        .games-grid {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto 4rem auto;
+            padding: 0 2rem;
+
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Tarjeta completa */
+        .game-card {
+            display: flex;
+            flex-direction: column;
+
+            background-color: var(--bg-card);
+            border: 2px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+
+            text-decoration: none;
+            color: var(--text-main);
+
+            position: relative;
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+
+            min-height: 500px;
+        }
+
+        /* Imagen */
+        .game-image {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+            background-color: #0f1322;
+        }
+
+        .game-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+
+            transition:
+                transform 0.5s ease,
+                filter 0.5s ease;
+        }
+
+        /* Si todavía no tienes imagen */
+        .game-image-placeholder {
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: var(--text-muted);
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(79, 251, 223, 0.05),
+                    rgba(121, 82, 179, 0.08)
+                );
+        }
+
+        /* Información */
+        .game-info {
+            flex: 1;
+
+            padding: 1.5rem;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-info h2 {
+            font-size: 1.6rem;
+            color: var(--text-main);
+            margin-bottom: 0.8rem;
+        }
+
+        .game-description {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+
+        /* Etiqueta opcional */
+        .game-type {
+            color: var(--accent-purple);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+        }
+
+        /* Botón visual */
+        .play-btn {
+            align-self: flex-start;
+
+            background-color: transparent;
+            color: var(--accent-neon);
+
+            border: 1px solid var(--accent-neon);
+            border-radius: 5px;
+
+            padding: 0.7rem 1.2rem;
+
+            font-weight: 700;
+            font-size: 0.9rem;
+
+            transition:
+                background-color 0.3s ease,
+                color 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        /* =========================
+           EFECTOS HOVER
+        ========================== */
+
+        .game-card:hover {
+            transform: translateY(-7px);
+
+            border-color: var(--accent-neon);
+
+            box-shadow:
+                0 0 15px rgba(79, 251, 223, 0.2),
+                0 15px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        .game-card:hover .game-image img {
+            transform: scale(1.07);
+            filter: brightness(1.1);
+        }
+
+        .game-card:hover .play-btn {
+            background-color: var(--accent-neon);
+            color: var(--bg-space);
+
+            box-shadow:
+                0 0 12px rgba(79, 251, 223, 0.35);
+        }
+
+        /* =========================
+           EFECTO DE ESCANEO
+        ========================== */
+
+        @keyframes game-scan {
+            0% {
+                top: -30px;
+            }
+
+            100% {
+                top: 100%;
+            }
+        }
+
+        .game-card::before {
+            content: "";
+
+            position: absolute;
+            left: 0;
+            top: -30px;
+
+            width: 100%;
+            height: 25px;
+
+            background-color: rgba(79, 251, 223, 0.12);
+
+            box-shadow:
+                0 0 15px rgba(79, 251, 223, 0.25);
+
+            opacity: 0;
+
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .game-card:hover::before {
+            opacity: 1;
+            animation: game-scan 1.6s linear infinite;
+        }
+
+        /* Líneas estilo monitor */
+        .game-card::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                repeating-linear-gradient(
+                    to bottom,
+                    transparent 0px,
+                    transparent 3px,
+                    rgba(79, 251, 223, 0.025) 4px
+                );
+
+            pointer-events: none;
+            z-index: 4;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 700px) {
+            .games-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1.2rem;
+            }
+
+            .game-image {
+                height: 230px;
+            }
+
+            .game-card {
+                min-height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         CABECERA
+    ========================== -->
+
+    <header>
+        <div class="nav-container">
+
+            <a href="../index.html" class="logo">
+                PLANET<span>PEDIA</span>
+            </a>
+
+            <input
+                type="checkbox"
+                id="nav-toggle"
+                class="nav-toggle"
+                hidden
+            >
+
+            <label
+                for="nav-toggle"
+                class="menu-toggle"
+                aria-label="Abrir menú"
+            >
+                ≡
+            </label>
+
+            <nav>
+                <a href="../index.html">Inicio</a>
+                <a href="Planetas.html">Planetas</a>
+                <a href="Especies.html">Especies</a>
+                <a href="Línea Temporal.html">Línea Temporal</a>
+                <a href="Juegos.html" class="active">Juegos</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- =========================
+         TÍTULO
+    ========================== -->
+
+    <div class="section-header">
+
+        <h1>Juegos</h1>
+
+        <p>
+            Explora los juegos y experiencias interactivas
+            del universo de Planet Pedia.
+        </p>
+
+    </div>
+
+
+    <!-- =========================
+         JUEGOS
+    ========================== -->
+
+    <main class="games-grid">
+
+
+        <!-- =========================
+             JUEGO 1
+        ========================== -->
+
+        <a href="juegos/CardGameA/CardGameA.html" class="game-card">
+
+            <div class="game-image">
+
+                <img
+                    src="juegos/CardGameA/JuegoExploracion.png"
+                    alt="Imagen del Juego 1"
+                >
+
+            </div>
+
+            <div class="game-info">
+
+                <span class="game-type">
+                    Estrategia
+                </span>
+
+                <h2>
+                    Simulación de razas
+                </h2>
+
+                <p class="game-description">
+                    un pequeño juego que simula el control de una raza alienígena en las que puedes investigar planetas, establecer relaciones o recolectar recursos
+                </p>
+
+                <span class="play-btn">
+                    Jugar ahora →
+                </span>
+
+            </div>
+
+        </a>
+
+
+
+        
+
+            
+
+        </a>
+
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Planet Pedia.
+            Archivo de Lore del Universo en construcción.
+        </p>
+
+    </footer>
+
+
+</body>
+</html>
+```

@@ -1,0 +1,291 @@
+{
+  "aracnosephus": {
+    "id": "aracnosephus",
+    "name": "AracnoSephus",
+    "homeworld": "Webitia",
+    "image": "../../../../Especies alienigenas/AracnoSephus/AracnoSephus.png",
+
+    "description": "Especie arácnida inteligente, agresiva, cruel y territorial. Han desarrollado un poderoso imperio basado en la esclavitud y la obtención masiva de recursos.",
+
+    "playstyle": "military",
+
+    "specializations": [
+      "Esclavitud",
+      "Manipulación",
+      "Guerra",
+      "Engaño"
+    ],
+
+    "abilities": [
+      "Telarañas",
+      "Agilidad superior",
+      "Gran visión",
+      "Visión nocturna",
+      "Colmillos venenosos"
+    ],
+
+    "speciesStats": {
+      "strength": 2,
+      "agility": 4,
+      "resistance": 3,
+      "speed": 3,
+      "intelligence": 6,
+      "ability": 4
+    },
+
+    "startingResources": {
+      "credits": 650,
+      "minerals": 300,
+      "energy": 140,
+      "science": 20,
+      "military": 18
+    },
+
+    "modifiers": {
+      "creditProduction": 1.2,
+      "mineralProduction": 1.2,
+      "militaryDamage": 1.1,
+      "diplomacy": 0.75
+    }
+  },
+
+  "foxers": {
+    "id": "foxers",
+    "name": "Foxers",
+    "homeworld": "Aetheria",
+    "image": "../../../../Especies alienigenas/Los Foxers/Los Foxers.png",
+
+    "description": "Pequeña especie extremadamente inteligente, especializada en ingeniería, robótica y creación de tecnología avanzada.",
+
+    "playstyle": "technology",
+
+    "specializations": [
+      "Ingeniería",
+      "Robótica",
+      "Construcción",
+      "Electrónica",
+      "Informática",
+      "Armería"
+    ],
+
+    "abilities": [
+      "Gran inteligencia",
+      "Gran astucia",
+      "Expertos en tecnología",
+      "Gran capacidad de análisis",
+      "Creación de artefactos",
+      "Sentidos mejorados",
+      "Agilidad"
+    ],
+
+    "speciesStats": {
+      "strength": 0,
+      "agility": 5,
+      "resistance": 2,
+      "speed": 1,
+      "intelligence": 8,
+      "ability": 0
+    },
+
+    "startingResources": {
+      "credits": 550,
+      "minerals": 220,
+      "energy": 200,
+      "science": 50,
+      "military": 8
+    },
+
+    "modifiers": {
+      "researchSpeed": 1.3,
+      "constructionCost": 0.8,
+      "defenseStrength": 1.25,
+      "militaryDamage": 0.9
+    }
+  },
+
+  "sterons": {
+    "id": "sterons",
+    "name": "Sterons",
+    "homeworld": "Gradius 4",
+    "image": "../../../../Especies alienigenas/Sterons/Steron.png",
+
+    "description": "Raza guerrera y conquistadora adaptada a condiciones extremas. Su sociedad es militarista y emplea la conquista y la esclavitud para ampliar su territorio.",
+
+    "playstyle": "conquest",
+
+    "specializations": [
+      "Guerra",
+      "Conquista",
+      "Combate"
+    ],
+
+    "abilities": [
+      "Fuerza mejorada",
+      "Gran aguante al calor"
+    ],
+
+    "speciesStats": null,
+
+    "startingResources": {
+      "credits": 450,
+      "minerals": 320,
+      "energy": 130,
+      "science": 15,
+      "military": 22
+    },
+
+    "modifiers": {
+      "militaryDamage": 1.25,
+      "armyStrength": 1.25,
+      "mineralProduction": 1.1,
+      "diplomacy": 0.7
+    }
+  },
+
+  "varyths": {
+    "id": "varyths",
+    "name": "Varyths",
+    "homeworld": "Sabaya",
+    "image": "../../../../Especies alienigenas/Varyths/Varyth.png",
+
+    "description": "Raza guerrera que considera el combate una actividad ceremonial y honorable vinculada a sus creencias.",
+
+    "playstyle": "warrior",
+
+    "specializations": [
+      "Combate cuerpo a cuerpo",
+      "Guerra"
+    ],
+
+    "abilities": [
+      "Expertos en combate cuerpo a cuerpo",
+      "Gran agilidad",
+      "Alma de guerra"
+    ],
+
+    "speciesStats": {
+      "strength": 1,
+      "agility": 8,
+      "resistance": 6,
+      "speed": 3,
+      "intelligence": 3,
+      "ability": 0
+    },
+
+    "startingResources": {
+      "credits": 400,
+      "minerals": 280,
+      "energy": 160,
+      "science": 15,
+      "military": 24
+    },
+
+    "modifiers": {
+      "groundCombat": 1.35,
+      "militaryTraining": 1.25,
+      "researchSpeed": 0.9
+    }
+  },
+
+  "xelthorianos": {
+    "id": "xelthorianos",
+    "name": "Xel'thorianos",
+    "homeworld": "Sapphire Dom",
+    "image": "../../../../Especies alienigenas/Xelthorianos/Xelthoriano.jpeg",
+
+    "description": "Especie generalmente pacífica, social y altruista con una gran afinidad por la energía, la biología y la medicina.",
+
+    "playstyle": "energy",
+
+    "specializations": [
+      "Energía",
+      "Biología",
+      "Medicina"
+    ],
+
+    "abilities": [
+      "Inmunidad a la electricidad",
+      "Manipulación de electricidad",
+      "Generación de energía",
+      "Generación de electricidad",
+      "Gran inteligencia",
+      "Gran visión",
+      "Visión nocturna",
+      "Visión térmica",
+      "Visión mágica",
+      "Gran velocidad",
+      "Gran agilidad",
+      "Grandes saltos"
+    ],
+
+    "speciesStats": {
+      "strength": 1,
+      "agility": 4,
+      "resistance": 3,
+      "speed": 3,
+      "intelligence": 6,
+      "ability": 8
+    },
+
+    "startingResources": {
+      "credits": 500,
+      "minerals": 170,
+      "energy": 300,
+      "science": 35,
+      "military": 10
+    },
+
+    "modifiers": {
+      "energyProduction": 1.35,
+      "researchSpeed": 1.1,
+      "diplomacy": 1.2
+    }
+  },
+
+  "zornicos": {
+    "id": "zornicos",
+    "name": "Zornicos",
+    "homeworld": "Zorn 1",
+    "image": "../../../../Especies alienigenas/Zornicos/Zornico.png",
+
+    "description": "Sociedad unificada a nivel planetario con grandes capacidades para la caza y el combate, además de una extraordinaria relación biológica con la energía estelar.",
+
+    "playstyle": "balanced",
+
+    "specializations": [
+      "Combate cuerpo a cuerpo",
+      "Caza",
+      "Puntería"
+    ],
+
+    "abilities": [
+      "Combate cuerpo a cuerpo",
+      "Armas a distancia",
+      "Absorción de energía solar",
+      "Regeneración"
+    ],
+
+    "speciesStats": {
+      "strength": 1,
+      "agility": 4,
+      "resistance": 4,
+      "speed": 3,
+      "intelligence": 6,
+      "ability": 3
+    },
+
+    "startingResources": {
+      "credits": 500,
+      "minerals": 220,
+      "energy": 220,
+      "science": 25,
+      "military": 14
+    },
+
+    "modifiers": {
+      "energyProduction": 1.15,
+      "groundCombat": 1.1,
+      "regeneration": 1.2
+    }
+  }
+}
