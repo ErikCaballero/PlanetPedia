@@ -41,7 +41,8 @@ window.SPECIES_DATA = {
       "image": "../../../Especies alienigenas/Grimoriums/Grimorium.png",
       "tags": [
         "superior",
-        "pacifica"
+        "pacifica",
+        "grandes"
       ]
     },
     {
@@ -67,7 +68,8 @@ window.SPECIES_DATA = {
       "name": "Los Tortanks",
       "image": "../../../Especies alienigenas/Tortanks/Tortank.png",
       "tags": [
-        "primitiva"
+        "primitiva",
+        "grandes"
       ]
     },
     {
@@ -84,14 +86,6 @@ window.SPECIES_DATA = {
       "image": "../../../Especies alienigenas/Thanatofos/Thanatofo.png",
       "tags": [
         "superior"
-      ]
-    },
-    {
-      "id": "sharkinors",
-      "name": "Los Sharkinors",
-      "image": "../../../Especies alienigenas/Sharkinors/Sharkinor.png",
-      "tags": [
-        "guerrera"
       ]
     },
     {
@@ -151,7 +145,8 @@ window.SPECIES_DATA = {
       "name": "Los Grolux",
       "image": "../../../Especies alienigenas/Los Grolux/Los Grolux.png",
       "tags": [
-        "primitiva"
+        "primitiva",
+        "grandes"
       ]
     },
     {
@@ -160,7 +155,8 @@ window.SPECIES_DATA = {
       "image": "../../../Especies alienigenas/Invasores X/Invasores X.jpeg",
       "tags": [
         "cientifica",
-        "tecnologica"
+        "tecnologica",
+        "esclavista"
       ]
     },
     {
@@ -187,7 +183,8 @@ window.SPECIES_DATA = {
       "name": "Los Xelthorianos",
       "image": "../../../Especies alienigenas/Xelthorianos/Xelthoriano.jpeg",
       "tags": [
-        "guerrera"
+        "pacifica",
+        "estandar"
       ]
     },
     {
@@ -195,7 +192,8 @@ window.SPECIES_DATA = {
       "name": "Los Sharkinors",
       "image": "../../../Especies alienigenas/Sharkinors/Sharkinor.png",
       "tags": [
-        "guerrera"
+        "guerrera",
+        "grandes"
       ]
     },
     {
@@ -212,7 +210,8 @@ window.SPECIES_DATA = {
       "image": "../../../Especies alienigenas/Gigantodones/Gigantodon.png",
       "tags": [
         "pacifica",
-        "primitiva"
+        "primitiva",
+        "grandes"
       ]
     },
     {
