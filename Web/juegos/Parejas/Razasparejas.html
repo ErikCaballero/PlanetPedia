@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Memoria Galáctica - Planet Pedia</title>
+
+    <!-- CSS GENERAL DE TU WEB -->
+    <link rel="stylesheet" href="../../plantilla.css">
+
+    <!-- CSS DEL JUEGO -->
+    <link rel="stylesheet" href="juego-parejas.css">
+</head>
+
+
+<body>
+
+    <!-- ================================ -->
+    <!-- CABECERA PLANET PEDIA -->
+    <!-- ================================ -->
+
+    <header>
+
+        <div class="nav-container">
+
+            <a href="../index.html" class="logo">
+                PLANET<span>PEDIA</span>
+            </a>
+
+            <!-- MENÚ MÓVIL -->
+            <input
+                type="checkbox"
+                id="nav-toggle"
+                class="nav-toggle"
+                hidden
+            >
+
+            <label
+                for="nav-toggle"
+                class="menu-toggle"
+                aria-label="Abrir menú"
+            >
+                ≡
+            </label>
+
+
+            <nav>
+
+                <a href="../index.html">
+                    Inicio
+                </a>
+
+                <a href="planetas.html">
+                    Planetas
+                </a>
+
+                <a href="Especies.html">
+                    Especies
+                </a>
+
+                <a href="LineaTemporal.html">
+                    Línea Temporal
+                </a>
+
+                <a
+                    href="juego-parejas.html"
+                    class="active"
+                >
+                    Memoria Galáctica
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================================ -->
+    <!-- CONTENIDO PRINCIPAL -->
+    <!-- ================================ -->
+
+    <main class="memory-page">
+
+
+        <!-- PRESENTACIÓN -->
+
+        <section class="game-hero">
+
+            <div class="hero-badge">
+                ARCHIVO DE ENTRENAMIENTO XENOBIOLÓGICO
+            </div>
+
+            <h1>
+                Memoria
+                <span>Galáctica</span>
+            </h1>
+
+            <p>
+                Identifica y empareja los especímenes alienígenas
+                antes de que finalice el protocolo temporal.
+            </p>
+
+        </section>
+
+
+
+        <!-- ================================ -->
+        <!-- MENÚ DE DIFICULTAD -->
+        <!-- ================================ -->
+
+        <section
+            id="menu"
+            class="game-panel difficulty-panel"
+        >
+
+            <div class="panel-heading">
+
+                <span class="eyebrow">
+                    SELECCIÓN DE SIMULACIÓN
+                </span>
+
+                <h2>
+                    Elige el nivel de exploración
+                </h2>
+
+                <p>
+                    Cada señal alienígena aparece exactamente
+                    dos veces. Localiza todas las coincidencias
+                    antes de que termine el tiempo.
+                </p>
+
+            </div>
+
+
+
+            <div class="difficulty-grid">
+
+
+                <!-- 2x2 -->
+
+                <button
+                    class="difficulty-card"
+                    onclick="startGame(2, 15)"
+                >
+
+                    <span class="difficulty-code">
+                        PROTOCOLO 01
+                    </span>
+
+                    <strong>
+                        2 × 2
+                    </strong>
+
+                    <span>
+                        2 parejas
+                    </span>
+
+                    <small>
+                        00:15
+                    </small>
+
+                </button>
+
+
+
+                <!-- 4x4 -->
+
+                <button
+                    class="difficulty-card"
+                    onclick="startGame(4, 60)"
+                >
+
+                    <span class="difficulty-code">
+                        PROTOCOLO 02
+                    </span>
+
+                    <strong>
+                        4 × 4
+                    </strong>
+
+                    <span>
+                        8 parejas
+                    </span>
+
+                    <small>
+                        01:00
+                    </small>
+
+                </button>
+
+
+
+                <!-- 6x6 -->
+
+                <button
+                    class="difficulty-card"
+                    onclick="startGame(6, 120)"
+                >
+
+                    <span class="difficulty-code">
+                        PROTOCOLO 03
+                    </span>
+
+                    <strong>
+                        6 × 6
+                    </strong>
+
+                    <span>
+                        18 parejas
+                    </span>
+
+                    <small>
+                        02:00
+                    </small>
+
+                </button>
+
+
+
+                <!-- 8x8 -->
+
+                <button
+                    class="difficulty-card"
+                    onclick="startGame(8, 800)"
+                >
+
+                    <span class="difficulty-code">
+                        PROTOCOLO 04
+                    </span>
+
+                    <strong>
+                        8 × 8
+                    </strong>
+
+                    <span>
+                        32 parejas
+                    </span>
+
+                    <small>
+                        04:00
+                    </small>
+
+                </button>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================ -->
+        <!-- JUEGO -->
+        <!-- ================================ -->
+
+        <section
+            id="game"
+            class="game-shell"
+        >
+
+
+            <!-- INFORMACIÓN DEL JUEGO -->
+
+            <div class="hud">
+
+
+                <div class="hud-box">
+
+                    <span>
+                        TIEMPO RESTANTE
+                    </span>
+
+                    <strong id="timer">
+                        00:00
+                    </strong>
+
+                </div>
+
+
+
+                <div class="hud-box">
+
+                    <span>
+                        PAREJAS VERIFICADAS
+                    </span>
+
+                    <strong>
+
+                        <span id="matches">
+                            0
+                        </span>
+
+                        /
+
+                        <span id="totalPairs">
+                            0
+                        </span>
+
+                    </strong>
+
+                </div>
+
+
+
+                <div class="hud-box">
+
+                    <span>
+                        INTENTOS
+                    </span>
+
+                    <strong id="attempts">
+                        0
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- TABLERO -->
+
+            <div class="board-frame">
+
+                <div class="scanline"></div>
+
+                <div id="board"></div>
+
+            </div>
+
+
+
+            <!-- BOTONES -->
+
+            <div class="controls">
+
+
+                <button
+                    class="secondary-btn"
+                    onclick="restartGame()"
+                >
+                    ⟳ Reiniciar protocolo
+                </button>
+
+
+                <button
+                    class="secondary-btn"
+                    onclick="goToMenu()"
+                >
+                    ← Cambiar dificultad
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ================================ -->
+    <!-- RESULTADO -->
+    <!-- ================================ -->
+
+    <div
+        id="result"
+        class="result-overlay"
+    >
+
+
+        <div class="result-box">
+
+
+            <span class="result-code">
+                INFORME DE MISIÓN
+            </span>
+
+
+            <div
+                id="resultIcon"
+                class="result-icon"
+            >
+                ◉
+            </div>
+
+
+            <h2 id="resultTitle"></h2>
+
+
+            <p id="resultText"></p>
+
+
+
+            <div class="result-actions">
+
+
+                <button
+                    class="primary-btn"
+                    onclick="restartGame()"
+                >
+                    Repetir misión
+                </button>
+
+
+                <button
+                    class="secondary-btn"
+                    onclick="goToMenu()"
+                >
+                    Volver al archivo
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================================ -->
+    <!-- FOOTER -->
+    <!-- ================================ -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Planet Pedia.
+            Archivo de Lore del Universo en construcción.
+        </p>
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="juego-parejas.js"></script>
+
+
+</body>
+
+</html>

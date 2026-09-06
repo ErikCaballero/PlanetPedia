@@ -163,6 +163,14 @@ const baseDatosEspecies = {
         inteligencia: 3,
         habilidad: 1
     },
+    Samyatis: {
+        fuerza: 1,
+        agilidad: 3,
+        resistencia: 4,
+        velocidad: 1,
+        inteligencia: 3,
+        habilidad: 7
+    },
     Tibutrones: {
         fuerza: 4,
         agilidad: 3,
