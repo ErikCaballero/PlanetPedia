@@ -173,8 +173,11 @@ const availableImages = [
 
     "../../../Especies alienigenas/Permians/Permian icono.png",
 
-    "../../../Especies alienigenas/Thaldrins/Thaldrin icono.png"
+    "../../../Especies alienigenas/Thaldrins/Thaldrin icono.png",
 
+    "../../../Especies alienigenas/Grynthars/Grynthar icono.png",
+
+    "../../../Especies alienigenas/Kothars/Kothar icono.png"
 ];
 
 

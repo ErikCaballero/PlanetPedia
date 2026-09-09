@@ -107,6 +107,14 @@ const baseDatosEspecies = {
         inteligencia: 1,
         habilidad: 5
     },
+    Grynthars: {
+        fuerza: 4,
+        agilidad: 3,
+        resistencia: 4,
+        velocidad: 0,
+        inteligencia: 6,
+        habilidad: 0
+    },
     InvasoresX: {
         fuerza: 5,
         agilidad: 8,
@@ -130,6 +138,14 @@ const baseDatosEspecies = {
         velocidad: 1,
         inteligencia: 4,
         habilidad: 0
+    },
+    Kothars: {
+        fuerza: 6,
+        agilidad: 6,
+        resistencia: 8,
+        velocidad: 3,
+        inteligencia: 3,
+        habilidad: 1
     },
     Legionarios: {
         fuerza: 6,
