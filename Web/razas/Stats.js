@@ -3,6 +3,14 @@
 // ==========================================
 const baseDatosEspecies = {
 
+    Albirions: {
+        fuerza: 4,
+        agilidad: 8,
+        resistencia: 4,
+        velocidad: 2,
+        inteligencia: 6,
+        habilidad: 2
+    },
     AracnoSephus: {
         fuerza: 2,
         agilidad: 4,

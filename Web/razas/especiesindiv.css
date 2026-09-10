@@ -525,6 +525,7 @@
                 flex-wrap: wrap;
                 gap: 10px;
                 margin-top: 15px;
+                margin-bottom: 10px;
             }
             .subrazasDiv a{
                 max-width: 360px;
@@ -545,6 +546,13 @@
             .skillLink{
                 text-decoration: none;
                 color: #00e1ff;
+            }
+
+            .extincion{
+                color: red; 
+                font-weight: bold; 
+                font-size: 4rem; 
+                margin-top: 10px;
             }
             /* TABLETS */
             @media (max-width: 900px) {
