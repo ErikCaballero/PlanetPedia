@@ -143,7 +143,7 @@ const baseDatosEspecies = {
         fuerza: 6,
         agilidad: 6,
         resistencia: 8,
-        velocidad: 3,
+        velocidad: 4,
         inteligencia: 3,
         habilidad: 1
     },

@@ -537,6 +537,15 @@
             .subrazasDiv a div {
                 text-align: center;
             }
+
+
+            .especie-link{
+                color: #33ff99;
+            }
+            .skillLink{
+                text-decoration: none;
+                color: #00e1ff;
+            }
             /* TABLETS */
             @media (max-width: 900px) {
 
