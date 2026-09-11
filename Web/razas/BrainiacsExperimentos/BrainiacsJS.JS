@@ -71,7 +71,7 @@ const experimentos = [
             "ElectroHexes",
 
         imagen:
-            "img/ElectroHexes.png",
+            "img/ElectroHexes.webp",
 
         categoria:
             "Energía / Biología",
@@ -112,7 +112,7 @@ const experimentos = [
             "Mente Espejo",
 
         imagen:
-            "img/RecuerdosBR.png",
+            "img/RecuerdosBR.webp",
 
         categoria:
             "Neurociencia",
@@ -192,7 +192,7 @@ const experimentos = [
             "Super Fertilizante",
 
         imagen:
-            "img/SuperFertilizante.png",
+            "img/SuperFertilizante.webp",
 
         categoria:
             "Agricultura y Ecología",
@@ -270,7 +270,7 @@ const experimentos = [
                     "El Devorados estelar",
 
                 imagen:
-                    "img/DevoradorEstelar.png",
+                    "img/DevoradorEstelar.webp",
 
                 categoria:
                     "Biología, energía y genética",
@@ -309,7 +309,7 @@ const experimentos = [
                         "El organismo quimera",
 
                     imagen:
-                        "img/OrganismoQuimera.png",
+                        "img/OrganismoQuimera.webp",
 
                     categoria:
                         "Biología y genética",
@@ -348,7 +348,7 @@ const experimentos = [
                             "El organismo quimera",
 
                         imagen:
-                            "img/OrganismoQuimera.png",
+                            "img/OrganismoQuimera.webp",
 
                         categoria:
                             "Biología y genética",

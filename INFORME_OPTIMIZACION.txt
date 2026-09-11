@@ -1,0 +1,8 @@
+PlanetPedia - compilación final
+Header común: incluido
+Imágenes JPG/JPEG/PNG convertidas: 293
+Peso antes: 610.51 MB
+Peso WebP: 59.90 MB
+Reducción: 90.2 %
+Archivos con referencias actualizadas: 6
+Referencias pendientes: 0
