@@ -181,7 +181,9 @@ const availableImages = [
     
     "../../../Especies alienigenas/Albirions/Albirion icono.png",
 
-    "../../../Especies alienigenas/Bulnaris/Bulnari icono.png"
+    "../../../Especies alienigenas/Bulnaris/Bulnari icono.png",
+
+    "../../../Especies alienigenas/Blukeys/Blukey icono.png"
 ];
 
 
