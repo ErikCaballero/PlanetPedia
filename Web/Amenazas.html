@@ -8,20 +8,8 @@
     <link rel="stylesheet" href="amenazas.css">
 </head>
 <body>
-    <header>
-        <div class="nav-container">
-            <a href="../index.html" class="logo">PLANET<span>PEDIA</span></a>
-            <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden />
-            <label for="nav-toggle" class="menu-toggle" aria-label="Abrir menú">≡</label>
-            <nav>
-                <a href="../index.html">Inicio</a>
-                <a href="Planetas.html">Planetas</a>
-                <a href="Especies.html">Especies</a>
-                <a href="LineaTemporal.html">Línea Temporal</a>
-                <a href="Amenazas.html" class="active">Amenazas</a>
-            </nav>
-        </div>
-    </header>
+    <div id="planetpedia-header"></div>
+    <script src="../components/header.js"></script>
 
     <section class="threat-hero">
         <div class="threat-hero__badge">ARCHIVO DE SEGURIDAD GALÁCTICA</div>
@@ -44,8 +32,6 @@
         </select>
         <select id="level-filter" onchange="filtrarAmenazas()">
             <option value="todos">Todos los niveles</option>
-            <option value="1">Nivel I</option>
-            <option value="2">Nivel II</option>
             <option value="3">Nivel III</option>
             <option value="4">Nivel IV</option>
             <option value="5">Nivel V</option>
@@ -62,7 +48,7 @@
             <div class="threat-card__content">
                 <div class="threat-meta">
                     <span class="threat-type">Bactería</span>
-                    <span class="danger danger-3">NIVEL II</span>
+                    <span class="danger danger-5">NIVEL III</span>
                 </div>
                 <h2>El CROPT</h2>
                 <p>Una bactería capaz de adueñarse de sistemas biológicos y manipular su funcionamiento, además de contar con una mente colmena super desarrollada que no cuenta con debilidades.</p>

@@ -270,10 +270,6 @@
 .species-link:active {
         color: inherit;
 }
-a{
-    text-decoration: none;
-    color: blueviolet;
-}
 /* ==========================================================================
    Adaptabilidad / Diseño Responsivo
    ========================================================================== */
