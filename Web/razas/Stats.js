@@ -43,6 +43,22 @@ const baseDatosEspecies = {
         inteligencia: 6,
         habilidad: 5
     },
+    Bulinos: {
+        fuerza: 1,
+        agilidad: 5,
+        resistencia: 3,
+        velocidad: 1,
+        inteligencia: 6,
+        habilidad: 5
+    },
+    Bulnaris: {
+        fuerza: 1,
+        agilidad: 6,
+        resistencia: 4,
+        velocidad: 4,
+        inteligencia: 4,
+        habilidad: 0
+    },
     Ceruleans: {
         fuerza: 3,
         agilidad: 4,

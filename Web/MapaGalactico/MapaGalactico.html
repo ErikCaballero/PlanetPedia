@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+
+  <title>Mapa Galáctico</title>
+
+  <link rel="stylesheet" href="mapacss.css">
+</head>
+
+<body>
+
+  <main id="galaxy-app">
+
+    <canvas
+      id="galaxy-map"
+      aria-label="Mapa galáctico interactivo"
+    ></canvas>
+
+
+    <!-- =========================
+         BARRA SUPERIOR
+    ========================== -->
+
+    <header class="map-topbar">
+
+      <div class="map-brand">
+        <strong>ASTRA CARTOGRAPHICA</strong>
+        <span>Mapa del universo conocido</span>
+      </div>
+
+
+      <form
+        class="map-search"
+        id="map-search-form"
+      >
+
+        <label
+          class="sr-only"
+          for="map-search-input"
+        >
+          Buscar lugar
+        </label>
+
+        <input
+          id="map-search-input"
+          type="search"
+          autocomplete="off"
+          placeholder="Buscar galaxia, sistema o mundo…"
+        >
+
+        <button
+          type="submit"
+          aria-label="Buscar"
+        >
+          ⌕
+        </button>
+
+      </form>
+
+
+      <div
+        class="map-controls"
+        aria-label="Controles del mapa"
+      >
+
+        <button
+          id="zoom-out"
+          type="button"
+          title="Alejar"
+          aria-label="Alejar"
+        >
+          −
+        </button>
+
+        <button
+          id="zoom-in"
+          type="button"
+          title="Acercar"
+          aria-label="Acercar"
+        >
+          +
+        </button>
+
+        <button
+          id="reset-view"
+          type="button"
+          title="Vista inicial"
+          aria-label="Vista inicial"
+        >
+          ⌂
+        </button>
+
+      </div>
+
+    </header>
+
+
+    <!-- =========================
+         INDICADOR DE ZOOM
+    ========================== -->
+
+    <div
+      class="map-zoom"
+      id="map-zoom-label"
+    >
+      Zoom 100%
+    </div>
+
+
+    <!-- =========================
+         LEYENDA
+    ========================== -->
+
+    <div
+      class="map-legend"
+      aria-hidden="true"
+    >
+
+      <div>
+        <span class="legend-dot galaxy"></span>
+        Galaxia
+      </div>
+
+      <div>
+        <span class="legend-dot system"></span>
+        Sistema
+      </div>
+
+      <div>
+        <span class="legend-dot world"></span>
+        Mundo
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         PANEL DE INFORMACIÓN
+    ========================== -->
+
+    <aside
+      class="info-panel"
+      id="info-panel"
+      aria-live="polite"
+    >
+
+      <button
+        class="info-close"
+        id="info-close"
+        type="button"
+        aria-label="Cerrar panel"
+      >
+        ✕
+      </button>
+
+
+      <div
+        class="info-type"
+        id="info-type"
+      >
+        Objeto
+      </div>
+
+
+      <h1 id="info-title">
+        Nombre
+      </h1>
+
+
+      <div
+        class="info-subtitle"
+        id="info-subtitle"
+      ></div>
+
+
+      <p id="info-description"></p>
+
+
+      <div class="info-meta">
+
+        <div>
+          <span>Coordenadas</span>
+          <strong id="info-coordinates">
+            0, 0
+          </strong>
+        </div>
+
+        <div>
+          <span>Escala</span>
+          <strong id="info-scale">
+            —
+          </strong>
+        </div>
+
+      </div>
+
+
+      <a
+        id="info-link"
+        href="#"
+        hidden
+      >
+        Ver página
+      </a>
+
+    </aside>
+
+  </main>
+
+
+  <!-- IMPORTANTE:
+       universe-data.js debe cargarse primero -->
+  <script src="universo.js"></script>
+  <script src="mapa.js"></script>
+
+</body>
+</html>
