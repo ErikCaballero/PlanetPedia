@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupos y Facciones - Planet Pedia</title>
+
+    <!-- Ajusta esta ruta si tu plantilla.css está en otra carpeta -->
+    <link rel="stylesheet" href="plantilla.css">
+    <link rel="stylesheet" href="grupos.css">
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <a href="../index.html" class="logo">PLANET<span>PEDIA</span></a>
+
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
+        <label for="nav-toggle" class="menu-toggle" aria-label="Abrir menú">≡</label>
+
+        <nav>
+            <a href="../index.html">Inicio</a>
+            <a href="Planetas.html">Planetas</a>
+            <a href="Especies.html">Especies</a>
+            <a href="Grupos.html" class="active">Grupos</a>
+            <a href="LineaTemporal.html">Línea Temporal</a>
+        </nav>
+    </div>
+</header>
+
+<section class="section-header groups-header">
+    <p class="eyebrow">ARCHIVO POLÍTICO · MILITAR · CRIMINAL</p>
+    <h1>Grupos y Facciones</h1>
+    <p>Imperios, federaciones, uniones planetarias, corporaciones, órdenes, carteles y demás organizaciones conocidas.</p>
+</section>
+
+<section class="filters-container" aria-label="Filtros del catálogo">
+    <label class="search-box">
+        <span class="sr-only">Buscar grupo</span>
+        <input
+            type="search"
+            id="group-search"
+            placeholder="Buscar grupo, líder, territorio..."
+            autocomplete="off"
+        >
+    </label>
+
+    <select id="type-filter" aria-label="Filtrar por tipo">
+        <option value="todos">Todos los tipos</option>
+        <option value="imperio">Imperio</option>
+        <option value="federacion">Federación</option>
+        <option value="union">Unión / alianza</option>
+        <option value="corporacion">Corporación</option>
+        <option value="militar">Organización militar</option>
+        <option value="criminal">Organización criminal</option>
+        <option value="cartel">Cartel</option>
+        <option value="culto">Culto / orden</option>
+        <option value="rebelde">Grupo rebelde</option>
+        <option value="otro">Otro</option>
+    </select>
+
+    <select id="status-filter" aria-label="Filtrar por estado">
+        <option value="todos">Cualquier estado</option>
+        <option value="activo">Activo</option>
+        <option value="debilitado">Debilitado</option>
+        <option value="desaparecido">Desaparecido</option>
+        <option value="desconocido">Estado desconocido</option>
+    </select>
+
+    <button id="sort-btn" type="button" data-order="asc">Ordenar: A → Z</button>
+</section>
+
+<main class="groups-grid" id="groups-grid">
+
+    <!-- ============================================================
+         EJEMPLO 1 · DUPLICA ESTA TARJETA PARA AÑADIR MÁS GRUPOS
+         data-search: palabras adicionales que quieras encontrar
+         data-type: imperio, federacion, union, corporacion, militar,
+                    criminal, cartel, culto, rebelde u otro
+         data-status: activo, debilitado, desaparecido o desconocido
+         ============================================================ -->
+    <a
+        href="grupos/PlantillaGrupo.html"
+        class="group-card"
+        data-name="Imperio de Ejemplo"
+        data-type="imperio"
+        data-status="activo"
+        data-search="imperio ejemplo emperador capital expansión militar"
+    >
+        <div class="card-img-wrapper">
+            <img src="../Grupos/Imperio de Ejemplo/portada.jpg" alt="Imperio de Ejemplo">
+        </div>
+
+        <div class="card-shade"></div>
+
+        <div class="card-topline">
+            <span class="type-chip">Imperio</span>
+            <span class="status-dot status-active">Activo</span>
+        </div>
+
+        <div class="card-info">
+            <p class="card-kicker">POTENCIA INTERESTELAR</p>
+            <h2>Imperio de Ejemplo</h2>
+            <p class="card-summary">Estado expansionista que controla varios sistemas y numerosas especies.</p>
+            <div class="card-meta">
+                <span>Capital: Nova Prime</span>
+                <span>Influencia: Muy alta</span>
+            </div>
+            <span class="view-btn">ABRIR EXPEDIENTE</span>
+        </div>
+    </a>
+
+    <!-- EJEMPLO 2 -->
+    <a
+        href="#"
+        class="group-card"
+        data-name="Cartel de Ejemplo"
+        data-type="cartel"
+        data-status="activo"
+        data-search="cartel criminal contrabando mercado negro piratas"
+    >
+        <div class="card-img-wrapper">
+            <img src="../Grupos/Cartel de Ejemplo/portada.jpg" alt="Cartel de Ejemplo">
+        </div>
+        <div class="card-shade"></div>
+        <div class="card-topline">
+            <span class="type-chip danger">Cartel</span>
+            <span class="status-dot status-active">Activo</span>
+        </div>
+        <div class="card-info">
+            <p class="card-kicker">RED CRIMINAL</p>
+            <h2>Cartel de Ejemplo</h2>
+            <p class="card-summary">Organización clandestina dedicada al contrabando y al comercio ilegal.</p>
+            <div class="card-meta">
+                <span>Base: Desconocida</span>
+                <span>Amenaza: Alta</span>
+            </div>
+            <span class="view-btn">ABRIR EXPEDIENTE</span>
+        </div>
+    </a>
+
+    <!-- EJEMPLO 3 -->
+    <a
+        href="#"
+        class="group-card"
+        data-name="Unión de Mundos Libres"
+        data-type="union"
+        data-status="activo"
+        data-search="union alianza planetas cooperación diplomacia comercio"
+    >
+        <div class="card-img-wrapper">
+            <img src="../Grupos/Union de Mundos Libres/portada.jpg" alt="Unión de Mundos Libres">
+        </div>
+        <div class="card-shade"></div>
+        <div class="card-topline">
+            <span class="type-chip peaceful">Unión</span>
+            <span class="status-dot status-active">Activo</span>
+        </div>
+        <div class="card-info">
+            <p class="card-kicker">ALIANZA PLANETARIA</p>
+            <h2>Unión de Mundos Libres</h2>
+            <p class="card-summary">Coalición política creada para proteger rutas, comercio y soberanía de sus miembros.</p>
+            <div class="card-meta">
+                <span>Sistemas: 12</span>
+                <span>Modelo: Confederación</span>
+            </div>
+            <span class="view-btn">ABRIR EXPEDIENTE</span>
+        </div>
+    </a>
+
+</main>
+
+<p class="empty-message" id="empty-message" hidden>No hay grupos que coincidan con los filtros.</p>
+
+<footer>
+    <p>Planet Pedia · Archivo galáctico de grupos y facciones</p>
+</footer>
+
+<script>
+const searchInput = document.getElementById('group-search');
+const typeFilter = document.getElementById('type-filter');
+const statusFilter = document.getElementById('status-filter');
+const sortBtn = document.getElementById('sort-btn');
+const grid = document.getElementById('groups-grid');
+const emptyMessage = document.getElementById('empty-message');
+
+function normalizeText(text) {
+    return text
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
+}
+
+function applyFilters() {
+    const query = normalizeText(searchInput.value.trim());
+    const selectedType = typeFilter.value;
+    const selectedStatus = statusFilter.value;
+    const cards = [...grid.querySelectorAll('.group-card')];
+    let visible = 0;
+
+    cards.forEach(card => {
+        const searchable = normalizeText(
+            `${card.dataset.name} ${card.dataset.search || ''} ${card.textContent}`
+        );
+
+        const matchesSearch = !query || searchable.includes(query);
+        const matchesType = selectedType === 'todos' || card.dataset.type === selectedType;
+        const matchesStatus = selectedStatus === 'todos' || card.dataset.status === selectedStatus;
+        const show = matchesSearch && matchesType && matchesStatus;
+
+        card.hidden = !show;
+        if (show) visible++;
+    });
+
+    emptyMessage.hidden = visible !== 0;
+}
+
+function sortCards() {
+    const currentOrder = sortBtn.dataset.order;
+    const nextOrder = currentOrder === 'asc' ? 'desc' : 'asc';
+    const cards = [...grid.querySelectorAll('.group-card')];
+
+    cards.sort((a, b) => {
+        const nameA = a.dataset.name.localeCompare(b.dataset.name, 'es', { sensitivity: 'base' });
+        return currentOrder === 'asc' ? nameA : -nameA;
+    });
+
+    cards.forEach(card => grid.appendChild(card));
+    sortBtn.dataset.order = nextOrder;
+    sortBtn.textContent = currentOrder === 'asc' ? 'Ordenar: Z → A' : 'Ordenar: A → Z';
+}
+
+searchInput.addEventListener('input', applyFilters);
+typeFilter.addEventListener('change', applyFilters);
+statusFilter.addEventListener('change', applyFilters);
+sortBtn.addEventListener('click', sortCards);
+</script>
+
+</body>
+</html>

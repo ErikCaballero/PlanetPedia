@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ============================================================
+         CAMBIA 1: NOMBRE DEL GRUPO
+         ============================================================ -->
+    <title>Expediente - Unión de Planetas Independientes</title>
+
+    <!-- Ajusta las rutas según dónde guardes este archivo -->
+    <link rel="stylesheet" href="../plantilla.css">
+    <link rel="stylesheet" href="gruposindiv.css">
+</head>
+
+<!--
+    CAMBIA 2: COLOR TEMÁTICO DEL GRUPO
+    --group-accent: color principal
+    --group-accent-rgb: el MISMO color convertido a RGB, sin rgb()
+
+    Ejemplos:
+    Cian      #4ffbdf  => 79, 251, 223
+    Rojo      #ff4b5c  => 255, 75, 92
+    Morado    #9c72ff  => 156, 114, 255
+    Dorado    #ffc857  => 255, 200, 87
+-->
+<body style="--group-accent:#9c72ff; --group-accent-rgb:156,114,255;">
+
+<header>
+    <div class="nav-container">
+        <a href="../../index.html" class="logo">PLANET<span>PEDIA</span></a>
+
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
+        <label for="nav-toggle" class="menu-toggle" aria-label="Abrir menú">≡</label>
+
+        <nav>
+            <a href="../../index.html">Inicio</a>
+            <a href="../Planetas.html">Planetas</a>
+            <a href="../Especies.html">Especies</a>
+            <a href="../Grupos.html" class="active">Grupos</a>
+            <a href="../LineaTemporal.html">Línea Temporal</a>
+        </nav>
+    </div>
+</header>
+
+<main class="faction-page">
+
+    <!-- ============================================================
+         CABECERA / HERO
+         CAMBIA imagen, emblema, nombre, tipo y descripción corta
+         ============================================================ -->
+    <section class="faction-hero">
+        <img
+            class="hero-background"
+            src="../../Grupos/Imperio de Ejemplo/portada.jpg"
+            alt="Territorios del Imperio de Ejemplo"
+        >
+        <div class="hero-overlay"></div>
+        <div class="hero-scanlines"></div>
+
+        <div class="hero-content">
+            <div class="emblem-box">
+                <img
+                    src="../../Grupos/Imperio de Ejemplo/emblema.png"
+                    alt="Emblema del Imperio de Ejemplo"
+                >
+            </div>
+
+            <div class="hero-copy">
+                <div class="hero-badges">
+                    <span class="badge badge-type">Coalición</span>
+                    <span class="badge badge-status active">● ACTIVO</span>
+                </div>
+
+                <p class="classification">EXPEDIENTE DE FACCIÓN · NIVEL DE INFLUENCIA: MUY ALTO</p>
+                <h1>Unión de Planetas Independientes</h1>
+                <p class="hero-description">
+                    La Unión de Planetas Independientes es una coalición de planetas que buscan mantener su autonomía y seguridad frente a la expansión de imperios y amenazas externas.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         DATOS RÁPIDOS
+         Puedes borrar o duplicar cualquier tarjeta
+         ============================================================ -->
+    <section class="quick-facts" aria-label="Datos principales del grupo">
+        <article class="fact-card">
+            <span class="fact-label">Tipo</span>
+            <strong>Coalición</strong>
+        </article>
+
+        <article class="fact-card">
+            <span class="fact-label">Fundación</span>
+            <strong>Año 12.430 E.G.</strong>
+        </article>
+
+        <article class="fact-card">
+            <span class="fact-label">Líder</span>
+            <strong>Emperador/a Nombre</strong>
+        </article>
+
+        <article class="fact-card">
+            <span class="fact-label">Capital / sede</span>
+            <strong>Nova Prime</strong>
+        </article>
+
+        <article class="fact-card">
+            <span class="fact-label">Territorio</span>
+            <strong>27 sistemas</strong>
+        </article>
+
+        <article class="fact-card">
+            <span class="fact-label">Población estimada</span>
+            <strong>Desconocida</strong>
+        </article>
+
+        <article class="fact-card">
+            <span class="fact-label">Modelo de gobierno</span>
+            <strong>República</strong>
+        </article>
+
+        <article class="fact-card">
+            <span class="fact-label">Estado</span>
+            <strong class="positive-text">Activo</strong>
+        </article>
+    </section>
+
+    <div class="content-layout">
+        <div class="main-column">
+
+            <!-- ========================================================
+                 DESCRIPCIÓN GENERAL
+                 ======================================================== -->
+            <section class="content-panel" id="descripcion">
+                <div class="section-title-row">
+                    <div>
+                        <p class="section-code">01 / IDENTIDAD</p>
+                        <h2>Descripción general</h2>
+                    </div>
+                </div>
+
+                <p>La Unión de Planetas Independientes se originó hace mucho mucho tiempo, un grupo de planteas, artos de ser constantemente aterrorizados por los imperios cercanos decidieron aunar fuerzas para combatirlos y tener una esperanza de sobrevivir, de esta forma, pudieron echar a los imperios de su sistema, aunque a cambio de una gran pérdida, miles de millones de vidas se perdieron en aquella larga guerra.</p>
+                <p>Esta unión llamó la atención de muchos, aumentando sus números hasta niveles muy altos.</p>
+
+
+                <div class="highlight-box">
+                    <span class="highlight-label">PRINCIPIO CENTRAL</span>
+                    <p>“Todos pueden unirse contra la injusticia y el mal.”</p>
+                </div>
+            </section>
+
+            <!-- ========================================================
+                 OBJETIVOS Y ACTIVIDADES
+                 ======================================================== -->
+            <section class="content-panel" id="actividades">
+                <div class="section-title-row">
+                    <div>
+                        <p class="section-code">02 / OPERACIONES</p>
+                        <h2>Qué hacen</h2>
+                    </div>
+                </div>
+
+                <div class="activity-grid">
+                    <article class="activity-card">
+                        <span class="activity-number">01</span>
+                        <h3>Expansión territorial</h3>
+                        <p>Conquistan, integran o anexionan nuevos sistemas para ampliar su esfera de influencia.</p>
+                    </article>
+
+                    <article class="activity-card">
+                        <span class="activity-number">02</span>
+                        <h3>Control comercial</h3>
+                        <p>Protegen o monopolizan rutas, recursos y mercados estratégicos.</p>
+                    </article>
+
+                    <article class="activity-card">
+                        <span class="activity-number">03</span>
+                        <h3>Investigación tecnológica</h3>
+                        <p>Financian proyectos científicos y tecnológicos para mantener superioridad sobre sus rivales.</p>
+                    </article>
+
+                    <article class="activity-card">
+                        <span class="activity-number">04</span>
+                        <h3>Diplomacia y espionaje</h3>
+                        <p>Utilizan embajadas, pactos, agentes y redes de información para conseguir ventajas políticas.</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Razas integrantes -->
+            <button type="button" class="btn-desplegar-stats btn-toggle" onclick="toggleSection('panel-razas', 'flecha-razas')">
+                <span>Razas integrantes</span>
+                <span class="flecha" id="flecha-razas">▼</span>
+            </button>
+
+            <div class="stats-container oculto" id="panel-razas">
+                <div class="grid-cards">
+
+                    <a href="../razas/Foxers.html" class="species-link">
+                        <div class="fotos-div1">
+                            <img src="../../Especies alienigenas/Los Foxers/Los Foxers.png" alt="Foxers" class="species-image">
+                            <h3 class="titulo-fotos">Foxers</h3>
+                            <p class="descripcion-fotos">Especialistas tecnológicos encargados de la ingeniería, robótica y desarrollo de tecnología dentro del grupo.</p>
+                            <span class="poblacion-fotos">Función: Ingeniería y tecnología</span>
+                        </div>
+                    </a>
+
+                    <a href="../razas/Klagors.html" class="species-link">
+                        <div class="fotos-div1">
+                            <img src="../../Especies alienigenas/Klagors/Klagor.jpeg" alt="Klagors" class="species-image">
+                            <h3 class="titulo-fotos">Klagors</h3>
+                            <p class="descripcion-fotos">Guerreros utilizados principalmente como soldados, fuerzas de choque y defensores de los territorios del grupo.</p>
+                            <span class="poblacion-fotos">Función: Ejército</span>
+                        </div>
+                    </a>
+
+                    <a href="../razas/Velorians.html" class="species-link">
+                        <div class="fotos-div1">
+                            <img src="../../Especies alienigenas/Velorians/Velorian.jpeg" alt="Velorians" class="species-image">
+                            <h3 class="titulo-fotos">Velorians</h3>
+                            <p class="descripcion-fotos">Gracias a su enorme velocidad son utilizados como exploradores, mensajeros y unidades de respuesta rápida.</p>
+                            <span class="poblacion-fotos">Función: Exploración y logística</span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- ========================================================
+                 SUBGRUPOS / DIVISIONES INTERNAS
+                 Esto sirve para ejércitos, casas nobles, células,
+                 departamentos, carteles subordinados, órdenes, etc.
+                 ======================================================== -->
+            <section class="content-panel" id="divisiones">
+                <div class="section-title-row">
+                    <div>
+                        <p class="section-code">04 / ESTRUCTURA</p>
+                        <h2>Grupos internos y divisiones</h2>
+                    </div>
+                </div>
+
+                <div class="entity-grid compact-grid">
+                    <article class="entity-card static-card">
+                        <div class="entity-image-wrap small-image">
+                            <img src="../../Grupos/Imperio de Ejemplo/guardia-imperial.jpg" alt="Guardia Imperial">
+                            <span class="entity-tag">MILITAR</span>
+                        </div>
+                        <div class="entity-content">
+                            <h3>Guardia Imperial</h3>
+                            <p>Unidad de élite encargada de proteger al gobierno, la capital y objetivos de máxima prioridad.</p>
+                        </div>
+                    </article>
+
+                    <article class="entity-card static-card">
+                        <div class="entity-image-wrap small-image">
+                            <img src="../../Grupos/Imperio de Ejemplo/inteligencia.jpg" alt="Servicio de Inteligencia">
+                            <span class="entity-tag">ESPIONAJE</span>
+                        </div>
+                        <div class="entity-content">
+                            <h3>Servicio de Inteligencia</h3>
+                            <p>Red de agentes destinada a contraespionaje, infiltración y obtención de información estratégica.</p>
+                        </div>
+                    </article>
+
+                    <article class="entity-card static-card">
+                        <div class="entity-image-wrap small-image">
+                            <img src="../../Grupos/Imperio de Ejemplo/comercio.jpg" alt="Consejo de Comercio">
+                            <span class="entity-tag">ECONOMÍA</span>
+                        </div>
+                        <div class="entity-content">
+                            <h3>Consejo de Comercio</h3>
+                            <p>Administra impuestos, rutas comerciales, contratos estatales y recursos estratégicos.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ========================================================
+                 LIDERAZGO
+                 ======================================================== -->
+            <section class="content-panel" id="liderazgo">
+                <div class="section-title-row">
+                    <div>
+                        <p class="section-code">05 / MANDO</p>
+                        <h2>Liderazgo y figuras importantes</h2>
+                    </div>
+                </div>
+
+                <div class="people-grid">
+                    <article class="person-card">
+                        <img src="../../Grupos/Imperio de Ejemplo/emperador.jpg" alt="Emperador Nombre">
+                        <div class="person-info">
+                            <span class="person-role">MÁXIMA AUTORIDAD</span>
+                            <h3>Emperador Nombre</h3>
+                            <p>Gobernante principal de la facción y responsable de sus decisiones estratégicas.</p>
+                        </div>
+                    </article>
+
+                    <article class="person-card">
+                        <img src="../../Grupos/Imperio de Ejemplo/general.jpg" alt="General Nombre">
+                        <div class="person-info">
+                            <span class="person-role">ALTO MANDO</span>
+                            <h3>General Nombre</h3>
+                            <p>Dirige las fuerzas armadas y coordina operaciones militares de gran escala.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ========================================================
+                 TERRITORIOS / PLANETAS CLAVE
+                 ======================================================== -->
+            <section class="content-panel" id="territorios">
+                <div class="section-title-row">
+                    <div>
+                        <p class="section-code">06 / TERRITORIO</p>
+                        <h2>Mundos y zonas controladas</h2>
+                    </div>
+                </div>
+
+                <div class="territory-list">
+                    <a class="territory-row" href="#">
+                        <img src="../../Planetas/Kalagor/Kalagor.png" alt="Nova Prime">
+                        <div>
+                            <span class="territory-type">CAPITAL</span>
+                            <h3>Nova Prime</h3>
+                            <p>Centro político, económico y militar del grupo.</p>
+                        </div>
+                        <span class="territory-arrow">→</span>
+                    </a>
+
+                    <a class="territory-row" href="#">
+                        <img src="../../Planetas/Kalagor/Kalagor.png" alt="Sistema Frontera IX">
+                        <div>
+                            <span class="territory-type">FRONTERA</span>
+                            <h3>Sistema Frontera IX</h3>
+                            <p>Zona fortificada que protege las rutas de entrada al territorio principal.</p>
+                        </div>
+                        <span class="territory-arrow">→</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- ========================================================
+                 HISTORIA / CRONOLOGÍA
+                 ======================================================== -->
+            <section class="content-panel" id="historia">
+                <div class="section-title-row">
+                    <div>
+                        <p class="section-code">07 / ARCHIVO HISTÓRICO</p>
+                        <h2>Historia</h2>
+                    </div>
+                </div>
+
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <span class="timeline-year">12.430 E.G.</span>
+                        <div>
+                            <h3>Fundación</h3>
+                            <p>Describe cómo nació el grupo y qué fuerzas o especies participaron en su creación.</p>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <span class="timeline-year">12.512 E.G.</span>
+                        <div>
+                            <h3>Primera gran expansión</h3>
+                            <p>Explica una guerra, anexión, alianza o hecho que transformó su influencia.</p>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <span class="timeline-year">ACTUALIDAD</span>
+                        <div>
+                            <h3>Situación presente</h3>
+                            <p>Resume el estado actual del grupo, sus conflictos abiertos y sus objetivos inmediatos.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+
+        <!-- ============================================================
+             COLUMNA LATERAL
+             ============================================================ -->
+        <aside class="side-column">
+
+            <!-- PODER DEL GRUPO -->
+            <section class="side-panel sticky-stats">
+                <p class="section-code">EVALUACIÓN</p>
+                <h2>Capacidades</h2>
+                <p class="side-note">Los valores se controlan con <code>data-value="0-100"</code>.</p>
+
+                <div class="power-stat" data-value="92">
+                    <div class="power-label"><span>Poder militar</span><strong>92</strong></div>
+                    <div class="power-track"><span></span></div>
+                </div>
+
+                <div class="power-stat" data-value="81">
+                    <div class="power-label"><span>Economía</span><strong>81</strong></div>
+                    <div class="power-track"><span></span></div>
+                </div>
+
+                <div class="power-stat" data-value="88">
+                    <div class="power-label"><span>Tecnología</span><strong>88</strong></div>
+                    <div class="power-track"><span></span></div>
+                </div>
+
+                <div class="power-stat" data-value="74">
+                    <div class="power-label"><span>Influencia política</span><strong>74</strong></div>
+                    <div class="power-track"><span></span></div>
+                </div>
+
+                <div class="power-stat" data-value="65">
+                    <div class="power-label"><span>Inteligencia / espionaje</span><strong>65</strong></div>
+                    <div class="power-track"><span></span></div>
+                </div>
+            </section>
+
+            <!-- RELACIONES -->
+            <section class="side-panel">
+                <p class="section-code">DIPLOMACIA</p>
+                <h2>Relaciones</h2>
+
+                <div class="relation-block">
+                    <h3 class="ally-title">Aliados</h3>
+                    <a href="#" class="relation-chip ally">Federación de Ejemplo</a>
+                    <a href="#" class="relation-chip ally">Casa Mercante X</a>
+                </div>
+
+                <div class="relation-block">
+                    <h3 class="enemy-title">Enemigos</h3>
+                    <a href="#" class="relation-chip enemy">Cartel de Ejemplo</a>
+                    <a href="#" class="relation-chip enemy">Coalición Rival</a>
+                </div>
+
+                <div class="relation-block">
+                    <h3 class="neutral-title">Neutral / variable</h3>
+                    <a href="#" class="relation-chip neutral">Mundo Independiente</a>
+                </div>
+            </section>
+
+            <!-- RECURSOS -->
+            <section class="side-panel">
+                <p class="section-code">RECURSOS</p>
+                <h2>Activos principales</h2>
+                <ul class="resource-list">
+                    <li>Flota de guerra</li>
+                    <li>Astilleros orbitales</li>
+                    <li>Red comercial</li>
+                    <li>Minerales estratégicos</li>
+                    <li>Agentes de inteligencia</li>
+                </ul>
+            </section>
+
+            <!-- ÍNDICE RÁPIDO -->
+            <section class="side-panel quick-index">
+                <p class="section-code">NAVEGACIÓN</p>
+                <h2>Índice</h2>
+                <a href="#descripcion">Descripción</a>
+                <a href="#actividades">Qué hacen</a>
+                <a href="#razas">Razas integrantes</a>
+                <a href="#divisiones">Divisiones internas</a>
+                <a href="#liderazgo">Liderazgo</a>
+                <a href="#territorios">Territorios</a>
+                <a href="#historia">Historia</a>
+            </section>
+        </aside>
+    </div>
+
+    <!-- ============================================================
+         PANEL DESPLEGABLE OPCIONAL
+         Úsalo para información secundaria: leyes, armamento, economía,
+         delitos, religión, rangos, protocolos, etc.
+         ============================================================ -->
+    <section class="wide-panel">
+        <button class="toggle-button" type="button" data-toggle="informacion-extra" aria-expanded="false">
+            <span>
+                <small>ARCHIVO COMPLEMENTARIO</small>
+                Información adicional del grupo
+            </span>
+            <span class="toggle-icon">+</span>
+        </button>
+
+        <div class="collapsible" id="informacion-extra">
+            <div class="collapsible-inner">
+                <div>
+                    <h3>Economía</h3>
+                    <p>Explica de dónde obtiene el dinero, qué comercia, qué impuestos cobra o qué mercados domina.</p>
+                </div>
+                <div>
+                    <h3>Fuerzas armadas</h3>
+                    <p>Describe ejércitos, flotas, unidades especiales, armamento o métodos de combate.</p>
+                </div>
+                <div>
+                    <h3>Leyes y costumbres</h3>
+                    <p>Incluye normas importantes, castigos, tradiciones, rituales o comportamientos internos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>Planet Pedia · Expediente de facción</p>
+</footer>
+
+<script src="grupos.js"></script>
+</body>
+</html>
