@@ -41,8 +41,8 @@
         <p>Esta es una raza guerrera, aman la conquista y esclavizan a otras especies, aman tener sirvientes que hagan las tareas pesadas por ellos, son una especie muy cruel, pues la tortura, la esclavitud y el dolor forman parte de su día a día. Esta raza es conocida por su savagery y su capacidad para ser extremadamente implacables en el combate y en la conquista llevando a cabo todo tipo de atrocidades y estrategias con tal de ganar.</p>
         <div class="foto1">
             <div class="fotos-div1">
-            <a href="../../Especies alienigenas/Sterons/Sterons.jpeg">
-                <img src="../../Especies alienigenas/Sterons/Sterons.jpeg" alt="Sterons" class="species-image">
+            <a href="../../Especies alienigenas/Sterons/Sterons.webp">
+                <img src="../../Especies alienigenas/Sterons/Sterons.webp" alt="Sterons" class="species-image">
             </a>
             <figcaption class="texto-fotos">Sterons</figcaption>
             </div>
@@ -156,8 +156,8 @@
         </ul>
         <p>Su jerarquía se basa en el emperador, el dominante de toda la raza, los verdugos del rey, la mano ejecutora del emperador, los regentes, los que llevan las ciudades o planetas que controlan, los soldados y los esclavos.</p>
         <div class="fotos-div1">
-            <a href="../../Especies alienigenas/Sterons/Steron emperador.jpeg">
-                <img src="../../Especies alienigenas/Sterons/Steron emperador.jpeg" alt="Emperador Steron" class="species-image">
+            <a href="../../Especies alienigenas/Sterons/Steron emperador.webp">
+                <img src="../../Especies alienigenas/Sterons/Steron emperador.webp" alt="Emperador Steron" class="species-image">
             </a>
             <figcaption class="texto-fotos">Emperador Steron</figcaption>
         </div>
@@ -169,44 +169,18 @@
         <h3>El comienzo del imperio</h3>
         <p>Cuando los Sterons descubrieron que podían conquistar planetas y esclavizar a otras razas, se dieron cuenta de que podían expandir su imperio y tener más recursos y alimento. Por lo cual comenzaron a conquistar planetas y a esclavizar a otras razas, expandiendo su imperio, además de que al esclavizar especies enteras tenian la fuerza de esas razas para sí mismas aumentando su poder mucho más allá pues los recursos que antes escaseaban ahora eran abundantes, ahora tenían todo lo que querían y eran invencibles... <br> O eso creían.</p>
         <h3>Un pez más grande</h3>
-        <p>Los Sterons habían conocido a razas más débiles que ellos, creyendo que eran los más fuertes, lo más poderosos, los dominantes de la galaxia, pero, "Siempre hay un pez más grande", una raza conquistadora llegó a su territorio, llegó ante su base principal de Gradius 4. Estaban jodidos, pues la raza que llegó para enseñarles que no puedes cometer el error de creer que nadie te superará fue la de los <!-- WikiLinks --> <a href="Invasores X.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Invasores X/Invasores X (1).jpeg"><div><strong>Los Invasores X</strong><p>Una raza de conquistadores avanzados que utilizaban a las especies conquistadas mejoradas por ellos para conquistar a otras.</p></div></div>'>Invasores X</a> los cuales los sometieron sin ninguna complicación y los agregaron a su colección de especies conquistadas y a su ejército.</p>
+        <p>Los Sterons habían conocido a razas más débiles que ellos, creyendo que eran los más fuertes, lo más poderosos, los dominantes de la galaxia, pero, "Siempre hay un pez más grande", una raza conquistadora llegó a su territorio, llegó ante su base principal de Gradius 4. Estaban jodidos, pues la raza que llegó para enseñarles que no puedes cometer el error de creer que nadie te superará fue la de los <!-- WikiLinks --> <a href="Invasores X.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Invasores X/Invasores X (1).webp"><div><strong>Los Invasores X</strong><p>Una raza de conquistadores avanzados que utilizaban a las especies conquistadas mejoradas por ellos para conquistar a otras.</p></div></div>'>Invasores X</a> los cuales los sometieron sin ninguna complicación y los agregaron a su colección de especies conquistadas y a su ejército.</p>
     </div>
 
+    <script src="../../components/voiceController.js"></script>
 </body>
 <!-- WikiLinks -->
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="https://unpkg.com/tippy.js@6"></script>
 <script src="wikilink.js"></script>
+<script src="dificultadvencer.js"></script>
 <script>
-    const configuracion = {
-      1: { texto: "Muy fácil", icono: "https://genesistoxical.com/wp-content/uploads/2021/05/Dibujo_de_calavera_animada_png.webp" },
-      2: { texto: "Fácil", icono: "https://genesistoxical.com/wp-content/uploads/2021/05/Calavera_con_huesos_cruzados_png.webp" },
-      3: { texto: "Medio", icono: "https://cdn.creazilla.com/cliparts/38354/skull-clipart-xl.webp" },
-      4: { texto: "Alto", icono: "https://marketplace.canva.com/qEZpA/MAHN2PqEZpA/1/tl/canva-illustration-of-a-white-skull-MAHN2PqEZpA.webp" },
-      5: { texto: "Muy alto", icono: "https://stickerapp.es/cdn-assets/images/preview/2015/09/19/design-4968/template-sticker-300x300.webp" },
-      6: { texto: "Difícil", icono: "https://static.vecteezy.com/system/resources/thumbnails/054/984/062/small/detailed-illustration-of-a-skull-and-crossbones-symbolizing-danger-piracy-and-rebellion-commonly-associated-with-warning-signs-png.webp" },
-      7: { texto: "Extremo", icono: "https://cdn.pixabay.com/photo/2025/10/21/08/43/drawing-9907092_640.webp" },
-      8: { texto: "Imposible", icono: "https://cdn.pixabay.com/photo/2025/09/16/09/08/scull-9837501_1280.webp" }
-    };
-
-    function actualizarDificultad(nivel) {
-      const segmentos = document.querySelectorAll('.segmento');
-      const texto = document.getElementById('texto-dificultad');
-      const img = document.getElementById('icono-dificultad');
-
-      // Colores: 1-3 Verde, 4-6 Amarillo, 7-8 Rojo
-      let color = nivel <= 3 ? '#2ecc71' : (nivel <= 6 ? '#f1c40f' : '#e74c3c');
-
-      segmentos.forEach((seg, index) => {
-        seg.style.background = index < nivel ? color : '#333';
-      });
-
-      texto.innerText = configuracion[nivel].texto;
-      texto.style.color = color;
-      img.src = configuracion[nivel].icono;
-    }
-
-    // Ejemplo: Llama a esta función para cambiar el nivel (del 1 al 8)
+    // Nivel de dificultad
     actualizarDificultad(3);
   </script>
 </html>

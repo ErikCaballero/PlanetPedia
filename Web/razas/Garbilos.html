@@ -19,8 +19,8 @@
     <!-- Bloque superior: Imagen + Nombre + Características -->
     <div class="top-section">
         <div class="img-box">
-            <a href="../../Especies alienigenas/Garbilos/Garbilo.jpeg">
-                <img src="../../Especies alienigenas/Garbilos/Garbilo.jpeg" style="width:100%; height:100%; object-fit:cover;">
+            <a href="../../Especies alienigenas/Garbilos/Garbilo.webp">
+                <img src="../../Especies alienigenas/Garbilos/Garbilo.webp" style="width:100%; height:100%; object-fit:cover;">
             </a>
         </div>
         <div class="header-box">
@@ -45,8 +45,8 @@
         <p>Los Garbilos son una raza pacífica, lo único que buscan y desean es la paz aunque tras haber descubierto otros planetas tratan de conseguir la mayor riqueza posible, pues los créditos galácticos pueden comprar muchas ventajas. Entre ellas, la seguridad y la comodidad, dos cosas que valoran mucho.</p>
         <div class="foto1">
             <div class="fotos-div1">
-            <a href="../../Especies alienigenas/Garbilos/Garbilos.jpeg">
-                <img src="../../Especies alienigenas/Garbilos/Garbilos.jpeg" alt="Grupo de Garbilos" class="species-image">
+            <a href="../../Especies alienigenas/Garbilos/Garbilos.webp">
+                <img src="../../Especies alienigenas/Garbilos/Garbilos.webp" alt="Grupo de Garbilos" class="species-image">
             </a>
             <figcaption class="texto-fotos">Grupo de Garbilos</figcaption>
             </div>
@@ -60,8 +60,8 @@
             <li>Ayuda de crecimiento de la flora</li>
         </ul>
         <div class="fotos-div1">
-            <a href="../../Especies alienigenas/Garbilos/Garbilo curando.jpeg">
-                <img src="../../Especies alienigenas/Garbilos/Garbilo curando.jpeg" alt="Garbilos luchando en la arena" class="species-image">
+            <a href="../../Especies alienigenas/Garbilos/Garbilo curando.webp">
+                <img src="../../Especies alienigenas/Garbilos/Garbilo curando.webp" alt="Garbilos luchando en la arena" class="species-image">
             </a>
             <figcaption class="texto-fotos">Garbilo sanando herida</figcaption>
         </div>
@@ -173,8 +173,8 @@
         <h3>La vida en las cuevas</h3>
         <p>La vida en las cuevas tampoco era fácil, habían criaturas peligrosas y los recursos tampoco eran abundantes, además habían gases tóxicos, derrumbamientos y otros peligros en las cuevas, aún con estas cosas, las cuevas son mas seguras que la superficie ya que en la superficie hay muchas razas y mucha guerra además de otros tantos peligros. La diferencia vital entre las cuevas y la superficie era que en las cuevas no habían razas inteligentes que les dieran caza, entonces, era relativamente fácil mantenerse a salvo de los peligros de la cueva. Aunque los Garbilos debían tener mucho cuidado con los depredadores subterráneos que allí habitaban. Sobre todo por una en concreto, el Greimork, una criatura resistente, fuerte, ágil y rápida, parece un depredador casi perfecto, sobre todo para el territorio en el que vive y caza.</p>
         <div class="fotos-div1">
-            <a href="../../Especies alienigenas/Garbilos/Depredador de cuevas de Metacost.jpeg">
-                <img src="../../Especies alienigenas/Garbilos/Depredador de cuevas de Metacost.jpeg" alt="Arsenal Garbilo" class="species-image">
+            <a href="../../Especies alienigenas/Garbilos/Depredador de cuevas de Metacost.webp">
+                <img src="../../Especies alienigenas/Garbilos/Depredador de cuevas de Metacost.webp" alt="Arsenal Garbilo" class="species-image">
             </a>
             <figcaption class="texto-fotos">Depredador de cuevas Greimork</figcaption>
         </div>
@@ -192,40 +192,14 @@
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="https://unpkg.com/tippy.js@6"></script>
 <script src="wikilink.js"></script>
+<script src="dificultadvencer.js"></script>
 <script>
-    // Inicializar Tippy.js en los enlaces con la clase .especie-link
-    
-
-    const configuracion = {
-      1: { texto: "Muy fácil", icono: "https://genesistoxical.com/wp-content/uploads/2021/05/Dibujo_de_calavera_animada_png.webp" },
-      2: { texto: "Fácil", icono: "https://genesistoxical.com/wp-content/uploads/2021/05/Calavera_con_huesos_cruzados_png.webp" },
-      3: { texto: "Medio", icono: "https://cdn.creazilla.com/cliparts/38354/skull-clipart-xl.webp" },
-      4: { texto: "Alto", icono: "https://marketplace.canva.com/qEZpA/MAHN2PqEZpA/1/tl/canva-illustration-of-a-white-skull-MAHN2PqEZpA.webp" },
-      5: { texto: "Muy alto", icono: "https://stickerapp.es/cdn-assets/images/preview/2015/09/19/design-4968/template-sticker-300x300.webp" },
-      6: { texto: "Difícil", icono: "https://static.vecteezy.com/system/resources/thumbnails/054/984/062/small/detailed-illustration-of-a-skull-and-crossbones-symbolizing-danger-piracy-and-rebellion-commonly-associated-with-warning-signs-png.webp" },
-      7: { texto: "Extremo", icono: "https://cdn.pixabay.com/photo/2025/10/21/08/43/drawing-9907092_640.webp" },
-      8: { texto: "Imposible", icono: "https://cdn.pixabay.com/photo/2025/09/16/09/08/scull-9837501_1280.webp" }
-    };
-
-    function actualizarDificultad(nivel) {
-      const segmentos = document.querySelectorAll('.segmento');
-      const texto = document.getElementById('texto-dificultad');
-      const img = document.getElementById('icono-dificultad');
-
-      let color = nivel <= 3 ? '#2ecc71' : (nivel <= 6 ? '#f1c40f' : '#e74c3c');
-
-      segmentos.forEach((seg, index) => {
-        seg.style.background = index < nivel ? color : '#333';
-      });
-
-      texto.innerText = configuracion[nivel].texto;
-      texto.style.color = color;
-      img.src = configuracion[nivel].icono;
-    }
-
+    // Nivel de dificultad
     actualizarDificultad(1);
 </script>
 </html>
 
 
 
+
+    <script src="../../components/voiceController.js"></script>
