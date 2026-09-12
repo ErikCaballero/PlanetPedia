@@ -270,6 +270,10 @@
 .species-link:active {
         color: inherit;
 }
+.InfoLink{
+    text-decoration: none;
+    color: #00e1ff;
+}
 /* ==========================================================================
    Adaptabilidad / Diseño Responsivo
    ========================================================================== */

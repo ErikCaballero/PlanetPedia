@@ -165,6 +165,29 @@ for file in PROJECT_ROOT.rglob("*"):
 # =========================================================
 # RESUMEN
 # =========================================================
+# =========================================================
+# 3. ELIMINAR PNG / JPG / JPEG ORIGINALES
+# =========================================================
+
+deleted_images = 0
+
+for original_path in converted:
+
+    try:
+        if original_path.exists():
+            original_path.unlink()
+            deleted_images += 1
+
+            print(
+                f"[ELIMINADA] "
+                f"{original_path.relative_to(PROJECT_ROOT)}"
+            )
+
+    except Exception as error:
+        print(
+            f"[ERROR AL ELIMINAR] "
+            f"{original_path}: {error}"
+        )
 
 print("\n===================================")
 print("Proceso terminado")
@@ -185,4 +208,8 @@ print(
     f"{updated_references}"
 )
 
+print(
+    f"Imágenes originales eliminadas: "
+    f"{deleted_images}"
+)
 print("===================================")

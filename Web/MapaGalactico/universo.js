@@ -254,7 +254,7 @@ window.UNIVERSE_DATA = {
 
       type: "world",
 
-      name: "Zorn1",
+      name: "Zorn 1",
 
       x: -698,
       y: -238,
@@ -268,10 +268,10 @@ window.UNIVERSE_DATA = {
         "Planeta capital • Clase terrestre",
 
       description:
-        "Capital del Dominio Solar y uno de los mundos más poblados del sector.",
+        "Capital del la raza de los Zornicos.",
 
       url:
-        "mundos/aurelia.html"
+        "../planetas/Zorn1.html"
     },
 
 
@@ -293,29 +293,56 @@ window.UNIVERSE_DATA = {
       maxZoom: 99,
 
       subtitle:
-        "Planeta rocoso • Mundo fortaleza",
+        "Planeta desértico • Planeta mediano",
 
       description:
-        "Un planeta oscuro y altamente militarizado.",
+        "Un planeta desértico.",
 
       url:
         "../planetas/Zorn2"
     },
-
-
     {
-      id: "tethys",
+      id: "zorn3",
 
-      parent: "helios",
+      parent: "Zorn",
 
       type: "world",
 
-      name: "Tethys",
+      name: "Zorn 3",
 
       x: -730,
       y: -205,
 
       size: 5.5,
+
+      minZoom: 2.0,
+      maxZoom: 99,
+
+      subtitle:
+        "Planeta desértico • Clase terrestre",
+
+      description:
+        "Capital del Dominio Solar y uno de los mundos más poblados del sector.",
+
+      url:
+        "mundos/aurelia.html"
+    },
+
+
+
+    {
+      id: "zorn4",
+
+      parent: "Zorn",
+
+      type: "world",
+
+      name: "Zorn 4",
+
+      x: -675,
+      y: -283,
+
+      size: 20,
 
       minZoom: 2.25,
       maxZoom: 99,
@@ -329,7 +356,6 @@ window.UNIVERSE_DATA = {
       url:
         "mundos/tethys.html"
     },
-
 
     {
       id: "lys",

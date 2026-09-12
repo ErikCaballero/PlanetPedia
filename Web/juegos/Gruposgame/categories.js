@@ -71,6 +71,18 @@ window.CATEGORIES_DATA = {
       "question": "Selecciona todas las especies consideradas pequeñas",
       "difficulty": 1,
       "enabled": true
+    },
+    {
+      "id": "criminal",
+      "question": "Selecciona todas las especies consideradas criminales o conocidas por ello",
+      "difficulty": 1,
+      "enabled": true
+    },
+    {
+      "id": "nómada",
+      "question": "Selecciona todas las especies nómadas",
+      "difficulty": 1,
+      "enabled": true
     }
 
   ]
