@@ -31,7 +31,7 @@ const experimentos = [
         nombre: "Permians",
 
         imagen:
-            "../../../Especies alienigenas/Permians/Permians.png",
+            "../../../Especies alienigenas/Permians/Permians.webp",
 
         categoria:
             "Bioingeniería",
@@ -153,7 +153,7 @@ const experimentos = [
             "Máquina de energía Material",
 
         imagen:
-            "../../../Especies alienigenas/Los Brainiac/Maquina Energicomaterial.jpeg",
+            "../../../Especies alienigenas/Los Brainiac/Maquina Energicomaterial.webp",
 
         categoria:
             "Energía",
@@ -231,7 +231,7 @@ const experimentos = [
                 "El CROPT",
 
             imagen:
-                "../../amenazas/imgAmenazas/El CROPT ciudad.png",
+                "../../amenazas/imgAmenazas/El CROPT ciudad.webp",
 
             categoria:
                 "Microbiología, Epidemiología y Genética",

@@ -109,81 +109,81 @@ let totalPairs = 0;
 
 const availableImages = [
 
-    "../../../Especies alienigenas/Bazofios/Bazofio icono.png",
+    "../../../Especies alienigenas/Bazofios/Bazofio icono.webp",
 
-    "../../../Especies alienigenas/Los Foxers/Foxer icono.png",
+    "../../../Especies alienigenas/Los Foxers/Foxer icono.webp",
 
-    "../../../Especies alienigenas/AracnoSephus/AracnoSephus icono.png",
+    "../../../Especies alienigenas/AracnoSephus/AracnoSephus icono.webp",
 
-    "../../../Especies alienigenas/Klagors/Klagor icono.png",
+    "../../../Especies alienigenas/Klagors/Klagor icono.webp",
 
-    "../../../Especies alienigenas/Brinix/Brinix icono.png",
+    "../../../Especies alienigenas/Brinix/Brinix icono.webp",
 
-    "../../../Especies alienigenas/Ceruleanos/Ceruleano icono.png",
+    "../../../Especies alienigenas/Ceruleanos/Ceruleano icono.webp",
 
-    "../../../Especies alienigenas/Garbilos/Garbilo icono.png",
+    "../../../Especies alienigenas/Garbilos/Garbilo icono.webp",
 
-    "../../../Especies alienigenas/Garguleans/Gargulean icono.png",
+    "../../../Especies alienigenas/Garguleans/Gargulean icono.webp",
 
-    "../../../Especies alienigenas/Gigantodones/Gigantodon icono.png",
+    "../../../Especies alienigenas/Gigantodones/Gigantodon icono.webp",
 
-    "../../../Especies alienigenas/Invasores X/InvasoresX icono.png",
+    "../../../Especies alienigenas/Invasores X/InvasoresX icono.webp",
 
-    "../../../Especies alienigenas/Los Brainiac/Brainiac icono.png",
+    "../../../Especies alienigenas/Los Brainiac/Brainiac icono.webp",
 
-    "../../../Especies alienigenas/Los Kaelish/Kaelish icono.png",
+    "../../../Especies alienigenas/Los Kaelish/Kaelish icono.webp",
 
-    "../../../Especies alienigenas/Orrs/Orr icono.png",
+    "../../../Especies alienigenas/Orrs/Orr icono.webp",
 
-    "../../../Especies alienigenas/Sharkinors/Sharkinor icono.png",
+    "../../../Especies alienigenas/Sharkinors/Sharkinor icono.webp",
 
-    "../../../Especies alienigenas/Sterons/Steron icono.png",
+    "../../../Especies alienigenas/Sterons/Steron icono.webp",
 
-    "../../../Especies alienigenas/Xelthorianos/Xel'thoriano icono.png",
+    "../../../Especies alienigenas/Xelthorianos/Xel'thoriano icono.webp",
 
-    "../../../Especies alienigenas/Zornicos/Zornico icono.png",
+    "../../../Especies alienigenas/Zornicos/Zornico icono.webp",
 
-    "../../../Especies alienigenas/Ultramitas/Ultramita icono.png",
+    "../../../Especies alienigenas/Ultramitas/Ultramita icono.webp",
 
-    "../../../Especies alienigenas/Varyths/Varyth icono.png",
+    "../../../Especies alienigenas/Varyths/Varyth icono.webp",
 
-    "../../../Especies alienigenas/Velorians/Velorian icono.png",
+    "../../../Especies alienigenas/Velorians/Velorian icono.webp",
 
-    "../../../Especies alienigenas/Tortanks/Tortank icono.png",
+    "../../../Especies alienigenas/Tortanks/Tortank icono.webp",
 
-    "../../../Especies alienigenas/Malerianos/Maleriano icono.png",
+    "../../../Especies alienigenas/Malerianos/Maleriano icono.webp",
 
-    "../../../Especies alienigenas/Grimoriums/Grimorium icono.png",
+    "../../../Especies alienigenas/Grimoriums/Grimorium icono.webp",
 
-    "../../../Especies alienigenas/Thanatofos/Thanatofo icono.png",
+    "../../../Especies alienigenas/Thanatofos/Thanatofo icono.webp",
 
-    "../../../Especies alienigenas/Friggits/Friggit icono.png",
+    "../../../Especies alienigenas/Friggits/Friggit icono.webp",
 
-    "../../../Especies alienigenas/Los Grolux/Grolux icono.png",
+    "../../../Especies alienigenas/Los Grolux/Grolux icono.webp",
 
-    "../../../Especies alienigenas/Xilvath/Xilvath icono.png",
+    "../../../Especies alienigenas/Xilvath/Xilvath icono.webp",
 
-    "../../../Especies alienigenas/Samyatis/Samyati icono.png",
+    "../../../Especies alienigenas/Samyatis/Samyati icono.webp",
 
-    "../../../Especies alienigenas/Hongers/Honger icono.png",
+    "../../../Especies alienigenas/Hongers/Honger icono.webp",
 
-    "../../../Especies alienigenas/Bulinos/Bulino icono.png",
+    "../../../Especies alienigenas/Bulinos/Bulino icono.webp",
 
-    "../../../Especies alienigenas/Porvils/Porvil icono.png",
+    "../../../Especies alienigenas/Porvils/Porvil icono.webp",
 
-    "../../../Especies alienigenas/Permians/Permian icono.png",
+    "../../../Especies alienigenas/Permians/Permian icono.webp",
 
-    "../../../Especies alienigenas/Thaldrins/Thaldrin icono.png",
+    "../../../Especies alienigenas/Thaldrins/Thaldrin icono.webp",
 
-    "../../../Especies alienigenas/Grynthars/Grynthar icono.png",
+    "../../../Especies alienigenas/Grynthars/Grynthar icono.webp",
 
-    "../../../Especies alienigenas/Kothars/Kothar icono.png",
+    "../../../Especies alienigenas/Kothars/Kothar icono.webp",
     
-    "../../../Especies alienigenas/Albirions/Albirion icono.png",
+    "../../../Especies alienigenas/Albirions/Albirion icono.webp",
 
-    "../../../Especies alienigenas/Bulnaris/Bulnari icono.png",
+    "../../../Especies alienigenas/Bulnaris/Bulnari icono.webp",
 
-    "../../../Especies alienigenas/Blukeys/Blukey icono.png"
+    "../../../Especies alienigenas/Blukeys/Blukey icono.webp"
 ];
 
 
