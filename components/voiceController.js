@@ -26,7 +26,8 @@
         { names: ['grupos', 'facciones'], path: 'Web/Grupos.html' },
         { names: ['amenazas'], path: 'Web/Amenazas.html' },
         { names: ['informacion adicional', 'información adicional'], path: 'Web/InformacionAdicional.html' },
-        { names: ['los pilares', 'pilares'], path: 'Web/LosPilares.html' }
+        { names: ['los pilares', 'pilares'], path: 'Web/LosPilares.html' },
+        { names: ['cazarrecompensas', 'cazarecompensas', 'caza recompensas'], path: 'Web/cazarrecompensas/Cazarrecompensas.html' }
     ];
 
     // Minijuegos: estos comandos tienen prioridad sobre la navegación general.

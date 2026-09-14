@@ -18,7 +18,18 @@
     "nave": "",
     "aliados": [],
     "enemigos": [],
+    "insignias": [
+      {
+        "id": "insignia-personalizada",
+        "nombre": "Nombre de la insignia",
+        "descripcion": "Motivo por el que obtuvo esta insignia.",
+        "icono": "◆",
+        "rareza": "Especial"
+      }
+    ],
     "descripcion": "",
-    "historia": ""
+    "historia": [
+      ""
+    ]
   }
 ]

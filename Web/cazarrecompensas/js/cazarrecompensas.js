@@ -38,6 +38,19 @@ const PUNTOS_PELIGROSIDAD = {
 };
 
 
+const PUNTOS_INSIGNIA_MANUAL = {
+
+  "Comun": 0,
+  "Común": 0,
+  "Rara": 2,
+  "Epica": 3,
+  "Épica": 3,
+  "Legendaria": 5,
+  "Especial": 7
+
+};
+
+
 
 /* =========================================================
    ELEMENTOS HTML
@@ -182,6 +195,37 @@ const cerrarRanking =
   );
 
 
+const botonComparador =
+  document.getElementById(
+    "botonComparador"
+  );
+
+const panelComparador =
+  document.getElementById(
+    "panelComparador"
+  );
+
+const cerrarComparador =
+  document.getElementById(
+    "cerrarComparador"
+  );
+
+const comparadorA =
+  document.getElementById(
+    "comparadorA"
+  );
+
+const comparadorB =
+  document.getElementById(
+    "comparadorB"
+  );
+
+const resultadoComparador =
+  document.getElementById(
+    "resultadoComparador"
+  );
+
+
 function abrirRanking() {
 
   panelRanking.classList.add(
@@ -253,6 +297,41 @@ if (cerrarRanking) {
     ocultarRanking
   );
 
+}
+
+
+/* =========================================================
+   ABRIR / CERRAR COMPARADOR
+========================================================= */
+
+function abrirComparador() {
+  if (!panelComparador || !botonComparador) return;
+
+  panelComparador.classList.add("open");
+  panelComparador.setAttribute("aria-hidden", "false");
+  botonComparador.classList.add("active");
+}
+
+function ocultarComparador() {
+  if (!panelComparador || !botonComparador) return;
+
+  panelComparador.classList.remove("open");
+  panelComparador.setAttribute("aria-hidden", "true");
+  botonComparador.classList.remove("active");
+}
+
+if (botonComparador) {
+  botonComparador.addEventListener("click", () => {
+    if (panelComparador && panelComparador.classList.contains("open")) {
+      ocultarComparador();
+    } else {
+      abrirComparador();
+    }
+  });
+}
+
+if (cerrarComparador) {
+  cerrarComparador.addEventListener("click", ocultarComparador);
 }
 
 /* =========================================================
@@ -342,6 +421,8 @@ async function cargarDatos() {
 
 
     renderRanking();
+
+    iniciarComparador();
 
   }
 
@@ -873,6 +954,30 @@ function calcularEstadisticas(idHunter) {
 
 
 /* =========================================================
+   PUNTOS DE INSIGNIAS MANUALES
+========================================================= */
+
+function puntosRarezaInsignia(rareza = "") {
+
+  const texto = String(rareza || "").trim();
+
+  return PUNTOS_INSIGNIA_MANUAL[texto] || 0;
+}
+
+
+function calcularPuntosInsigniasManuales(hunter) {
+
+  return lista(hunter.insignias)
+    .map((insignia, index) => normalizarInsigniaManual(insignia, index))
+    .filter(Boolean)
+    .reduce(
+      (total, insignia) => total + puntosRarezaInsignia(insignia.rareza),
+      0
+    );
+}
+
+
+/* =========================================================
    RANKING
 ========================================================= */
 
@@ -912,12 +1017,25 @@ function calcularRanking() {
              Alto      = 9
              Severo    = 12
              Extremo   = 15
+
+          + insignias MANUALES según rareza:
+             Rara       = 2
+             Épica      = 3
+             Legendaria = 5
+             Especial   = 7
+
+          Las insignias automáticas no otorgan puntos.
         */
+
+        const puntosInsignias =
+          calcularPuntosInsigniasManuales(hunter);
+
 
         const puntuacion =
           (stats.completados * 10) +
           stats.puntosContratos +
-          (puntosPeligrosidad * 3);
+          (puntosPeligrosidad * 3) +
+          puntosInsignias;
 
 
         return {
@@ -934,6 +1052,8 @@ function calcularRanking() {
             stats.puntosContratos,
 
           puntosPeligrosidad,
+
+          puntosInsignias,
 
           puntuacion
 
@@ -1512,6 +1632,689 @@ function renderContratos(contratos) {
 
 
 /* =========================================================
+   VALORACIÓN DEL CAZARRECOMPENSAS
+========================================================= */
+
+function generarEstrellas(cantidad) {
+
+  const valor = Math.max(
+    0,
+    Math.min(
+      5,
+      Math.round(Number(cantidad) || 0)
+    )
+  );
+
+  return `
+    <span class="rating-stars" aria-label="${valor} de 5 estrellas">
+      <span class="rating-stars-filled">${"★".repeat(valor)}</span><span class="rating-stars-empty">${"★".repeat(5 - valor)}</span>
+    </span>
+  `;
+}
+
+
+function calcularAmenazaEstrellas(peligrosidad) {
+
+  const niveles = {
+    "Bajo": 1,
+    "Moderado": 2,
+    "Alto": 3,
+    "Severo": 4,
+    "Extremo": 5
+  };
+
+  return niveles[peligrosidad] || 0;
+}
+
+
+function calcularExperienciaEstrellas(anosActivo) {
+
+  const anos = parseInt(anosActivo) || 0;
+
+  if (anos >= 25) return 5;
+  if (anos >= 15) return 4;
+  if (anos >= 8) return 3;
+  if (anos >= 3) return 2;
+  if (anos >= 1) return 1;
+
+  return 0;
+}
+
+
+function calcularEfectividadEstrellas(tasaExito) {
+
+  const porcentaje = Number(tasaExito) || 0;
+
+  if (porcentaje >= 90) return 5;
+  if (porcentaje >= 75) return 4;
+  if (porcentaje >= 55) return 3;
+  if (porcentaje >= 30) return 2;
+  if (porcentaje > 0) return 1;
+
+  return 0;
+}
+
+
+function calcularActividadEstrellas(totalContratos) {
+
+  const total = Number(totalContratos) || 0;
+
+  if (total >= 20) return 5;
+  if (total >= 12) return 4;
+  if (total >= 7) return 3;
+  if (total >= 3) return 2;
+  if (total >= 1) return 1;
+
+  return 0;
+}
+
+
+function calcularValoracion(hunter, stats) {
+
+  const amenaza = calcularAmenazaEstrellas(
+    hunter.peligrosidad
+  );
+
+  const experiencia = calcularExperienciaEstrellas(
+    hunter.anosActivo
+  );
+
+  const efectividad = calcularEfectividadEstrellas(
+    stats.tasaExito
+  );
+
+  const actividad = calcularActividadEstrellas(
+    stats.contratos.length
+  );
+
+  const media = (
+    amenaza +
+    experiencia +
+    efectividad +
+    actividad
+  ) / 4;
+
+  return {
+    amenaza,
+    experiencia,
+    efectividad,
+    actividad,
+    media,
+    estrellasGenerales: Math.round(media)
+  };
+}
+
+
+
+
+/* =========================================================
+   INSIGNIAS
+========================================================= */
+
+function normalizarInsigniaManual(insignia, index = 0) {
+
+  if (typeof insignia === "string") {
+    return {
+      id: `manual-${index}`,
+      nombre: insignia,
+      descripcion: "Insignia especial registrada manualmente en el expediente.",
+      icono: "◆",
+      rareza: "Especial",
+      puntosRanking: puntosRarezaInsignia("Especial"),
+      origen: "manual"
+    };
+  }
+
+  if (!insignia || typeof insignia !== "object") {
+    return null;
+  }
+
+  return {
+    id: insignia.id || `manual-${index}`,
+    nombre: insignia.nombre || "Insignia sin nombre",
+    descripcion: insignia.descripcion || "Insignia especial registrada manualmente en el expediente.",
+    icono: insignia.icono || "◆",
+    rareza: insignia.rareza || "Especial",
+    puntosRanking: puntosRarezaInsignia(insignia.rareza || "Especial"),
+    origen: "manual"
+  };
+}
+
+
+function calcularInsigniasAutomaticas(hunter, stats) {
+
+  const insignias = [];
+  const anos = parseInt(hunter.anosActivo) || 0;
+  const especialidades = lista(hunter.especialidades).filter(Boolean).length;
+  const finalizados = stats.completados + stats.fallidos;
+  const peligro = hunter.peligrosidad || "";
+
+  if (anos >= 25) {
+    insignias.push({
+      id: "leyenda-del-oficio",
+      nombre: "Leyenda del oficio",
+      descripcion: "Más de 25 años de actividad registrados como cazarrecompensas.",
+      icono: "★",
+      rareza: "Legendaria",
+      origen: "automatica"
+    });
+  }
+  else if (anos >= 15) {
+    insignias.push({
+      id: "veterano",
+      nombre: "Veterano",
+      descripcion: "Al menos 15 años de actividad registrados.",
+      icono: "✦",
+      rareza: "Épica",
+      origen: "automatica"
+    });
+  }
+  else if (anos >= 8) {
+    insignias.push({
+      id: "experimentado",
+      nombre: "Experimentado",
+      descripcion: "Al menos 8 años de actividad registrados.",
+      icono: "◇",
+      rareza: "Rara",
+      origen: "automatica"
+    });
+  }
+
+  if (stats.completados >= 10) {
+    insignias.push({
+      id: "implacable",
+      nombre: "Implacable",
+      descripcion: "Ha completado al menos 10 contratos con éxito.",
+      icono: "✹",
+      rareza: "Legendaria",
+      origen: "automatica"
+    });
+  }
+  else if (stats.completados >= 5) {
+    insignias.push({
+      id: "profesional",
+      nombre: "Profesional",
+      descripcion: "Ha completado al menos 5 contratos con éxito.",
+      icono: "◆",
+      rareza: "Rara",
+      origen: "automatica"
+    });
+  }
+
+  if (finalizados >= 3 && stats.tasaExito === 100) {
+    insignias.push({
+      id: "expediente-impecable",
+      nombre: "Expediente impecable",
+      descripcion: "Mantiene una tasa de éxito del 100% con al menos 3 contratos finalizados.",
+      icono: "✧",
+      rareza: "Épica",
+      origen: "automatica"
+    });
+  }
+
+  if (peligro === "Extremo") {
+    insignias.push({
+      id: "amenaza-extrema",
+      nombre: "Amenaza extrema",
+      descripcion: "Clasificado en el nivel máximo de peligrosidad del archivo.",
+      icono: "☠",
+      rareza: "Legendaria",
+      origen: "automatica"
+    });
+  }
+  else if (peligro === "Severo") {
+    insignias.push({
+      id: "alto-riesgo",
+      nombre: "Operador de alto riesgo",
+      descripcion: "Clasificado con nivel de peligrosidad Severo.",
+      icono: "▲",
+      rareza: "Épica",
+      origen: "automatica"
+    });
+  }
+
+  if (especialidades >= 4) {
+    insignias.push({
+      id: "versatil",
+      nombre: "Versátil",
+      descripcion: "Domina al menos cuatro especialidades registradas.",
+      icono: "✣",
+      rareza: "Rara",
+      origen: "automatica"
+    });
+  }
+
+  if (stats.contratos.length >= 20) {
+    insignias.push({
+      id: "actividad-excepcional",
+      nombre: "Actividad excepcional",
+      descripcion: "Cuenta con al menos 20 contratos registrados en el archivo.",
+      icono: "⬢",
+      rareza: "Épica",
+      origen: "automatica"
+    });
+  }
+
+  if (stats.creditosGanados >= 1000000) {
+    insignias.push({
+      id: "millon-de-creditos",
+      nombre: "Un millón de créditos",
+      descripcion: "Ha acumulado al menos 1.000.000 de créditos en contratos completados.",
+      icono: "◈",
+      rareza: "Legendaria",
+      origen: "automatica"
+    });
+  }
+
+  return insignias;
+}
+
+
+function obtenerInsignias(hunter, stats) {
+
+  const automaticas = calcularInsigniasAutomaticas(hunter, stats);
+  const manuales = lista(hunter.insignias)
+    .map((insignia, index) => normalizarInsigniaManual(insignia, index))
+    .filter(Boolean);
+
+  return {
+    automaticas,
+    manuales,
+    puntosManuales: manuales.reduce(
+      (total, insignia) => total + (insignia.puntosRanking || 0),
+      0
+    ),
+    total: automaticas.length + manuales.length
+  };
+}
+
+
+function claseRareza(rareza = "") {
+  return clase(rareza || "especial");
+}
+
+
+function renderTarjetaInsignia(insignia) {
+
+  return `
+    <article class="badge-card badge-${claseRareza(insignia.rareza)}">
+
+      <div class="badge-emblem" aria-hidden="true">
+        ${esc(insignia.icono || "◆")}
+      </div>
+
+      <div class="badge-card-body">
+
+        <div class="badge-card-topline">
+          <span class="badge-rarity">
+            ${esc(insignia.rareza || "Especial")}
+          </span>
+
+          <span class="badge-origin ${insignia.origen === "manual" ? "is-manual" : "is-auto"}">
+            ${insignia.origen === "manual" ? "ESPECIAL" : "AUTOMÁTICA"}
+          </span>
+
+          ${
+            insignia.origen === "manual" && insignia.puntosRanking > 0
+              ? `<span class="badge-ranking-points">+${insignia.puntosRanking} PTS RANKING</span>`
+              : ""
+          }
+        </div>
+
+        <h4>${esc(insignia.nombre)}</h4>
+
+        <p>${esc(insignia.descripcion || "Sin descripción registrada.")}</p>
+
+      </div>
+
+    </article>
+  `;
+}
+
+
+function renderInsignias(hunter, stats) {
+
+  const insignias = obtenerInsignias(hunter, stats);
+
+  return `
+    <div class="badges-tab">
+
+      <div class="badges-hero">
+        <div>
+          <span class="eyebrow">DISTINCIONES DEL EXPEDIENTE</span>
+          <h3>Insignias</h3>
+          <p>
+            Distinciones obtenidas automáticamente por trayectoria y rendimiento,
+            junto con insignias especiales registradas manualmente.
+          </p>
+        </div>
+
+        <div class="badges-summary">
+          <div class="badges-count">
+            <strong>${insignias.total}</strong>
+            <span>${insignias.total === 1 ? "INSIGNIA" : "INSIGNIAS"}</span>
+          </div>
+
+          <div class="badges-ranking-total">
+            <strong>+${insignias.puntosManuales}</strong>
+            <span>PTS RANKING</span>
+          </div>
+        </div>
+      </div>
+
+      <section class="badges-section">
+        <div class="badges-section-heading">
+          <div>
+            <span class="badges-section-kicker">REGISTRO AUTOMÁTICO</span>
+            <h4>Insignias de trayectoria</h4>
+          </div>
+          <span class="badges-section-count">${insignias.automaticas.length}</span>
+        </div>
+
+        ${
+          insignias.automaticas.length
+            ? `<div class="badges-grid">${insignias.automaticas.map(renderTarjetaInsignia).join("")}</div>`
+            : `
+              <div class="badges-empty">
+                <span>◇</span>
+                <div>
+                  <strong>SIN INSIGNIAS AUTOMÁTICAS</strong>
+                  <p>Este expediente todavía no cumple los requisitos de ninguna distinción automática.</p>
+                </div>
+              </div>
+            `
+        }
+      </section>
+
+      <section class="badges-section badges-section-manual">
+        <div class="badges-section-heading">
+          <div>
+            <span class="badges-section-kicker">REGISTRO ESPECIAL</span>
+            <h4>Insignias personalizadas</h4>
+          </div>
+          <span class="badges-section-count">${insignias.manuales.length}</span>
+        </div>
+
+        ${
+          insignias.manuales.length
+            ? `<div class="badges-grid">${insignias.manuales.map(renderTarjetaInsignia).join("")}</div>`
+            : `
+              <div class="badges-empty badges-empty-manual">
+                <span>＋</span>
+                <div>
+                  <strong>SIN INSIGNIAS ESPECIALES</strong>
+                  <p>Puedes añadirlas manualmente desde el campo <code>insignias</code> de este cazarrecompensas en el JSON.</p>
+                </div>
+              </div>
+            `
+        }
+      </section>
+
+    </div>
+  `;
+}
+
+
+/* =========================================================
+   COMPARADOR DE CAZARRECOMPENSAS
+========================================================= */
+
+function puntuacionRankingHunter(hunter) {
+
+  const stats = calcularEstadisticas(hunter.id);
+  const puntosPeligrosidad =
+    PUNTOS_PELIGROSIDAD[hunter.peligrosidad] || 0;
+
+  const puntosInsignias =
+    calcularPuntosInsigniasManuales(hunter);
+
+  return (
+    (stats.completados * 10) +
+    stats.puntosContratos +
+    (puntosPeligrosidad * 3) +
+    puntosInsignias
+  );
+}
+
+
+function iniciarComparador() {
+
+  if (!comparadorA || !comparadorB) return;
+
+  const opciones = CAZARRECOMPENSAS
+    .slice()
+    .sort((a, b) =>
+      String(a.nombre || "").localeCompare(
+        String(b.nombre || ""),
+        "es"
+      )
+    )
+    .map(hunter => `
+      <option value="${esc(hunter.id)}">
+        ${esc(hunter.nombre)}
+      </option>
+    `)
+    .join("");
+
+  comparadorA.innerHTML = `
+    <option value="">Seleccionar cazarrecompensas...</option>
+    ${opciones}
+  `;
+
+  comparadorB.innerHTML = `
+    <option value="">Seleccionar cazarrecompensas...</option>
+    ${opciones}
+  `;
+
+  comparadorA.addEventListener("change", actualizarComparador);
+  comparadorB.addEventListener("change", actualizarComparador);
+}
+
+
+function actualizarComparador() {
+
+  if (!comparadorA || !comparadorB || !resultadoComparador) return;
+
+  const idA = comparadorA.value;
+  const idB = comparadorB.value;
+
+  if (!idA || !idB) {
+    resultadoComparador.innerHTML = `
+      <div class="compare-empty">
+        Selecciona dos expedientes distintos para iniciar la comparación.
+      </div>
+    `;
+    return;
+  }
+
+  if (idA === idB) {
+    resultadoComparador.innerHTML = `
+      <div class="compare-empty compare-warning">
+        Selecciona dos cazarrecompensas diferentes para realizar la comparación.
+      </div>
+    `;
+    return;
+  }
+
+  const hunterA = obtenerCazarrecompensas(idA);
+  const hunterB = obtenerCazarrecompensas(idB);
+
+  if (!hunterA || !hunterB) return;
+
+  resultadoComparador.innerHTML = renderComparacion(hunterA, hunterB);
+
+  resultadoComparador
+    .querySelectorAll("[data-open-hunter]")
+    .forEach(boton => {
+      boton.addEventListener("click", () => {
+        abrirPerfil(boton.dataset.openHunter);
+      });
+    });
+}
+
+
+function compararNumero(valorA, valorB) {
+  const a = Number(valorA) || 0;
+  const b = Number(valorB) || 0;
+
+  return {
+    a: a > b,
+    b: b > a,
+    empate: a === b
+  };
+}
+
+
+function claseMejor(esMejor, empate) {
+  if (empate) return "is-tie";
+  return esMejor ? "is-better" : "";
+}
+
+
+function renderComparacion(hunterA, hunterB) {
+
+  const statsA = calcularEstadisticas(hunterA.id);
+  const statsB = calcularEstadisticas(hunterB.id);
+
+  const valorA = calcularValoracion(hunterA, statsA);
+  const valorB = calcularValoracion(hunterB, statsB);
+
+  const rankingA = puntuacionRankingHunter(hunterA);
+  const rankingB = puntuacionRankingHunter(hunterB);
+
+  const anosA = parseInt(hunterA.anosActivo) || 0;
+  const anosB = parseInt(hunterB.anosActivo) || 0;
+
+  const comparaciones = {
+    general: compararNumero(valorA.media, valorB.media),
+    amenaza: compararNumero(valorA.amenaza, valorB.amenaza),
+    experiencia: compararNumero(valorA.experiencia, valorB.experiencia),
+    efectividad: compararNumero(statsA.tasaExito, statsB.tasaExito),
+    actividad: compararNumero(statsA.contratos.length, statsB.contratos.length),
+    completados: compararNumero(statsA.completados, statsB.completados),
+    anos: compararNumero(anosA, anosB),
+    ranking: compararNumero(rankingA, rankingB)
+  };
+
+  const cabecera = (hunter, lado) => `
+    <article class="compare-hunter-card compare-hunter-${lado}">
+      <div class="compare-hunter-image">
+        ${imagenHTML(hunter)}
+      </div>
+      <div class="compare-hunter-info">
+        <span class="eyebrow">EXPEDIENTE ${lado.toUpperCase()}</span>
+        <h3>${esc(hunter.nombre)}</h3>
+        <p>${esc(hunter.raza || "Raza desconocida")}</p>
+        <div class="compare-hunter-badges">
+          <span class="badge ${clase(hunter.peligrosidad)}">
+            ${esc(hunter.peligrosidad || "Sin clasificar")}
+          </span>
+          <span class="badge">
+            ${esc(hunter.estado || "Desconocido")}
+          </span>
+        </div>
+        <button
+          class="compare-open-profile"
+          type="button"
+          data-open-hunter="${esc(hunter.id)}"
+        >
+          ABRIR EXPEDIENTE
+        </button>
+      </div>
+    </article>
+  `;
+
+  const fila = (
+    etiqueta,
+    valorIzquierda,
+    valorDerecha,
+    comparacion,
+    extraClass = ""
+  ) => `
+    <div class="compare-stat-row ${extraClass}">
+      <div class="compare-stat-value ${claseMejor(comparacion.a, comparacion.empate)}">
+        ${valorIzquierda}
+        ${comparacion.a ? '<small class="compare-best">MEJOR</small>' : ''}
+      </div>
+      <div class="compare-stat-label">${etiqueta}</div>
+      <div class="compare-stat-value ${claseMejor(comparacion.b, comparacion.empate)}">
+        ${valorDerecha}
+        ${comparacion.b ? '<small class="compare-best">MEJOR</small>' : ''}
+      </div>
+    </div>
+  `;
+
+  return `
+    <div class="compare-head-to-head">
+      ${cabecera(hunterA, "a")}
+      <div class="compare-center-mark">VS</div>
+      ${cabecera(hunterB, "b")}
+    </div>
+
+    <div class="compare-table">
+      ${fila(
+        "VALORACIÓN GENERAL",
+        `<div class="compare-stars">${generarEstrellas(valorA.estrellasGenerales)}</div><strong>${valorA.media.toFixed(1)} / 5</strong>`,
+        `<div class="compare-stars">${generarEstrellas(valorB.estrellasGenerales)}</div><strong>${valorB.media.toFixed(1)} / 5</strong>`,
+        comparaciones.general,
+        "compare-main-rating"
+      )}
+
+      ${fila(
+        "AMENAZA",
+        `${generarEstrellas(valorA.amenaza)}<strong>${esc(hunterA.peligrosidad || "Desconocido")}</strong>`,
+        `${generarEstrellas(valorB.amenaza)}<strong>${esc(hunterB.peligrosidad || "Desconocido")}</strong>`,
+        comparaciones.amenaza,
+        "compare-threat-row"
+      )}
+
+      ${fila(
+        "EXPERIENCIA",
+        `${generarEstrellas(valorA.experiencia)}<strong>${esc(formatoAnios(hunterA.anosActivo))}</strong>`,
+        `${generarEstrellas(valorB.experiencia)}<strong>${esc(formatoAnios(hunterB.anosActivo))}</strong>`,
+        comparaciones.experiencia
+      )}
+
+      ${fila(
+        "EFECTIVIDAD",
+        `${generarEstrellas(valorA.efectividad)}<strong>${statsA.tasaExito}%</strong>`,
+        `${generarEstrellas(valorB.efectividad)}<strong>${statsB.tasaExito}%</strong>`,
+        comparaciones.efectividad
+      )}
+
+      ${fila(
+        "ACTIVIDAD",
+        `${generarEstrellas(valorA.actividad)}<strong>${statsA.contratos.length} contratos</strong>`,
+        `${generarEstrellas(valorB.actividad)}<strong>${statsB.contratos.length} contratos</strong>`,
+        comparaciones.actividad
+      )}
+
+      ${fila(
+        "CONTRATOS COMPLETADOS",
+        `<strong>${statsA.completados}</strong>`,
+        `<strong>${statsB.completados}</strong>`,
+        comparaciones.completados
+      )}
+
+      ${fila(
+        "AÑOS EN ACTIVO",
+        `<strong>${esc(formatoAnios(hunterA.anosActivo))}</strong>`,
+        `<strong>${esc(formatoAnios(hunterB.anosActivo))}</strong>`,
+        comparaciones.anos
+      )}
+
+      ${fila(
+        "PUNTOS DE RANKING",
+        `<strong>${rankingA} PTS</strong>`,
+        `<strong>${rankingB} PTS</strong>`,
+        comparaciones.ranking
+      )}
+    </div>
+  `;
+}
+
+
+/* =========================================================
    ABRIR EXPEDIENTE
 ========================================================= */
 
@@ -1534,6 +2337,20 @@ function abrirPerfil(
   const stats =
     calcularEstadisticas(
       hunter.id
+    );
+
+
+  const valoracion =
+    calcularValoracion(
+      hunter,
+      stats
+    );
+
+
+  const insignias =
+    obtenerInsignias(
+      hunter,
+      stats
     );
 
 
@@ -1675,6 +2492,25 @@ function abrirPerfil(
       <button
         type="button"
         class="tab-btn"
+        data-tab="valoracion"
+      >
+        Valoración
+      </button>
+
+
+      <button
+        type="button"
+        class="tab-btn"
+        data-tab="insignias"
+      >
+        Insignias
+        <span class="tab-badge-count">${insignias.total}</span>
+      </button>
+
+
+      <button
+        type="button"
+        class="tab-btn"
         data-tab="equipo"
       >
         Equipamiento
@@ -1723,6 +2559,25 @@ function abrirPerfil(
           }
 
         </p>
+
+      </div>
+
+
+      <div class="profile-section profile-rating-summary">
+
+        <div class="profile-rating-summary-head">
+          <h3>
+            Valoración general
+          </h3>
+
+          <strong class="profile-rating-score">
+            ${valoracion.media.toFixed(1)} / 5
+          </strong>
+        </div>
+
+        <div class="profile-rating-stars">
+          ${generarEstrellas(valoracion.estrellasGenerales)}
+        </div>
 
       </div>
 
@@ -1781,6 +2636,111 @@ function abrirPerfil(
 
         : ""
       }
+
+    </section>
+
+
+
+    <!-- VALORACIÓN -->
+
+    <section
+      id="tab-valoracion"
+      class="tab-pane"
+    >
+
+      <div class="rating-main">
+
+        <span class="eyebrow">
+          EVALUACIÓN DEL ARCHIVO
+        </span>
+
+        <h3>
+          Valoración general
+        </h3>
+
+        <div class="rating-main-stars">
+          ${generarEstrellas(valoracion.estrellasGenerales)}
+        </div>
+
+        <div class="rating-main-number">
+          ${valoracion.media.toFixed(1)}
+          <span>/ 5</span>
+        </div>
+
+        <p>
+          Valoración calculada automáticamente a partir de la amenaza,
+          la experiencia, la efectividad y la actividad registrada.
+        </p>
+
+      </div>
+
+
+      <div class="rating-grid">
+
+        <div class="rating-card rating-threat">
+
+          <div class="rating-card-header">
+            <span>AMENAZA</span>
+            <strong>${esc(hunter.peligrosidad || "Desconocido")}</strong>
+          </div>
+
+          ${generarEstrellas(valoracion.amenaza)}
+
+        </div>
+
+
+        <div class="rating-card">
+
+          <div class="rating-card-header">
+            <span>EXPERIENCIA</span>
+            <strong>${esc(formatoAnios(hunter.anosActivo))}</strong>
+          </div>
+
+          ${generarEstrellas(valoracion.experiencia)}
+
+        </div>
+
+
+        <div class="rating-card">
+
+          <div class="rating-card-header">
+            <span>EFECTIVIDAD</span>
+            <strong>${stats.tasaExito}%</strong>
+          </div>
+
+          ${generarEstrellas(valoracion.efectividad)}
+
+        </div>
+
+
+        <div class="rating-card">
+
+          <div class="rating-card-header">
+            <span>ACTIVIDAD</span>
+            <strong>
+              ${stats.contratos.length}
+              ${stats.contratos.length === 1 ? "contrato" : "contratos"}
+            </strong>
+          </div>
+
+          ${generarEstrellas(valoracion.actividad)}
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- INSIGNIAS -->
+
+    <section
+      id="tab-insignias"
+      class="tab-pane"
+    >
+
+      ${renderInsignias(hunter, stats)}
 
     </section>
 

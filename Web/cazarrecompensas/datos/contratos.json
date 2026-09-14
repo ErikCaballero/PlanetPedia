@@ -135,5 +135,85 @@
     "resultado": "Cargamento recuperado. El carguero sufrió daños críticos.",
 
     "observaciones": "La operación implicó un enfrentamiento directo con la tripulación y sus fuerzas de escolta."
-  }
+  },
+  {
+  "id": "CON-0007",
+  "cazarrecompensas": "vrakk-tal",
+
+  "nombre": "Eliminación de Vardo Suin",
+
+  "tipo": "Eliminación",
+  "dificultad": "Baja",
+  "estado": "Completado",
+
+  "objetivo": "Vardo Suin",
+  "cliente": "Imperio AracnoSephus",
+  "lugar": "Malasin",
+
+  "recompensa": 1250,
+
+  "descripcion": "Localizar y eliminar al almirante del ejército de los Varyths, Vardo Suin.",
+  "resultado": "Objetivo eliminado con éxito.",
+  "observaciones": "No han habido complicaciones."
+},
+{
+  "id": "CON-0008",
+  "cazarrecompensas": "torg-han",
+
+  "nombre": "Eliminación Vrik Nator",
+
+  "tipo": "Eliminación",
+  "dificultad": "Alta",
+  "estado": "Completado",
+
+  "objetivo": "Eliminar al lider criminal Vrik Nator",
+  "cliente": "Garvock el carnicero",
+  "lugar": "Liveria",
+
+  "recompensa": 48000,
+
+  "descripcion": "El contrato es de eliminar a el rival líder criminal de los territorios de Liveria de Garvock.",
+  "resultado": "Objetivo eliminado con éxito.",
+  "observaciones": "Con su lider cayeron todos sus guardas."
+},
+{
+  "id": "CON-0009",
+  "cazarrecompensas": "torg-han",
+
+  "nombre": "Escolta del mensajero de Garvock",
+
+  "tipo": "Escolta",
+  "dificultad": "Alta",
+  "estado": "Completado",
+
+  "objetivo": "Escoltar al mensajero de Garvock a otro líder criminal",
+  "cliente": "Garvock el carnicero",
+  "lugar": "Sistema Gryndariano",
+
+  "recompensa": 21000,
+
+  "descripcion": "Se debe escoltar y proteger al mensajero de Garvock por territorio rival para negociar con la cabeza criminal rival.",
+  "resultado": "Completado con éxito.",
+  "observaciones": "Se han ejecutado a todos los insolentes que intentaban eliminar al mensajero."
+},
+{
+  "id": "CON-0010",
+  "cazarrecompensas": "torg-han",
+
+  "nombre": "Eliminación de Sea Viria",
+
+  "tipo": "Eliminación",
+  "dificultad": "Alta",
+  "estado": "Completado",
+
+  "objetivo": "Eliminar a la soldado Sea Viria, una importante general de la Unión de Planetas Independientes",
+  "cliente": "Garvock el carnicero",
+  "lugar": "Cebalia",
+
+  "recompensa": 36000,
+
+  "descripcion": "Se debe eliminar a Sea Viria por entrometerse demasiado en los asuntos del líder criminal Gravock el carnicero.",
+  "resultado": "Se ha eliminado al objetivo y se ha encubierto como muerte en una taberna para no levantar sospechas.",
+  "observaciones": "Trabajo realizado con éxito."
+}
 ]

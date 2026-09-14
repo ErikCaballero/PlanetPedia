@@ -53,3 +53,64 @@ IMPORTANTE SOBRE LOS CONTRATOS
 ------------------------------
 El valor "cazarrecompensas" de cada contrato debe coincidir EXACTAMENTE con el campo "id" de un registro en datos/cazarrecompensas.json.
 En el archivo incluido actualmente hay contratos de ejemplo con IDs como "boba-fett", "nyra-vex" y "drogg-kalan", mientras que tus cazadores actuales usan IDs como "orbus-zot" y "klarsus-morg". Esos contratos de ejemplo no se asignarán a tus cazadores hasta que cambies esos IDs.
+
+
+INSIGNIAS
+---------
+Cada cazarrecompensas tiene una pestaña "Insignias". La web genera automáticamente
+algunas distinciones según sus datos (años activo, contratos completados, tasa de éxito,
+peligrosidad, especialidades, etc.).
+
+Además puedes añadir tus propias insignias en datos/cazarrecompensas.json con el campo:
+
+  "insignias": [
+    {
+      "id": "cazador-de-graialock",
+      "nombre": "Cazador de Graialock",
+      "descripcion": "Concedida por derrotar a Graialock durante un contrato especial.",
+      "icono": "☠",
+      "rareza": "Legendaria"
+    }
+  ]
+
+Campos de una insignia manual:
+- id: identificador opcional.
+- nombre: nombre mostrado.
+- descripcion: motivo o hazaña.
+- icono: símbolo que aparecerá en la insignia.
+- rareza: Común, Rara, Épica, Legendaria o Especial.
+
+También puedes usar una forma rápida con solo texto:
+  "insignias": ["Sobreviviente de Kharon", "Cazador del Vacío"]
+
+Las insignias manuales NO sustituyen las automáticas: se muestran juntas en la misma pestaña,
+separadas en "Insignias de trayectoria" e "Insignias personalizadas".
+
+
+PUNTOS DE INSIGNIAS MANUALES EN EL RANKING
+-------------------------------------------
+Solo las insignias añadidas manualmente en el campo "insignias" otorgan puntos extra
+al ranking. Las insignias automáticas de trayectoria no suman puntos.
+
+Puntuación por rareza:
+- Común: 0 puntos
+- Rara: 2 puntos
+- Épica: 3 puntos
+- Legendaria: 5 puntos
+- Especial: 7 puntos
+
+No necesitas escribir un campo "puntos": la web calcula automáticamente los puntos
+según el valor de "rareza".
+
+Ejemplo:
+  "insignias": [
+    {
+      "id": "cazador-de-graialock",
+      "nombre": "Cazador de Graialock",
+      "descripcion": "Concedida por derrotar a Graialock durante un contrato especial.",
+      "icono": "☠",
+      "rareza": "Legendaria"
+    }
+  ]
+
+Esa insignia añadirá automáticamente +5 puntos al ranking.

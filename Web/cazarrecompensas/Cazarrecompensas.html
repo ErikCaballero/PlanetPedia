@@ -159,6 +159,75 @@
 
 
 <!-- =======================================================
+     COMPARADOR
+======================================================= -->
+
+<section class="compare-access">
+
+  <button
+    id="botonComparador"
+    class="compare-toggle"
+    type="button"
+  >
+    <span class="compare-toggle-icon">⇄</span>
+    <span>COMPARAR CAZARRECOMPENSAS</span>
+    <span class="compare-toggle-arrow">↓</span>
+  </button>
+
+  <div
+    id="panelComparador"
+    class="compare-panel"
+    aria-hidden="true"
+  >
+
+    <div class="compare-panel-header">
+      <div>
+        <span class="eyebrow">HERRAMIENTA DEL ARCHIVO</span>
+        <h2>Comparador de Cazarrecompensas</h2>
+        <p>Selecciona dos expedientes para comparar valoración, experiencia, peligrosidad y rendimiento contractual.</p>
+      </div>
+
+      <button
+        id="cerrarComparador"
+        class="compare-close"
+        type="button"
+        aria-label="Cerrar comparador"
+      >×</button>
+    </div>
+
+    <div class="compare-selectors">
+      <label class="compare-select-box">
+        <span>EXPEDIENTE A</span>
+        <select id="comparadorA">
+          <option value="">Seleccionar cazarrecompensas...</option>
+        </select>
+      </label>
+
+      <div class="compare-vs">
+        <span>VS</span>
+        <small>COMPARACIÓN DIRECTA</small>
+      </div>
+
+      <label class="compare-select-box">
+        <span>EXPEDIENTE B</span>
+        <select id="comparadorB">
+          <option value="">Seleccionar cazarrecompensas...</option>
+        </select>
+      </label>
+    </div>
+
+    <div id="resultadoComparador" class="compare-result">
+      <div class="compare-empty">
+        Selecciona dos expedientes distintos para iniciar la comparación.
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
      CATÁLOGO
 ======================================================= -->
 
@@ -348,7 +417,7 @@
 ======================================================= -->
 
 <script src="js/cazarrecompensas.js?v=2"></script>
-
+<script src="../../components/voiceController.js"></script>
 
 </body>
 </html>
