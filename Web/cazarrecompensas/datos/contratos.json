@@ -1,0 +1,139 @@
+[
+  {
+    "id": "CON-0001",
+    "cazarrecompensas": "vrakk-tal",
+
+    "nombre": "Captura de Torin Vaal",
+
+    "tipo": "Captura viva",
+    "dificultad": "Baja",
+    "estado": "Completado",
+
+    "objetivo": "Torin Vaal",
+    "cliente": "Unión de Planetas Independientes",
+    "lugar": "Zorn 1",
+
+    "recompensa": 8000,
+
+    "descripcion": "Localizar y capturar con vida al contrabandista Torin Vaal.",
+
+    "resultado": "Objetivo capturado y entregado al cliente.",
+
+    "observaciones": "El objetivo intentó abandonar el planeta utilizando documentación falsa."
+  },
+
+  {
+    "id": "CON-0002",
+    "cazarrecompensas": "vrakk-tal",
+
+    "nombre": "Eliminación de Korda Renn",
+
+    "tipo": "Eliminación",
+    "dificultad": "Alta",
+    "estado": "Completado",
+
+    "objetivo": "Korda Renn",
+    "cliente": "Imperio AracnoSephus",
+    "lugar": "Nar Shaddaa",
+
+    "recompensa": 21000,
+
+    "descripcion": "Localizar y eliminar a Korda Renn antes de que pudiera abandonar el sector.",
+
+    "resultado": "El objetivo logró escapar antes de ser localizado.",
+
+    "observaciones": "Se sospecha que recibió información sobre la existencia del contrato."
+  },
+
+  {
+    "id": "CON-0003",
+    "cazarrecompensas": "boba-fett",
+
+    "nombre": "Recuperación del prototipo X-91",
+
+    "tipo": "Recuperación",
+    "dificultad": "Severa",
+    "estado": "Aceptado",
+
+    "objetivo": "Prototipo X-91",
+    "cliente": "Cliente desconocido",
+    "lugar": "Borde Exterior",
+
+    "recompensa": 200000,
+
+    "descripcion": "Localizar y recuperar un prototipo tecnológico desaparecido.",
+
+    "resultado": "",
+
+    "observaciones": "Contrato actualmente activo."
+  },
+
+  {
+    "id": "CON-0004",
+    "cazarrecompensas": "nyra-vex",
+
+    "nombre": "Extracción de informante",
+
+    "tipo": "Extracción",
+    "dificultad": "Alta",
+    "estado": "Completado",
+
+    "objetivo": "Informante V-17",
+    "cliente": "Desconocido",
+    "lugar": "Coruscant",
+
+    "recompensa": 65000,
+
+    "descripcion": "Extraer con vida a un informante antes de que fuera localizado por fuerzas hostiles.",
+
+    "resultado": "El informante fue extraído y entregado sin bajas.",
+
+    "observaciones": "La operación fue realizada sin alertar a las fuerzas de seguridad locales."
+  },
+
+  {
+    "id": "CON-0005",
+    "cazarrecompensas": "nyra-vex",
+
+    "nombre": "Recuperación de datos",
+
+    "tipo": "Recuperación",
+    "dificultad": "Moderada",
+    "estado": "Completado",
+
+    "objetivo": "Archivo de navegación cifrado",
+    "cliente": "Corporación privada",
+    "lugar": "Corellia",
+
+    "recompensa": 32000,
+
+    "descripcion": "Recuperar un archivo de navegación robado antes de que pudiera ser vendido.",
+
+    "resultado": "Archivo recuperado intacto.",
+
+    "observaciones": ""
+  },
+
+  {
+    "id": "CON-0006",
+    "cazarrecompensas": "z-417",
+
+    "nombre": "Asalto al carguero Vagrant",
+
+    "tipo": "Recuperación",
+    "dificultad": "Severa",
+    "estado": "Completado",
+
+    "objetivo": "Cargamento militar",
+    "cliente": "Desconocido",
+    "lugar": "Sector Arkanis",
+
+    "recompensa": 78000,
+
+    "descripcion": "Interceptar un carguero armado y recuperar un cargamento militar robado.",
+
+    "resultado": "Cargamento recuperado. El carguero sufrió daños críticos.",
+
+    "observaciones": "La operación implicó un enfrentamiento directo con la tripulación y sus fuerzas de escolta."
+  }
+]

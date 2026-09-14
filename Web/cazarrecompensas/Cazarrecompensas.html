@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Cazarrecompensas | Planet Pedia
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="../plantilla.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/cazarrecompensas.css?v=2"
+  >
+
+</head>
+
+
+<body>
+
+
+<!-- =======================================================
+     HEADER
+======================================================= -->
+
+    <div id="planetpedia-header"></div>
+    <script src="../../components/header.js"></script>
+
+
+
+
+<!-- =======================================================
+     HERO
+======================================================= -->
+
+<main>
+
+  <section class="hunter-hero">
+
+    <div class="hero-content">
+
+      <span class="eyebrow">
+        ARCHIVO GALÁCTICO
+      </span>
+
+      <h1>
+        Cazarrecompensas
+      </h1>
+
+      <p>
+        Registro de algunos de los cazarrecompensas más
+        conocidos de la galaxia. Consulta sus expedientes,
+        especialidades, equipamiento, historial operativo
+        y contratos registrados.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+<!-- =======================================================
+     RANKING
+======================================================= -->
+
+  <section class="ranking-access">
+
+  <button
+    id="botonRanking"
+    class="ranking-toggle"
+    type="button"
+  >
+    <span class="ranking-toggle-icon">
+      ◈
+    </span>
+
+    <span>
+      VER RANKING GALÁCTICO
+    </span>
+
+    <span class="ranking-toggle-arrow">
+      ↓
+    </span>
+  </button>
+
+
+  <div
+    id="panelRanking"
+    class="ranking-panel"
+    aria-hidden="true"
+  >
+
+    <div class="ranking-panel-header">
+
+      <div>
+
+        <span class="eyebrow">
+          CLASIFICACIÓN GALÁCTICA
+        </span>
+
+        <h2>
+          Ranking de Cazarrecompensas
+        </h2>
+
+        <p>
+          Clasificación basada en contratos completados,
+          dificultad registrada y nivel de peligrosidad.
+        </p>
+
+      </div>
+
+
+      <button
+        id="cerrarRanking"
+        class="ranking-close"
+        type="button"
+        aria-label="Cerrar ranking"
+      >
+        ×
+      </button>
+
+    </div>
+
+
+    <div class="ranking-columns">
+
+      <span>POS.</span>
+      <span>CAZARRECOMPENSAS</span>
+      <span>COMPLETADOS</span>
+      <span>PELIGRO</span>
+      <span>ÉXITO</span>
+      <span>PUNTOS</span>
+
+    </div>
+
+
+    <div
+      id="rankingCazarrecompensas"
+      class="ranking-list"
+    >
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     CATÁLOGO
+======================================================= -->
+
+  <section class="catalog-section">
+
+    <div class="section-heading">
+
+      <div>
+
+        <span class="eyebrow">
+          BASE DE DATOS
+        </span>
+
+        <h2>
+          Registro de Cazarrecompensas
+        </h2>
+
+      </div>
+
+
+      <span
+        id="contadorResultados"
+        class="result-count"
+      >
+        0 registros
+      </span>
+
+    </div>
+
+
+
+<!-- =======================================================
+     FILTROS
+======================================================= -->
+
+    <div class="hunter-controls">
+
+      <div class="search-box">
+
+        <label for="busqueda">
+          Buscar
+        </label>
+
+        <input
+          type="search"
+          id="busqueda"
+          placeholder="Nombre, raza, alias o especialidad..."
+        >
+
+      </div>
+
+
+      <div class="filter-box">
+
+        <label for="filtroPeligrosidad">
+          Peligrosidad
+        </label>
+
+        <select id="filtroPeligrosidad">
+
+          <option value="">
+            Todas
+          </option>
+
+          <option value="Bajo">
+            Bajo
+          </option>
+
+          <option value="Moderado">
+            Moderado
+          </option>
+
+          <option value="Alto">
+            Alto
+          </option>
+
+          <option value="Severo">
+            Severo
+          </option>
+
+          <option value="Extremo">
+            Extremo
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="filter-box">
+
+        <label for="filtroEstado">
+          Estado
+        </label>
+
+        <select id="filtroEstado">
+
+          <option value="">
+            Todos
+          </option>
+
+          <option value="Activo">
+            Activo
+          </option>
+
+          <option value="Retirado">
+            Retirado
+          </option>
+
+          <option value="Fallecido">
+            Fallecido
+          </option>
+
+          <option value="Desconocido">
+            Desconocido
+          </option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+
+
+<!-- =======================================================
+     GRID
+======================================================= -->
+
+    <div
+      id="gridCazarrecompensas"
+      class="hunter-grid"
+    >
+    </div>
+
+  </section>
+
+</main>
+
+
+
+<!-- =======================================================
+     MODAL / EXPEDIENTE
+======================================================= -->
+
+<div
+  id="modal"
+  class="profile-modal"
+  aria-hidden="true"
+>
+
+  <div
+    class="modal-backdrop"
+    data-cerrar-modal
+  >
+  </div>
+
+
+  <div
+    class="modal-panel"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="nombrePerfil"
+  >
+
+    <button
+      type="button"
+      class="modal-close"
+      data-cerrar-modal
+      aria-label="Cerrar expediente"
+    >
+      ×
+    </button>
+
+
+    <div id="contenidoPerfil">
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- =======================================================
+     JAVASCRIPT
+======================================================= -->
+
+<script src="js/cazarrecompensas.js?v=2"></script>
+
+
+</body>
+</html>

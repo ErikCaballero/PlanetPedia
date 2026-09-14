@@ -1,0 +1,24 @@
+[
+  {
+    "id": "id-unico-sin-espacios",
+    "nombre": "",
+    "alias": "",
+    "raza": "",
+    "planetaOrigen": "",
+    "imagen": "img/cazarrecompensas/archivo.webp",
+    "edad": "",
+    "anosActivo": "",
+    "estado": "Activo",
+    "peligrosidad": "",
+    "afiliacion": "",
+    "zonasOperacion": [],
+    "especialidades": [],
+    "armamento": [],
+    "equipamiento": [],
+    "nave": "",
+    "aliados": [],
+    "enemigos": [],
+    "descripcion": "",
+    "historia": ""
+  }
+]

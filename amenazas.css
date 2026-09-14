@@ -1,0 +1,324 @@
+body {
+    background-color: var(--bg-space);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image:
+        radial-gradient(white, rgba(255,255,255,.18) 2px, transparent 40px),
+        radial-gradient(white, rgba(255,255,255,.12) 1px, transparent 30px),
+        radial-gradient(circle at 50% 0%, rgba(136, 0, 20, 0.16), transparent 35%);
+    background-size: 550px 550px, 350px 350px, 100% 700px;
+    background-position: 0 0, 40px 60px, top center;
+}
+
+.threat-hero {
+    max-width: 1050px;
+    margin: 3.5rem auto 2rem;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.threat-hero__badge {
+    display: inline-block;
+    padding: .45rem .9rem;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 75, 95, .45);
+    color: #ff6478;
+    background: rgba(255, 58, 80, .07);
+    border-radius: 999px;
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.threat-hero h1 {
+    color: var(--accent-neon);
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    line-height: 1;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 30px rgba(79, 251, 223, .15);
+}
+
+.threat-hero p {
+    color: var(--text-muted);
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.alert-strip {
+    max-width: 760px;
+    margin: 1.5rem auto 0;
+    padding: .85rem 1.1rem;
+    border-left: 3px solid #ff4059;
+    background: rgba(255, 40, 65, .07);
+    color: #d9dce6;
+    text-align: left;
+    font-size: .9rem;
+}
+
+.pulse-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: .55rem;
+    border-radius: 50%;
+    background: #ff4059;
+    box-shadow: 0 0 12px #ff4059;
+    animation: pulse 1.4s infinite;
+}
+
+@keyframes pulse {
+    50% { opacity: .35; transform: scale(.75); }
+}
+
+.controls {
+    max-width: 1100px;
+    margin: 0 auto 2rem;
+    padding: 0 2rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+    gap: .8rem;
+}
+
+.controls input,
+.controls select,
+.controls button {
+    background: rgba(22, 27, 44, .95);
+    color: var(--text-main);
+    border: 1px solid rgba(255,255,255,.11);
+    border-radius: 8px;
+    padding: .85rem 1rem;
+    outline: none;
+    transition: .25s ease;
+}
+
+.controls input:focus,
+.controls select:focus,
+.controls button:hover,
+.controls button.active {
+    border-color: var(--accent-neon);
+    box-shadow: 0 0 0 2px rgba(79,251,223,.07);
+}
+
+.controls button {
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.threat-grid {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto 4rem;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 1.5rem;
+}
+
+.threat-card {
+    min-height: 430px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 6px;
+    background: linear-gradient(180deg, rgba(22,27,44,.88), rgba(9,11,20,.98));
+    transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+
+.threat-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 74, 94, .65);
+    box-shadow: 0 18px 50px rgba(0,0,0,.35), 0 0 24px rgba(255, 52, 78, .08);
+}
+
+.threat-card__visual {
+    height: 170px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.threat-card__visual::before,
+.threat-card__visual::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(1px);
+}
+
+.threat-card__visual::before {
+    width: 220px;
+    height: 220px;
+    border: 1px solid rgba(255,255,255,.14);
+}
+
+.threat-card__visual::after {
+    width: 110px;
+    height: 110px;
+    border: 1px solid rgba(255,255,255,.2);
+}
+
+.sigil {
+    position: relative;
+    z-index: 2;
+    font-size: 4.3rem;
+    font-weight: 200;
+    text-shadow: 0 0 25px currentColor;
+}
+
+.visual-singularity { background: radial-gradient(circle at center, #5b0016 0, #220009 28%, #090b14 65%); color: #ff4762; }
+.visual-swarm { background: radial-gradient(circle at 35% 55%, #423200 0, #171309 35%, #090b14 70%); color: #f6c84a; }
+.visual-storm { background: radial-gradient(circle at 55% 45%, #173969 0, #10182b 38%, #090b14 72%); color: #73a8ff; }
+.visual-tech { background: radial-gradient(circle at center, #003c39 0, #082321 40%, #090b14 72%); color: var(--accent-neon); }
+.visual-cosmic { background: radial-gradient(circle at center, #4b144e 0, #1b0d28 35%, #090b14 72%); color: #d587ff; }
+.visual-watchers { background: radial-gradient(circle at center, #272727 0, #111 40%, #07080c 75%); color: #e7e7e7; }
+
+.scanlines {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 3;
+    background: linear-gradient(rgba(255,255,255,0) 50%, rgba(0,0,0,.13) 50%);
+    background-size: 100% 4px;
+    opacity: .65;
+}
+
+.threat-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -25px;
+    width: 100%;
+    height: 18px;
+    background: rgba(255, 52, 78, .24);
+    box-shadow: 0 0 14px rgba(255, 52, 78, .35);
+    opacity: 0;
+    z-index: 4;
+    pointer-events: none;
+}
+
+.threat-card:hover::before {
+    opacity: 1;
+    animation: danger-scan 1.6s linear infinite;
+}
+
+@keyframes danger-scan {
+    to { transform: translateY(480px); }
+}
+
+.threat-card__content {
+    padding: 1.35rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    position: relative;
+    z-index: 5;
+}
+
+.threat-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: .8rem;
+}
+
+.threat-type {
+    color: var(--accent-neon);
+    font-size: .72rem;
+    letter-spacing: 1.3px;
+    font-weight: 800;
+}
+
+.danger {
+    padding: .25rem .5rem;
+    border-radius: 4px;
+    font-size: .72rem;
+    font-weight: 900;
+    letter-spacing: .8px;
+}
+
+.danger-3 { color: #f9d66a; border: 1px solid rgba(249,214,106,.45); background: rgba(249,214,106,.08); }
+.danger-4 { color: #ff9c56; border: 1px solid rgba(255,156,86,.5); background: rgba(255,156,86,.08); }
+.danger-5 { color: #ff526a; border: 1px solid rgba(255,82,106,.55); background: rgba(255,82,106,.09); }
+
+.threat-card h2 {
+    font-size: 1.45rem;
+    margin-bottom: .7rem;
+}
+
+.threat-card p {
+    color: var(--text-muted);
+    line-height: 1.55;
+    font-size: .94rem;
+    margin-bottom: 1rem;
+}
+
+.threat-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin-top: auto;
+    margin-bottom: 1rem;
+}
+
+.threat-stats span {
+    border: 1px solid rgba(255,255,255,.08);
+    background: rgba(255,255,255,.035);
+    color: #c8ccd8;
+    padding: .35rem .55rem;
+    border-radius: 4px;
+    font-size: .77rem;
+}
+
+.view-btn {
+    display: inline-block;
+    width: fit-content;
+    color: #07110f;
+    background: var(--accent-neon);
+    text-decoration: none;
+    font-weight: 800;
+    font-size: .82rem;
+    padding: .55rem .85rem;
+    border-radius: 3px;
+    transform: translateY(8px);
+    opacity: .75;
+    transition: .25s ease;
+}
+
+.threat-card:hover .view-btn {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.empty-state {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--text-muted);
+    border: 1px dashed rgba(255,255,255,.13);
+}
+
+@media (max-width: 900px) {
+    .controls { grid-template-columns: 1fr 1fr; }
+    .controls input { grid-column: 1 / -1; }
+}
+
+@media (max-width: 600px) {
+    .threat-hero { margin-top: 2.25rem; }
+    .controls { grid-template-columns: 1fr; }
+    .controls input { grid-column: auto; }
+    .threat-grid { grid-template-columns: 1fr; padding: 0 1rem; }
+    .threat-hero, .controls { padding-left: 1rem; padding-right: 1rem; }
+}
