@@ -2929,3 +2929,83 @@ main{position:relative;z-index:1}
 .tabs{
   margin-top: 18px;
 }
+
+/* =========================================================
+   CONTRATOS CONJUNTOS
+========================================================= */
+.contract-joint-block{
+  margin:14px 0 16px;
+  padding:12px 14px;
+  border:1px solid rgba(79,251,223,.18);
+  border-radius:9px;
+  background:rgba(79,251,223,.035);
+}
+.contract-joint-heading{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:10px;
+  color:var(--text-muted);
+  font-size:.72rem;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.contract-joint-badge{
+  display:inline-flex;
+  align-items:center;
+  padding:5px 8px;
+  border:1px solid rgba(79,251,223,.4);
+  border-radius:999px;
+  color:var(--accent-neon);
+  background:rgba(79,251,223,.07);
+  font-weight:800;
+  letter-spacing:.09em;
+}
+.contract-participants{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+}
+.contract-participants-label{
+  padding-top:6px;
+  color:var(--text-muted);
+  font-size:.66rem;
+  font-weight:800;
+  letter-spacing:.09em;
+}
+.contract-participants-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+}
+.contract-participant{
+  appearance:none;
+  border:1px solid rgba(121,82,179,.48);
+  border-radius:6px;
+  padding:5px 9px;
+  background:rgba(121,82,179,.09);
+  color:var(--text-main);
+  font:inherit;
+  font-size:.78rem;
+  font-weight:700;
+  cursor:pointer;
+  transition:border-color .18s ease, color .18s ease, transform .18s ease;
+}
+.contract-participant:hover{
+  border-color:var(--accent-neon);
+  color:var(--accent-neon);
+  transform:translateY(-1px);
+}
+.contract-participant-missing{
+  padding:5px 9px;
+  border:1px dashed rgba(255,255,255,.16);
+  border-radius:6px;
+  color:var(--text-muted);
+  font-size:.78rem;
+}
+@media (max-width:650px){
+  .contract-joint-heading,
+  .contract-participants{align-items:flex-start;flex-direction:column}
+  .contract-participants-label{padding-top:0}
+}

@@ -11,23 +11,10 @@
     "estado": "Activo",
     "peligrosidad": "Alto",
     "afiliacion": "Independiente",
-    "zonasOperacion": [
-      "Borde Exterior",
-      "Núcleo Galáctico"
-    ],
-    "especialidades": [
-      "Captura viva",
-      "Eliminación"
-    ],
-    "armamento": [
-      "Mazo Orrniano",
-      "Granadas gravitatorias",
-      "Granadas pesadas"
-    ],
-    "equipamiento": [
-      "Armadura Orrniana",
-      "Botiquín"
-    ],
+    "zonasOperacion": ["Borde Exterior", "Núcleo Galáctico"],
+    "especialidades": ["Captura viva", "Eliminación"],
+    "armamento": ["Mazo Orrniano","Granadas gravitatorias","Granadas pesadas"],
+    "equipamiento": ["Armadura Orrniana","Botiquín"],
     "nave": "",
     "insignias": [],
     "descripcion": "Cazarrecompensas de gran fuerza y brutalidad que utiliza la fuerza bruta para completar sus misiones.",
@@ -45,20 +32,11 @@
     "estado": "Activo",
     "peligrosidad": "Alto",
     "afiliacion": "Independiente",
-    "zonasOperacion": [
-      "Borde Medio",
-      "Núcleo Galáctico"
-    ],
+    "zonasOperacion": ["Borde Exterior", "Núcleo Galáctico"],
     "aliados": [],
     "enemigos": [],
-    "especialidades": [
-      "Eliminación",
-      "Misiones acuáticas"
-    ],
-    "armamento": [
-      "Tridente Sharkinor",
-      "Cuchillo dentado"
-    ],
+    "especialidades": ["Eliminación","Misiones acuáticas"],
+    "armamento": ["Tridente Sharkinor","Cuchillo dentado"],
     "equipamiento": [],
     "nave": "Vesper",
     "insignias": [],
@@ -77,23 +55,10 @@
     "estado": "Activo",
     "peligrosidad": "Bajo",
     "afiliacion": "Bounty Contract Authority",
-    "zonasOperacion": [
-      "Borde Exterior"
-    ],
-    "especialidades": [
-      "Eliminación"
-    ],
-    "armamento": [
-      "Rifle de precisión",
-      "Cuchilla térmica",
-      "Granadas explosivas",
-      "Bláster de pulso"
-    ],
-    "equipamiento": [
-      "Armadura Klagor reforzada",
-      "Escudo de impacto",
-      "Baliza de rastreo"
-    ],
+    "zonasOperacion": ["Borde Exterior"],
+    "especialidades": ["Eliminación"],
+    "armamento": ["Rifle de precisión","Cuchilla térmica","Granadas explosivas","Bláster de pulso"],
+    "equipamiento": ["Armadura Klagor reforzada","Escudo de impacto","Baliza de rastreo"],
     "nave": "Transporte blindado K-9",
     "insignias": [],
     "descripcion": "Cazarrecompensas especializado en operaciones de eliminación, francotirador de gran precisión.",
@@ -111,26 +76,10 @@
     "estado": "Retirado",
     "peligrosidad": "Alto",
     "afiliacion": "Mercenario independiente",
-    "zonasOperacion": [
-      "Borde Exterior"
-    ],
-    "especialidades": [
-      "Captura viva",
-      "Asalto",
-      "Recuperación"
-    ],
-    "armamento": [
-      "Cañón de partículas",
-      "Cuchilla térmica",
-      "Granadas gravitatorias"
-    ],
-    "equipamiento": [
-      "Armadura reforzada",
-      "Escudo Burbuja de energía",
-      "Baliza de rastreo",
-      "Dron de reconocimiento",
-      "Bláster de pulso"
-    ],
+    "zonasOperacion": ["Borde Exterior"],
+    "especialidades": ["Captura viva","Asalto","Recuperación"],
+    "armamento": ["Cañón de partículas","Cuchilla térmica","Granadas gravitatorias"],
+    "equipamiento": ["Armadura reforzada","Escudo Burbuja de energía","Baliza de rastreo","Dron de reconocimiento","Bláster de pulso"],
     "nave": "Hipernave Foxsim 9",
     "insignias": [],
     "descripcion": "Un tecnólogo experimentado en el uso de armas avanzadas y equipos de combate retirado que ahora se dedica a la venta de armamento a los cazarrecompensas.",
@@ -148,26 +97,11 @@
     "estado": "Activo",
     "peligrosidad": "Severo",
     "afiliacion": "Independiente",
-    "zonasOperacion": [
-      "Borde Exterior",
-      "Núcleo Galáctico"
-    ],
-    "especialidades": [
-      "Asalto",
-      "Captura viva",
-      "Recuperación"
-    ],
-    "armamento": [
-      "Rifle de asalto Estiniano",
-      "Cuchillo dentado",
-      "Lanza plegable",
-      "Granadas de gas",
-      ""
-    ],
+    "zonasOperacion": ["Borde Exterior","Núcleo Galáctico"],
+    "especialidades": ["Asalto","Captura viva","Recuperación"],
+    "armamento": ["Rifle de asalto Estiniano","Cuchillo dentado","Lanza plegable","Granadas de gas"],
     "equipamiento": [],
-    "aliados": [
-      "orbus-zot"
-    ],
+    "aliados": ["orbus-zot"],
     "enemigos": [],
     "nave": "Glasius 4",
     "insignias": [],
@@ -189,26 +123,11 @@
     "estado": "Activo",
     "peligrosidad": "Severo",
     "afiliacion": "",
-    "zonasOperacion": [
-      "Borde Exterior",
-      "Borde Medio",
-      "Núcleo Galáctico"
-    ],
-    "especialidades": [
-      "Recuperación",
-      "Asalto",
-      "Eliminación",
-      "Captura viva",
-      "Robo",
-      "Robo de información"
-    ],
-    "armamento": [
-      "Pistola de sigilo",
-      "Cuchilla térmica"
-    ],
-    "equipamiento": [
-      "Droide de reconocimiento"
-    ],
+    "enemigos": [],
+    "zonasOperacion": ["Borde Exterior","Borde Medio","Núcleo Galáctico"],
+    "especialidades": ["Recuperación","Asalto","Eliminación","Captura viva","Robo","Robo de información","Misiones de sigilo","Misiones de espionaje"],
+    "armamento": ["Pistola de sigilo","Cuchilla térmica"],
+    "equipamiento": ["Droide de reconocimiento"],
     "nave": "Nave Y-12",
     "insignias": [],
     "descripcion": "Cazarrecompensas androide de gran precisión y sigilo, es uno de los cazarrecompensas más efectivos y caros de todos.",
@@ -226,29 +145,12 @@
     "estado": "Activo",
     "peligrosidad": "Moderado",
     "afiliacion": "Independiente",
-    "zonasOperacion": [
-      "Borde Medio",
-      "Núcleo Galáctico"
-    ],
-    "especialidades": [
-      "Captura viva",
-      "Misiones acuáticas"
-    ],
-    "armamento": [
-      "Lanza arpón de coralto",
-      "Red arrojadiza",
-      "Cuchillo de coralto",
-      "Granadas submarinas"
-    ],
-    "equipamiento": [
-      "Armadura blindada de coralto",
-      "Botiquín de primeros auxilios",
-      "Baliza de rastreo"
-    ],
+    "zonasOperacion": ["Borde Medio","Núcleo Galáctico"],
+    "especialidades": ["Captura viva","Misiones acuáticas"],
+    "armamento": ["Lanza arpón de coralto","Red arrojadiza","Cuchillo de coralto","Granadas submarinas"],
+    "equipamiento": ["Armadura blindada de coralto","Botiquín de primeros auxilios","Baliza de rastreo"],
     "nave": "Salunus 2",
-    "enemigos": [
-      "klarsus-morg"
-    ],
+    "enemigos": ["klarsus-morg"],
     "insignias": [],
     "descripcion": "Un cazarrecompensas especializado en misiones acuáticas, un cazarrecompensas capaz de respirar bajo el agua.",
     "historia": "Titus Barus es un Bulino nacido en la ciudad principal de Thalassa Prime, formaba parte del grupo extremista de 'Los téntaculos de Thalassa', el propósito de este grupo era el de eliminar a los Sharkinors para vengar el pasado de su especie."
@@ -265,23 +167,12 @@
     "estado": "Activo",
     "peligrosidad": "Bajo",
     "afiliacion": "Bounty Contract Authority",
-    "zonasOperacion": [
-      "Núcleo Galáctico"
-    ],
-    "especialidades": [
-      "Asalto"
-    ],
-    "armamento": [
-      "Rifle de precisión",
-      "Bláster de pulso"
-    ],
-    "equipamiento": [
-      "Máscara de gas"
-    ],
+    "zonasOperacion": ["Núcleo Galáctico"],
+    "especialidades": ["Asalto"],
+    "armamento": ["Rifle de precisión","Bláster de pulso"],
+    "equipamiento": ["Máscara de gas"],
     "nave": "Caza de asalto B-7",
-    "aliados": [
-      "kael-varu"
-    ],
+    "aliados": ["kael-varu"],
     "enemigos": [],
     "insignias": [],
     "descripcion": "Una cazarrecompensas menor, francotiradora novata de poca experiencia, se encarga de contratos de bajo nivel.",
@@ -299,21 +190,9 @@
     "estado": "Activo",
     "peligrosidad": "Severo",
     "afiliacion": "Los sirvientes de Gorvak",
-    "zonasOperacion": [
-      "Borde Exterior",
-      "Borde Medio",
-      "Núcleo Galáctico"
-    ],
-    "especialidades": [
-      "Eliminación",
-      "Asalto",
-      "Robo"
-    ],
-    "armamento": [
-      "Báster Zyx-9",
-      "Granada aturdidora",
-      "Bomba de humo"
-    ],
+    "zonasOperacion": ["Borde Exterior","Borde Medio","Núcleo Galáctico"],
+    "especialidades": ["Eliminación","Asalto","Robo"],
+    "armamento": ["Báster Zyx-9","Granada aturdidora","Bomba de humo"],
     "equipamiento": [],
     "nave": "",
     "aliados": [],
@@ -347,26 +226,12 @@
     "estado": "Activo",
     "peligrosidad": "Moderado",
     "afiliacion": "AracnoHunters",
-    "zonasOperacion": [
-      "Borde Exterior"
-    ],
-    "especialidades": [
-      "Asalto",
-      "Escolta"
-    ],
-    "armamento": [
-      "Bláster de pulso",
-      "Fusil de precisión",
-      "Granadas explosivas"
-    ],
-    "equipamiento": [
-      "Armadura blindada",
-      "Visor Térmico"
-    ],
+    "zonasOperacion": ["Borde Exterior"],
+    "especialidades": ["Asalto","Escolta"],
+    "armamento": ["Bláster de pulso","Fusil de precisión","Granadas explosivas"],
+    "equipamiento": ["Armadura blindada","Visor Térmico"],
     "nave": "Asfus 4",
-    "aliados": [
-      "sala-maek"
-    ],
+    "aliados": ["sala-maek"],
     "enemigos": [],
     "insignias": [],
     "descripcion": "Un cazarrecompensas mediano que trabaja exclusivamente para el Imperio AracnoSephus",

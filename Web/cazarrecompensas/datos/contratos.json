@@ -215,5 +215,245 @@
   "descripcion": "Se debe eliminar a Sea Viria por entrometerse demasiado en los asuntos del líder criminal Gravock el carnicero.",
   "resultado": "Se ha eliminado al objetivo y se ha encubierto como muerte en una taberna para no levantar sospechas.",
   "observaciones": "Trabajo realizado con éxito."
+},
+{
+  "id": "CON-0011",
+  "cazarrecompensas": "vrakk-tal",
+
+  "nombre": "Protección del comerciante",
+
+  "tipo": "Escolta",
+  "dificultad": "Baja",
+  "estado": "Completado",
+
+  "objetivo": "Escoltar al cliente comerciante a través de territorio hostil",
+  "cliente": "Comerciante Bulino",
+  "lugar": "Kalagor",
+
+  "recompensa": 2100,
+
+  "descripcion": "Se debe escoltar al comerciante Bulino a través de territorio hostil para garantizar su seguridad.",
+  "resultado": "Se ha escoltado correctamente al comerciante.",
+  "observaciones": "Menudo tostón de tipo, no volveré a aceptar trabajos para él, no para de hablar todo el tiempo."
+},
+{
+  "id": "CON-0012",
+  "cazarrecompensas": ["orbus-zot", "klarsus-morg","vrakk-tal"],
+
+  "nombre": "Asalto a un almacen de armas",
+
+  "tipo": "Asalto",
+  "dificultad": "Alta",
+  "estado": "Completado",
+
+  "objetivo": "Asaltar un almacen de armas de una nave carguero Foxer.",
+  "cliente": "Imperio AracnoSephus",
+  "lugar": "Núcleo Galáctico",
+
+  "recompensa": 32000,
+
+  "descripcion": "Se realizará un asalto a un almacen de armas de una nave carguero Foxer para robar armas para el Imperio AracnoSephus.",
+  "resultado": "Asalto completado con éxito y armas entregadas al cliente.",
+  "observaciones": "Se han robado las armas aunque se han producido altercados con Guardianes de Coralto, un combate muy tenso que haterminado con heridas en algunos de los miembros del equipo."
+},
+{
+  "id": "CON-0013",
+  "cazarrecompensas": "klarsus-morg",
+
+  "nombre": "Eliminación de un líder criminal",
+
+  "tipo": "Eliminación",
+  "dificultad": "Alta",
+  "estado": "Completado",
+
+  "objetivo": "Eliminar a un líder criminal enemigo de los territorios del Cartel de Gorvack.",
+  "cliente": "Gorvack el carnicero",
+  "lugar": "Sistema Gryndariano",
+
+  "recompensa": 48000,
+
+  "descripcion": "Se debe eliminar a un líder criminal que está interfiriendo con los intereses del Cartel de Gorvack.",
+  "resultado": "Objetivo eliminado con éxito.",
+  "observaciones": "He destruído a todos los enemigos que habían en la zona del cártel."
+},
+{
+  "id": "CON-0014",
+  "cazarrecompensas": "orbus-zot",
+
+  "nombre": "Recuperación de un cargamento robado",
+
+  "tipo": "Recuperación",
+  "dificultad": "Moderada",
+  "estado": "Completado",
+
+  "objetivo": "Recuperar un cargamento robado de armas y suministros.",
+  "cliente": "Vlagok el negro",
+  "lugar": "Sistema Vorlak",
+
+  "recompensa": 38000,
+
+  "descripcion": "Se debe recuperar un cargamento robado de armas y suministros que pertenece al Cartel de Gorvack.",
+  "resultado": "Cargamento recuperado con éxito y entregado al cliente.",
+  "observaciones": ""
+},
+{
+  "id": "CON-0015",
+  "cazarrecompensas": "torg-han",
+
+  "nombre": "Eliminación del cazarrecompensas Kael Varu",
+
+  "tipo": "Eliminación",
+  "dificultad": "Alta",
+  "estado": "Completado",
+
+  "objetivo": "Eliminar al cazarrecompensas Kael Varu por intento de asesinato a Gorvack el carnicero.",
+  "cliente": "Gorvack el carnicero",
+  "lugar": "Kalagor",
+
+  "recompensa": 135000,
+
+  "descripcion": "Se debe eliminar lo antes posible al cazarrecompensas Kael Varu por su intento de asesinato a Gorvack el carnicero.",
+  "resultado": "Objetivo eliminado con éxito.",
+  "observaciones": "Objetivo eliminado."
+},
+{
+  "id": "CON-0016",
+  "cazarrecompensas": "z-417",
+
+  "nombre": "Recuperación de un cargamento robado",
+
+  "tipo": "Recuperación",
+  "dificultad": "Severa",
+  "estado": "Completado",
+
+  "objetivo": "Recuperar un cargamento robado de armas Foxer robado.",
+  "cliente": "Gobierno Foxer",
+  "lugar": "Webitia",
+
+  "recompensa": 220000,
+
+  "descripcion": "Se debe viajar a Webitia, (sede del imperio AracnoSephus) y recuperar el reciente cargamento robado por cazarrecompensas del imperio AracnoSephus con gran prioridad",
+  "resultado": "Cargamento recuperado con éxito y entregado al cliente.",
+  "observaciones": "Se ha recuperado el cargamento tras la eliminación de múltiples soldados del imperio AracnoSephus."
+},
+{
+  "id": "CON-0017",
+  "cazarrecompensas": "z-417",
+
+  "nombre": "Escolta de cargamento Foxer",
+
+  "tipo": "Escolta",
+  "dificultad": "Moderada",
+  "estado": "Completado",
+
+  "objetivo": "Escoltar y proteger un cargamento Foxer de armas de gran valor.",
+  "cliente": "Gobierno Foxer",
+  "lugar": "Espacio abierto",
+
+  "recompensa": 125000,
+
+  "descripcion": "Tras el último incidente con el cargamento robado, se debe escoltar y proteger un cargamento Foxer de armas de gran valor de cualquier cazarrecompensas u organización hostil.",
+  "resultado": "Cargamento escoltado y protegido con éxito hasta su destino.",
+  "observaciones": "Se ha intentado robar el cargamento pero se ha conseguido protegerlo sin problema."
+},
+{
+  "id": "CON-0018",
+  "cazarrecompensas": ["klarsus-morg", "kael-varu", "alan-vlanx"],
+
+  "nombre": "Robar cargamento de armas Foxer",
+
+  "tipo": "Robo",
+  "dificultad": "Alta",
+  "estado": "Fallido",
+
+  "objetivo": "Robar el cargamento de armas Foxer de un carguero de transporte.",
+  "cliente": "Imperio AracnoSephus",
+  "lugar": "Espacio abierto",
+
+  "recompensa": 15000,
+
+  "descripcion": "Se debe robar el cargamento de armas Foxer de un carguero de transporte antes de que llegue a su destino.",
+  "resultado": "No se ha conseguido robar el cargamento debido al cazarrecompensas Z-417 que lo escoltaba y protegía.",
+  "observaciones": "El cazarrecompensas Z-417 casi mata a todos los miembros del equipo, se ha conseguido escapar con vida pero sin el cargamento."
+},
+{
+  "id": "CON-0019",
+  "cazarrecompensas": "orbus-zot",
+
+  "nombre": "Secuestro de un alto mando de la Unión de Planetas Independientes",
+
+  "tipo": "Captura viva",
+  "dificultad": "Moderada",
+  "estado": "Completado",
+
+  "objetivo": "Secuestrar a un alto mando de la Unión de Planetas Independientes para obtener información valiosa de posibles cargamentos.",
+  "cliente": "Imperio Steron",
+  "lugar": "Espacio abierto",
+
+  "recompensa": 9100,
+
+  "descripcion": "Se quiere obtener información valiosa sobre posibles cargamentos de armas y tecnologías de la Unión de Planetas Independientes.",
+  "resultado": "Captura viva completada y entregada al cliente.",
+  "observaciones": "He capturado y entregado al alto cargo al cliente."
+},
+{
+  "id": "CON-0020",
+  "cazarrecompensas": "torg-han",
+
+  "nombre": "Eliminación de el criminal Karg Zun",
+
+  "tipo": "Eliminación",
+  "dificultad": "Severa",
+  "estado": "Completado",
+
+  "objetivo": "Se debe eliminar al criminal Karg Zun.",
+  "cliente": "Gorvack el carnicero",
+  "lugar": "Territorio de Gorvack",
+
+  "recompensa": 72000,
+
+  "descripcion": "Se debe eliminar al criminal Karg Zun, un criminal que se dedica a eliminar el tráfico de armas y drogas de cualquier cártel rival, incluyendo de el Cártel de Gorvack el carnicero.",
+  "resultado": "Objetivo eliminado con éxito.",
+  "observaciones": "No le molestará más."
+},
+{
+  "id": "CON-000021",
+  "cazarrecompensas": "alan-vlanx",
+
+  "nombre": "Robo a un banco local",
+
+  "tipo": "Robo",
+  "dificultad": "Baja",
+  "estado": "Completado",
+
+  "objetivo": "Robar un pequeño banco local de Zorn 1.",
+  "cliente": "Criminal Varnich Vernoc.",
+  "lugar": "Zorn 1",
+
+  "recompensa": 6000,
+
+  "descripcion": "Se debe asaltar un banco local y entregar el dinero robado al cliente.",
+  "resultado": "El robo se ha completado con éxito y el dinero ha sido entregado al cliente.",
+  "observaciones": "He robado el banco local y entregado el dinero al cliente."
+},
+{
+  "id": "CON-0022",
+  "cazarrecompensas": "torg-han",
+
+  "nombre": "Asalto a un almacen de armas de un cártel rival",
+
+  "tipo": "Asalto",
+  "dificultad": "Moderada",
+  "estado": "Completado",
+
+  "objetivo": "Robar las armas de un almacen de armas de un cártel rival.",
+  "cliente": "Gorvack el carnicero",
+  "lugar": "Territorio de Gorvack",
+
+  "recompensa": 23000,
+
+  "descripcion": "Se debe robar un almacen de armas de un cártel rival para dejarlo sin armas y así adquirirlas.",
+  "resultado": "Armas robadas con éxito y entregadas al cliente.",
+  "observaciones": "Se ha vaciado el almacen de armas, entregado al cliente y eliminado a los guardas."
 }
 ]

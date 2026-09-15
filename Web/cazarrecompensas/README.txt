@@ -114,3 +114,22 @@ Ejemplo:
   ]
 
 Esa insignia añadirá automáticamente +5 puntos al ranking.
+
+CONTRATOS CONJUNTOS
+-------------------
+Un contrato puede pertenecer a un solo cazarrecompensas o a varios.
+Los contratos antiguos siguen funcionando sin ningún cambio.
+
+Contrato individual:
+  "cazarrecompensas": "orbus-zot"
+
+Contrato conjunto:
+  "cazarrecompensas": ["orbus-zot", "klarsus-morg", "zirus-clain"]
+
+En un contrato conjunto, cada ID debe coincidir EXACTAMENTE con un "id" de
+datos/cazarrecompensas.json. El mismo contrato aparecerá en el expediente de cada
+participante y contará en las estadísticas, valoración, comparador y ranking de cada uno.
+No dupliques el contrato en contratos.json: basta con un único registro con todos los IDs.
+
+La interfaz marca automáticamente estos casos como "CONTRATO CONJUNTO" y muestra los
+participantes. Al pulsar el nombre de un participante se abre su expediente.

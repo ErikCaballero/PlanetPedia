@@ -400,9 +400,10 @@ async function cargarDatos() {
       CAZARRECOMPENSAS.map(hunter => hunter.id)
     );
 
-    const contratosSinHunter = CONTRATOS.filter(
-      contrato => !idsHunters.has(contrato.cazarrecompensas)
-    );
+    const contratosSinHunter = CONTRATOS.filter(contrato => {
+      const participantes = obtenerIdsCazarrecompensasContrato(contrato);
+      return participantes.length === 0 || participantes.some(id => !idsHunters.has(id));
+    });
 
     if (contratosSinHunter.length) {
       console.warn(
@@ -805,14 +806,75 @@ function filtrar() {
    CONTRATOS DE UN HUNTER
 ========================================================= */
 
+function obtenerIdsCazarrecompensasContrato(contrato) {
+
+  if (!contrato) return [];
+
+  const valor = contrato.cazarrecompensas;
+
+  if (Array.isArray(valor)) {
+    return [...new Set(
+      valor
+        .map(id => String(id || "").trim())
+        .filter(Boolean)
+    )];
+  }
+
+  const id = String(valor || "").trim();
+  return id ? [id] : [];
+
+}
+
+function contratoPerteneceACazarrecompensas(contrato, idHunter) {
+  return obtenerIdsCazarrecompensasContrato(contrato).includes(idHunter);
+}
+
 function obtenerContratos(idHunter) {
 
   return CONTRATOS.filter(
-    contrato =>
-      contrato.cazarrecompensas ===
-      idHunter
+    contrato => contratoPerteneceACazarrecompensas(contrato, idHunter)
   );
 
+}
+
+function renderParticipantesContrato(contrato) {
+
+  const ids = obtenerIdsCazarrecompensasContrato(contrato);
+
+  if (ids.length <= 1) return "";
+
+  const participantes = ids.map(id => {
+    const hunter = obtenerCazarrecompensas(id);
+    const nombre = hunter ? hunter.nombre : id;
+
+    if (!hunter) {
+      return `<span class="contract-participant-missing">${esc(nombre)}</span>`;
+    }
+
+    return `
+      <button
+        type="button"
+        class="contract-participant"
+        onclick="abrirPerfil('${esc(id)}')"
+        title="Abrir expediente de ${esc(nombre)}"
+      >
+        ${esc(nombre)}
+      </button>
+    `;
+  }).join("");
+
+  return `
+    <div class="contract-joint-block">
+      <div class="contract-joint-heading">
+        <span class="contract-joint-badge">CONTRATO CONJUNTO</span>
+        <span>${ids.length} participantes</span>
+      </div>
+      <div class="contract-participants">
+        <span class="contract-participants-label">PARTICIPANTES</span>
+        <div class="contract-participants-list">${participantes}</div>
+      </div>
+    </div>
+  `;
 }
 
 
@@ -1535,6 +1597,8 @@ function renderContratos(contratos) {
 
         </div>
 
+
+        ${renderParticipantesContrato(contrato)}
 
         <div class="contract-summary-grid">
 
