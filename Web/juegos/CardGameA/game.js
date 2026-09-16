@@ -32,7 +32,7 @@ const races = {
   foxers: {
     name: "Foxers",
     homeworld: "Aetheria",
-    image: "../../../Especies alienigenas/Los Foxers/Los Foxers.png",
+    image: "../../../Especies alienigenas/Los Foxers/Los Foxers.webp",
     playstyle: "Tecnología e ingeniería",
 
     description:
@@ -64,7 +64,7 @@ const races = {
   aracnosephus: {
     name: "AracnoSephus",
     homeworld: "Webitia",
-    image: "../../../Especies alienigenas/AracnoSephus/AracnoSephus.png",
+    image: "../../../Especies alienigenas/AracnoSephus/AracnoSephus.webp",
     playstyle: "Expansión y guerra",
 
     description:
@@ -96,7 +96,7 @@ const races = {
   sterons: {
     name: "Sterons",
     homeworld: "Gradius 4",
-    image: "../../../Especies alienigenas/Sterons/Steron.png",
+    image: "../../../Especies alienigenas/Sterons/Steron.webp",
     playstyle: "Conquista militar",
 
     description:
@@ -128,7 +128,7 @@ const races = {
   varyths: {
     name: "Varyths",
     homeworld: "Sabaya",
-    image: "../../../Especies alienigenas/Varyths/Varyth.png",
+    image: "../../../Especies alienigenas/Varyths/Varyth.webp",
     playstyle: "Combate y guerra",
 
     description:
@@ -160,7 +160,7 @@ const races = {
   xelthorianos: {
     name: "Xel'thorianos",
     homeworld: "Sapphire Dom",
-    image: "../../../Especies alienigenas/Xelthorianos/Xelthoriano.jpeg",
+    image: "../../../Especies alienigenas/Xelthorianos/Xelthoriano.webp",
     playstyle: "Energía y ciencia",
 
     description:
@@ -192,7 +192,7 @@ const races = {
   zornicos: {
     name: "Zornicos",
     homeworld: "Zorn 1",
-    image: "../../../Especies alienigenas/Zornicos/Zornico.png",
+    image: "../../../Especies alienigenas/Zornicos/Zornico.webp",
     playstyle: "Equilibrado",
 
     description:

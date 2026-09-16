@@ -1,0 +1,245 @@
+/* PlanetPedia - buscador global */
+.pp-search-open {
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+    border: 1px solid rgba(255,255,255,.16);
+    background: rgba(255,255,255,.06);
+    color: var(--text-main, #f4f7ff);
+    font: inherit;
+    font-weight: 600;
+    padding: .55rem .8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border-color .2s, background .2s, transform .2s;
+}
+.pp-search-open:hover,
+.pp-search-open:focus-visible {
+    border-color: var(--accent-neon, #4ffbdf);
+    background: rgba(79,251,223,.09);
+    outline: none;
+}
+.pp-search-open:active { transform: translateY(1px); }
+.pp-search-open kbd {
+    padding: .08rem .35rem;
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 4px;
+    color: var(--text-muted, #aeb7c8);
+    font-size: .72rem;
+    font-family: inherit;
+    background: rgba(0,0,0,.18);
+}
+
+.pp-search-fallback {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 9997;
+    box-shadow: 0 8px 30px rgba(0,0,0,.28);
+}
+
+.pp-search-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: none;
+    align-items: flex-start;
+    justify-content: center;
+    padding: min(10vh, 80px) 18px 24px;
+    background: rgba(2, 7, 16, .78);
+    backdrop-filter: blur(8px);
+}
+.pp-search-overlay.is-open { display: flex; }
+.pp-search-dialog {
+    width: min(760px, 100%);
+    max-height: min(78vh, 760px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.13);
+    border-radius: 16px;
+    background: var(--bg-card, #111927);
+    color: var(--text-main, #f4f7ff);
+    box-shadow: 0 28px 90px rgba(0,0,0,.55);
+}
+.pp-search-head {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    padding: .9rem 1rem;
+    border-bottom: 1px solid rgba(255,255,255,.09);
+}
+.pp-search-icon { opacity: .8; font-size: 1.15rem; }
+.pp-search-input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-size: 1.08rem;
+}
+.pp-search-input::placeholder { color: var(--text-muted, #98a3b8); }
+.pp-search-close {
+    border: 1px solid rgba(255,255,255,.13);
+    background: transparent;
+    color: var(--text-muted, #aeb7c8);
+    border-radius: 7px;
+    padding: .28rem .48rem;
+    cursor: pointer;
+}
+.pp-search-close:hover { color: var(--text-main, #fff); border-color: rgba(255,255,255,.28); }
+
+/*
+ * Cabecera, filtros y pie no deben ceder altura cuando hay muchos resultados.
+ * La única zona flexible/scrollable verticalmente es .pp-search-results.
+ */
+.pp-search-head,
+.pp-search-filters,
+.pp-search-footer {
+    flex: 0 0 auto;
+}
+
+.pp-search-filters {
+    display: flex;
+    align-items: center;
+    gap: .45rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    min-height: 48px;
+    box-sizing: border-box;
+    padding: .55rem 1rem;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,.34) transparent;
+}
+.pp-search-filter {
+    flex: 0 0 auto;
+    min-width: max-content;
+    height: 30px;
+    min-height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    white-space: nowrap;
+    line-height: 1;
+    border: 1px solid rgba(255,255,255,.12);
+    background: rgba(255,255,255,.035);
+    color: var(--text-muted, #b3bdcc);
+    border-radius: 999px;
+    padding: 0 .72rem;
+    cursor: pointer;
+    font: inherit;
+    font-size: .82rem;
+}
+.pp-search-filter:hover,
+.pp-search-filter.is-active {
+    color: var(--accent-neon, #4ffbdf);
+    border-color: var(--accent-neon, #4ffbdf);
+    background: rgba(79,251,223,.07);
+}
+
+.pp-search-results {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    padding: .5rem;
+}
+.pp-search-empty {
+    padding: 2.6rem 1.2rem;
+    color: var(--text-muted, #aeb7c8);
+    text-align: center;
+    line-height: 1.55;
+}
+.pp-search-result {
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: .9rem;
+    padding: .72rem;
+    border: 1px solid transparent;
+    border-radius: 11px;
+    color: inherit;
+    text-decoration: none;
+    transition: background .15s, border-color .15s;
+}
+.pp-search-result:hover,
+.pp-search-result.is-selected {
+    background: rgba(255,255,255,.055);
+    border-color: rgba(79,251,223,.3);
+}
+.pp-search-thumb {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 9px;
+    background: rgba(255,255,255,.05);
+}
+.pp-search-thumb-placeholder {
+    width: 72px;
+    height: 72px;
+    display: grid;
+    place-items: center;
+    border-radius: 9px;
+    background: rgba(255,255,255,.05);
+    font-size: 1.35rem;
+}
+.pp-search-result-main { min-width: 0; }
+.pp-search-result-top {
+    display: flex;
+    align-items: baseline;
+    gap: .55rem;
+    margin-bottom: .28rem;
+}
+.pp-search-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 750;
+    color: var(--text-main, #fff);
+}
+.pp-search-category {
+    flex: 0 0 auto;
+    color: var(--accent-neon, #4ffbdf);
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+}
+.pp-search-snippet {
+    margin: 0;
+    color: var(--text-muted, #aeb7c8);
+    font-size: .86rem;
+    line-height: 1.42;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.pp-search-snippet mark,
+.pp-search-title mark {
+    color: inherit;
+    background: rgba(79,251,223,.2);
+    border-radius: 3px;
+    padding: 0 .08em;
+}
+.pp-search-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: .7rem;
+    padding: .62rem 1rem;
+    border-top: 1px solid rgba(255,255,255,.07);
+    color: var(--text-muted, #8f9aab);
+    font-size: .74rem;
+}
+
+body.pp-search-lock { overflow: hidden; }
+
+@media (max-width: 700px) {
+    .pp-search-open kbd { display: none; }
+    .pp-search-overlay { padding: 10px; align-items: stretch; }
+    .pp-search-dialog { max-height: none; height: min(92vh, 780px); margin-top: 4vh; }
+    .pp-search-result { grid-template-columns: 56px minmax(0,1fr); }
+    .pp-search-thumb, .pp-search-thumb-placeholder { width: 56px; height: 56px; }
+    .pp-search-footer span:last-child { display: none; }
+}

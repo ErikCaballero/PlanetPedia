@@ -40,6 +40,11 @@
                 path.endsWith("/web/especies.html")
             ) {
                 activePage = "especies";
+            } else if (
+                path.includes("/web/personajes/") ||
+                path.endsWith("/web/personajes.html")
+            ) {
+                activePage = "personajes";
             } else if (path.endsWith("/web/lineatemporal.html")) {
                 activePage = "linea-temporal";
             } else if (

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Archivo de personajes relevantes del universo de PlanetPedia: gobernantes, guerreros, científicos, criminales y otras figuras históricas.">
+    <title>Personajes - Planet Pedia</title>
+    <link rel="stylesheet" href="plantilla.css">
+    <link rel="stylesheet" href="personajes/css/personajes.css">
+</head>
+<body>
+    <div id="planetpedia-header"></div>
+    <script src="../components/header.js"></script>
+
+    <main>
+        <section class="characters-hero" aria-labelledby="characters-title">
+            <div class="characters-hero__content">
+                <span class="eyebrow">ARCHIVO DE INDIVIDUOS</span>
+                <h1 id="characters-title">Personajes</h1>
+                <p>
+                    Figuras que han dejado huella en la historia galáctica. Gobernantes, guerreros,
+                    científicos, criminales y otros individuos cuyos actos forman parte de los registros de PlanetPedia.
+                </p>
+
+                <div class="hero-metrics" aria-label="Resumen del archivo">
+                    <div class="hero-metric">
+                        <strong id="metricCharacters">12</strong>
+                        <span>registros</span>
+                    </div>
+                    <div class="hero-metric">
+                        <strong id="metricRoles">5</strong>
+                        <span>categorías</span>
+                    </div>
+                    <div class="hero-metric hero-metric--special">
+                        <strong>01</strong>
+                        <span>archivo especial</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-section" aria-labelledby="featured-title">
+            <div class="section-heading characters-heading">
+                <div>
+                    <span class="eyebrow">FIGURAS DESTACADAS</span>
+                    <h2 id="featured-title">Nombres que cambiaron la galaxia</h2>
+                </div>
+                <p>Una selección de personajes especialmente relevantes dentro de los registros actuales.</p>
+            </div>
+
+            <div class="featured-grid">
+                <a class="featured-card" href="personajes/Grimlon.html">
+                    <img src="../Especies alienigenas/Ceruleanos/Grimlon vs 4 orrs.webp" alt="Grimlon enfrentándose a cuatro Orrs">
+                    <div class="featured-card__shade"></div>
+                    <div class="featured-card__content">
+                        <span class="role-chip">Guerrero</span>
+                        <h3>Grimlon</h3>
+                        <p>Ceruleano · Figura legendaria de combate</p>
+                        <span class="card-link">Abrir registro <span aria-hidden="true">→</span></span>
+                    </div>
+                </a>
+
+                <a class="featured-card" href="personajes/Gorvak-el-Carnicero.html">
+                    <img src="../Especies alienigenas/Grynthars/Grynthar sentado.webp" alt="Gorvak el Carnicero">
+                    <div class="featured-card__shade"></div>
+                    <div class="featured-card__content">
+                        <span class="role-chip role-chip--criminal">Criminal</span>
+                        <h3>Gorvak el Carnicero</h3>
+                        <p>Grynthar · Conocido como el Rey Criminal</p>
+                        <span class="card-link">Abrir registro <span aria-hidden="true">→</span></span>
+                    </div>
+                </a>
+
+                <a class="featured-card" href="personajes/Faid-Foxer.html">
+                    <img src="../Especies alienigenas/Los Foxers/Los Foxers.webp" alt="Foxers, especie de Faid Foxer">
+                    <div class="featured-card__shade"></div>
+                    <div class="featured-card__content">
+                        <span class="role-chip role-chip--science">Tecnólogo</span>
+                        <h3>Faid Foxer</h3>
+                        <p>Foxer · Miembro de los Guardianes Galácticos</p>
+                        <span class="card-link">Abrir registro <span aria-hidden="true">→</span></span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="special-section" aria-labelledby="special-title">
+            <div class="special-card">
+                <div class="special-card__icon" aria-hidden="true">◈</div>
+                <div class="special-card__copy">
+                    <span class="eyebrow">SECCIÓN ESPECIAL</span>
+                    <h2 id="special-title">Cazarrecompensas</h2>
+                    <p>
+                        El archivo de cazarrecompensas conserva su identidad propia. Sus expedientes, contratos,
+                        ranking y comparador siguen funcionando en su sección especializada, sin duplicar fichas aquí.
+                    </p>
+                    <div class="special-card__tags" aria-label="Funciones de la sección de cazarrecompensas">
+                        <span>Expedientes</span>
+                        <span>Contratos</span>
+                        <span>Ranking</span>
+                        <span>Comparador</span>
+                    </div>
+                </div>
+                <a class="special-card__button" href="cazarrecompensas/Cazarrecompensas.html">
+                    Explorar archivo <span aria-hidden="true">→</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="catalog-section" aria-labelledby="catalog-title">
+            <div class="section-heading characters-heading catalog-heading">
+                <div>
+                    <span class="eyebrow">BASE DE DATOS</span>
+                    <h2 id="catalog-title">Archivo de personajes</h2>
+                </div>
+                <span id="resultCount" class="result-count" aria-live="polite">12 registros</span>
+            </div>
+
+            <div class="character-controls">
+                <label class="search-control" for="characterSearch">
+                    <span>Buscar</span>
+                    <div class="search-control__field">
+                        <span aria-hidden="true">⌕</span>
+                        <input id="characterSearch" type="search" autocomplete="off" placeholder="Nombre, especie, cargo o alias...">
+                    </div>
+                </label>
+
+                <label class="select-control" for="speciesFilter">
+                    <span>Especie</span>
+                    <select id="speciesFilter">
+                        <option value="all">Todas las especies</option>
+                    </select>
+                </label>
+
+                <label class="select-control" for="sortCharacters">
+                    <span>Ordenar</span>
+                    <select id="sortCharacters">
+                        <option value="featured">Relevancia del archivo</option>
+                        <option value="name-asc">Nombre A–Z</option>
+                        <option value="name-desc">Nombre Z–A</option>
+                        <option value="species">Especie A–Z</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="role-filters" id="roleFilters" aria-label="Filtrar por categoría">
+                <button class="role-filter active" type="button" data-role="all">Todos</button>
+                <button class="role-filter" type="button" data-role="gobernante">Gobernantes</button>
+                <button class="role-filter" type="button" data-role="guerrero">Guerreros</button>
+                <button class="role-filter" type="button" data-role="cientifico">Científicos</button>
+                <button class="role-filter" type="button" data-role="criminal">Criminales</button>
+            </div>
+
+            <div id="charactersGrid" class="characters-grid" aria-live="polite"></div>
+
+            <div id="emptyState" class="empty-state" hidden>
+                <span class="empty-state__icon" aria-hidden="true">◇</span>
+                <h3>No hay registros que coincidan</h3>
+                <p>Prueba con otro nombre, especie o categoría.</p>
+                <button id="clearFilters" type="button">Restablecer filtros</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Planet Pedia. Archivo de Lore del Universo en construcción.</p>
+    </footer>
+
+    <script src="personajes/js/personajes.js"></script>
+    <script src="../components/search.js" data-planetpedia-search></script>
+    <script src="../components/voiceController.js" data-planetpedia-voice></script>
+  <script src="../components/backToTop.js" data-planetpedia-back-to-top></script>
+</body>
+</html>

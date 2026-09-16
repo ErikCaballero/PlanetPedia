@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Expediente de Grimlon en PlanetPedia.">
+  <title>Grimlon - Personajes - Planet Pedia</title>
+  <link rel="stylesheet" href="../plantilla.css">
+  <link rel="stylesheet" href="css/ficha-personaje.css">
+
+  <style>
+    /* ===== Secciones ampliables de personaje ===== */
+    .character-section {
+      margin-top: 2rem;
+    }
+
+    .character-section__intro {
+      max-width: 75ch;
+      margin-bottom: 1.4rem;
+      line-height: 1.75;
+    }
+
+    .history-list {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .history-entry {
+      padding: 1.2rem 1.25rem;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 14px;
+      background: rgba(255,255,255,.035);
+    }
+
+    .history-entry h3 {
+      margin: 0 0 .45rem;
+    }
+
+    .history-entry p {
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    .history-entry__label {
+      display: inline-block;
+      margin-bottom: .45rem;
+      font-size: .78rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      opacity: .72;
+    }
+
+    .ability-grid,
+    .equipment-grid,
+    .relationship-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .ability-card,
+    .equipment-card,
+    .relationship-card {
+      min-height: 150px;
+      padding: 1.2rem;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 14px;
+      background: rgba(255,255,255,.035);
+    }
+
+    .ability-card h3,
+    .equipment-card h3,
+    .relationship-card h3 {
+      margin: 0 0 .55rem;
+    }
+
+    .ability-card p,
+    .equipment-card p,
+    .relationship-card p {
+      margin: 0;
+      line-height: 1.65;
+    }
+
+    .card-kicker {
+      display: block;
+      margin-bottom: .4rem;
+      font-size: .76rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      opacity: .7;
+    }
+
+    .placeholder-card {
+      border-style: dashed;
+      opacity: .82;
+    }
+
+    .relationship-card__type {
+      display: inline-block;
+      margin-bottom: .65rem;
+      padding: .22rem .55rem;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 999px;
+      font-size: .76rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      min-height: 220px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 14px;
+      background: rgba(255,255,255,.035);
+    }
+
+    .gallery-item img {
+      display: block;
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .gallery-item figcaption {
+      padding: .85rem 1rem;
+      line-height: 1.5;
+    }
+
+    .gallery-placeholder {
+      min-height: 220px;
+      display: grid;
+      place-items: center;
+      padding: 1.25rem;
+      text-align: center;
+      border: 1px dashed rgba(255,255,255,.18);
+      border-radius: 14px;
+      background: rgba(255,255,255,.02);
+      opacity: .75;
+    }
+
+    .section-note {
+      margin-top: 1rem;
+      padding: .9rem 1rem;
+      border-left: 3px solid currentColor;
+      background: rgba(255,255,255,.03);
+      line-height: 1.65;
+      opacity: .85;
+    }
+
+    @media (max-width: 850px) {
+      .ability-grid,
+      .equipment-grid,
+      .relationship-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 560px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item img {
+        height: auto;
+        max-height: 360px;
+      }
+    }
+
+
+    /* ===== Navegación interna de la ficha ===== */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    #biografia,
+    #historia,
+    #habilidades,
+    #equipo,
+    #relaciones,
+    #galeria {
+      scroll-margin-top: 110px;
+    }
+
+    .character-jump-nav {
+      margin: 1.25rem 0 2rem;
+      padding: .7rem;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 14px;
+      background: rgba(255,255,255,.035);
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+
+    .character-jump-nav__inner {
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+      width: max-content;
+      min-width: 100%;
+    }
+
+    .character-jump-nav__label {
+      margin-right: .25rem;
+      padding: .45rem .65rem;
+      font-size: .74rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      opacity: .62;
+      white-space: nowrap;
+    }
+
+    .character-jump-nav a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: .5rem .85rem;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 999px;
+      color: inherit;
+      text-decoration: none;
+      white-space: nowrap;
+      background: rgba(255,255,255,.025);
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+    }
+
+    .character-jump-nav a:hover,
+    .character-jump-nav a:focus-visible {
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.25);
+    }
+
+
+    @media (max-width: 700px) {
+      .character-jump-nav {
+        margin-top: 1rem;
+      }
+
+      .character-jump-nav__label {
+        display: none;
+      }
+
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .character-jump-nav a {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="planetpedia-header"></div>
+  <script src="../../components/header.js"></script>
+
+  <main>
+    <a class="character-back" href="../Personajes.html">← Volver a Personajes</a>
+
+    <section class="character-hero" aria-labelledby="character-name">
+      <div class="character-portrait">
+        <img src="../../Especies alienigenas/Ceruleanos/Grimlon vs 4 orrs.webp" alt="Grimlon">
+      </div>
+      <div class="character-hero__content">
+        <span class="eyebrow">EXPEDIENTE DE PERSONAJE</span>
+        <span class="character-role">Guerrero</span>
+        <h1 id="character-name">Grimlon</h1>
+        <p class="character-alias">Guerrero legendario de los Ceruleanos</p>
+        <p class="character-lead">Uno de los guerreros más temidos de la historia ceruleana, recordado por una habilidad de combate excepcional y por actuar como el arma más poderosa de su pueblo durante las guerras por el dominio del planeta.</p>
+        <div class="character-actions">
+          <a href="#biografia">Leer expediente</a>
+          <a href="../razas/Ceruleanos.html">Ver especie →</a>
+        </div>
+      </div>
+    </section>
+
+    <nav class="character-jump-nav" aria-label="Navegación por el expediente">
+      <div class="character-jump-nav__inner">
+        <span class="character-jump-nav__label">Ir a</span>
+        <a href="#biografia">Biografía</a>
+        <a href="#historia">Historia</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#equipo">Equipo</a>
+        <a href="#relaciones">Relaciones</a>
+        <a href="#galeria">Galería</a>
+      </div>
+    </nav>
+
+    <div class="character-layout">
+      <div class="character-main">
+        <section class="character-panel" id="biografia">
+          <span class="eyebrow">REGISTRO ACTUAL</span>
+          <h2>Biografía</h2>
+          <p>Grimlon nació durante las guerras por el dominio del planeta ceruleano. Destacó muy por encima del resto de combatientes y entrenó a un pequeño grupo destinado a misiones especialmente complicadas. Incluso después de mejorar enormemente, ninguno de aquellos guerreros alcanzó su nivel.</p>
+        </section>
+
+        <section class="character-panel">
+          <span class="eyebrow">DATOS DESTACADOS</span>
+          <h2>Hechos conocidos</h2>
+          <div class="fact-grid"><div class="fact-card">Se enfrentó en solitario a cuatro Orrs.</div><div class="fact-card">Fue considerado el combatiente más hábil de su raza en su época.</div><div class="fact-card">Entrenó a un grupo especializado para misiones de alta dificultad.</div></div>
+        </section>
+
+        <section class="character-panel">
+          <span class="eyebrow">NOTA DEL ARCHIVO</span>
+          <div class="character-quote">Su combate contra cuatro Orrs quedó registrado como una hazaña sin precedentes entre los Ceruleanos.</div>
+        </section>
+
+        <section class="character-panel character-section" id="historia">
+          <span class="eyebrow">TRAYECTORIA</span>
+          <h2>Historia</h2>
+          <p class="character-section__intro">
+            La información conocida sitúa a Grimlon en pleno periodo de guerras por el dominio del planeta ceruleano.
+            Esta sección está pensada para que puedas desarrollar su vida por etapas sin convertirla en un único bloque de texto.
+          </p>
+
+          <div class="history-list">
+            <article class="history-entry">
+              <span class="history-entry__label">Origen</span>
+              <h3>Nacido durante las guerras ceruleanas</h3>
+              <p>
+                Grimlon nació durante las guerras por el dominio del planeta ceruleano. Su juventud y el contexto exacto
+                de sus primeros años todavía pueden desarrollarse con más detalle.
+              </p>
+            </article>
+
+            <article class="history-entry">
+              <span class="history-entry__label">Ascenso</span>
+              <h3>Un combatiente muy por encima de su época</h3>
+              <p>
+                Destacó muy por encima del resto de combatientes y terminó siendo recordado como uno de los guerreros
+                más temidos de la historia ceruleana.
+              </p>
+            </article>
+
+            <article class="history-entry">
+              <span class="history-entry__label">Entrenamiento</span>
+              <h3>El grupo especializado</h3>
+              <p>
+                Grimlon entrenó a un pequeño grupo de guerreros destinado a misiones especialmente complicadas.
+                Aunque sus integrantes mejoraron enormemente, ninguno llegó a alcanzar su nivel.
+              </p>
+            </article>
+
+            <article class="history-entry">
+              <span class="history-entry__label">Hazaña conocida</span>
+              <h3>El combate contra cuatro Orrs</h3>
+              <p>
+                Entre los hechos registrados de su vida destaca su enfrentamiento en solitario contra cuatro Orrs,
+                una hazaña considerada sin precedentes entre los Ceruleanos.
+              </p>
+            </article>
+
+            <article class="history-entry placeholder-card">
+              <span class="history-entry__label">Por desarrollar</span>
+              <h3>Añade aquí una nueva etapa</h3>
+              <p>
+                Puedes duplicar este bloque para añadir campañas, derrotas, viajes, ascensos, cambios personales,
+                encuentros importantes o cualquier otra etapa de la vida de Grimlon.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="character-panel character-section" id="habilidades">
+          <span class="eyebrow">CAPACIDADES</span>
+          <h2>Habilidades</h2>
+          <p class="character-section__intro">
+            Aquí puedes separar las capacidades de Grimlon por disciplina. De momento solo se incluyen las que ya
+            están respaldadas por su expediente actual.
+          </p>
+
+          <div class="ability-grid">
+            <article class="ability-card">
+              <span class="card-kicker">Combate</span>
+              <h3>Habilidad de combate excepcional</h3>
+              <p>
+                Grimlon sobresalió muy por encima del resto de guerreros de su época y fue considerado el combatiente
+                más hábil de su raza en aquel periodo.
+              </p>
+            </article>
+
+            <article class="ability-card">
+              <span class="card-kicker">Entrenamiento</span>
+              <h3>Formación de guerreros</h3>
+              <p>
+                Fue capaz de entrenar a un grupo especializado para misiones de alta dificultad, elevando de forma
+                considerable el nivel de sus integrantes.
+              </p>
+            </article>
+
+            <article class="ability-card placeholder-card">
+              <span class="card-kicker">Por desarrollar</span>
+              <h3>Nueva habilidad</h3>
+              <p>
+                Añade aquí fuerza, resistencia, velocidad, técnica, estrategia, sentidos, poderes u otra capacidad
+                cuando decidas concretarla.
+              </p>
+            </article>
+
+            <article class="ability-card placeholder-card">
+              <span class="card-kicker">Por desarrollar</span>
+              <h3>Otra capacidad</h3>
+              <p>
+                Duplica o elimina estas tarjetas según el número de habilidades que quieras documentar.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="character-panel character-section" id="equipo">
+          <span class="eyebrow">INVENTARIO</span>
+          <h2>Equipo</h2>
+          <p class="character-section__intro">
+            Esta sección está preparada sin imágenes, para que puedas describir armas, protección, herramientas o
+            cualquier objeto personal de Grimlon cuando definas su equipamiento.
+          </p>
+
+          <div class="equipment-grid">
+            <article class="equipment-card placeholder-card">
+              <span class="card-kicker">Arma principal</span>
+              <h3>Por definir</h3>
+              <p>Nombre del arma, origen, funcionamiento, materiales, historia y situaciones en las que la utiliza.</p>
+            </article>
+
+            <article class="equipment-card placeholder-card">
+              <span class="card-kicker">Protección</span>
+              <h3>Por definir</h3>
+              <p>Armadura, uniforme, protección corporal o cualquier elemento defensivo habitual.</p>
+            </article>
+
+            <article class="equipment-card placeholder-card">
+              <span class="card-kicker">Equipo secundario</span>
+              <h3>Por definir</h3>
+              <p>Herramientas, armas secundarias, dispositivos, objetos personales o recursos de apoyo.</p>
+            </article>
+
+            <article class="equipment-card placeholder-card">
+              <span class="card-kicker">Objeto destacado</span>
+              <h3>Por definir</h3>
+              <p>Un objeto único o especialmente importante para la historia del personaje.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="character-panel character-section" id="relaciones">
+          <span class="eyebrow">VÍNCULOS</span>
+          <h2>Relaciones</h2>
+          <p class="character-section__intro">
+            Puedes usar una tarjeta por persona o grupo e indicar qué tipo de vínculo mantiene con Grimlon.
+          </p>
+
+          <div class="relationship-grid">
+            <article class="relationship-card">
+              <span class="relationship-card__type">Discípulos / subordinados</span>
+              <h3>Grupo especializado de guerreros</h3>
+              <p>
+                Grimlon entrenó personalmente a un pequeño grupo destinado a las misiones más complicadas.
+                Ninguno de sus miembros llegó a igualar su nivel.
+              </p>
+            </article>
+
+            <article class="relationship-card placeholder-card">
+              <span class="relationship-card__type">Por definir</span>
+              <h3>Nombre del personaje</h3>
+              <p>
+                Explica aquí cómo se conocieron, qué relación mantienen, cómo evoluciona ese vínculo y qué importancia
+                tiene para la historia de Grimlon.
+              </p>
+            </article>
+
+            <article class="relationship-card placeholder-card">
+              <span class="relationship-card__type">Aliado / rival / enemigo</span>
+              <h3>Nombre del personaje</h3>
+              <p>
+                Puedes duplicar esta tarjeta tantas veces como necesites y enlazar el nombre a otra ficha de personaje
+                cuando exista.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="character-panel character-section" id="galeria">
+          <span class="eyebrow">ARCHIVO VISUAL</span>
+          <h2>Galería</h2>
+          <p class="character-section__intro">
+            La galería puede crecer sin cambiar la estructura de la página. Cada imagen puede llevar una pequeña
+            descripción o contexto.
+          </p>
+
+          <div class="gallery-grid">
+            <figure class="gallery-item">
+              <img src="../../Especies alienigenas/Ceruleanos/Grimlon vs 4 orrs.webp"
+                   alt="Grimlon enfrentándose a cuatro Orrs">
+              <figcaption>Grimlon durante su enfrentamiento contra cuatro Orrs.</figcaption>
+            </figure>
+
+            <div class="gallery-placeholder">
+              Añade aquí otra imagen de Grimlon cuando tengas material visual.
+            </div>
+
+            <div class="gallery-placeholder">
+              Puedes duplicar este bloque para ampliar la galería.
+            </div>
+          </div>
+
+          <div class="section-note">
+            Para añadir una imagen nueva, copia el bloque <code>&lt;figure class="gallery-item"&gt;</code>,
+            cambia la ruta del <code>src</code>, el <code>alt</code> y el texto del <code>figcaption</code>.
+          </div>
+        </section>
+
+      </div>
+
+      <aside class="character-sidebar" aria-label="Datos del personaje">
+        <section class="data-card">
+          <div class="data-card__title">Ficha rápida</div>
+          <dl class="data-list">
+            <div class="data-row"><dt>Nombre</dt><dd>Grimlon</dd></div>
+            <div class="data-row"><dt>Especie</dt><dd><a href="../razas/Ceruleanos.html">Ceruleano</a></dd></div>
+            <div class="data-row"><dt>Rol</dt><dd>Guerrero</dd></div>
+            <div class="data-row"><dt>Alias / título</dt><dd>Guerrero legendario de los Ceruleanos</dd></div>
+            <div class="data-row"><dt>Afiliación</dt><dd>Ceruleanos</dd></div>
+            <div class="data-row"><dt>Estado del registro</dt><dd>Registro histórico</dd></div>
+          </dl>
+        </section>
+        <section class="source-card">
+          <strong>Lore relacionado</strong>
+          <p>La ficha conserva un enlace hacia la entrada de especie original para que el personaje siga conectado con el resto de PlanetPedia.</p>
+          <a href="../razas/Ceruleanos.html#grimlon">Abrir Ceruleanos →</a>
+        </section>
+      </aside>
+    </div>
+
+    <nav class="character-nav" aria-label="Otros personajes">
+      <a href="Soberano-Secreto.html"><small>← Personaje anterior</small><strong>Soberano Secreto</strong></a>
+      <a href="Karkinox.html"><small>Siguiente personaje →</small><strong>Karkinox</strong></a>
+    </nav>
+  </main>
+<footer><p>&copy; 2026 Planet Pedia. Archivo de Lore del Universo en construcción.</p></footer>
+<script src="../../components/search.js" data-planetpedia-search></script>
+    <script src="../../components/voiceController.js" data-planetpedia-voice></script>
+  <script src="../../components/backToTop.js" data-planetpedia-back-to-top></script>
+</body>
+</html>

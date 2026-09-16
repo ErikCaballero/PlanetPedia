@@ -1,5 +1,6 @@
 from pathlib import Path
 from PIL import Image, ImageOps
+import os
 import re
 
 # La raíz del proyecto es la carpeta superior a /herramientas/
@@ -11,6 +12,7 @@ TEXT_EXTENSIONS = {".html", ".htm", ".css", ".js"}
 converted = {}
 
 print("=== PlanetPedia - Conversor a WebP ===\n")
+
 
 # =========================================================
 # 1. CONVERTIR PNG / JPG / JPEG A WEBP
@@ -64,16 +66,101 @@ for src in PROJECT_ROOT.rglob("*"):
 # =========================================================
 # 2. ACTUALIZAR RUTAS EN HTML / CSS / JS
 # =========================================================
+#
+# Antes se intentaba extraer la ruta con una expresión regular que
+# prohibía espacios. Por eso una ruta como:
+#
+#   ../../Especies alienigenas/Los Foxers/Los Foxers.png
+#
+# se cortaba y no se podía resolver correctamente.
+#
+# Además, solo se actualizaban referencias de imágenes convertidas en
+# ESA ejecución. Si el .webp ya existía y el .png/.jpg había sido
+# eliminado anteriormente, la referencia se quedaba sin modificar.
+#
+# La solución es tomar como fuente de verdad todos los .webp que existen
+# en el proyecto y generar, para cada archivo de texto, las rutas locales
+# equivalentes que podrían seguir terminando en .png/.jpg/.jpeg.
 
-pattern = re.compile(
-    r'(?P<path>[^"\'\s()<>]+?\.(?:png|jpe?g))'
-    r'(?P<tail>[?#][^"\'\s()<>]*)?',
-    re.IGNORECASE
-)
+
+def relative_url(from_file: Path, target: Path) -> str:
+    """Devuelve una ruta relativa con '/' aunque el script se ejecute en Windows."""
+    return os.path.relpath(target, from_file.parent).replace(os.sep, "/")
+
+
+def encoded_variant(path: str) -> str:
+    """Contempla el caso habitual de espacios escritos como %20."""
+    # No usamos quote() sobre toda la ruta: algunos ZIP antiguos pueden
+    # contener nombres con bytes no UTF-8 representados mediante
+    # surrogateescape. Sustituir únicamente espacios es suficiente para
+    # las rutas web del proyecto y evita que un nombre así detenga todo.
+    return path.replace(" ", "%20")
+
+
+def update_image_references(text: str, file: Path, webp_files):
+    """
+    Cambia referencias locales .png/.jpg/.jpeg a .webp SOLO cuando el
+    .webp correspondiente existe realmente.
+
+    Funciona con:
+      - nombres de archivo y carpetas con espacios;
+      - rutas relativas (../../...);
+      - rutas que empiezan por '/';
+      - rutas con espacios codificados como %20;
+      - HTML, CSS y cadenas de JavaScript;
+      - query strings o hashes, porque solo sustituye la ruta/extensión.
+    """
+    replacements = {}
+
+    for webp in webp_files:
+        relative_webp = relative_url(file, webp)
+        root_webp = "/" + webp.relative_to(PROJECT_ROOT).as_posix()
+
+        for webp_reference in (relative_webp, root_webp):
+            if not webp_reference.lower().endswith(".webp"):
+                continue
+
+            stem = webp_reference[:-5]
+
+            for old_extension in (".png", ".jpg", ".jpeg"):
+                old_reference = stem + old_extension
+                replacements.setdefault(old_reference.casefold(), webp_reference)
+
+                # También contempla rutas con espacios escritos como %20.
+                encoded_old = encoded_variant(old_reference)
+                encoded_new = encoded_variant(webp_reference)
+                replacements.setdefault(encoded_old.casefold(), encoded_new)
+
+    if not replacements:
+        return text, 0
+
+    # Un único patrón por archivo es mucho más rápido que recorrer el texto
+    # una vez por cada imagen. Las rutas más largas van primero para evitar
+    # que una ruta corta sea tratada como un fragmento de otra.
+    alternatives = sorted(replacements, key=len, reverse=True)
+    pattern = re.compile(
+        r"(?<![A-Za-z0-9._~:/-])(?:"
+        + "|".join(re.escape(item) for item in alternatives)
+        + r")",
+        re.IGNORECASE,
+    )
+
+    def replace_match(match):
+        return replacements[match.group(0).casefold()]
+
+    return pattern.subn(replace_match, text)
+
+
+# Incluye tanto los WebP recién creados como los que ya estaban en el
+# proyecto antes de ejecutar este script.
+webp_files = [
+    path.resolve()
+    for path in PROJECT_ROOT.rglob("*")
+    if path.is_file() and path.suffix.lower() == ".webp"
+]
 
 updated_files = 0
 updated_references = 0
-
 
 for file in PROJECT_ROOT.rglob("*"):
 
@@ -86,89 +173,42 @@ for file in PROJECT_ROOT.rglob("*"):
     try:
         text = file.read_text(encoding="utf-8")
     except UnicodeDecodeError:
+        print(
+            f"[AVISO] No se pudo leer como UTF-8: "
+            f"{file.relative_to(PROJECT_ROOT)}"
+        )
         continue
 
     original_text = text
-    changes_in_file = 0
 
-    def replace_reference(match):
-
-        global updated_references
-
-        raw_path = match.group("path")
-        tail = match.group("tail") or ""
-
-        # No modificar URLs externas
-        if re.match(
-            r"^[a-z]+://",
-            raw_path,
-            re.IGNORECASE
-        ):
-            return match.group(0)
-
-        # No modificar imágenes data:
-        if raw_path.startswith("data:"):
-            return match.group(0)
-
-        decoded_path = raw_path.replace("%20", " ")
-
-        # Resolver la ruta real de la imagen
-        if raw_path.startswith("/"):
-            candidate = (
-                PROJECT_ROOT
-                / decoded_path.lstrip("/")
-            ).resolve()
-
-        else:
-            candidate = (
-                file.parent
-                / decoded_path
-            ).resolve()
-
-        # Solo cambiar la ruta si esa imagen
-        # realmente ha sido convertida
-        if candidate not in converted:
-            return match.group(0)
-
-        new_path = re.sub(
-            r"\.(png|jpe?g)$",
-            ".webp",
-            raw_path,
-            flags=re.IGNORECASE
-        )
-
-        updated_references += 1
-
-        return new_path + tail
-
-    text = pattern.sub(
-        replace_reference,
-        text
+    text, changes_in_file = update_image_references(
+        text,
+        file,
+        webp_files,
     )
 
-    # Guardar únicamente si ha habido cambios
     if text != original_text:
-
         file.write_text(
             text,
             encoding="utf-8"
         )
 
         updated_files += 1
+        updated_references += changes_in_file
 
         print(
             f"[RUTAS ACTUALIZADAS] "
-            f"{file.relative_to(PROJECT_ROOT)}"
+            f"{file.relative_to(PROJECT_ROOT)} "
+            f"({changes_in_file} cambios)"
         )
 
 
 # =========================================================
-# RESUMEN
-# =========================================================
-# =========================================================
 # 3. ELIMINAR PNG / JPG / JPEG ORIGINALES
 # =========================================================
 
+# Solo se eliminan originales que se hayan convertido correctamente en
+# esta ejecución. Los archivos con error de conversión se conservan.
 deleted_images = 0
 
 for original_path in converted:
@@ -189,27 +229,16 @@ for original_path in converted:
             f"{original_path}: {error}"
         )
 
+
+# =========================================================
+# RESUMEN
+# =========================================================
+
 print("\n===================================")
 print("Proceso terminado")
 print("===================================")
-
-print(
-    f"Imágenes convertidas: "
-    f"{len(converted)}"
-)
-
-print(
-    f"Archivos actualizados: "
-    f"{updated_files}"
-)
-
-print(
-    f"Rutas modificadas: "
-    f"{updated_references}"
-)
-
-print(
-    f"Imágenes originales eliminadas: "
-    f"{deleted_images}"
-)
+print(f"Imágenes convertidas: {len(converted)}")
+print(f"Archivos actualizados: {updated_files}")
+print(f"Rutas modificadas: {updated_references}")
+print(f"Imágenes originales eliminadas: {deleted_images}")
 print("===================================")

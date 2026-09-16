@@ -13,7 +13,7 @@
     "cliente": "Unión de Planetas Independientes",
     "lugar": "Zorn 1",
 
-    "recompensa": 8000,
+    "recompensa": 1100,
 
     "descripcion": "Localizar y capturar con vida al contrabandista Torin Vaal.",
 
@@ -36,7 +36,7 @@
     "cliente": "Imperio AracnoSephus",
     "lugar": "Nar Shaddaa",
 
-    "recompensa": 21000,
+    "recompensa": 10000,
 
     "descripcion": "Localizar y eliminar a Korda Renn antes de que pudiera abandonar el sector.",
 
@@ -59,7 +59,7 @@
     "cliente": "Cliente desconocido",
     "lugar": "Borde Exterior",
 
-    "recompensa": 200000,
+    "recompensa": 20000,
 
     "descripcion": "Localizar y recuperar un prototipo tecnológico desaparecido.",
 
@@ -170,7 +170,7 @@
   "cliente": "Garvock el carnicero",
   "lugar": "Liveria",
 
-  "recompensa": 48000,
+  "recompensa": 23000,
 
   "descripcion": "El contrato es de eliminar a el rival líder criminal de los territorios de Liveria de Garvock.",
   "resultado": "Objetivo eliminado con éxito.",
@@ -190,7 +190,7 @@
   "cliente": "Garvock el carnicero",
   "lugar": "Sistema Gryndariano",
 
-  "recompensa": 21000,
+  "recompensa": 11000,
 
   "descripcion": "Se debe escoltar y proteger al mensajero de Garvock por territorio rival para negociar con la cabeza criminal rival.",
   "resultado": "Completado con éxito.",
@@ -210,7 +210,7 @@
   "cliente": "Garvock el carnicero",
   "lugar": "Cebalia",
 
-  "recompensa": 36000,
+  "recompensa": 18000,
 
   "descripcion": "Se debe eliminar a Sea Viria por entrometerse demasiado en los asuntos del líder criminal Gravock el carnicero.",
   "resultado": "Se ha eliminado al objetivo y se ha encubierto como muerte en una taberna para no levantar sospechas.",
@@ -250,7 +250,7 @@
   "cliente": "Imperio AracnoSephus",
   "lugar": "Núcleo Galáctico",
 
-  "recompensa": 32000,
+  "recompensa": 12500,
 
   "descripcion": "Se realizará un asalto a un almacen de armas de una nave carguero Foxer para robar armas para el Imperio AracnoSephus.",
   "resultado": "Asalto completado con éxito y armas entregadas al cliente.",
@@ -270,7 +270,7 @@
   "cliente": "Gorvack el carnicero",
   "lugar": "Sistema Gryndariano",
 
-  "recompensa": 48000,
+  "recompensa": 32000,
 
   "descripcion": "Se debe eliminar a un líder criminal que está interfiriendo con los intereses del Cartel de Gorvack.",
   "resultado": "Objetivo eliminado con éxito.",

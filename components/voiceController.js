@@ -9,14 +9,16 @@
 
     const componentsUrl = new URL('./', script.src);
     const siteRootUrl = new URL('../', componentsUrl);
+    const indexUrl = new URL('search-index.js', componentsUrl);
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const synth = window.speechSynthesis;
 
     // ============================================================
-    // CONFIGURACIÓN FÁCIL: AÑADE AQUÍ NUEVAS SECCIONES O SINÓNIMOS
+    // ALIASES MANUALES ESPECIALES
     // ============================================================
-    // NO hace falta añadir especies ni planetas: se leen automáticamente
-    // desde las tarjetas de Web/Especies.html y Web/Planetas.html.
+    // Las páginas normales NO se añaden aquí: generar_buscador.py crea un
+    // índice global automático. Esta lista solo conserva nombres alternativos
+    // especiales como "home", "razas" o "facciones".
     const sections = [
         { names: ['inicio', 'menu', 'menú', 'pagina principal', 'página principal', 'home'], path: 'index.html' },
         { names: ['especies', 'razas', 'catalogo de especies', 'catálogo de especies'], path: 'Web/Especies.html' },
@@ -58,7 +60,7 @@
     };
     if (!LANGUAGES[prefs.language]) prefs.language = 'es';
 
-    const cache = { especies: null, planetas: null, properNames: null };
+    const cache = { especies: null, planetas: null, pages: null, properNames: null };
     const translatorCache = new Map();
     let recognition = null;
     let listening = false;
@@ -160,13 +162,24 @@
         let score = 0;
         let secondScore = 0;
         for (const item of items) {
-            const s = similarity(q, item.name);
-            if (s > score) {
+            const candidateNames = Array.isArray(item.names) && item.names.length
+                ? item.names
+                : [item.name];
+            let itemScore = 0;
+            let matchedName = item.name;
+            for (const candidateName of candidateNames) {
+                const candidateScore = similarity(q, candidateName);
+                if (candidateScore > itemScore) {
+                    itemScore = candidateScore;
+                    matchedName = candidateName;
+                }
+            }
+            if (itemScore > score) {
                 secondScore = score;
-                score = s;
-                best = item;
-            } else if (s > secondScore) {
-                secondScore = s;
+                score = itemScore;
+                best = { ...item, matchedName };
+            } else if (itemScore > secondScore) {
+                secondScore = itemScore;
             }
         }
         const threshold = q.length <= 4 ? 0.78 : q.length <= 7 ? 0.65 : 0.60;
@@ -191,6 +204,48 @@
         cache[type] = items;
         cache.properNames = null;
         return items;
+    }
+
+
+    async function loadPageIndex() {
+        if (cache.pages) return cache.pages;
+
+        if (!Array.isArray(window.PLANETPEDIA_SEARCH_INDEX)) {
+            await new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.src = indexUrl.href;
+                script.dataset.planetpediaVoiceIndex = '';
+                script.onload = resolve;
+                script.onerror = () => reject(new Error('No se pudo cargar el índice automático de PlanetPedia.'));
+                document.head.appendChild(script);
+            });
+        }
+
+        const entries = Array.isArray(window.PLANETPEDIA_SEARCH_INDEX)
+            ? window.PLANETPEDIA_SEARCH_INDEX
+            : [];
+
+        cache.pages = entries
+            .filter(entry => entry && entry.titulo && entry.url)
+            .map(entry => {
+                const aliases = Array.isArray(entry.aliases) ? entry.aliases.filter(Boolean) : [];
+                return {
+                    name: String(entry.titulo).trim(),
+                    names: [String(entry.titulo).trim(), ...aliases.map(alias => String(alias).trim())].filter(Boolean),
+                    url: new URL(entry.url, siteRootUrl).href,
+                    path: entry.url,
+                    type: 'pagina',
+                    category: entry.categoria || 'General'
+                };
+            });
+        return cache.pages;
+    }
+
+    async function findAcrossPages(query) {
+        const target = cleanTarget(query);
+        if (!target) return null;
+        const pages = await loadPageIndex();
+        return bestMatch(target, pages);
     }
 
     async function getProperNames() {
@@ -451,6 +506,23 @@
         return true;
     }
 
+    // Usa el mismo buscador global que Ctrl/Cmd + K. Si search.js todavía está
+    // terminando de cargar, deja el comando preparado y lo ejecuta al estar listo.
+    function searchGlobal(query) {
+        const exactQuery = String(query || '').trim();
+        const execute = () => {
+            if (!window.PlanetPediaSearch || typeof window.PlanetPediaSearch.search !== 'function') return false;
+            window.PlanetPediaSearch.search(exactQuery);
+            showStatus(exactQuery ? `Buscando “${exactQuery}” en PlanetPedia…` : 'Abriendo buscador global…', 2200);
+            return true;
+        };
+
+        if (execute()) return true;
+        window.addEventListener('planetpedia-search-ready', execute, { once: true });
+        showStatus('Preparando buscador global…', 1500);
+        return true;
+    }
+
     function applyPendingSpeciesSearch() {
         if (!isSpeciesPage()) return;
         const pending = localStorage.getItem('ppPendingSpeciesSearch');
@@ -702,13 +774,13 @@
 
         if (/^(ayuda|comandos|que puedo decir|qué puedo decir)$/.test(text)) {
             showList('Ejemplos de comandos', [
-                { name: '“Bazofios” / “Abre Bazofios”' }, { name: '“Busca X” (filtra especies)' }, { name: '“Abre Kalagor”' },
+                { name: '“Bazofios” / “Abre Bazofios”' }, { name: '“Abre <cualquier página>”' }, { name: '“Busca X” (Especies: filtro · resto: búsqueda global)' }, { name: '“Abre Kalagor”' },
                 { name: '“Ve a planetas”' }, { name: '“Lista los planetas”' },
                 { name: '“Lista las especies”' }, { name: '“Lee la página”' },
                 { name: '“Pausa lectura” / “Reanuda lectura”' }, { name: '“Para la lectura”' },
                 { name: '“Lee más despacio” / “Lee más rápido”' }, { name: '“Abre simulación / grupos / parejas”' }, { name: '“Inicio”' }
             ]);
-            assistantSpeakSpanish('Puedes navegar, filtrar especies, abrir especies y planetas, abrir juegos, listar catálogos y leer la página.');
+            assistantSpeakSpanish('Puedes navegar, abrir automáticamente cualquier página indexada, filtrar especies, abrir juegos, listar catálogos y leer la página.');
             return true;
         }
 
@@ -737,14 +809,16 @@
         m = text.match(/^(?:buscar|busca|buscame|abre|abrir|muestra|mostrar|ir a|ve a|vete a)\s+(?:el\s+)?planeta\s+(.+)$/);
         if (m && await openCatalogItem('planetas', m[1])) return true;
 
-        // "Busca X" ya no abre una ficha: escribe EXACTAMENTE X en el buscador de especies
-        // y deja visibles todas las tarjetas cuyo nombre contiene ese texto.
+        // "Busca X" es contextual:
+        // - dentro de Especies.html filtra las tarjetas de esa página;
+        // - desde cualquier otra página usa el buscador global (el mismo de Ctrl/Cmd + K).
         m = String(rawText || '').trim().match(/^(?:buscar|busca|búscame|buscame)\s+(.+)$/i);
         if (m) {
             let exactQuery = m[1].trim();
-            // Permite también "busca especie X" / "busca raza X" sin meter esas palabras en la caja.
+            // Si se dice "busca especie X" / "busca raza X", no incluimos esas palabras en la consulta.
             exactQuery = exactQuery.replace(/^(?:la\s+|una\s+)?(?:especie|raza)\s+/i, '').trim();
-            searchSpecies(exactQuery);
+            if (isSpeciesPage()) applySpeciesSearch(exactQuery);
+            else searchGlobal(exactQuery);
             return true;
         }
 
@@ -759,21 +833,26 @@
 
         m = text.match(/^(?:abre|abrir|ve a|vete a|ir a|muestra|mostrar)\s+(.+)$/);
         if (m) {
-            const candidate = await findAcrossCatalogs(m[1]);
+            // El índice global lo genera automáticamente generar_buscador.py.
+            // Incluye cualquier HTML nuevo y sus aliases opcionales.
+            const candidate = await findAcrossPages(m[1]);
             if (candidate) {
-                showStatus(`He entendido “${rawText}” → ${candidate.name}. Abriendo…`, 1200); assistantSpeakSpanish(`Abriendo ${candidate.name}`);
-                setTimeout(() => { window.location.href = candidate.url; }, 500); return true;
+                showStatus(`He entendido “${rawText}” → ${candidate.name}. Abriendo…`, 1200);
+                assistantSpeakSpanish(`Abriendo ${candidate.name}`);
+                setTimeout(() => { window.location.href = candidate.url; }, 500);
+                return true;
             }
         }
 
-        // NUEVO: un nombre solo también se busca. "bazofi" puede resolver a "Bazofios".
-        // Evitamos frases muy largas para no interpretar conversación normal como una ficha.
+        // Un título solo también puede abrir cualquier página indexada.
+        // Evitamos frases muy largas para no interpretar conversación normal como navegación.
         if (text.split(' ').length <= 5) {
-            const candidate = await findAcrossCatalogs(text);
+            const candidate = await findAcrossPages(text);
             if (candidate && candidate.score >= 0.65) {
                 showStatus(`He entendido “${rawText}” como “${candidate.name}”. Abriendo…`, 1400);
                 assistantSpeakSpanish(`Creo que has dicho ${candidate.name}. Abriendo.`);
-                setTimeout(() => { window.location.href = candidate.url; }, 600); return true;
+                setTimeout(() => { window.location.href = candidate.url; }, 600);
+                return true;
             }
         }
 
@@ -842,6 +921,7 @@
         listen: startListening,
         execute: handleCommand,
         loadCatalog,
+        loadPageIndex,
         readPage: () => startReadingPage(true),
         pauseReading: togglePauseReading,
         stopReading,
