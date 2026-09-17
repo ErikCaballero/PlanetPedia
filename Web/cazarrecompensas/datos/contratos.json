@@ -1,25 +1,25 @@
 [
   {
     "id": "CON-0001",
-    "cazarrecompensas": "vrakk-tal",
+    "cazarrecompensas": "zirus-clain",
 
-    "nombre": "Captura de Torin Vaal",
+    "nombre": "Captura de Marcus Gloin",
 
     "tipo": "Captura viva",
-    "dificultad": "Baja",
+    "dificultad": "Moderada",
     "estado": "Completado",
 
-    "objetivo": "Torin Vaal",
+    "objetivo": "Campurar a Marcus Gloin",
     "cliente": "Unión de Planetas Independientes",
-    "lugar": "Zorn 1",
+    "lugar": "Dwarwing",
 
     "recompensa": 1100,
 
-    "descripcion": "Localizar y capturar con vida al contrabandista Torin Vaal.",
+    "descripcion": "Localizar y capturar con vida al criminal Marcus Gloin.",
 
     "resultado": "Objetivo capturado y entregado al cliente.",
 
-    "observaciones": "El objetivo intentó abandonar el planeta utilizando documentación falsa."
+    "observaciones": "El objetivo intentó huir subiendo a una nave de transporte público, pero, fue capturado antes de entrar."
   },
 
   {
@@ -47,30 +47,30 @@
 
   {
     "id": "CON-0003",
-    "cazarrecompensas": "boba-fett",
+    "cazarrecompensas": "zirus-clain",
 
     "nombre": "Recuperación del prototipo X-91",
 
     "tipo": "Recuperación",
     "dificultad": "Severa",
-    "estado": "Aceptado",
+    "estado": "Completado",
 
     "objetivo": "Prototipo X-91",
-    "cliente": "Cliente desconocido",
-    "lugar": "Borde Exterior",
+    "cliente": "Gobierno Foxer",
+    "lugar": "Territorio Permian",
 
-    "recompensa": 20000,
+    "recompensa": 35000,
 
     "descripcion": "Localizar y recuperar un prototipo tecnológico desaparecido.",
 
-    "resultado": "",
+    "resultado": "Prototipo recuperado con éxito.",
 
-    "observaciones": "Contrato actualmente activo."
+    "observaciones": "Se ha recuperado recuperado el prototipo de la nave X-91 que fue robada por el imperio Permian."
   },
 
   {
     "id": "CON-0004",
-    "cazarrecompensas": "nyra-vex",
+    "cazarrecompensas": "zirus-clain",
 
     "nombre": "Extracción de informante",
 
@@ -78,11 +78,11 @@
     "dificultad": "Alta",
     "estado": "Completado",
 
-    "objetivo": "Informante V-17",
-    "cliente": "Desconocido",
-    "lugar": "Coruscant",
+    "objetivo": "Informante Bulino",
+    "cliente": "Unión de Planetas Independientes",
+    "lugar": "Webitia",
 
-    "recompensa": 65000,
+    "recompensa": 19500,
 
     "descripcion": "Extraer con vida a un informante antes de que fuera localizado por fuerzas hostiles.",
 
@@ -93,25 +93,25 @@
 
   {
     "id": "CON-0005",
-    "cazarrecompensas": "nyra-vex",
+    "cazarrecompensas": "zirus-clain",
 
-    "nombre": "Recuperación de datos",
+    "nombre": "Eliminación del criminal Garivio",
 
-    "tipo": "Recuperación",
-    "dificultad": "Moderada",
+    "tipo": "Eliminación",
+    "dificultad": "Alta",
     "estado": "Completado",
 
-    "objetivo": "Archivo de navegación cifrado",
-    "cliente": "Corporación privada",
-    "lugar": "Corellia",
+    "objetivo": "Eliminar a Garivio",
+    "cliente": "Gorvack el carnicero",
+    "lugar": "Cebalia",
 
-    "recompensa": 32000,
+    "recompensa": 16000,
 
-    "descripcion": "Recuperar un archivo de navegación robado antes de que pudiera ser vendido.",
+    "descripcion": "Eliminar al criminal Garivio.",
 
-    "resultado": "Archivo recuperado intacto.",
+    "resultado": "Objetivo eliminado con éxito.",
 
-    "observaciones": ""
+    "observaciones": "Lo he eliminado sin dificultades."
   },
 
   {
@@ -455,5 +455,167 @@
   "descripcion": "Se debe robar un almacen de armas de un cártel rival para dejarlo sin armas y así adquirirlas.",
   "resultado": "Armas robadas con éxito y entregadas al cliente.",
   "observaciones": "Se ha vaciado el almacen de armas, entregado al cliente y eliminado a los guardas."
+},
+{
+  "id": "CON-0023",
+  "cazarrecompensas": "torg-han",
+
+  "nombre": "Entrenamiento de soldados de élite",
+
+  "tipo": "Entrenamiento",
+  "dificultad": "Moderada",
+  "estado": "Completado",
+
+  "objetivo": "Entrenar a un grupo de soldados de élite del cártel de Gorvack.",
+  "cliente": "Garvock el carnicero",
+  "lugar": "Sede del cártel de Gorvack",
+
+  "recompensa": 17500,
+
+  "descripcion": "Se debe entrenar a un grupo de soldados de élite del cártel de Gorvack para que puedan servir como defensores de Gorvack.",
+  "resultado": "Soldados entrenados con éxito, sus habilidades con los blásters han mejorado pero, siguen sin alcanzar el nivel de Torg Han.",
+  "observaciones": "Los he mejorado más de lo que podrían haber mejorado por sí mismos."
+},
+{
+  "id": "CON-0024",
+  "cazarrecompensas": "alan-vlanx",
+
+  "nombre": "Escolta de político Bulino",
+
+  "tipo": "Escolta",
+  "dificultad": "Moderada",
+  "estado": "Completado",
+
+  "objetivo": "Escoltar a un político Bulino de la Unión de Planetas Independientes a través de territorio hostil.",
+  "cliente": "Unión de Planetas Independientes",
+  "lugar": "Territorio de Gorvack",
+
+  "recompensa": 1750,
+
+  "descripcion": "Se debe escoltar a el político Bulino de la Unión de Planetas Independientes hasta el líder criminal Gorvack el carnicero para negociar un trato.",
+  "resultado": "Completado con éxito.",
+  "observaciones": "Lo he escoltado ida y vuelta."
+},
+{
+  "id": "CON-0025",
+  "cazarrecompensas": "vrakk-tal",
+
+  "nombre": "Captura de Torin Vaal",
+
+  "tipo": "Captura viva",
+  "dificultad": "Baja",
+  "estado": "Completado",
+
+  "objetivo": "Torin Vaal",
+  "cliente": "Unión de Planetas Independientes",
+  "lugar": "Zorn 1",
+
+  "recompensa": 1100,
+
+  "descripcion": "Localizar y capturar con vida al contrabandista Torin Vaal.",
+
+  "resultado": "Objetivo capturado y entregado al cliente.",
+
+  "observaciones": "El objetivo intentó abandonar el planeta utilizando documentación falsa."
+},
+{
+  "id": "CON-0026",
+  "cazarrecompensas": "titus-barus",
+
+  "nombre": "Eliminación del criminal de guerra Karnos Kross",
+
+  "tipo": "Eliminación",
+  "dificultad": "Alta",
+  "estado": "Completado",
+
+  "objetivo": "Eliminar a Karnos Kross. ",
+  "cliente": "Gobierno Bulino",
+  "lugar": "Thalassa Prime",
+
+  "recompensa": 14500,
+
+  "descripcion": "Se debe eliminar al criminal de guerra Karnos Kross, criminal de los Sharkinors que se dedica a eliminar a los Bulinos.",
+  "resultado": "Objetivo eliminado con éxito.",
+  "observaciones": "He eliminado a ese maldito Sharkinor."
+},
+{
+  "id": "CON-0027",
+  "cazarrecompensas": "titus-barus",
+
+  "nombre": "Eliminación del criminal de guerra Krelor Mer.",
+
+  "tipo": "Eliminación",
+  "dificultad": "Alta",
+  "estado": "Completado",
+
+  "objetivo": "Eliminar a Krelor Mer.",
+  "cliente": "Gobierno Bulino",
+  "lugar": "Thalassa Prime",
+
+  "recompensa": 15750,
+
+  "descripcion": "Se debe eliminar al criminal de guerra Krelor Mer.",
+  "resultado": "Objetivo eliminado con éxito.",
+  "observaciones": "He eliminado a ese maldito Sharkinor asesino."
+},
+{
+  "id": "CON-0028",
+  "cazarrecompensas": "titus-barus",
+
+  "nombre": "Robo de información de la Unión de Planetas Independientes",
+
+  "tipo": "Robo de información",
+  "dificultad": "Alta",
+  "estado": "Fallido",
+
+  "objetivo": "Robar información de la Unión de Planetas Independientes.",
+  "cliente": "Imperio Steron",
+  "lugar": "Terrabiria",
+
+  "recompensa": 23000,
+
+  "descripcion": "Se debe robar la información del suero de super soldado que se les proporciona a los Legionarios Galácticos.",
+  "resultado": "No se ha robado la información.",
+  "observaciones": "Habían 5 Legionarios Galácticos custodiando la información, he conseguido escapar de Terrabiria por pura suerte."
+},
+{
+  "id": "CON-0029",
+  "cazarrecompensas": "z-417",
+
+  "nombre": "Eliminación de líder Steron",
+
+  "tipo": "Eliminación",
+  "dificultad": "Alta",
+  "estado": "Completado",
+
+  "objetivo": "Eliminar a Grenicox.",
+  "cliente": "Gobierno Foxer",
+  "lugar": "Gradius",
+
+  "recompensa": 34500,
+
+  "descripcion": "Se debe eliminar auno de los líderes del Imperio Steron, Grenicox.",
+  "resultado": "Objetivo eliminado con éxito.",
+  "observaciones": "Onjetivo eliminado con toda su guardia."
+},
+{
+  "id": "CON-0030",
+  "cazarrecompensas": "sala-maek",
+
+  "nombre": "Eliminación del criminal ",
+
+  "tipo": "",
+  "dificultad": "",
+  "estado": "",
+
+  "objetivo": "",
+  "cliente": "",
+  "lugar": "",
+
+  "recompensa": 0,
+
+  "descripcion": "",
+  "resultado": "",
+  "observaciones": ""
 }
 ]

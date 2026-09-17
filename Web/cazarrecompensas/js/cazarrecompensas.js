@@ -30,25 +30,30 @@ const PUNTOS_DIFICULTAD = {
 const PUNTOS_PELIGROSIDAD = {
 
   "Bajo": 1,
-  "Moderado": 2,
-  "Alto": 3,
-  "Severo": 4,
-  "Extremo": 5
+  "Moderado": 3,
+  "Alto": 5,
+  "Severo": 10,
+  "Extremo": 15
 
 };
 
 
 const PUNTOS_INSIGNIA_MANUAL = {
 
-  "Comun": 0,
-  "Común": 0,
-  "Rara": 2,
-  "Epica": 3,
-  "Épica": 3,
-  "Legendaria": 5,
-  "Especial": 7
+  "Comun": 1,
+  "Común": 1,
+  "Rara": 3,
+  "Epica": 5,
+  "Épica": 5,
+  "Legendaria": 7,
+  "Especial": 10
 
 };
+
+
+// Cada contrato con estado "Fallido" resta puntos del ranking.
+// Cambia solo este valor si quieres aumentar o reducir la penalización.
+const PENALIZACION_CONTRATO_FALLIDO = 5;
 
 
 
@@ -1040,6 +1045,42 @@ function calcularPuntosInsigniasManuales(hunter) {
 
 
 /* =========================================================
+   PUNTUACIÓN DEL RANKING
+========================================================= */
+
+function calcularPuntuacionRanking(hunter, stats = calcularEstadisticas(hunter.id)) {
+
+  const puntosPeligrosidad =
+    PUNTOS_PELIGROSIDAD[hunter.peligrosidad] || 0;
+
+  const puntosInsignias =
+    calcularPuntosInsigniasManuales(hunter);
+
+  const puntosCompletados =
+    stats.completados * 10;
+
+  const penalizacionFallidos =
+    stats.fallidos * PENALIZACION_CONTRATO_FALLIDO;
+
+  const puntuacion =
+    puntosCompletados +
+    stats.puntosContratos +
+    (puntosPeligrosidad * 3) +
+    puntosInsignias -
+    penalizacionFallidos;
+
+  return {
+    puntuacion,
+    puntosCompletados,
+    puntosContratos: stats.puntosContratos,
+    puntosPeligrosidad,
+    puntosInsignias,
+    penalizacionFallidos
+  };
+}
+
+
+/* =========================================================
    RANKING
 ========================================================= */
 
@@ -1055,49 +1096,32 @@ function calcularRanking() {
           );
 
 
-        const puntosPeligrosidad =
-          PUNTOS_PELIGROSIDAD[
-            hunter.peligrosidad
-          ] || 0;
-
-
         /*
           PUNTUACIÓN DEL RANKING
 
           +10 por cada contrato completado
 
-          + puntos según dificultad:
-             Baja      = 1
-             Moderada  = 2
-             Alta      = 4
-             Severa    = 7
-             Extrema   = 10
+          + puntos de dificultad de los contratos completados
 
-          + peligrosidad × 3:
-             Bajo      = 3
-             Moderado  = 6
-             Alto      = 9
-             Severo    = 12
-             Extremo   = 15
+          + puntos de peligrosidad × 3
 
-          + insignias MANUALES según rareza:
-             Rara       = 2
-             Épica      = 3
-             Legendaria = 5
-             Especial   = 7
+          + puntos de insignias MANUALES
+
+          -5 por cada contrato fallido
 
           Las insignias automáticas no otorgan puntos.
+          La fórmula real está centralizada en calcularPuntuacionRanking().
         */
 
-        const puntosInsignias =
-          calcularPuntosInsigniasManuales(hunter);
+        const detallePuntuacion =
+          calcularPuntuacionRanking(hunter, stats);
 
-
-        const puntuacion =
-          (stats.completados * 10) +
-          stats.puntosContratos +
-          (puntosPeligrosidad * 3) +
-          puntosInsignias;
+        const {
+          puntuacion,
+          puntosPeligrosidad,
+          puntosInsignias,
+          penalizacionFallidos
+        } = detallePuntuacion;
 
 
         return {
@@ -1106,6 +1130,11 @@ function calcularRanking() {
 
           contratosCompletados:
             stats.completados,
+
+          contratosFallidos:
+            stats.fallidos,
+
+          penalizacionFallidos,
 
           tasaExito:
             stats.tasaExito,
@@ -1304,6 +1333,25 @@ function renderRanking() {
               <strong>
                 ${hunter.contratosCompletados}
               </strong>
+
+            </div>
+
+
+            <div
+              class="ranking-value ranking-failures"
+              data-label="Fallidos"
+              title="${hunter.contratosFallidos} contrato(s) fallido(s): -${hunter.penalizacionFallidos} puntos"
+            >
+
+              <strong>
+                ${hunter.contratosFallidos}
+              </strong>
+
+              ${hunter.penalizacionFallidos > 0 ? `
+                <small>
+                  -${hunter.penalizacionFallidos} PTS
+                </small>
+              ` : ""}
 
             </div>
 
@@ -2123,24 +2171,6 @@ function renderInsignias(hunter, stats) {
    COMPARADOR DE CAZARRECOMPENSAS
 ========================================================= */
 
-function puntuacionRankingHunter(hunter) {
-
-  const stats = calcularEstadisticas(hunter.id);
-  const puntosPeligrosidad =
-    PUNTOS_PELIGROSIDAD[hunter.peligrosidad] || 0;
-
-  const puntosInsignias =
-    calcularPuntosInsigniasManuales(hunter);
-
-  return (
-    (stats.completados * 10) +
-    stats.puntosContratos +
-    (puntosPeligrosidad * 3) +
-    puntosInsignias
-  );
-}
-
-
 function iniciarComparador() {
 
   if (!comparadorA || !comparadorB) return;
@@ -2229,6 +2259,18 @@ function compararNumero(valorA, valorB) {
 }
 
 
+function compararMenorNumero(valorA, valorB) {
+  const a = Number(valorA) || 0;
+  const b = Number(valorB) || 0;
+
+  return {
+    a: a < b,
+    b: b < a,
+    empate: a === b
+  };
+}
+
+
 function claseMejor(esMejor, empate) {
   if (empate) return "is-tie";
   return esMejor ? "is-better" : "";
@@ -2243,8 +2285,11 @@ function renderComparacion(hunterA, hunterB) {
   const valorA = calcularValoracion(hunterA, statsA);
   const valorB = calcularValoracion(hunterB, statsB);
 
-  const rankingA = puntuacionRankingHunter(hunterA);
-  const rankingB = puntuacionRankingHunter(hunterB);
+  const detalleRankingA = calcularPuntuacionRanking(hunterA, statsA);
+  const detalleRankingB = calcularPuntuacionRanking(hunterB, statsB);
+
+  const rankingA = detalleRankingA.puntuacion;
+  const rankingB = detalleRankingB.puntuacion;
 
   const anosA = parseInt(hunterA.anosActivo) || 0;
   const anosB = parseInt(hunterB.anosActivo) || 0;
@@ -2256,6 +2301,7 @@ function renderComparacion(hunterA, hunterB) {
     efectividad: compararNumero(statsA.tasaExito, statsB.tasaExito),
     actividad: compararNumero(statsA.contratos.length, statsB.contratos.length),
     completados: compararNumero(statsA.completados, statsB.completados),
+    fallidos: compararMenorNumero(statsA.fallidos, statsB.fallidos),
     anos: compararNumero(anosA, anosB),
     ranking: compararNumero(rankingA, rankingB)
   };
@@ -2361,6 +2407,14 @@ function renderComparacion(hunterA, hunterB) {
       )}
 
       ${fila(
+        "CONTRATOS FALLIDOS",
+        `<strong>${statsA.fallidos}</strong>${detalleRankingA.penalizacionFallidos > 0 ? `<small class="compare-penalty">-${detalleRankingA.penalizacionFallidos} PTS</small>` : `<small class="compare-penalty is-zero">SIN PENALIZACIÓN</small>`}`,
+        `<strong>${statsB.fallidos}</strong>${detalleRankingB.penalizacionFallidos > 0 ? `<small class="compare-penalty">-${detalleRankingB.penalizacionFallidos} PTS</small>` : `<small class="compare-penalty is-zero">SIN PENALIZACIÓN</small>`}`,
+        comparaciones.fallidos,
+        "compare-failures-row"
+      )}
+
+      ${fila(
         "AÑOS EN ACTIVO",
         `<strong>${esc(formatoAnios(hunterA.anosActivo))}</strong>`,
         `<strong>${esc(formatoAnios(hunterB.anosActivo))}</strong>`,
@@ -2406,6 +2460,13 @@ function abrirPerfil(
 
   const valoracion =
     calcularValoracion(
+      hunter,
+      stats
+    );
+
+
+  const detalleRanking =
+    calcularPuntuacionRanking(
       hunter,
       stats
     );
@@ -2788,6 +2849,36 @@ function abrirPerfil(
           </div>
 
           ${generarEstrellas(valoracion.actividad)}
+
+        </div>
+
+
+        <div class="rating-card rating-ranking-points">
+
+          <div class="rating-card-header">
+            <span>PUNTOS DE RANKING</span>
+            <strong>${detalleRanking.puntuacion} PTS</strong>
+          </div>
+
+          <p class="rating-card-note">
+            Puntuación final después de bonificaciones y penalizaciones.
+          </p>
+
+        </div>
+
+
+        <div class="rating-card rating-failures">
+
+          <div class="rating-card-header">
+            <span>CONTRATOS FALLIDOS</span>
+            <strong>${stats.fallidos}</strong>
+          </div>
+
+          <p class="rating-card-note rating-penalty-note">
+            ${detalleRanking.penalizacionFallidos > 0
+              ? `-${detalleRanking.penalizacionFallidos} PTS de penalización`
+              : "Sin penalización"}
+          </p>
 
         </div>
 

@@ -314,10 +314,11 @@ main{position:relative;z-index:1}
 
   grid-template-columns:
     70px
-    minmax(280px, 2fr)
-    minmax(110px, .7fr)
-    minmax(110px, .8fr)
+    minmax(250px, 2fr)
+    minmax(105px, .7fr)
     minmax(90px, .6fr)
+    minmax(105px, .8fr)
+    minmax(85px, .6fr)
     minmax(100px, .6fr);
 
   gap:16px;
@@ -354,10 +355,11 @@ main{position:relative;z-index:1}
 
   grid-template-columns:
     70px
-    minmax(280px, 2fr)
-    minmax(110px, .7fr)
-    minmax(110px, .8fr)
+    minmax(250px, 2fr)
+    minmax(105px, .7fr)
     minmax(90px, .6fr)
+    minmax(105px, .8fr)
+    minmax(85px, .6fr)
     minmax(100px, .6fr);
 
   gap:16px;
@@ -572,6 +574,21 @@ main{position:relative;z-index:1}
   font-size:.95rem;
 }
 
+
+.ranking-failures{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:3px;
+}
+
+
+.ranking-failures small{
+  color:#ef6879;
+  font-size:.58rem;
+  font-weight:900;
+  letter-spacing:.06em;
+}
 
 
 /* =========================================================
@@ -2061,6 +2078,27 @@ main{position:relative;z-index:1}
   text-align:right;
 }
 
+.rating-card-note{
+  margin:0;
+  color:var(--text-muted,#9fa4b4);
+  font-size:.78rem;
+  line-height:1.5;
+}
+
+.rating-ranking-points .rating-card-header strong{
+  color:var(--accent-neon,#4ffbdf);
+  font-size:1rem;
+}
+
+.rating-failures{
+  border-color:rgba(239,104,121,.2);
+}
+
+.rating-penalty-note{
+  color:#ef6879;
+  font-weight:800;
+}
+
 .rating-stars{
   display:inline-flex;
   font-size:1.3rem;
@@ -2435,6 +2473,21 @@ main{position:relative;z-index:1}
   font-size:.55rem;
   font-weight:900;
   letter-spacing:.11em;
+}
+
+.compare-penalty{
+  color:#ef6879;
+  font-size:.6rem;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+
+.compare-penalty.is-zero{
+  color:var(--text-muted,#9fa4b4);
+}
+
+.compare-failures-row .is-better .compare-penalty{
+  color:var(--accent-neon,#4ffbdf);
 }
 
 .compare-stars .rating-stars,
