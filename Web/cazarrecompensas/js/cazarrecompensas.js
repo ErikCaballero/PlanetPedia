@@ -1268,10 +1268,13 @@ function renderRanking() {
         let etiqueta = "";
 
         if (posicion === 1) {
-          etiqueta = "PRIMER PUESTO";
+          etiqueta = "MEJOR CAZARRECOMPENSAS";
+        }
+        else if (posicion === 2) {
+          etiqueta = "TOP 2";
         }
 
-        else if (posicion <= 3) {
+        else if (posicion === 3) {
           etiqueta = "TOP 3";
         }
 
@@ -1952,14 +1955,22 @@ function calcularInsigniasAutomaticas(hunter, stats) {
       origen: "automatica"
     });
   }
-
-  if (finalizados >= 3 && stats.tasaExito === 100) {
+  if (finalizados >= 10 && stats.tasaExito === 100) {
     insignias.push({
       id: "expediente-impecable",
       nombre: "Expediente impecable",
-      descripcion: "Mantiene una tasa de éxito del 100% con al menos 3 contratos finalizados.",
+      descripcion: "Mantiene una tasa de éxito del 100% con al menos 10 contratos finalizados.",
       icono: "✧",
       rareza: "Épica",
+      origen: "automatica"
+    });
+  } else  if (finalizados >= 6 && stats.tasaExito === 100) {
+    insignias.push({
+      id: "buena-racha",
+      nombre: "Buena racha",
+      descripcion: "Mantiene una tasa de éxito del 100% con al menos 6 contratos finalizados.",
+      icono: "◆",
+      rareza: "Rara",
       origen: "automatica"
     });
   }
@@ -2155,7 +2166,6 @@ function renderInsignias(hunter, stats) {
                 <span>＋</span>
                 <div>
                   <strong>SIN INSIGNIAS ESPECIALES</strong>
-                  <p>Puedes añadirlas manualmente desde el campo <code>insignias</code> de este cazarrecompensas en el JSON.</p>
                 </div>
               </div>
             `

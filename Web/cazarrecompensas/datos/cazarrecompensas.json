@@ -219,7 +219,7 @@
     "nombre": "Kael Varu",
     "alias": "",
     "raza": "Humano",
-    "planetaOrigen": "Terrabim",
+    "planetaOrigen": "Terrabiria",
     "imagen": "img/cazarrecompensas/Kael Varu.webp",
     "edad": "34 años",
     "anosActivo": "",
@@ -238,5 +238,194 @@
     "historia": [
       "Kael Varu fue un militar muy agresivo en la Unión de Planetas Independientes hasta que fue expulsado por su elevada agresividad por ello, buscó refugio en la competencia uniéndose a el Imperio AracnoSephus, con el que completa contratos para ganarse la vida."
     ]
+  },
+    {
+    "id": "chip-brutus",
+    "nombre": "Chip y Brutus",
+    "alias": "El cerebro y el arma",
+    "raza": "Mirnix y Clarsus",
+    "planetaOrigen": "",
+    "imagen": "img/cazarrecompensas/Chip y Brutus.webp",
+    "edad": "25 y 32 años",
+    "anosActivo": "12 años",
+    "estado": "Activo",
+    "peligrosidad": "Alto",
+    "afiliacion": "Bounty Contract Authority",
+    "zonasOperacion": ["Borde Exterior","Borde Medio","Núcleo Galáctico"],
+    "especialidades": ["Asalto","Eliminación","Captura viva"],
+    "armamento": ["Bláster de pulso","Maza de borilio","Granadas aturdidoras","Granadas de humo"],
+    "equipamiento": ["Panel de hackeo","Gafas de amplificación","Armadura de borilio"],
+    "nave": "Slax Z-9",
+    "aliados": [],
+    "enemigos": ["torg-han"],
+    "insignias": [
+      {
+        "id": "insignia-personalizada",
+        "nombre": "Nombre de la insignia",
+        "descripcion": "Motivo por el que obtuvo esta insignia.",
+        "icono": "◆",
+        "rareza": "Especial"
+      }
+    ],
+    "descripcion": "Son un pequeño Mirnix y un poderoso Clarsus que siempre trabajan en equipo, uno es el cerebro de la operación y el otro el arma devastadora, son un duo extremadamente peligroso pues cada uno completa al otro.",
+    "historia": [
+      "El Mirnix Chip nació en una ciudad que era muy exigente pues, se quería que los integrantes de la especie fuesen más inteligentes para poder competir con otras razas, pues son una raza de pequeño tamaño y pocas capacidades físicas y no tienen el nivel intelectual de otras razas como la de los Foxers, Brainiacs o Invasores X, por ende él harto de esa situación abandonó su ciudad y su planeta para dedicarse al crimen, donde encontró a Brutus, un Clarsus muy fuerte que estaba siendo esclavizado por la raza de los AracnoSephus, al verlo se vió a si mismo, pues era esclavizado por un gobierno que se quería hacer más poderosos a costa del esfuerzo de los individuos, así que con un par de granadas aturdió a sus guardias y destruyó su collar de control para que no recibiera descargas por lo que él mató a todos los AracnoSephus que habían.",
+      "Tras escapar del planeta en una nave AracnoSehus, Chip habló con Brutus y le propuso un trato, que trabajaran juntos, mano a mano, Brutus aceptó pues estaba muy agradecido con Chip por haberlo salvado de su esclavitud, juntos vendieron la nave AracnoSephus y con el dinero compraron equipo para ambos. Comenzando así su vida criminal conjunta. Se unieron a la Bounty Contract Authority y comenzaron a completar contratos de alto riesgo, convirtiéndose en un dúo extremadamente peligroso pues cada uno completa al otro y aunque aceptaban a veces otros contratos no aceptaban contratos de los AracnoSephus por lo que le hiceron a Brutus." 
+    ]
+  },
+  {
+    "id": "grant-zelgus",
+    "nombre": "Grant Zelgus",
+    "alias": "El sable rojo de la muerte",
+    "raza": "Humano",
+    "planetaOrigen": "Terrabiria",
+    "imagen": "img/cazarrecompensas/Grant Zelgus.webp",
+    "edad": "35 años",
+    "anosActivo": "5 años",
+    "estado": "Activo",
+    "peligrosidad": "Extremo",
+    "afiliacion": "Mercenario independiente",
+    "zonasOperacion": ["Borde Exterior","Borde Medio","Núcleo Galáctico"],
+    "especialidades": ["Asalto","Eliminación","Captura viva","Robo","Interrogación","Misiones de sigilo","Misiones de espionaje","Misiones en grupo"],
+    "armamento": ["Sable plásmatico rojo", "Bláster láser",""],
+    "equipamiento": ["Armadura completa de Ultrum","Jetpack","Casco con visor de visión nocturna y térmica","Botiquín de primeros auxilios","Baliza de rastreo"],
+    "nave": "Bunty 1",
+    "aliados": [],
+    "enemigos": [],
+    "descripcion": "Considerado por muchos como el cazarrecompensas más peligroso conocido, Grant Zelgus es capaz de eliminar casia cualquier objetivo, si este cazarrecompensas te tiene en su contrato, sabes que estás muerto.",
+    "historia": [
+      "Un humano de Terrabiria el cual eligieron para ser un Legionario Galáctico, pero, antes de la inyección del suero de supersoldado abandonó el plan para convertirse en Legionario Galáctico para ser un cazarrecompensas.",
+      "Con su entrenamiento como Legionario Galáctico no le costó mucho convertirse en un buen cazarrecompensas, por ello, él luchó con el ejército de los TerraMarines durante 4 años, ascendiendo al más alto rango y ganando un total de 12 insigneas en este ejército por haber completado misiones que se consideraban imposibles, en una de las misiones consiguió, una espada plasmática roja, la cual es un arma muy cara y deseada por todos el pidió quedársela por sus servicios, a lo que tras una larga negociación con los altos cargos de la Unión de Planetas Independientes aceptaron que se la quedara, aumentando su efectividad en combate por su poderosa arma.",
+      "Tras sus 4 impecables años de servicio en el ejército de Terrabiria Grant Zalgus abandonó el ejército para convertirse en un cazarrecompensas independiente, pues de esta manera él mismo podría escoger las misiones en las que participaría, cumpliendo su primer año de cazarrecompensas contratos de la Unión de Planetas Independientes."
+    ]
+  },
+  {
+    "id": "saxus-bein",
+    "nombre": "Saxus Bein",
+    "alias": "",
+    "raza": "Glitorio",
+    "planetaOrigen": "",
+    "imagen": "img/cazarrecompensas/Saxus Bein.webp",
+    "edad": "38 años",
+    "anosActivo": "3 años",
+    "estado": "Activo",
+    "peligrosidad": "Bajo",
+    "afiliacion": "Bounty Contract Authority",
+    "zonasOperacion": ["Borde Exterior","Borde Medio","Núcleo Galáctico"],
+    "especialidades": ["Asalto","Misiones en equipo"],
+    "armamento": ["Bláster de pulso","Granadas de humo"],
+    "equipamiento": [],
+    "nave": "Caza de asalto B-7",
+    "aliados": [],
+    "enemigos": [],
+    "descripcion": "Un cazarrecompensas de poca monta que suele dedicarse a realizar contratos de bajo nivel para asegurar créditos fáciles aunque no sean demasiados.",
+    "historia": [
+      "Es un ex soldado que abandonó el ejército de su planeta natal para poder dedicarse misiones más sencillas y de un menor pelígro, por ello, se ha dedicado a realizar misiones sencillas para poder obtener el dinero suficiente para poder vivir tranquilamente en unos pocos años."
+    ]
+  },
+  {
+    "id": "shin-kanu",
+    "nombre": "Shin Kanu",
+    "alias": "",
+    "raza": "Humano",
+    "planetaOrigen": "Terrabiria",
+    "imagen": "img/cazarrecompensas/Shin Kanu.webp",
+    "edad": "33 años",
+    "anosActivo": "9 años",
+    "estado": "Activo",
+    "peligrosidad": "Moderado",
+    "afiliacion": "Bounty Contract Authority",
+    "zonasOperacion": ["Borde Exterior","Borde Medio","Núcleo Galáctico"],
+    "especialidades": ["Eliminación"],
+    "armamento": ["Bláster de pulso","Rifle de asalto V-12","Granadas aturdidoras"],
+    "equipamiento": ["Armadura completa"],
+    "nave": "Caza de asalto B-7",
+    "aliados": ["kael-varu"],
+    "enemigos": [],
+    "descripcion": "Un cazarrecompensas humano de mediana peligrosidad, espezializado en misiones de eliminación.",
+    "historia": [
+      "Un humano entrenado en el ejército de Terrabiria y que ha luchado en varias guerras y se retiró para convertirse en cazarrecompensas y pagar al gobierno de Terrabiria para saldar su deuda de 85.000 créditos galácticos."
+    ]
+  },
+  {
+    "id": "holdingtus",
+    "nombre": "Holdingtus",
+    "alias": "El demoledor",
+    "raza": "Clarsus",
+    "planetaOrigen": "",
+    "imagen": "img/cazarrecompensas/Holdingtus.webp",
+    "edad": "40 años",
+    "anosActivo": "2 años",
+    "estado": "Activo",
+    "peligrosidad": "Alto",
+    "afiliacion": "Mercenario independiente",
+    "zonasOperacion": ["Borde Exterior","Borde Medio","Núcleo Galáctico"],
+    "especialidades": ["Demolición","Asalto","Eliminación"],
+    "armamento": ["Minigun pesada de coralto","Granadas explosivas","Bombas de demolición","Lanzamisiles"],
+    "equipamiento": ["Armadura de coralto"],
+    "nave": "Braxteir 2",
+    "aliados": ["chip-brutus"],
+    "enemigos": [],
+    "descripcion": "Un Clarsus con una gran pasión por la demolición y la destrucción, un cazarrecompensas ideal para misiones que requieran una gran potencia de fuego, pero, nada recomendable para misiones de sigilo. ",
+    "historia": [
+      "Un Clarsus que fue un soldado de élite de el ejército de su especie, completando misiones de alto riesgo, siendo la cabeza demoledora de su pelotón, en muchas ocasiones ha sido el artífice de la salvación de su pelotón, por ello acabó recibiendo una armadura de coralto para poder resistir mucho más daño y así salvar a su pelotón con una mayor facilidad."
+    ]
+  },
+  
+  {
+    "id": "death-eye",
+    "nombre": "Death Eye",
+    "alias": "El Ojo de la Muerte",
+    "raza": "Zorvath",
+    "planetaOrigen": "Zorvath",
+    "imagen": "img/cazarrecompensas/Death Eye.webp",
+    "edad": "50 años",
+    "anosActivo": "10 años",
+    "estado": "Activo",
+    "peligrosidad": "Severo",
+    "afiliacion": "Mercenario independiente",
+    "zonasOperacion": ["Borde Exterior","Borde Medio","Núcleo Galáctico"],
+    "especialidades": ["Eliminación"],
+    "armamento": ["Francotirador DP-19","Cuchilla térmica","Granadas de humo","Bláster de pulso"],
+    "equipamiento": ["Máscara con visor ampliable"],
+    "nave": "Corvus L-3",
+    "aliados": [],
+    "enemigos": [],
+    "descripcion": "un francotirado experimentado y letal, capaz de eliminar a objetivos a largas distancias con una gran precisión, se dice que es el 'Ojo que nunca falla'.",
+    "historia": [
+      "Un ex francotirador militar con más de 20 años de experiencia que tiene un recuento total de objetivos eliminados que asciende a más de 570 objetivos. Siendo un soldado muy beneficioso en cualquier batalla, pues era capaz de eliminar a objetivos sin tener ninguna perdida de nada, siendo realmente rentable.",
+      "Este francotirador era muy respetado y temido por sus compañeros, por ello, no se le acercaban por miedo, ya que él era callado y no solía hablar con nadie, simplemente se dedicaba a eliminar a todos aquellos enemigos que tuvieran la mala suerte de pasar por su mira, pese a no ser muy social todos sus compañeros agradecían que estuviese, pues saben que él solo era capaz de aislar a un gran grupo de enemigos en un edificio por miedo a ser alcanzados por uno de esos tiros."
+    ]
+  },
+  
+  {
+    "id": "zarzus-klan",
+    "nombre": "Zarzus Klan",
+    "alias": "",
+    "raza": "",
+    "planetaOrigen": "",
+    "imagen": "img/cazarrecompensas/Zarzus Klan.webp",
+    "edad": "37 años",
+    "anosActivo": "4 años",
+    "estado": "Activo",
+    "peligrosidad": "Moderado",
+    "afiliacion": "Bounty Contract Authority",
+    "zonasOperacion": ["Borde Exterior","Borde Medio","Núcleo Galáctico"],
+    "especialidades": ["Asalto","Misiones en grupo"],
+    "armamento": ["Rifle de asalto M-4","Pistola de mano L-9","Cuchilla térmica","Granadas térmicas","Granadas explosivas"],
+    "equipamiento": ["Botiquín"],
+    "nave": "Caza de asalto B-7",
+    "aliados": [],
+    "enemigos": [],
+    "descripcion": "Un mercenario de mediana peligrosidad, se dedica sobretodo a las misiones de asalto y a misiones en grupo.",
+    "historia": [
+      "Zarzus Klan es un ex militar que complió con su ejército y decidió retirarse para disfrutar de la vida, pero, tras un corto periodo de tiempo echaba de menos realizar misiones, por lo que se unió a una asociación de cazarrecompensas y empezó a completar misiones para sentir de nuevo esa adrenalina y emoción."
+    ]
   }
+
+
+
+
+
+
 ]

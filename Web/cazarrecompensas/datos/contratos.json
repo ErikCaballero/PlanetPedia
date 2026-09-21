@@ -128,7 +128,7 @@
     "cliente": "Desconocido",
     "lugar": "Sector Arkanis",
 
-    "recompensa": 78000,
+    "recompensa": 54000,
 
     "descripcion": "Interceptar un carguero armado y recuperar un cargamento militar robado.",
 
@@ -602,20 +602,360 @@
   "id": "CON-0030",
   "cazarrecompensas": "sala-maek",
 
-  "nombre": "Eliminación del criminal ",
+  "nombre": "Eliminación del criminal Variela Sark",
 
-  "tipo": "",
-  "dificultad": "",
-  "estado": "",
+  "tipo": "Eliminación",
+  "dificultad": "Baja",
+  "estado": "Completado",
 
-  "objetivo": "",
-  "cliente": "",
-  "lugar": "",
+  "objetivo": "Eliminar a Variela Sark.",
+  "cliente": "Krag Voss",
+  "lugar": "Malakno",
 
-  "recompensa": 0,
+  "recompensa": 1250,
 
-  "descripcion": "",
-  "resultado": "",
-  "observaciones": ""
+  "descripcion": "Se debe eliminar a la criminal Variela Sark por haber robado mercancía de combustible a Krag Voss.",
+  "resultado": "Objetivo eliminado con éxito.",
+  "observaciones": "He eliminado a la criminal Variela Sark."
+},
+{
+  "id": "CON-0031",
+  "cazarrecompensas": "kael-varu",
+
+  "nombre": "Eliminar a Garvock el carnicero",
+
+  "tipo": "Eliminación",
+  "dificultad": "Severa",
+  "estado": "Fallido",
+
+  "objetivo": "Eliminar a Gorvack el carnicero.",
+  "cliente": "Desconocido",
+  "lugar": "Territorio de Gorvack",
+
+  "recompensa": 48500,
+
+  "descripcion": "Se debe eliminar a la cabeza criminal Gorvack el carnicero, líder del cártel de Gorvack.",
+  "resultado": "No se ha completado el contrato debido a la intervención de un cazarrecompensas.",
+  "observaciones": "Mierda, mierda, mierda."
+},
+{
+  "id": "CON-0032",
+  "cazarrecompensas": "chip-brutus",
+
+  "nombre": "Asaltar nave AracnoSephus",
+
+  "tipo": "Asalto",
+  "dificultad": "Alta",
+  "estado": "Completado",
+
+  "objetivo": "Asaltar una nave de transporte de armamento del Imperio AracnoSephus y robar su cargamento.",
+  "cliente": "Unión de Planetas Independientes",
+  "lugar": "Espacio exterior",
+
+  "recompensa": 24000,
+
+  "descripcion": "Se debe asaltar una nave de transporte de armamento del imperio AracnoSpehus para que no llegue a suministrar a sus fuerzas de combate en la línea de batalla contra los Varyths.",
+  "resultado": "Se han robado las armas con éxito y eliminado a la tripulación.",
+  "observaciones": "Nos llebamos algunas armas para venderlas junto a la nave."
+},
+{
+  "id": "CON-0033",
+  "cazarrecompensas": "chip-brutus",
+
+  "nombre": "Asaltar nave AracnoSephus",
+
+  "tipo": "Asalto",
+  "dificultad": "Alta",
+  "estado": "Completado",
+
+  "objetivo": "Asaltar una nave de transporte de armamento del Imperio AracnoSephus y robar su cargamento.",
+  "cliente": "Unión de Planetas Independientes",
+  "lugar": "Espacio exterior",
+
+  "recompensa": 24500,
+
+  "descripcion": "Se debe asaltar una nave de transporte de armamento del imperio AracnoSpehus para que no llegue a suministrar a sus fuerzas de combate en la línea de batalla contra los Legionarios Galácticos.",
+  "resultado": "Se han robado las armas con éxito y eliminado a la tripulación.",
+  "observaciones": "Nos llebamos algunas armas para venderlas junto a la nave."
+},
+{
+  "id": "CON-0034",
+  "cazarrecompensas": "chip-brutus",
+
+  "nombre": "Asaltar nave AracnoSephus",
+
+  "tipo": "Asalto",
+  "dificultad": "Alta",
+  "estado": "Completado",
+
+  "objetivo": "Asaltar una nave de transporte de armamento del Imperio AracnoSephus y robar su cargamento.",
+  "cliente": "Unión de Planetas Independientes",
+  "lugar": "Espacio exterior",
+
+  "recompensa": 26000,
+
+  "descripcion": "Se debe asaltar una nave de transporte de armamento del imperio AracnoSpehus para que no llegue a suministrar a sus fuerzas de combate en la línea de batalla contra los Legionarios Galácticos.",
+  "resultado": "Se han robado las armas con éxito y eliminado a la tripulación.",
+  "observaciones": "Nos llebamos algunas armas para venderlas junto a la nave."
+},
+{
+  "id": "CON-0035",
+  "cazarrecompensas": "chip-brutus",
+
+  "nombre": "Asaltar puesto de mando AracnoSephus",
+
+  "tipo": "Asalto",
+  "dificultad": "Severa",
+  "estado": "Completado",
+
+  "objetivo": "Asaltar un puesto de mando del imperio AracnoSephus.",
+  "cliente": "Unión de Planetas Independientes",
+  "lugar": "Planeta Verliria.",
+
+  "recompensa": 38000,
+
+  "descripcion": "Se ayudará en la guerra contra el imperio AracnoSephus destruyendo un puesto de mando en el planeta Verliria para evitar la manutención del ejército AracnoSephus para reducir sus fuerzas contra los Legionarios Galácticos.",
+  "resultado": "Se ha destruído el puesto de mando con éxito.",
+  "observaciones": "Chip: El puesto de mando ha sido destruido con éxito Brutus: AracnoSephus muertos, Brutus disfruta."
+},
+{
+  "id": "CON-0036",
+  "cazarrecompensas": "chip-brutus",
+
+  "nombre": "Asaltar nave Steron",
+
+  "tipo": "Asalto",
+  "dificultad": "Alta",
+  "estado": "Completado",
+
+  "objetivo": "Asaltar una nave Steron, los cazarrecompensas pueden quedarse con el cargamento de armas y esa será su recompensa principal además de un pequeño pago.",
+  "cliente": "Unión de Planetas Independientes",
+  "lugar": "Espacio abierto",
+
+  "recompensa": 4500,
+
+  "descripcion": "Se debe asaltar una nave Steron que cuenta con un jugoso cargamento de armas, el cliente no quiere el cargamento, solamente quiere que el imperio de los Sterons disminuya sus fuerzas.",
+  "resultado": "Nave asaltada con éxito.",
+  "observaciones": "Chip: Nos hemos llevado el cargamento y la nave, a este paso nos haremos ricos."
+},
+{
+  "id": "CON-0037",
+  "cazarrecompensas": ["chip-brutus", "torg-han", "orbus-zot","vrakk-tal"],
+
+  "nombre": "Asaltar centro de mando de el criminal Vulgin Klein.",
+
+  "tipo": "Asalto",
+  "dificultad": "Severa",
+  "estado": "Completado",
+
+  "objetivo": "Asaltar y hundir el cártel criminal Puños de Vultirions",
+  "cliente": "Garvock el carnicero",
+  "lugar": "Territorio de Vulgin Klein",
+
+  "recompensa": 32000,
+
+  "descripcion": "Se debe formar un equipo de cazarrecompensas para asaltar al rival criminal de Gorvack, Vulgin Klein, y hundir su cártel criminal Puños de Vultirions, para así debilitarlo y destruir a un rival más de Gorvack.",
+  "resultado": "Se ha eliminado el cártel entero y llevado a su cabeza frente a Gorvack.",
+  "observaciones": "Chip: Es estupendo trabajar con un equipo compentente de cazarrecompensas. Torg Han: Trabajo completado. Vrakk Tal: La habilidad de Torg Han con el bláster es impresionante, jamás había visto nada parecido en nadie."
+},
+{
+  "id": "CON-0038",
+  "cazarrecompensas": "torg-han",
+
+  "nombre": "Eliminar a los remanentes del cártel de Vulgin Klein",
+
+  "tipo": "Eliminación",
+  "dificultad": "Moderada",
+  "estado": "Completado",
+
+  "objetivo": "Se debe eliminar a los remanentes del cártel de Vulgin Klein, para garantizar que no habrán rebeliones.",
+  "cliente": "Garvock el carnicero",
+  "lugar": "Territorio de Vulgin Klein",
+
+  "recompensa": 21000,
+
+  "descripcion": "Se debe encontrar y eliminar a los remanentes del cártel de Vulgin Klein, para eliminar posibles rebeliones.",
+  "resultado": "Remanentes eliminados con éxito.",
+  "observaciones": "Objetivos eliminados."
+},
+{
+  "id": "CON-0039",
+  "cazarrecompensas": "z-417",
+
+  "nombre": "Investigar sede central de el imperio Steron",
+
+  "tipo": "Investigación",
+  "dificultad": "Extrema",
+  "estado": "Completado",
+
+  "objetivo": "Recopilar información sobre las fuerzas del imperio Steron y su sede central.",
+  "cliente": "Unión de Planetas Independientes",
+  "lugar": "Gradius 4",
+
+  "recompensa": 94500,
+
+  "descripcion": "Se requiere investigar la sede central del imperio Steron para obtener información sobre sus fuerzas y operaciones para planificar una posible destrucción de su cruel imperio creciente.",
+  "resultado": "Se ha recogido información sobre el imperio Steron.",
+  "observaciones": "Se ha entregado la información al cliente en una unidad de almacenamiento con la grabación y datos de la investigación."
+},
+{
+  "id": "CON-0040",
+  "cazarrecompensas": "grant-zelgus",
+
+  "nombre": "Eliminación de líder Steron",
+
+  "tipo": "Eliminación",
+  "dificultad": "Extrema",
+  "estado": "Completado",
+
+  "objetivo": "Eliminar al líder del imperio Steron, Klagnos Melgus.",
+  "cliente": "Unión de Planetas Independientes",
+  "lugar": "Gradius 4",
+
+  "recompensa": 100000,
+
+  "descripcion": "Trás la eliminación del anterior líder Steron la seguridad a aumentado enormemente, por ende es prácticamente imposible eliminar a su nuevo líder.",
+  "resultado": "Líder Steron eliminado con éxito.",
+  "observaciones": "He eliminado a Klagnos Melgus y a otros 56 soldados de élite."
+},
+{
+  "id": "CON-0041",
+  "cazarrecompensas": "alan-vlanx",
+
+  "nombre": "Eliminación de un asesino.",
+
+  "tipo": "Eliminación",
+  "dificultad": "Baja",
+  "estado": "Completado",
+
+  "objetivo": "Eliminar a un asesino en el planeta Zorn 2",
+  "cliente": "Un hombre Zorniano",
+  "lugar": "Zorn 2",
+
+  "recompensa": 1050,
+
+  "descripcion": "Ese maldito desgraciado mató a mi hija, quiero que sufra una muerte larga.",
+  "resultado": "Asesino eliminado con éxito.",
+  "observaciones": "El asesino ha sido eliminado con una muerte que ha durado 35 minutos."
+},
+{
+  "id": "CON-0042",
+  "cazarrecompensas": "alan-vlanx",
+
+  "nombre": "Captura viva de un criminal",
+
+  "tipo": "Captura viva",
+  "dificultad": "Baja",
+  "estado": "Completado",
+
+  "objetivo": "Capturar a un criminal del planeta al que las autoridades no consiguen capturar.",
+  "cliente": "Autoridades de Metacost",
+  "lugar": "Metacost",
+
+  "recompensa": 1750,
+
+  "descripcion": "Se debe capturar a un criminal de una de las ciudades de Metacost el cual lleva 9 meses causando problemas y las autoridades de Metacost no lo han encontrado.",
+  "resultado": "Criminal capturado con éxito y entregado a las autoridades de Metacost.",
+  "observaciones": "He entregado a ese escurridizo criminal a las autoridades y solo he tardado 3 días en encontrarlo."
+},
+{
+  "id": "CON-0043",
+  "cazarrecompensas": "alan-vlanx",
+
+  "nombre": "Captura viva de un asesino en Metacost",
+
+  "tipo": "Captura viva",
+  "dificultad": "Baja",
+  "estado": "Completado",
+
+  "objetivo": "Capturar viva a un asesino en el planeta Metacost.",
+  "cliente": "Autoridades de Metacost",
+  "lugar": "Metacost",
+
+  "recompensa": 1860,
+
+  "descripcion": "Se debe capturar a un asesino de Metacost para ser juzgado ante los tribunales de Metacost.",
+  "resultado": "Asesino capturado viva y entregado a las autoridades de Metacost.",
+  "observaciones": "El asesino ha sido capturado viva y entregado a las autoridades de Metacost."
+},
+{
+  "id": "CON-0044",
+  "cazarrecompensas": "grant-zelgus",
+
+  "nombre": "Captura viva de un criminal galáctico.",
+
+  "tipo": "Captura viva",
+  "dificultad": "Alta",
+  "estado": "Completado",
+
+  "objetivo": "Capturar a Glen Varn, un criminal galáctico que ha perpretado varios atentados terrorístas en varios planetas de la Unión de Planetas Independientes.",
+  "cliente": "Unión de Planetas Independientes",
+  "lugar": "Indeterminado",
+
+  "recompensa": 17500,
+
+  "descripcion": "Se capturar a Glen Varn, un criminal galáctico que ha perpretado varios atentados terrorístas en varios planetas de la Unión de Planetas Independientes y entregarlo a la Unión de Planetas Independientes.",
+  "resultado": "Criminal galáctico capturado con éxito.",
+  "observaciones": "He capturado al terrorista galáctico."
+},
+{
+  "id": "CON-0045",
+  "cazarrecompensas": "alan-vlanx",
+
+  "nombre": "Capturar a un ladrón de varios bancos de Metacost.",
+
+  "tipo": "Captura viva",
+  "dificultad": "Baja",
+  "estado": "Completado",
+
+  "objetivo": "Capturar a un ladrón de varios bancos de Metacost.",
+  "cliente": "Autoridades de Metacost",
+  "lugar": "Metacost",
+
+  "recompensa": 2100,
+
+  "descripcion": "Se debe capturar al ladrón que ha robado más de 150.000 créditos de varios bancos de Metacost y entregarlo a las autoridades de Metacost.",
+  "resultado": "Criminal capturado con éxito y entregado a las autoridades de Metacost.",
+  "observaciones": "Desgraciadamente no he encontrado los 150.000 créditos."
+},
+{
+  "id": "CON-0046",
+  "cazarrecompensas": "alan-vlanx",
+
+  "nombre": "Eliminar a una cabeza militar de el ejército de los Varyths.",
+
+  "tipo": "Eliminación",
+  "dificultad": "Severa",
+  "estado": "Fallido",
+
+  "objetivo": "Eliminar a una cabeza militar de el ejército de los Varyths.",
+  "cliente": "Imperio de los Invasores X",
+  "lugar": "Marius",
+
+  "recompensa": 24000,
+
+  "descripcion": "Se debe eliminar a la cabeza militar de el ejército de los Varyths para debilitar sus fuerzas y permitir vengarse a el imperio de los Invasores X por la derrota en sus manos.",
+  "resultado": "La cabeza militar no pudo ser eliminada.",
+  "observaciones": "Me han capturado y derrotado fácilmente."
+},
+{
+  "id": "CON-0047",
+  "cazarrecompensas": "z-417",
+
+  "nombre": "Eliminar a una cabeza militar de el ejército de los Varyths.",
+
+  "tipo": "Eliminación",
+  "dificultad": "Severa",
+  "estado": "Completado",
+
+  "objetivo": "Eliminar a una cabeza militar de el ejército de los Varyths.",
+  "cliente": "Imperio de los Invasores X",
+  "lugar": "Marius",
+
+  "recompensa": 85000,
+
+  "descripcion": "Se debe eliminar a la cabeza militar de el ejército de los Varyths para debilitar sus fuerzas y permitir vengarse a el imperio de los Invasores X por la derrota en sus manos.",
+  "resultado": "La cabeza militar ha sido eliminada con éxito.",
+  "observaciones": "La misión ha sido completada con éxito."
 }
 ]
