@@ -298,6 +298,13 @@ a { color:inherit; }
     }
 
 
+    .sangre {
+      position: relative;
+      color: #ff1a1a;
+      font-family: 'Sangrefont';
+    }
+
+
     @media (max-width: 700px) {
       .character-jump-nav {
         margin-top: 1rem;
