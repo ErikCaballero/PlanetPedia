@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Expediente Syrilu</title>
+    <link favicon rel="icon" type="image/png" href="../../Especies alienigenas/Syrilus/Syrilu icono.webp">
+    <link rel="stylesheet" href="../plantilla.css">
+    <link rel="stylesheet" href="especiesindiv.css">
+</head>
+
+<body>
+    <div id="planetpedia-header"></div>
+    <script src="../../components/header.js"></script>
+<div class="container">
+    <!-- Bloque superior: Imagen + Nombre + Características -->
+    <div class="top-section">
+        <div class="img-box">
+            <!-- Aquí irá tu imagen -->
+            <a href="../../Especies alienigenas/Syrilus/Syrilu.webp">
+                <img src="../../Especies alienigenas/Syrilus/Syrilu.webp" style="width:100%; height:100%; object-fit:cover;">
+            </a>
+        </div>
+        <div class="header-box">
+            <h1>Los Syrilus</h1>
+            <h2>Características físicas</h2>
+            <p>Los Syrilus son una raza de pequeño tamaño, pequeñas extremidades y aspecto adorable que recordaba al de un bebé como si no creciesen, su piel es de un color morado, azulado. Tienen dos cortos brazos acabados en cinco dedos y dos cortas piernas acabadas en tres dedos. Carecen de pelo, tienen tres grandes ojos, uno de ellos ligeramente superior ubicado en la frente, una pequeñísima nariz, una boca y dos grandes y picudas orejas.</p>
+            <p>Miden entre 0.8 y 1.3 metros de altura y 35 kg de peso.</p>
+            <p>Esperanza de vida: 90 años.</p>
+            <h2>Planeta de origen</h2>
+            <p>Bernio</p>
+            <h2>Idioma</h2>
+            <p><i>Syrilo</i></p>
+        </div>
+    </div>
+
+    <!-- Bloque inferior: Habilidades y otros -->
+    <div class="bottom-section">
+        <h2>Características sociales</h2>
+        <p>Los Syrilus son una pacífica y tranquila raza que evitan el conflicto a toda costa y prefieren huir o esconderse antes que pelear, pues ellos odian matar o herir a cualquier criatura o raza, por ello tratan a toda costa de evitarlo, además de que sus cuerpos no cuentan con la capacidad de luchar por sí solos. Viven en aldeas de pequeño tamaño para las razas de tamaño estandar pero, para ellos es más que suficiente.</p>
+        
+        <div class="especializaciones">
+        <button class="especializaciones-btn" type="button">
+            <span>Áreas de especialización</span>
+            <span class="especializaciones-icono">+</span>
+        </button>
+
+    </div>
+        <div class="foto1">
+            <div class="fotos-div1">
+            <a href="../../Especies alienigenas/Syrilus/Syrilus.webp">
+                <img src="../../Especies alienigenas/Syrilus/Syrilus.webp" alt="Grupo de Syrilus" class="species-image">
+            </a>
+            <figcaption class="texto-fotos">Grupo de Syrilus.</figcaption>
+            </div>
+            <p>Los Syrilus son una raza muy sociable, hablan mucho entre ellos y se la pasan hablando, jugando o aprendiendo en grupo, pues les encanta estar en grupos grandes, rara vez se ve a un Syrilu realizar una tarea en solitario, pues hasta el alimento lo preparan en grupo, pues las comidas suelen verse más como banquetes que como comidas normales, con grandes y largas mesas con muchas bocas que alimentar. Se la pasan hablando constantemente y aunque no es común hay algunos de ellos que también saben hablar galáctico estandar para poder comunicarse con el resto de razas.</p>
+        </div>
+        <h2>Habilidades</h2>
+        <ul>
+            <li><a class="skillLink" href="../InformacionAdicional.html#Pathokinesis">Pathokinesis</a></li>
+            <li><a class="skillLink" href="../InformacionAdicional.html#SuperEmpatia">Super Empatía</a></li>
+        </ul>
+        <div class="container" data-especie="Syrilus">
+        <!-- Botón para desplegar/ocultar estadísticas -->
+        <button type="button" class="btn-desplegar-stats" id="btnStats">
+            <span>Ver Estadísticas de la Especie</span>
+            <span class="flecha" id="flechaStats">▼</span>
+        </button>
+
+        <!-- Contenedor oculto por defecto mediante la clase 'oculto' -->
+        <div class="stats-container oculto" id="panelStats">
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Fuerza</span>
+                    <span class="stat-value" id="val-fuerza">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-fuerza"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Agilidad</span>
+                    <span class="stat-value" id="val-agilidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-agilidad"></div>
+                </div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Resistencia</span>
+                    <span class="stat-value" id="val-resistencia">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-resistencia"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Velocidad</span>
+                    <span class="stat-value" id="val-velocidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-velocidad"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Inteligencia</span>
+                    <span class="stat-value" id="val-inteligencia">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-inteligencia"></div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Habilidades</span>
+                    <span class="stat-value" id="val-habilidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-habilidad"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- Enlace al archivo JavaScript externo (Asegúrate de ajustar la ruta si es necesario) -->
+        <script src="Stats.js"></script>
+        <h2>Dificultad de derrotar</h2>
+        <div class="contenedor-completo">
+            <div class="bloque-dificultad">
+            <div class="dificultad-barra" id="barra">
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+            </div>
+            <span id="texto-dificultad" class="texto-nivel"></span>
+            </div>
+            <img id="icono-dificultad" src="" alt="Icono">
+        </div>
+        <h2>Creencias</h2>
+        <p>Sus creencias determinan completamente su estilo de vida, pues son pacíficos y respetuosos con todas las formas de vida que los rodea, no dañan a nadie y evitan a toda costa ejercer violencia, dejándolo no solo como último recurso si no que ni siquiera lo tienen como opción, para ellos un Syrilu que ejerza la violencia es una aberración a las reglas de la naturaleza. De hecho suelen tener todo tipo de pequeños animales de su planeta por las ciudades y suelen alimentarlos y cuidarlos.</p>
+        <a href="../../Especies alienigenas/Syrilus/Syrilu animal.webp">
+            <img src="../../Especies alienigenas/Syrilus/Syrilu animal.webp" alt="Syrilu alimentando a un animal" class="species-image">
+        </a>
+        <figcaption class="texto-fotos">Syrilu alimentando a un animal</figcaption>
+        <h2>Jerarquía</h2>
+        <ul>
+            <li class="emperador">Líder</li>
+            <li>Ciudadanos</li>
+        </ul>
+        <h2>Historia</h2>
+        <h3>El comienzo</h3>
+        <p>Los Syrilus tuvieron un comienzo que catalogan como una pesadilla absoluta, pues vivieron una persecución no solo de las criaturas de su planeta si no también por otras razas como los <!-- WikiLinks --> <a href="Orakais.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Orakais/Orakai.webp"><div><strong>Los Orakais</strong><p>Los Orakais son una ex raza guerrera con una escelente habildad de combate que buscan la paz en todo el universo.</p></div></div>'>Los Orakais</a>, por lo que se veían obligados a huir y esconderse esperando que no los encontraran.</p>
+        <h3>De aterradores a defensores</h3>
+        <p>Cuando los <!-- WikiLinks --> <a href="Orakais.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Orakais/Orakai.webp"><div><strong>Los Orakais</strong><p>Los Orakais son una ex raza guerrera con una escelente habildad de combate que buscan la paz en todo el universo.</p></div></div>'>Los Orakais</a> cambiaron de valores y dejaron de ser una raza conquistadores, pasaron a defenderlos, lo cual a ellos les resultó raro, pero, como realmente sentían que ellos no deseaban causarles daño aceptaron con mucho gusto a esta nueva raza que los protegía pues, por primera vez podían asentar sus primeras aldeas y vivir cómoda y tranquilamente.</p>
+    </div>
+
+</div>
+
+<script src="../../components/search.js" data-planetpedia-search></script>
+<script src="../../components/voiceController.js" data-planetpedia-voice></script>
+<script src="../../components/backToTop.js" data-planetpedia-back-to-top></script>
+</body>
+<script src="especialidad.js"></script>
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+<script src="wikilink.js"></script>
+<script src="dificultadvencer.js"></script>
+<script>
+    // Nivel de dificultad
+    actualizarDificultad(1);
+  </script>
+</html>

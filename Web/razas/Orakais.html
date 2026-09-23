@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Expediente Orakai</title>
+    <link favicon rel="icon" type="image/png" href="../../Especies alienigenas/Orakais/Orakai icono.png ">
+    <link rel="stylesheet" href="../plantilla.css">
+    <link rel="stylesheet" href="especiesindiv.css">
+</head>
+
+<body>
+    <div id="planetpedia-header"></div>
+    <script src="../../components/header.js"></script>
+<div class="container">
+    <!-- Bloque superior: Imagen + Nombre + Características -->
+    <div class="top-section">
+        <div class="img-box">
+            <!-- Aquí irá tu imagen -->
+            <a href="../../Especies alienigenas/Orakais/Orakai.webp">
+                <img src="../../Especies alienigenas/Orakais/Orakai.webp" style="width:100%; height:100%; object-fit:cover;">
+            </a>
+        </div>
+        <div class="header-box">
+            <h1>Los Orakais</h1>
+            <h2>Características físicas</h2>
+            <p>Los Orakais son una raza de aspecto humanoide, con cuatro ojos pequeños, una boca, una nariz y dos orejas, además de eso tienen una corona de cuernos de la misma apariencia de su piel, su piel es de color rojo y tienen dos brazos y dos piernas acabadas en 5 dedos.</p>
+            <p>Miden entre 1.5 y 2.1 metros de altura y 80 kg de peso.</p>
+            <p>Esperanza de vida: 120 años.</p>
+            <h2>Planeta de origen</h2>
+            <p>Bernio</p>
+            <h2>Idioma</h2>
+            <p><i>Orrakis</i></p>
+        </div>
+    </div>
+
+    <!-- Bloque inferior: Habilidades y otros -->
+    <div class="bottom-section">
+        <h2>Características sociales</h2>
+        <p>Los Orakais son una ex raza guerrera que antes se dedicaban a la guerra pero, tras darse cuenta que la guerra no lleva a ningún lado dejaron la guerra y dejaron el combate a algo meramente defensivo, deportivo y espiritual. Ahora la raza se siente orgullosa de su habilidad de combate y sus hazañas en guerras pasadas aunque ahora no preparan a su ejército para la conquista es un error pensar que son indefensos, pues son una de las razas con mejor habilidad de combate conocidas. Aunque ahora no buscan la conquista, desprecian a toda raza e imperio que busque la conquista dado a que desean traer la paz al universo y que todas las razas puedan vivir tranquilas y en paz.</p>
+        
+        <div class="especializaciones">
+        <button class="especializaciones-btn" type="button">
+            <span>Áreas de especialización</span>
+            <span class="especializaciones-icono">+</span>
+        </button>
+
+        <div class="especializaciones-contenido">
+            <div class="especializaciones-grid">
+
+                <div class="especializacion">Combate cuerpo a cuerpo</div>
+                <div class="especializacion">Guerra</div>
+                <div class="especializacion">Diplomacia</div>
+            </div>
+        </div>
+
+    </div>
+        <div class="foto1">
+            <div class="fotos-div1">
+            <a href="../../Especies alienigenas/Orakais/EstatuaOrakai.png">
+                <img src="../../Especies alienigenas/Orakais/EstatuaOrakai.png" alt="Estatua de Orakai" class="species-image">
+            </a>
+            <figcaption class="texto-fotos">Orakai contemplando estatua.</figcaption>
+            </div>
+            <p>Hay estatuas en las ciudades de Bernio que representan a los antigüos guerreros de su raza, para ellos son una figura de honor, valentía y fuerza, pues piensan que los Orakais del pasado fueron los que se dejaron la piel luchando constantemente para darles lo que tienen ahora, todos sus recursos, territorios y poder militar. Deshonrar las estatuas es una condena de muerte, pues para ellos son sagradas, da igual quién seas, si las deshonras ensuciándolas, dañándolas o alguna acción parecida tienes una sentencia de muerte por parte de toda la raza, pues te conviertes en el enemigo público número 1.</p>        
+        </div>
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Expertos en combate cuerpo a cuerpo</li>
+            <li><a class="skillLink" href="../InformacionAdicional.html#ElectrorrecepcionPas">Electrorrecepción pasiva</a></li>
+            <li><a class="skillLink" href="../InformacionAdicional.html#ElectrorrecepcionAct">Electrorrecepción activa</a></li>
+        </ul>
+        <div class="container" data-especie="Orakais">
+        <!-- Botón para desplegar/ocultar estadísticas -->
+        <button type="button" class="btn-desplegar-stats" id="btnStats">
+            <span>Ver Estadísticas de la Especie</span>
+            <span class="flecha" id="flechaStats">▼</span>
+        </button>
+
+        <!-- Contenedor oculto por defecto mediante la clase 'oculto' -->
+        <div class="stats-container oculto" id="panelStats">
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Fuerza</span>
+                    <span class="stat-value" id="val-fuerza">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-fuerza"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Agilidad</span>
+                    <span class="stat-value" id="val-agilidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-agilidad"></div>
+                </div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Resistencia</span>
+                    <span class="stat-value" id="val-resistencia">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-resistencia"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Velocidad</span>
+                    <span class="stat-value" id="val-velocidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-velocidad"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Inteligencia</span>
+                    <span class="stat-value" id="val-inteligencia">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-inteligencia"></div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Habilidades</span>
+                    <span class="stat-value" id="val-habilidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-habilidad"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- Enlace al archivo JavaScript externo (Asegúrate de ajustar la ruta si es necesario) -->
+        <script src="Stats.js"></script>
+        <h2>Dificultad de derrotar</h2>
+        <div class="contenedor-completo">
+            <div class="bloque-dificultad">
+            <div class="dificultad-barra" id="barra">
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+            </div>
+            <span id="texto-dificultad" class="texto-nivel"></span>
+            </div>
+            <img id="icono-dificultad" src="" alt="Icono">
+        </div>
+        <h2>Creencias</h2>
+        <p>Aman el combate como rituales y deporte, pues para ellos, los combates son una forma de demostrar la fuerza interna los rituales de combate consisten en dos Orakais, el uno contra el otro y se vale cualquier tipo de modo de combate, de contacto, de grappling etcétera... En estos combates se busca noquear o someter al enemigo, por lo que los Orakais acaban teniendo una gran resistencia al daño físico, además de la obvia mejora de la habilidad de combate. Aunque es espiritual también se realizan torneos y ligas de combate como deporte, hay varios tipos de combates deportivos, están los de contacto, grappling y mixtos. Dentro de los combates de contacto tienes los combates de contactos únicamente con puños, únicamente con piernas y los totales en los que puedes golpear al rival sin limitaciones. Cualquier especie es bienvenida a realizar alguna de las variantes del combate deportivo a menos de que posean capacidades superiores, en cuyo caso se considera un combate injusto pues es muy difícil vencer a un oponente superior a ti por mucho en fuerza, agilidad o reflejos. Y en el combate deportivo también se puede ganar prestigio y respeto dentro de la especie de los Orakais.</p>
+        <a href="../../Especies alienigenas/Orakais/RitualOrakai.webp">
+            <img src="../../Especies alienigenas/Orakais/RitualOrakai.webp" alt="Ritual de combate Orakai" class="species-image">
+        </a>
+        <figcaption class="texto-fotos">Ritual de combate Orakai</figcaption>
+        <h2>Jerarquía</h2>
+        <ul>
+            <li class="emperador">Gobernador</li>
+            <li>Presidentes</li>
+            <li>Élite Orakai</li>
+            <li>Guerreros</li>
+            <li>Ciudadanos</li>
+        </ul>
+        <h2>Historia</h2>
+        <h3>El comienzo</h3>
+        <p>Los Orakais comenzaron como una raza guerrera, una raza que no solo conquistaba cualquier civilización que no fuese de su especie, si no que también entre ellos, dando lugar a múltiples ocasiones en las que se originaban guerras civiles en las que muchos de ellos caían en batalla, generando miles de muertes.</p>
+        <h3>La transformación de valores</h3>
+        <p>Hubo un Orakai conocido como "El profeta de la paz", que reunió a los jefes de los grandes clanes, una vez todos reunidos él mostró que las guerras constantes no eran una fomra viable de vivir pues repercutían negativamente en la cantidad de Orakais que habían vivos, en el estilo de vida y en el poder como raza, entonces tras una difícil y larga negociación llegaron a la conclusión de que no deberían de dedicarse más a la conquista y a la guerra, pues pese a que siempre hayan sido una raza guerrera, los Orakais son una raza bastante inteligente. Desde entonces poco a poco empezaron a ver a las razas débiles como una a la que defender en vez de una a la que destruir.</p>
+        <h3>El espacio exterior</h3>
+        <p>Al conseguir la tecnología suficiente para salir del planeta descubrieron que no eran la primera civilización que lo conseguía, ni eran la mejor en hacerlo, pues, habían razas que tenían hasta naves hechas bases espaciales con miles y cientos de miles de residentes en ellas, tras descubrir la gran cantidad de amenazas que albergaba el basto universo que acababan de descubrir, se unieron a un grupo de planetas que buscaban la paz para ellos mismos, la Unión de Planetas Independientes. En este grupo de planetas, habían unas reglas, las cuales eran defender a algún planeta de esta coalición que sea atacado y no atacar activamente a ningún planeta que no sea una amenaza reconocida, normas que parecían hechas por "El Profeta de la paz", pues eran las normas que llevaban siguiendo ya muchos, muchos años.</p>
+        <h3>Los Legionarios Galácticos</h3>
+        <p>En la Unión de Planetas Independientes se hizo una propuesta; crear a unos guerreros de super élite los cuales había que pretender que fuesen muy superiores en todos los aspectos a cualquier otra unidad militar de la coalición, ellos estuvieron de acuerdo en el momento en el que escucharon la propuesta, incitando al resto de razas a aceptar la propuesta, gracias a ellos, lo que inició como una loca propuesta acabó resultando en una propuesta sería y viable. Tras muchas discusiones y deliberaciones en los altos mandos, se exigió que todos los detalles estuviesen pulidos y una vez pulidos los detalles, se expondrían y se votaría por ello, entonces se dividieron las tareas en lo concerniente a la creación de este ejército, los Orakais serían los que entrenarían a los Legionarios Galácticos en el combate cuerpo a cuerpo para que este apartado fuera impecable.</p>
+        <a href="../../Especies alienigenas/Orakais/Votación.webp">
+            <img src="../../Especies alienigenas/Orakais/Votación.webp" alt="Votación para aprobar a los Legionarios Galácticos" class="species-image">
+        </a>
+        <figcaption class="texto-fotos">Votación para la aprobación de los Legionarios Galácticos</figcaption>
+
+    </div>
+
+</div>
+
+<script src="../../components/search.js" data-planetpedia-search></script>
+<script src="../../components/voiceController.js" data-planetpedia-voice></script>
+<script src="../../components/backToTop.js" data-planetpedia-back-to-top></script>
+</body>
+<script src="especialidad.js"></script>
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+<script src="wikilink.js"></script>
+<script src="dificultadvencer.js"></script>
+<script>
+    // Nivel de dificultad
+    actualizarDificultad(3);
+  </script>
+</html>
