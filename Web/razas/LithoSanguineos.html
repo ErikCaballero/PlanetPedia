@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Expediente Litho Sanguineo</title>
+    <link favicon rel="icon" type="image/png" href="../../Especies alienigenas/LithoSanguineos/LithoSanguineo icono.png">
+    <link rel="stylesheet" href="../plantilla.css">
+    <link rel="stylesheet" href="especiesindiv.css">
+</head>
+
+<body>
+    <div id="planetpedia-header"></div>
+    <script src="../../components/header.js"></script>
+<div class="container">
+    <!-- Bloque superior: Imagen + Nombre + Características -->
+    <div class="top-section">
+        <div class="img-box">
+            <!-- Aquí irá tu imagen -->
+            <a href="../../Especies alienigenas/LithoSanguineos/LithoSanguineo.webp">
+                <img src="../../Especies alienigenas/LithoSanguineos/LithoSanguineo.webp" style="width:100%; height:100%; object-fit:cover;">
+            </a>
+        </div>
+        <div class="header-box">
+            <h1>Los LithoSanguineos</h1>
+            <h2>Características físicas</h2>
+            <p>Los LithoSanguineos son una raza una raza hecha de SanguiCuarzo, un material hecho de una clase de cuarzo Sanguíneo, resistente y el cual puede llegar a generar vida, son fractálicos, cada parte de su cuerpo está hecho con la misma forma pero de diferentes tamaños, tienen una cabeza sin orejas, ojos, nariz ni boca, dos brazos acabados en 5 dedos y  dos piernas sin dedos. Son de colores: rojo carmesí, rosa translúcido, negro carbón y gris metálico. Tienen un núcleo en el pecho el cual es la que almacena su alma y vida, brilla en un intenso color rojo claro. </p>
+            <p>Miden entre 3 y 5 metros de altura y 120 kg de peso.</p>
+            <p>Esperanza de vida: <span class="eterno">Eternos</span>.</p>
+            <h2>Planeta de origen</h2>
+            <p>Quarum</p>
+            <h2>Idioma</h2>
+            <p><i>Desconocido</i></p>
+        </div>
+    </div>
+
+    <!-- Bloque inferior: Habilidades y otros -->
+    <div class="bottom-section">
+        <h2>Características sociales</h2>
+        <p>Los LithoSanguineos son una raza que consideran que las formas de vida no <!-- WikiLinks --> <a href="Orakais.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><p>Formas de vida de naturaleza de mineral y cristalina.</p></div></div>'>lítica</a>, odiando así a todas las formas de vida orgánicas, lo que convierte a esta raza en una amenaza para todas casi todas las formas de vida. Son una raza que conquista planetas, aunque su método no es de todo efectivo.</p>
+        
+        <div class="especializaciones">
+        <button class="especializaciones-btn" type="button">
+            <span>Áreas de especialización</span>
+            <span class="especializaciones-icono">+</span>
+        </button>
+
+         <div class="especializaciones-contenido">
+            <div class="especializaciones-grid">
+
+                <div class="especializacion">Guerra</div>
+                <div class="especializacion">Conquista</div>
+
+            </div>
+        </div>
+    </div>
+        <div class="foto1">
+            <div class="fotos-div1">
+            <a href="../../Especies alienigenas/LithoSanguineos/LithoSanguineos.webp">
+                <img src="../../Especies alienigenas/LithoSanguineos/LithoSanguineos.webp" alt="Grupo de LithoSanguineos" class="species-image">
+            </a>
+            <figcaption class="texto-fotos">Grupo de LithoSanguineos.</figcaption>
+            </div>
+            <p>Los LithoSanguineos tienen varias formas diferentes además de que dependen en gran medida de su armamento pues hay algunos que son más grandes y tienen escudos que actuan como defensores de los ejércitos de la especie los cuales son más resistentes y suelen estar en primera línea para recibir sin problemas todos los daños.</p>
+        </div>
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Gran resistencia</li>
+            <li>Super regeneración</li>
+        </ul>
+        <div class="container" data-especie="LithoSanguineos">
+        <!-- Botón para desplegar/ocultar estadísticas -->
+        <button type="button" class="btn-desplegar-stats" id="btnStats">
+            <span>Ver Estadísticas de la Especie</span>
+            <span class="flecha" id="flechaStats">▼</span>
+        </button>
+
+        <!-- Contenedor oculto por defecto mediante la clase 'oculto' -->
+        <div class="stats-container oculto" id="panelStats">
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Fuerza</span>
+                    <span class="stat-value" id="val-fuerza">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-fuerza"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Agilidad</span>
+                    <span class="stat-value" id="val-agilidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-agilidad"></div>
+                </div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Resistencia</span>
+                    <span class="stat-value" id="val-resistencia">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-resistencia"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Velocidad</span>
+                    <span class="stat-value" id="val-velocidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-velocidad"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Inteligencia</span>
+                    <span class="stat-value" id="val-inteligencia">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-inteligencia"></div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Habilidades</span>
+                    <span class="stat-value" id="val-habilidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-habilidad"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- Enlace al archivo JavaScript externo (Asegúrate de ajustar la ruta si es necesario) -->
+        <script src="Stats.js"></script>
+        <h2>Dificultad de derrotar</h2>
+        <div class="contenedor-completo">
+            <div class="bloque-dificultad">
+            <div class="dificultad-barra" id="barra">
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+            </div>
+            <span id="texto-dificultad" class="texto-nivel"></span>
+            </div>
+            <img id="icono-dificultad" src="" alt="Icono">
+        </div>
+        <h2>Creencias</h2>
+        <p>Sus creencias determinan completamente su estilo de vida, pues son pacíficos y respetuosos con todas las formas de vida que los rodea, no dañan a nadie y evitan a toda costa ejercer violencia, dejándolo no solo como último recurso si no que ni siquiera lo tienen como opción, para ellos un LithoSanguineo que ejerza la violencia es una aberración a las reglas de la naturaleza. De hecho suelen tener todo tipo de pequeños animales de su planeta por las ciudades y suelen alimentarlos y cuidarlos.</p>
+        <h2>Jerarquía</h2>
+        <ul>
+            <li class="emperador">Cristal Madre</li>
+            <li>Líderes</li>
+            <li>Soldados</li>
+            <li>Obreros</li>
+        </ul>
+        <h2>Historia</h2>
+        <h3>El Origen</h3>
+        <p>De lo poco que sabemos de esta raza, el origen está muy gris, pues, no se sabe con exactitud como se generó o de donde salió, algunos dicen que esta raza apareció por el paso del tiempo en su planeta evolucionando a partir de las estructuras de cuarzo formadas, pero, hay un problema por el que esta teoría no funciona y esa es: Su Núcleo, el hecho de que tengan un núcleo que almacene su alma y les permita regenerarse completamente siempre y cuando su núcleo esté intacto. Por esta razón muchos se optan por una teoría más loca: Creados mágicamente. Se ha investigado mucho los cuerpos de algunos de estos seres y se han encontrado cantidades inmensas de <!-- WikiLinks --> <a href="#" class="especie-link" data-tippy-content='<div class="wiki-popup"><p>La energía y esencia que aparece en los objetos, seres o estructuras mágicas. Una energía vital para realizar hechizos o conjuros.</p></div></div>'>maná</a> que apuntan a que sea muy probable que esta raza se haya creado por la intervención de la magia, lo que ya no se sabe tan claramente es si los creó un ser o son una creación pura de la magia, pero está claro que son seres de origen mágico.</p>
+        <h3>El comienzo</h3>
+        <p>El comienzo de esta raza fue sencillo, ya que por lo que sabemos esta raza fue la única de su planeta. Gracias a su Red Psiónica esta raza puede comunicarse entre sí y su "nodo" lo llaman Cristal Madre que permite a toda la especie comunicarse entre sí a parte de ser el líder por ende siempre han tenido una vida fácil.</p>
+        <h3>El espacio exterior</h3>
+        <p>Al no contar con tecnología.</p>
+        <h3>Descubrimiento de otras razas</h3>
+        <p>Al descubrir otras razas los Litho Sanguineos descubrieron que habían otras razas y que las otras razas no eran como ellos, por ende los vieron como: "Un defecto de la existencia" por lo que tras hablarlo y debatirlo con el Cristal Madre decidieron que había que eliminar a todos los defectos de la existencia, así que los Litho Sanguineos empezaron a eliminar al resto de vida existente convirtiéndolos en cuarzo de esta forma en su pensamiento "purifican" el universo. Así empezaron a eliminar a cada especie que encontraban, por esta razón, algunas razas se vieron obligadas a abandonar su planeta natal solo para sobrevivir y es que esta raza es extremadamente difícil de destruir por su enorme tamaño, poder, resistencia y regeneración y aunque tengan un punto débil no es nada sencillo aprovecharlo. Entre las razas afectadas se encuentra la de los <!-- WikiLinks --> <a href="Sterons.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Sterons/Steron.webp"><div><strong>Los Sterons</strong><p>Una raza imperialista y esclavista, conocida por ser una de las razas más crueles del universo.</p></div></div>'>Sterons</a> los cuales tuvieron que abandonar un planeta que habían conquistado por la presencia de los Litho Sanguineos.</p>
+        <a href="../../Especies alienigenas/LithoSanguineos/LithoSanguineo vs Sterons.webp">
+            <img src="../../Especies alienigenas/LithoSanguineos/LithoSanguineo vs Sterons.webp" alt="LithoSanguineo alimentando a un animal" class="species-image">
+        </a>
+        <figcaption class="texto-fotos">LithoSanguineo alimentando a un animal</figcaption>
+
+    </div>
+
+</div>
+<script src="../../components/search.js" data-planetpedia-search></script>
+<script src="../../components/voiceController.js" data-planetpedia-voice></script>
+<script src="../../components/backToTop.js" data-planetpedia-back-to-top></script>
+</body>
+<script src="especialidad.js"></script>
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+<script src="wikilink.js"></script>
+<script src="dificultadvencer.js"></script>
+<script>
+    // Nivel de dificultad
+    actualizarDificultad(6);
+  </script>
+
+</body>
+</html>

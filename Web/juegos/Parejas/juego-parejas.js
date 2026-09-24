@@ -185,9 +185,11 @@ const availableImages = [
 
     "../../../Especies alienigenas/Blukeys/Blukey icono.webp",
 
-    "../../../Especies alienigenas/Syrilus/Syrilu icono.png",
+    "../../../Especies alienigenas/Syrilus/Syrilu icono.webp",
     
-    "../../../Especies alienigenas/Orakais/Orakai icono.png"
+    "../../../Especies alienigenas/Orakais/Orakai icono.webp",
+
+    "../../../Especies alienigenas/LithoSanguineos/LithoSanguineo icono.png"
 ];
 
 

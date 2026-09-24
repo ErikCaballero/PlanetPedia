@@ -298,6 +298,8 @@
                 align-items: center;
                 max-width: 280px;
             }
+
+            
             .wiki-popup img {
                 width: 70px;
                 height: 70px;
@@ -313,6 +315,18 @@
                 color: #4ffbdf;
                 display: block;
                 margin-bottom: 3px;
+            }
+
+            .wiki-adicional{
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                max-width: 280px;
+            }
+
+            .wiki-adicional p{
+                color: #00e1ff;
+                font-size: large;
             }
             .eterno {
                 background: linear-gradient(90deg, #d9ff03, #00e1ff, #b804b2);
