@@ -189,7 +189,7 @@ const availableImages = [
     
     "../../../Especies alienigenas/Orakais/Orakai icono.webp",
 
-    "../../../Especies alienigenas/LithoSanguineos/LithoSanguineo icono.png"
+    "../../../Especies alienigenas/LithoSanguineos/LithoSanguineo icono.webp"
 ];
 
 
