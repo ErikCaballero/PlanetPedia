@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Expediente Warhounds</title>
+    <link favicon rel="icon" type="image/png" href="../../Especies alienigenas/Warhounds/Warhound icono.webp">
+    <link rel="stylesheet" href="../plantilla.css">
+    <link rel="stylesheet" href="especiesindiv.css">
+</head>
+
+<body>
+    <div id="planetpedia-header"></div>
+    <script src="../../components/header.js"></script>
+<main>
+<div class="container">
+    <!-- Bloque superior: Imagen + Nombre + Características -->
+    <div class="top-section">
+        <div class="img-box">
+            <!-- Aquí irá tu imagen -->
+            <a href="../../Especies alienigenas/Warhounds/Warhound.webp">
+                <img src="../../Especies alienigenas/Warhounds/Warhound.webp"  alt="Imagen de la especie" style="width:100%; height:100%; object-fit:cover;">
+            </a>
+        </div>
+        <div class="header-box">
+            <h1>Los Warhounds</h1>
+            <h2>Características físicas</h2>
+            <p>Los Warhounds tienen aspecto de perros de la tierra, tienen una gran cantidad de pelaje muy denso en todo el cuerpo además de un pelaje bastante grueso, por lo que entre el pelaje y la piel cuentan con una armadura natural muy buena, son grandes y corpulentos, cuerpos especializados en resistir daños. Tienen dos ojos, una nariz y una boca en la cual cuentan con colmillos sobresalientes, además de ello tienen unas orejas picudas. Sus estómagos son bastante buenos, pues no enferman por comer comida sin cocinar y todo tipo de comida. </p>
+            <p>Miden entre 3 y 5 metros de altura y 120 kg de peso.</p>
+            <p>Esperanza de vida: 85 años.</p>
+            <h2>Planeta de origen</h2>
+            <p>Warrum</p>
+            <h2>Idioma</h2>
+            <p><i>WarHunder</i></p>
+        </div>
+    </div>
+
+    <!-- Bloque inferior: Habilidades y otros -->
+    <div class="bottom-section">
+        <h2>Características sociales</h2>
+        <p>Los Warhounds son una raza guerrera, les encanta luchar en guerras, batallas a gran escala y contiendas pero, aunque adoren esto no luchan contra cualquiera pues la guerra para ellos es más como un deporte, un deporte mortal que realizan en grupos de cientos o miles, luchan contra quienes deseen luchar, incluso contra ellos mismos, pues para ellos es su entretenimiento y su propósito de vida, única y exclusivamente contra quienes lo deseen, en el fondo son muy buenos, pues defienden a los pobres débiles que no puedan defenderse. De hecho muchos dicen sobre ellos que ojalá todas las razas guerreras fuesen como ellos.</p>
+        
+        <div class="especializaciones">
+        <button class="especializaciones-btn" type="button">
+            <span>Áreas de especialización</span>
+            <span class="especializaciones-icono">+</span>
+        </button>
+
+         <div class="especializaciones-contenido">
+            <div class="especializaciones-grid">
+
+                <div class="especializacion">Guerra</div>
+                <div class="especializacion">Estrategia militar</div>
+
+            </div>
+        </div>
+    </div>
+        <div class="foto1">
+            <div class="fotos-div1">
+            <a href="../../Especies alienigenas/Warhounds/Warhounds.webp">
+                <img src="../../Especies alienigenas/Warhounds/Warhounds.webp" alt="Grupo de Warhounds" class="species-image">
+            </a>
+            <figcaption class="texto-fotos">Grupo de Warhounds.</figcaption>
+            </div>
+            <p>Los Warhounds utilizan todo tipo de armas, ya sean cuerpo a cuerpo o a distancia, como por ejemplo: lanzallamas, mazas, ametralladoras, francotiradores, fusiles entre otras muchas armas que ellos mismos fabrican. Tambien cuentan con armaduras pesadas pero, sumamente resistentes, diseñadas explícitamente para la guerra, para resistir tiros, golpes, empujones... </p>
+        </div>
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Gran resistencia</li>
+            <li><a class="skillLink" href="../InformacionAdicional.html#InmunidadPsiquica">Inmunidad psíquica</a></li>
+            <li>Estómagos fuertes</li>
+            <li>Super sentidos</li>
+        </ul>
+        <div class="container" data-especie="Warhounds">
+        <!-- Botón para desplegar/ocultar estadísticas -->
+        <button type="button" class="btn-desplegar-stats" id="btnStats">
+            <span>Ver Estadísticas de la Especie</span>
+            <span class="flecha" id="flechaStats">▼</span>
+        </button>
+
+        <!-- Contenedor oculto por defecto mediante la clase 'oculto' -->
+        <div class="stats-container oculto" id="panelStats">
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Fuerza</span>
+                    <span class="stat-value" id="val-fuerza">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-fuerza"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Agilidad</span>
+                    <span class="stat-value" id="val-agilidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-agilidad"></div>
+                </div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Resistencia</span>
+                    <span class="stat-value" id="val-resistencia">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-resistencia"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Velocidad</span>
+                    <span class="stat-value" id="val-velocidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-velocidad"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Inteligencia</span>
+                    <span class="stat-value" id="val-inteligencia">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-inteligencia"></div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Habilidades</span>
+                    <span class="stat-value" id="val-habilidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-habilidad"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- Enlace al archivo JavaScript externo (Asegúrate de ajustar la ruta si es necesario) -->
+        <script src="Stats.js"></script>
+        <h2>Dificultad de derrotar</h2>
+        <div class="contenedor-completo">
+            <div class="bloque-dificultad">
+            <div class="dificultad-barra" id="barra">
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+            </div>
+            <span id="texto-dificultad" class="texto-nivel"></span>
+            </div>
+            <img id="icono-dificultad" src="" alt="Icono">
+        </div>
+        <h2>Creencias</h2>
+        <p>La guerra es en lo que creen, creen en la fuerza individual y colectiva pues, el Rey de cada palacio de los Warhounds tiene el poder y fuerza de su propio pueblo y su propio ejército además de su fuerza y poder propio. Para ellos, morir en guerra es algo honorable, algo que hacen que estos individuos marchen a la guerra sin ningún tipo de miedo, si no que simplemente avanzan con una brutalidad sin parangón. Además solo atacan a las razas que den batalla, pues lo que les gusta son las guerras difíciles de ganar con enemigos a la altura, que den batalla y deben ayudar a los que sean más débiles, así tal vez algún día se hagan lo suficientemente fuertes como para ser considerados un rival. Además de que NUNCA exterminan a una raza pues si lo hacen se acabarían quedando sin razas contra los que luchar.</p> 
+
+        <h3>Dioses</h3>
+        <ul>
+            <li>Piramtrix: Diosa de la muerte.</li>
+            <li>Slaindill: Dios de la herrería, la forja y la tecnología.</li>
+            <li>Blanduil: Diosa de la comida.</li>
+            <li>Glandilia: Diosa de la fiesta y la bebida.</li>
+            <li>Martus: Dios de la brutalidad.</li>
+            <li>Glortes: Dios de la guerra y el combate.</li>
+            <li>Maris: Diosa de la paz, la calma y la tranquilidad.</li>
+            <li>Lumex: Dios del fuego, las explosiones y el calor.</li>
+            <li>Suler: Diosa de la naturaleza.</li>
+        </ul>
+
+        <h2>Jerarquía</h2>
+        <ul>
+            <li class="emperador">Rey</li>
+            <li>Maestros</li>
+            <li>Guerreros de élite</li>
+            <li>Soldados</li>
+            <li>Ciudadanos</li>
+        </ul>
+        <p>El Rey de cada castillo de los Warhounds es quién decide todo, incluido contra quién se declarará la siguiente guerra, simpre y cuando cumpla con las creencias de la especie. Su jerarquía suele funcionar para cada castillos, por lo que cada Rey actúa en su castillo, cada Maestro de la guerra o de la forja actúa en su castillo y así con todo.</p>
+        <a href="../../Especies alienigenas/Warhounds/FortalezaWarHound.webp">
+            <img src="../../Especies alienigenas/Warhounds/FortalezaWarHound.webp" alt="Fortaleza WarHound" class="species-image">
+        </a>
+        <figcaption class="texto-fotos">Castillo Warhound</figcaption>
+
+        <h2>Maestros</h2>
+        <h3>Maestro de la guerra</h3>
+        <p>El maestro de la guerra suele ser el mejor soldado que tiene el ejército de cada castillo, pues tras cada guerra se vuelve a elegir al maestro de la guerra, pues él es el que lidera a los Warhounds en cada combate. Este es el único maestro que se renueva cada X tiempo, pues el resto no suele ser reemplazado ya que cada año suelen tener más experiencia pero, el maestro de la guerra también tiene que ser el mejor guerrero, pues en caso de tener que zanjar la guerra en un combate de 1 vs 1 es el maestro de la guerra.</p>
+        <h3>Maestro de la forja</h3>
+        <p>El maestro de la forja es el jefe absoluto en el apartado de la forja y la creación de todo tipo de tecnologías, se encargan de diseñar nuevas armas y vehículos. Es uno de los maestros más importantes, pues sin él, su tecnología acabaría tarde o temprano, suelen utilizar la lava de los volcanes para forjar y crear las tecnologías. Este maestro no suele estar en compañía, pues su función para cada castillo Warhound es lo que más aman hacer y se pasan el día completo fabricando armas y armaduras para el ejército del castillo, utiliza tanto meteriales extraídos de la tierra como reutilizados de otras armas y armaduras de su especie como de otras, para él los materiales que entran son materiales independientemente de su origen, pues las armas y armaduras rotas o en mal estado los mandan a los herreros normales, que se dedican a reparar las armaduras y armas de los Soldados así como reabastecerles las municiones. El maestro herrero solo se encarga de crear o inventar.</p>
+        <a href="../../Especies alienigenas/Warhounds/ForjaWarHound.webp">
+            <img src="../../Especies alienigenas/Warhounds/ForjaWarHound.webp" alt="Maestro de Forja Warhound" class="species-image">
+        </a>
+        <figcaption class="texto-fotos">Maestro de Forja Warhound</figcaption>
+        <h3>Maestro de la minería</h3>
+        <p>Aunque sea importante este maestro no se considera tan importante como otros, pues su trabajo es buscar y organizar a los mineros para obtener nuevos materiales, pero, como reutilizan también materiales, no es tan importante como el de la forja o la guerra.</p>
+        <h3>Maestro de la construcción</h3>
+        <p>Su trabajo es, obviamente la construcción, se encargan de crear edificios así como de dirigir a los otros constructores para que las murallas y las estructuras se mantengan siempre en perfecto estado, para evitar cualquier fisura que los enemigos puedan aprovechar. El maestro constructor también se encarga de diseñar tanto mejoras para las estructuras ya existentes como de diseñar nuevas estructuras.</p>
+        
+        
+        <h2>Historia</h2>
+        <h3>El comienzo</h3>
+        <p>Su comienzo no dista mucho de lo que son ahora, con algunas excepciones como por ejemplo que solo ataquen a quien resulte un peligro, amenaza o rival digno, pues en sus comienzos los Warhound se enfrentaban a cada ser que se encontraban. Su comienzo no fue complicado, por las capacidades y habilidades físicas que tienen.</p>
+        <h3>La gran guerra</h3>
+        <p>Los Warhound lucharon una vez en una guerra tan grande que casi se extinguen, pues tuvieron una guerra como raza contra otras 4 especies, lo que les complicó muchísimo la victoria y la supervivencia, perdieron batallas solo por la monstruosa inferioridad numérica que tenían, llegando en algunas batallas a estar en un 45:1, lo que hacía algunas batallas casi imposibles de ganar. </p>
+
+        <h3>Primeros Vehículos</h3>
+        <p>Malquizor fue el primer maestro que creó el primer vehículo, pues él era maestro de la guerra y de la construcción.</p>
+        <a href="../../Especies alienigenas/Warhounds/TanqueWarHound.webp">
+            <img src="../../Especies alienigenas/Warhounds/TanqueWarHound.webp" alt="Meteorito de los Litho Sanguineos" class="species-image">
+        </a>
+        <figcaption class="texto-fotos">Meteorito de los Litho Sanguineos</figcaption>
+        <h3>Unidad de defensa</h3>
+        <p>Tras darse a conocer al resto del universo y hacerlo como una raza agresiva que busca la destrucción de toda raza que no sea la suya, recibieron contra ataques de otras razas por lo que el Cristal Madre creó una versión más potente y mucho más resistente del defensor para protegerse de los atacantes cercanos. Esta unidad es más grande, midiendo hasta 7 metros de alto. Este tipo de unidad no suele abandonar el planeta, pues actúan más como defensores del planeta siendo capaz de destruir naves, tanques o unidades de gran resistencia o incluso eliminar a cientos de enemigos.</p>
+        <a href="../../Especies alienigenas/Warhounds/LithoSangineoDefensor.webp">
+            <img src="../../Especies alienigenas/Warhounds/LithoSangineoDefensor.webp" alt="LithoSangineo Defensor evolucionado" class="species-image">
+        </a>
+        <figcaption class="texto-fotos">Litho Sangineo Defensor evolucionado</figcaption>
+
+    </div>
+
+</div>
+</main>
+<script src="../../components/search.js" data-planetpedia-search></script>
+<script src="../../components/voiceController.js" data-planetpedia-voice></script>
+<script src="../../components/backToTop.js" data-planetpedia-back-to-top></script>
+</body>
+<script src="especialidad.js"></script>
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+<script src="wikilink.js"></script>
+<script src="dificultadvencer.js"></script>
+<script>
+    // Nivel de dificultad
+    actualizarDificultad(6);
+  </script>
+
+</body>
+</html>
