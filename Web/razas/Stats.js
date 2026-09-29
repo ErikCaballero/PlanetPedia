@@ -259,6 +259,22 @@ const baseDatosEspecies = {
         inteligencia: 3,
         habilidad: 3
     },
+    Vorlaks: {
+        fuerza: 1,
+        agilidad: 5,
+        resistencia: 4,
+        velocidad: 2,
+        inteligencia: 4,
+        habilidad: 0
+    },
+    Warhounds: {
+        fuerza: 3,
+        agilidad: 5,
+        resistencia: 5,
+        velocidad: 3,
+        inteligencia: 3,
+        habilidad: 2
+    },
     Xelthorianos: {
         fuerza: 1,
         agilidad: 4,
