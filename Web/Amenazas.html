@@ -25,13 +25,16 @@
         <input type="text" id="threat-search" placeholder="Buscar amenaza..." oninput="filtrarAmenazas()">
         <select id="type-filter" onchange="filtrarAmenazas()">
             <option value="todos">Todos los tipos</option>
-            <option value="entidad">Criatura</option>
-            <option value="especie">Bactería</option>
-            <option value="tecnologia">Tecnología</option>
+            <option value="criatura">Criatura</option>
+            <option value="bacteria">Bactería</option>
+            <option value="tecnología">Tecnología</option>
             <option value="cosmica">Amenaza cósmica</option>
+            <option value="raza">Raza alienígena</option>
         </select>
         <select id="level-filter" onchange="filtrarAmenazas()">
             <option value="todos">Todos los niveles</option>
+            <option value="1">Nivel I</option>
+            <option value="2">Nivel II</option>
             <option value="3">Nivel III</option>
             <option value="4">Nivel IV</option>
             <option value="5">Nivel V</option>
@@ -40,7 +43,7 @@
     </section>
 
     <main class="threat-grid" id="threat-grid">
-        <article class="threat-card" data-type="entidad" data-level="5" data-name="La Singularidad Carmesí">
+        <article class="threat-card" data-type="bacteria" data-level="5" data-name="CROPT">
             <div class="threat-card__visual visual-singularity">
                 <img src="amenazas/imgAmenazas/CROPT bacteria.webp" alt="Imagen de el CROPT">
             </div>
@@ -48,7 +51,7 @@
             <div class="threat-card__content">
                 <div class="threat-meta">
                     <span class="threat-type">Bactería</span>
-                    <span class="danger danger-5">NIVEL III</span>
+                    <span class="danger danger-5">NIVEL V</span>
                 </div>
                 <h2>El CROPT</h2>
                 <p>Una bactería capaz de adueñarse de sistemas biológicos y manipular su funcionamiento, además de contar con una mente colmena super desarrollada que no cuenta con debilidades.</p>
@@ -57,65 +60,91 @@
             </div>
         </article>
 
-        <article class="threat-card" data-type="especie" data-level="4" data-name="Enjambre Devorador Vork">
-            <div class="threat-card__visual visual-swarm"><div class="sigil">✦</div></div>
+        <article class="threat-card" data-type="criatura" data-level="1" data-name="Insectrumidos">
+            <div class="threat-card__visual visual-swarm">
+                <img src="amenazas/imgAmenazas/Insectrumidos/InsectrumidoObrero.webp" alt="Imagen de Insectrumido">
+            </div>
             <div class="scanlines"></div>
             <div class="threat-card__content">
-                <div class="threat-meta"><span class="threat-type">ESPECIE HOSTIL</span><span class="danger danger-4">NIVEL IV</span></div>
-                <h2>Enjambre Devorador Vork</h2>
-                <p>Oleadas biológicas capaces de consumir ecosistemas enteros y convertir recursos planetarios en nueva biomasa.</p>
+                <div class="threat-meta">
+                    <span class="threat-type">ESPECIE HOSTIL</span>
+                    <span class="danger danger-1">NIVEL I</span>
+                </div>
+                <h2>Insectrumidos</h2>
+                <p>Una especie Insectoide parásitoide que conquista planeta con un elevado número de ellos, con un sistema jerarquico en el que la reina es el mayor rango y la líder de toda la colonia, .</p>
                 <div class="threat-stats"><span>Alcance: Planetario</span><span>Estado: Expansión</span></div>
-                <a href="#" class="view-btn">Acceder al expediente</a>
+                <a href="amenazas/Insectrumidos.html" class="view-btn">Acceder al expediente</a>
             </div>
         </article>
 
-        <article class="threat-card" data-type="fenomeno" data-level="4" data-name="Tormenta de Vacío N-77">
-            <div class="threat-card__visual visual-storm"><div class="sigil">ϟ</div></div>
+        <article class="threat-card" data-type="criatura" data-level="3" data-name="ColmenaCarmesí">
+            <div class="threat-card__visual visual-swarm">
+                <img src="amenazas/imgAmenazas/ColmenaCarmesi/MortigenoGuerrero.webp" alt="Imagen de Insectrumido">
+            </div>
             <div class="scanlines"></div>
             <div class="threat-card__content">
-                <div class="threat-meta"><span class="threat-type">FENÓMENO</span><span class="danger danger-4">NIVEL IV</span></div>
-                <h2>Tormenta de Vacío N-77</h2>
-                <p>Frente energético errante que inutiliza sistemas de navegación, comunicaciones y escudos a su paso.</p>
-                <div class="threat-stats"><span>Alcance: Sectorial</span><span>Estado: Móvil</span></div>
-                <a href="#" class="view-btn">Acceder al expediente</a>
+                <div class="threat-meta">
+                    <span class="threat-type">ESPECIE HOSTIL</span>
+                    <span class="danger danger-3">NIVEL III</span>
+                </div>
+                <h2>Colmena Carmesí</h2>
+                <p>Una especie Insectoide parásitoide que conquista planeta con un elevado número de ellos, con un sistema jerarquico en el que la reina es el mayor rango y la líder de toda la colonia, .</p>
+                <div class="threat-stats"><span>Alcance: Galáctico</span><span>Estado: Expansión</span></div>
+                <a href="amenazas/ColmenaCarmesi.html" class="view-btn">Acceder al expediente</a>
             </div>
         </article>
 
-        <article class="threat-card" data-type="tecnologia" data-level="3" data-name="Protocolo Obsidiana">
-            <div class="threat-card__visual visual-tech"><div class="sigil">⌬</div></div>
+        <article class="threat-card" data-type="raza" data-level="3" data-name="LithoSanguineos">
+            <div class="threat-card__visual visual-singularity">
+                <img src="../Especies alienigenas/LithoSanguineos/LithoSanguineos.webp" alt="Imagen los Ultramitas">
+            </div>
             <div class="scanlines"></div>
             <div class="threat-card__content">
-                <div class="threat-meta"><span class="threat-type">TECNOLOGÍA</span><span class="danger danger-3">NIVEL III</span></div>
-                <h2>Protocolo Obsidiana</h2>
-                <p>Red autónoma de guerra capaz de infiltrarse en infraestructura orbital y tomar control de defensas planetarias.</p>
-                <div class="threat-stats"><span>Alcance: Regional</span><span>Estado: Contenida</span></div>
-                <a href="#" class="view-btn">Acceder al expediente</a>
+                <div class="threat-meta">
+                    <span class="threat-type">RAZA ALIENIGENA</span>
+                    <span class="danger danger-3">NIVEL III</span>
+                </div>
+                <h2>Los Litho Sanguíneos</h2>
+                <p>Una raza alienígena hecha de cuarzo Sanguíneo que odia y desprecia a toda forma de vida orgánica y trata de eliminarlos a todos convirtiéndolos en estátuas de Cuarzo Sanguíneo.</p>
+                <div class="threat-stats"><span>Alcance: Galáctico</span><span>Estado: Activa</span></div>
+                <a href="razas/LithoSanguineos.html" class="view-btn">Acceder al expediente</a>
             </div>
         </article>
 
-        <article class="threat-card" data-type="cosmica" data-level="5" data-name="El Hambre entre Estrellas">
-            <div class="threat-card__visual visual-cosmic"><div class="sigil">◉</div></div>
+        <article class="threat-card" data-type="raza" data-level="5" data-name="Ultramitas">
+            <div class="threat-card__visual visual-singularity">
+                <img src="../Especies alienigenas/Ultramitas/UltramitasC.png" alt="Imagen los Ultramitas">
+            </div>
             <div class="scanlines"></div>
             <div class="threat-card__content">
-                <div class="threat-meta"><span class="threat-type">AMENAZA CÓSMICA</span><span class="danger danger-5">NIVEL V</span></div>
-                <h2>El Hambre entre Estrellas</h2>
-                <p>Anomalía de origen desconocido que reduce lentamente la emisión energética de estrellas cercanas hasta su colapso.</p>
-                <div class="threat-stats"><span>Alcance: Estelar</span><span>Estado: Desconocido</span></div>
-                <a href="#" class="view-btn">Acceder al expediente</a>
+                <div class="threat-meta">
+                    <span class="threat-type">RAZA ALIENIGENA</span>
+                    <span class="danger danger-5">NIVEL V</span>
+                </div>
+                <h2>Los Ultramitas</h2>
+                <p>Una raza alienígena imperialista de gran poder que es capaz de aniquilar la vida en un planeta con un solo individuo de la especie, poseen la habilidad de volar, super fuerza, super resistencia super velocidad, visión lase y la mejor: ADN adáptativo que los hace adaptarse al daño que se les haga.</p>
+                <div class="threat-stats"><span>Alcance: Galáctico</span><span>Estado: Activa</span></div>
+                <a href="razas/Ultramitas.html" class="view-btn">Acceder al expediente</a>
             </div>
         </article>
 
-        <article class="threat-card" data-type="entidad" data-level="3" data-name="Los Observadores Negros">
-            <div class="threat-card__visual visual-watchers"><div class="sigil">△</div></div>
+        <article class="threat-card" data-type="tecnología" data-level="5" data-name="AEnox">
+            <div class="threat-card__visual visual-singularity">
+                <img src="amenazas/imgAmenazas/AEnox/Aniquilador AEnox.webp" alt="Imagen los AEnox">
+            </div>
             <div class="scanlines"></div>
             <div class="threat-card__content">
-                <div class="threat-meta"><span class="threat-type">ENTIDAD</span><span class="danger danger-3">NIVEL III</span></div>
-                <h2>Los Observadores Negros</h2>
-                <p>Figuras silenciosas detectadas en los límites de sistemas habitados antes de eventos políticos y militares de gran escala.</p>
-                <div class="threat-stats"><span>Alcance: Variable</span><span>Estado: Vigilancia</span></div>
-                <a href="#" class="view-btn">Acceder al expediente</a>
+                <div class="threat-meta">
+                    <span class="threat-type">TECONOLOGIA</span>
+                    <span class="danger danger-5">NIVEL V</span>
+                </div>
+                <h2>AEnox</h2>
+                <p>Una IA super avanzada, libre y peligrosa, capaz de aprender, evolucionar y adaptarse creada por la raza de los Brainiacs. Esta IA es capaz de construir y diseñar robots en fábricas que tiene construídas en algunos planetas y bases espaciales, posee un gran número de fuerzas y un gran poder.</p>
+                <div class="threat-stats"><span>Alcance: Desconocido</span><span>Estado: Activa</span></div>
+                <a href="amenazas/AEnox.html" class="view-btn">Acceder al expediente</a>
             </div>
         </article>
+       
     </main>
 
     <div id="empty-state" class="empty-state" hidden>No se han encontrado amenazas que coincidan con los filtros.</div>

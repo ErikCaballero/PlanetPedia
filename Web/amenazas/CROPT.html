@@ -1,3 +1,1110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expediente — Colmena Carmesí | Planet Pedia</title>
 
-    <script src="../../components/voiceController.js"></script>
-  <script src="../../components/backToTop.js" data-planetpedia-back-to-top></script>
+    <!--
+        PLANTILLA DE AMENAZA INDIVIDUAL
+        --------------------------------
+        Todo el CSS está incluido en este archivo para que puedas moverlo
+        o copiarlo sin depender de amenazas.css.
+
+        Para crear otra amenaza:
+        1. Cambia el nombre, tipo, nivel y datos del expediente.
+        2. Sustituye las imágenes de la galería.
+        3. Rellena Historia, Castas, Capacidades, Organización, etc.
+        4. Mantén la estructura de las tarjetas de imagen para que todas
+           tengan un tamaño visual uniforme.
+    -->
+
+    <style>
+        :root {
+            --bg-space: #0b0d17;
+            --bg-card: #161b2c;
+            --bg-card-2: #101422;
+            --text-main: #f4f5f6;
+            --text-muted: #9fa4b4;
+            --accent-neon: #4ffbdf;
+            --accent-red: #ff4059;
+            --accent-red-soft: rgba(255, 64, 89, .12);
+            --border: rgba(255,255,255,.10);
+            --max-width: 1180px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            color: var(--text-main);
+            background-color: var(--bg-space);
+            background-image:
+                radial-gradient(white, rgba(255,255,255,.16) 2px, transparent 40px),
+                radial-gradient(white, rgba(255,255,255,.10) 1px, transparent 30px),
+                radial-gradient(circle at 50% 0%, rgba(136, 0, 20, .16), transparent 38%);
+            background-size: 550px 550px, 350px 350px, 100% 700px;
+            background-position: 0 0, 40px 60px, top center;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        /* =========================================================
+           NAVEGACIÓN
+           ========================================================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(11, 13, 23, .86);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(79,251,223,.18);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            min-height: 70px;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 800;
+            font-size: 1.35rem;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--accent-neon);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 1.4rem;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: .92rem;
+            transition: color .25s ease;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--accent-neon);
+        }
+
+        /* =========================================================
+           CONTENEDOR GENERAL
+           ========================================================= */
+
+        .page {
+            width: min(100% - 2rem, var(--max-width));
+            margin: auto;
+        }
+
+        /* =========================================================
+           CABECERA DEL EXPEDIENTE
+           ========================================================= */
+
+        .threat-hero {
+            padding: 4.5rem 0 2.5rem;
+            text-align: center;
+        }
+
+        .threat-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: .55rem;
+            padding: .42rem .85rem;
+            margin-bottom: 1.2rem;
+            border: 1px solid rgba(255,64,89,.45);
+            border-radius: 999px;
+            background: rgba(255,64,89,.07);
+            color: #ff6b7d;
+            font-size: .72rem;
+            font-weight: 800;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+        }
+
+        .threat-badge::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--accent-red);
+            box-shadow: 0 0 12px var(--accent-red);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            50% {
+                opacity: .35;
+                transform: scale(.7);
+            }
+        }
+
+        .threat-hero h1 {
+            color: var(--accent-neon);
+            font-size: clamp(2.5rem, 7vw, 5.4rem);
+            line-height: .98;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 0 0 30px rgba(79,251,223,.12);
+            margin-bottom: 1rem;
+        }
+
+        .threat-subtitle {
+            max-width: 800px;
+            margin: auto;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        /* =========================================================
+           BLOQUE DE INFORMACIÓN RÁPIDA
+           ========================================================= */
+
+        .threat-overview {
+            display: grid;
+            grid-template-columns: minmax(260px, .9fr) minmax(0, 1.5fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .main-image {
+            position: relative;
+            min-height: 390px;
+            overflow: hidden;
+            display: grid;
+            place-items: center;
+            padding: 1.25rem;
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 8px;
+            background:
+                radial-gradient(circle at center, rgba(116, 0, 32, .60), rgba(20, 6, 14, .92) 65%),
+                #080a11;
+            box-shadow: 0 20px 55px rgba(0,0,0,.28);
+        }
+
+        .main-image::before,
+        .main-image::after {
+            content: "";
+            position: absolute;
+            border: 1px solid rgba(255,255,255,.10);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .main-image::before {
+            width: 280px;
+            height: 280px;
+        }
+
+        .main-image::after {
+            width: 150px;
+            height: 150px;
+        }
+
+        .main-image img {
+            position: relative;
+            z-index: 2;
+            display: block;
+            width: 100%;
+            height: 100%;
+            max-height: 350px;
+            object-fit: contain;
+            object-position: center;
+        }
+
+        .scanlines {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: linear-gradient(
+                rgba(255,255,255,0) 50%,
+                rgba(0,0,0,.12) 50%
+            );
+            background-size: 100% 4px;
+            opacity: .45;
+            z-index: 3;
+        }
+
+        .overview-card {
+            padding: 1.7rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: linear-gradient(145deg, rgba(22,27,44,.94), rgba(10,13,23,.97));
+        }
+
+        .section-kicker {
+            color: var(--accent-neon);
+            font-size: .72rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: .65rem;
+        }
+
+        .overview-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: .8rem;
+        }
+
+        .overview-card > p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .danger-level {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: .9rem 1rem;
+            margin-bottom: 1.2rem;
+            border-left: 3px solid var(--accent-red);
+            background: var(--accent-red-soft);
+        }
+
+        .danger-level strong {
+            color: #ff7182;
+        }
+
+        .danger-level span {
+            color: #d8dbe3;
+            font-size: .9rem;
+        }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: .65rem;
+        }
+
+        .data-item {
+            padding: .75rem .85rem;
+            border: 1px solid rgba(255,255,255,.07);
+            border-radius: 5px;
+            background: rgba(255,255,255,.025);
+        }
+
+        .data-item small {
+            display: block;
+            color: #777e90;
+            font-size: .7rem;
+            letter-spacing: .7px;
+            text-transform: uppercase;
+            margin-bottom: .15rem;
+        }
+
+        .data-item strong {
+            color: #e6e8ed;
+            font-size: .9rem;
+        }
+
+        /* =========================================================
+           NAVEGACIÓN INTERNA
+           ========================================================= */
+
+        .threat-nav {
+            position: sticky;
+            top: 70px;
+            z-index: 50;
+            margin-bottom: 3.5rem;
+            border: 1px solid rgba(79,251,223,.12);
+            border-radius: 7px;
+            background: rgba(11,13,23,.90);
+            backdrop-filter: blur(10px);
+        }
+
+        .threat-nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .threat-nav a {
+            display: block;
+            padding: .75rem 1rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: .82rem;
+            transition: .2s ease;
+        }
+
+        .threat-nav a:hover {
+            color: var(--accent-neon);
+            background: rgba(79,251,223,.04);
+        }
+
+        /* =========================================================
+           SECCIONES DE INFORMACIÓN
+           ========================================================= */
+
+        .lore-section {
+            margin-bottom: 4rem;
+            scroll-margin-top: 110px;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1.4rem;
+            padding-bottom: .75rem;
+            border-bottom: 1px solid rgba(255,255,255,.09);
+        }
+
+        .section-heading h2 {
+            font-size: clamp(1.55rem, 3vw, 2.2rem);
+        }
+
+        .section-heading h2::before {
+            content: "// ";
+            color: var(--accent-neon);
+            font-weight: 400;
+        }
+
+        .section-heading p {
+            color: #73798a;
+            font-size: .8rem;
+        }
+
+        .content-card {
+            padding: 1.6rem;
+            border: 1px solid var(--border);
+            border-radius: 7px;
+            background: rgba(16,20,34,.82);
+        }
+
+        .content-card p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .content-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =========================================================
+           BLOQUES CON IMAGEN + TEXTO
+           Puedes repetir este bloque tantas veces como quieras.
+           ========================================================= */
+
+        .lore-block {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(260px, .75fr);
+            gap: 1.5rem;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .lore-block.reverse {
+            grid-template-columns: minmax(260px, .75fr) minmax(0, 1fr);
+        }
+
+        .lore-block.reverse .lore-text {
+            order: 2;
+        }
+
+        .lore-block.reverse .image-card {
+            order: 1;
+        }
+
+        .lore-text h3 {
+            color: #eef0f4;
+            font-size: 1.35rem;
+            margin-bottom: .7rem;
+        }
+
+        .image-card {
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,.10);
+            border-radius: 7px;
+            background: #090b13;
+        }
+
+        /* Tamaño controlado: ni gigantes ni diminutas */
+        .image-card img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: contain;
+            padding: .8rem;
+            background:
+                radial-gradient(circle, rgba(79,251,223,.05), transparent 65%),
+                #090b13;
+        }
+
+        .image-card figcaption {
+            padding: .6rem .75rem;
+            border-top: 1px solid rgba(255,255,255,.07);
+            color: #777e90;
+            font-size: .74rem;
+            text-align: center;
+        }
+
+        /* =========================================================
+           CASTAS / TIPOS / ELEMENTOS
+           ========================================================= */
+
+        .entity-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .entity-card {
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,.09);
+            border-radius: 7px;
+            background: linear-gradient(180deg, rgba(22,27,44,.92), rgba(10,13,23,.96));
+        }
+
+        .entity-card .image-card {
+            border: 0;
+            border-radius: 0;
+        }
+
+        .entity-card .image-card img {
+            aspect-ratio: 1 / 1;
+        }
+
+        .entity-info {
+            padding: 1.1rem;
+        }
+
+        .entity-info h3 {
+            color: var(--accent-neon);
+            font-size: 1.05rem;
+            margin-bottom: .45rem;
+        }
+
+        .entity-info p {
+            color: var(--text-muted);
+            font-size: .88rem;
+            line-height: 1.6;
+        }
+
+        /* =========================================================
+           HABILIDADES / CARACTERÍSTICAS
+           ========================================================= */
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .feature {
+            padding: 1.2rem;
+            border-left: 2px solid var(--accent-neon);
+            border-top: 1px solid rgba(255,255,255,.07);
+            border-right: 1px solid rgba(255,255,255,.07);
+            border-bottom: 1px solid rgba(255,255,255,.07);
+            background: rgba(22,27,44,.55);
+        }
+
+        .feature h3 {
+            margin-bottom: .4rem;
+            font-size: 1rem;
+        }
+
+        .feature p {
+            color: var(--text-muted);
+            font-size: .88rem;
+        }
+
+        /* =========================================================
+           GALERÍA FINAL
+           ========================================================= */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: .9rem;
+        }
+
+        .gallery figure {
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,.09);
+            border-radius: 6px;
+            background: #090b13;
+        }
+
+        .gallery img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: contain;
+            padding: .65rem;
+            transition: transform .35s ease;
+        }
+
+        .gallery figure:hover img {
+            transform: scale(1.04);
+        }
+
+        .gallery figcaption {
+            padding: .5rem .6rem;
+            color: #777e90;
+            font-size: .72rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,.06);
+        }
+
+        /* =========================================================
+           ALERTA FINAL
+           ========================================================= */
+
+        .warning-box {
+            margin-top: 2rem;
+            padding: 1rem 1.2rem;
+            border: 1px solid rgba(255,64,89,.25);
+            border-left: 3px solid var(--accent-red);
+            background: rgba(255,64,89,.06);
+            color: #cdd1db;
+            font-size: .9rem;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding: 2rem;
+            border-top: 1px solid rgba(255,255,255,.06);
+            text-align: center;
+            color: var(--text-muted);
+            background: rgba(11,13,23,.9);
+            font-size: .85rem;
+        }
+
+        /* =========================================================
+           RESPONSIVE
+           ========================================================= */
+
+        @media (max-width: 900px) {
+            .nav-container {
+                padding: 1rem;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .threat-overview {
+                grid-template-columns: 1fr;
+            }
+
+            .main-image {
+                min-height: 330px;
+            }
+
+            .lore-block,
+            .lore-block.reverse {
+                grid-template-columns: 1fr;
+            }
+
+            .lore-block.reverse .lore-text,
+            .lore-block.reverse .image-card {
+                order: initial;
+            }
+
+            .entity-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .page {
+                width: min(100% - 1.2rem, var(--max-width));
+            }
+
+            .threat-hero {
+                padding-top: 3rem;
+            }
+
+            .threat-nav {
+                top: 0;
+            }
+
+            .threat-nav ul {
+                justify-content: flex-start;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+            }
+
+            .threat-nav a {
+                white-space: nowrap;
+            }
+
+            .data-grid,
+            .feature-grid,
+            .entity-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .main-image {
+                min-height: 290px;
+            }
+
+            .section-heading {
+                display: block;
+            }
+
+            .section-heading p {
+                margin-top: .3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================================
+         CABECERA
+         Si ya utilizas header.js en Planet Pedia, puedes sustituir
+         este bloque por tu componente habitual.
+         ========================================================= -->
+    <header>
+        <div class="nav-container">
+            <a href="../Amenazas.html" class="logo">PLANET<span>PEDIA</span></a>
+
+            <nav>
+                <a href="../Amenazas.html">Amenazas</a>
+                <a href="#historia">Historia</a>
+                <a href="#castas">Castas</a>
+                <a href="#capacidades">Capacidades</a>
+                <a href="#galeria">Galería</a>
+            </nav>
+        </div>
+    </header>
+
+
+    <main class="page">
+
+        <!-- =====================================================
+             HERO
+             ===================================================== -->
+        <section class="threat-hero">
+            <div class="threat-badge">EXPEDIENTE DE AMENAZA · NIVEL III</div>
+
+            <h1>Colmena Carmesí</h1>
+
+            <p class="threat-subtitle">
+                Registro clasificado de una especie insectoide parásitoide
+                organizada en una estructura jerárquica de colonia.
+            </p>
+        </section>
+
+
+        <!-- =====================================================
+             RESUMEN + IMAGEN PRINCIPAL
+             ===================================================== -->
+        <section class="threat-overview">
+
+            <figure class="main-image">
+                <!-- Sustituye esta ruta por la imagen principal de la amenaza -->
+                <img
+                    src="amenazas/imgAmenazas/ColmenaCarmesi/MortigenoGuerrero.webp"
+                    alt="Representación de un individuo de la Colmena Carmesí"
+                >
+                <div class="scanlines"></div>
+            </figure>
+
+            <div class="overview-card">
+                <div class="section-kicker">Ficha de identificación</div>
+
+                <h2>Colmena Carmesí</h2>
+
+                <p>
+                    Una especie insectoide parásitoide que conquista planetas
+                    mediante un elevado número de individuos y mantiene un
+                    sistema jerárquico en el que la reina ocupa el rango más alto
+                    y lidera la colonia.
+                </p>
+
+                <div class="danger-level">
+                    <strong>NIVEL III</strong>
+                    <span>Clasificación de amenaza registrada</span>
+                </div>
+
+                <div class="data-grid">
+                    <div class="data-item">
+                        <small>Tipo</small>
+                        <strong>Especie hostil</strong>
+                    </div>
+
+                    <div class="data-item">
+                        <small>Alcance</small>
+                        <strong>Galáctico</strong>
+                    </div>
+
+                    <div class="data-item">
+                        <small>Estado</small>
+                        <strong>Expansión</strong>
+                    </div>
+
+                    <div class="data-item">
+                        <small>Organización</small>
+                        <strong>Colonia jerárquica</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             MENÚ INTERNO
+             ===================================================== -->
+        <nav class="threat-nav" aria-label="Navegación del expediente">
+            <ul>
+                <li><a href="#descripcion">Descripción</a></li>
+                <li><a href="#historia">Historia</a></li>
+                <li><a href="#castas">Castas</a></li>
+                <li><a href="#capacidades">Capacidades</a></li>
+                <li><a href="#organizacion">Organización</a></li>
+                <li><a href="#galeria">Galería</a></li>
+            </ul>
+        </nav>
+
+
+        <!-- =====================================================
+             DESCRIPCIÓN
+             ===================================================== -->
+        <section class="lore-section" id="descripcion">
+            <div class="section-heading">
+                <h2>Descripción</h2>
+                <p>Información general de la amenaza</p>
+            </div>
+
+            <div class="content-card">
+                <p>
+                    La Colmena Carmesí es una especie insectoide parásitoide
+                    caracterizada por su capacidad de expansión y conquista
+                    planetaria. Su sociedad se estructura alrededor de una
+                    jerarquía en cuya cúspide se encuentra la reina.
+                </p>
+
+                <p>
+                    <!--
+                        ESCRIBE AQUÍ MÁS INFORMACIÓN SOBRE LA AMENAZA.
+                        Este párrafo es intencionadamente editable.
+                    -->
+                    Añade aquí información adicional sobre su apariencia,
+                    comportamiento, ciclo de vida, hábitat o cualquier otro
+                    aspecto que quieras documentar.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             HISTORIA
+             ===================================================== -->
+        <section class="lore-section" id="historia">
+            <div class="section-heading">
+                <h2>Historia</h2>
+                <p>Origen, expansión y acontecimientos conocidos</p>
+            </div>
+
+            <!-- Puedes repetir este bloque para cada etapa histórica. -->
+            <article class="lore-block">
+
+                <div class="lore-text content-card">
+                    <div class="section-kicker">Origen</div>
+                    <h3>Los primeros registros</h3>
+
+                    <p>
+                        Escribe aquí el origen de la Colmena Carmesí:
+                        dónde apareció, cuándo fue descubierta y cuáles fueron
+                        los primeros acontecimientos relacionados con ella.
+                    </p>
+
+                    <p>
+                        Puedes añadir tantos párrafos como necesites sin
+                        modificar el diseño.
+                    </p>
+                </div>
+
+                <figure class="image-card">
+                    <!-- Imagen cuadrada recomendada -->
+                    <img
+                        src="amenazas/imgAmenazas/ColmenaCarmesi/MortigenoGuerrero.webp"
+                        alt="Imagen histórica de la Colmena Carmesí"
+                    >
+                    <figcaption>Imagen asociada al periodo histórico</figcaption>
+                </figure>
+
+            </article>
+
+
+            <!-- Ejemplo de segundo bloque imagen + texto -->
+            <article class="lore-block reverse">
+
+                <div class="lore-text content-card">
+                    <div class="section-kicker">Expansión</div>
+                    <h3>La expansión de la colonia</h3>
+
+                    <p>
+                        Describe aquí cómo se produce la expansión de la
+                        amenaza, qué planetas o territorios ha alcanzado y qué
+                        acontecimientos importantes han ocurrido.
+                    </p>
+                </div>
+
+                <figure class="image-card">
+                    <img
+                        src="amenazas/imgAmenazas/ColmenaCarmesi/MortigenoGuerrero.webp"
+                        alt="Representación de la expansión de la Colmena Carmesí"
+                    >
+                    <figcaption>Imagen de referencia</figcaption>
+                </figure>
+
+            </article>
+        </section>
+
+
+        <!-- =====================================================
+             CASTAS
+             ===================================================== -->
+        <section class="lore-section" id="castas">
+            <div class="section-heading">
+                <h2>Castas</h2>
+                <p>Jerarquía y tipos de individuos</p>
+            </div>
+
+            <div class="entity-grid">
+
+                <!-- CASTA 1 -->
+                <article class="entity-card">
+                    <figure class="image-card">
+                        <img
+                            src="amenazas/imgAmenazas/ColmenaCarmesi/MortigenoGuerrero.webp"
+                            alt="Casta de la Colmena Carmesí"
+                        >
+                        <figcaption>Imagen de la casta</figcaption>
+                    </figure>
+
+                    <div class="entity-info">
+                        <h3>Casta / Individuo</h3>
+                        <p>
+                            Describe aquí esta casta: función, comportamiento,
+                            tamaño, armamento, posición dentro de la colonia,
+                            etc.
+                        </p>
+                    </div>
+                </article>
+
+
+                <!-- CASTA 2 -->
+                <article class="entity-card">
+                    <figure class="image-card">
+                        <img
+                            src="amenazas/imgAmenazas/ColmenaCarmesi/MortigenoGuerrero.webp"
+                            alt="Segunda casta de la Colmena Carmesí"
+                        >
+                        <figcaption>Imagen de la casta</figcaption>
+                    </figure>
+
+                    <div class="entity-info">
+                        <h3>Segunda casta</h3>
+                        <p>
+                            Añade aquí la descripción de otro tipo de individuo.
+                        </p>
+                    </div>
+                </article>
+
+
+                <!-- CASTA 3 -->
+                <article class="entity-card">
+                    <figure class="image-card">
+                        <img
+                            src="amenazas/imgAmenazas/ColmenaCarmesi/MortigenoGuerrero.webp"
+                            alt="Tercera casta de la Colmena Carmesí"
+                        >
+                        <figcaption>Imagen de la casta</figcaption>
+                    </figure>
+
+                    <div class="entity-info">
+                        <h3>Tercera casta</h3>
+                        <p>
+                            Añade aquí la descripción de otro tipo de individuo.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             CAPACIDADES
+             ===================================================== -->
+        <section class="lore-section" id="capacidades">
+            <div class="section-heading">
+                <h2>Capacidades</h2>
+                <p>Características y capacidades conocidas</p>
+            </div>
+
+            <div class="feature-grid">
+
+                <article class="feature">
+                    <h3>01 · Capacidad principal</h3>
+                    <p>
+                        Describe aquí una capacidad, habilidad o característica
+                        importante de la amenaza.
+                    </p>
+                </article>
+
+                <article class="feature">
+                    <h3>02 · Capacidad secundaria</h3>
+                    <p>
+                        Describe aquí otra capacidad o característica.
+                    </p>
+                </article>
+
+                <article class="feature">
+                    <h3>03 · Adaptaciones</h3>
+                    <p>
+                        Explica las adaptaciones biológicas, tecnológicas o
+                        sociales que posea la amenaza.
+                    </p>
+                </article>
+
+                <article class="feature">
+                    <h3>04 · Debilidades</h3>
+                    <p>
+                        Si existen debilidades conocidas, documenta aquí la
+                        información correspondiente.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             ORGANIZACIÓN
+             ===================================================== -->
+        <section class="lore-section" id="organizacion">
+            <div class="section-heading">
+                <h2>Organización</h2>
+                <p>Estructura interna de la amenaza</p>
+            </div>
+
+            <div class="content-card">
+                <p>
+                    La información disponible en el registro base indica que
+                    la Colmena Carmesí posee un sistema jerárquico y que la reina
+                    constituye el rango superior y el liderazgo de la colonia.
+                </p>
+
+                <p>
+                    Añade aquí un esquema más detallado de la jerarquía,
+                    relaciones entre castas, comunicación, reproducción,
+                    estrategia de conquista y cualquier otra información
+                    relevante.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             GALERÍA
+             ===================================================== -->
+        <section class="lore-section" id="galeria">
+            <div class="section-heading">
+                <h2>Galería</h2>
+                <p>Material visual del expediente</p>
+            </div>
+
+            <div class="gallery">
+
+                <figure>
+                    <img
+                        src="amenazas/imgAmenazas/ColmenaCarmesi/MortigenoGuerrero.webp"
+                        alt="Colmena Carmesí — Guerrero"
+                    >
+                    <figcaption>Guerrero</figcaption>
+                </figure>
+
+                <!--
+                    COPIA ESTE <figure> PARA AÑADIR MÁS IMÁGENES.
+                    Las imágenes quedan automáticamente cuadradas.
+                -->
+
+                <figure>
+                    <img
+                        src="amenazas/imgAmenazas/ColmenaCarmesi/MortigenoGuerrero.webp"
+                        alt="Colmena Carmesí — Imagen 2"
+                    >
+                    <figcaption>Imagen 2</figcaption>
+                </figure>
+
+                <figure>
+                    <img
+                        src="amenazas/imgAmenazas/ColmenaCarmesi/MortigenoGuerrero.webp"
+                        alt="Colmena Carmesí — Imagen 3"
+                    >
+                    <figcaption>Imagen 3</figcaption>
+                </figure>
+
+                <figure>
+                    <img
+                        src="amenazas/imgAmenazas/ColmenaCarmesi/MortigenoGuerrero.webp"
+                        alt="Colmena Carmesí — Imagen 4"
+                    >
+                    <figcaption>Imagen 4</figcaption>
+                </figure>
+
+            </div>
+
+            <div class="warning-box">
+                <strong>NOTA DEL ARCHIVO:</strong>
+                Sustituye o amplía las imágenes de esta galería según el material
+                disponible para cada amenaza.
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>&copy; 2026 Planet Pedia. Archivo de Lore del Universo en construcción.</p>
+    </footer>
+
+</body>
+</html>

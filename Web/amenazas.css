@@ -1,3 +1,4 @@
+
 body {
     background-color: var(--bg-space);
     color: var(--text-main);
@@ -73,7 +74,10 @@ body {
 }
 
 @keyframes pulse {
-    50% { opacity: .35; transform: scale(.75); }
+    50% {
+        opacity: .35;
+        transform: scale(.75);
+    }
 }
 
 .controls {
@@ -139,14 +143,43 @@ body {
     box-shadow: 0 18px 50px rgba(0,0,0,.35), 0 0 24px rgba(255, 52, 78, .08);
 }
 
+
+/* =========================================================
+   IMAGEN DE LA AMENAZA
+   ========================================================= */
+
 .threat-card__visual {
-    height: 170px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    min-height: 300px;
+
     display: grid;
     place-items: center;
     position: relative;
     overflow: hidden;
+
     border-bottom: 1px solid rgba(255,255,255,.08);
+
+    /* Fondo para que las imágenes con transparencia
+       mantengan el estilo de la tarjeta */
+    background-color: rgba(5, 7, 14, .75);
 }
+
+/* Las imágenes se muestran COMPLETAS.
+   contain evita que se recorten. */
+.threat-card__visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Decoración circular detrás de la imagen */
 
 .threat-card__visual::before,
 .threat-card__visual::after {
@@ -154,6 +187,8 @@ body {
     position: absolute;
     border-radius: 50%;
     filter: blur(1px);
+    pointer-events: none;
+    z-index: 1;
 }
 
 .threat-card__visual::before {
@@ -168,6 +203,9 @@ body {
     border: 1px solid rgba(255,255,255,.2);
 }
 
+
+/* Iconos de las amenazas que todavía no tienen imagen */
+
 .sigil {
     position: relative;
     z-index: 2;
@@ -176,19 +214,51 @@ body {
     text-shadow: 0 0 25px currentColor;
 }
 
-.visual-singularity { background: radial-gradient(circle at center, #5b0016 0, #220009 28%, #090b14 65%); color: #ff4762; }
-.visual-swarm { background: radial-gradient(circle at 35% 55%, #423200 0, #171309 35%, #090b14 70%); color: #f6c84a; }
-.visual-storm { background: radial-gradient(circle at 55% 45%, #173969 0, #10182b 38%, #090b14 72%); color: #73a8ff; }
-.visual-tech { background: radial-gradient(circle at center, #003c39 0, #082321 40%, #090b14 72%); color: var(--accent-neon); }
-.visual-cosmic { background: radial-gradient(circle at center, #4b144e 0, #1b0d28 35%, #090b14 72%); color: #d587ff; }
-.visual-watchers { background: radial-gradient(circle at center, #272727 0, #111 40%, #07080c 75%); color: #e7e7e7; }
+
+/* Fondos de cada amenaza */
+
+.visual-singularity {
+    background: radial-gradient(circle at center, #5b0016 0, #220009 28%, #090b14 65%);
+    color: #ff4762;
+}
+
+.visual-swarm {
+    background: radial-gradient(circle at 35% 55%, #423200 0, #171309 35%, #090b14 70%);
+    color: #f6c84a;
+}
+
+.visual-storm {
+    background: radial-gradient(circle at 55% 45%, #173969 0, #10182b 38%, #090b14 72%);
+    color: #73a8ff;
+}
+
+.visual-tech {
+    background: radial-gradient(circle at center, #003c39 0, #082321 40%, #090b14 72%);
+    color: var(--accent-neon);
+}
+
+.visual-cosmic {
+    background: radial-gradient(circle at center, #4b144e 0, #1b0d28 35%, #090b14 72%);
+    color: #d587ff;
+}
+
+.visual-watchers {
+    background: radial-gradient(circle at center, #272727 0, #111 40%, #07080c 75%);
+    color: #e7e7e7;
+}
+
+
+/* Líneas de escaneo */
 
 .scanlines {
     position: absolute;
     inset: 0;
     pointer-events: none;
     z-index: 3;
-    background: linear-gradient(rgba(255,255,255,0) 50%, rgba(0,0,0,.13) 50%);
+    background: linear-gradient(
+        rgba(255,255,255,0) 50%,
+        rgba(0,0,0,.13) 50%
+    );
     background-size: 100% 4px;
     opacity: .65;
 }
@@ -213,7 +283,9 @@ body {
 }
 
 @keyframes danger-scan {
-    to { transform: translateY(480px); }
+    to {
+        transform: translateY(480px);
+    }
 }
 
 .threat-card__content {
@@ -248,9 +320,23 @@ body {
     letter-spacing: .8px;
 }
 
-.danger-3 { color: #f9d66a; border: 1px solid rgba(249,214,106,.45); background: rgba(249,214,106,.08); }
-.danger-4 { color: #ff9c56; border: 1px solid rgba(255,156,86,.5); background: rgba(255,156,86,.08); }
-.danger-5 { color: #ff526a; border: 1px solid rgba(255,82,106,.55); background: rgba(255,82,106,.09); }
+.danger-3 {
+    color: #f9d66a;
+    border: 1px solid rgba(249,214,106,.45);
+    background: rgba(249,214,106,.08);
+}
+
+.danger-4 {
+    color: #ff9c56;
+    border: 1px solid rgba(255,156,86,.5);
+    background: rgba(255,156,86,.08);
+}
+
+.danger-5 {
+    color: #ff526a;
+    border: 1px solid rgba(255,82,106,.55);
+    background: rgba(255,82,106,.09);
+}
 
 .threat-card h2 {
     font-size: 1.45rem;
@@ -310,15 +396,53 @@ body {
     border: 1px dashed rgba(255,255,255,.13);
 }
 
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
 @media (max-width: 900px) {
-    .controls { grid-template-columns: 1fr 1fr; }
-    .controls input { grid-column: 1 / -1; }
+    .controls {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .controls input {
+        grid-column: 1 / -1;
+    }
 }
 
 @media (max-width: 600px) {
-    .threat-hero { margin-top: 2.25rem; }
-    .controls { grid-template-columns: 1fr; }
-    .controls input { grid-column: auto; }
-    .threat-grid { grid-template-columns: 1fr; padding: 0 1rem; }
-    .threat-hero, .controls { padding-left: 1rem; padding-right: 1rem; }
+    .threat-hero {
+        margin-top: 2.25rem;
+    }
+
+    .controls {
+        grid-template-columns: 1fr;
+    }
+
+    .controls input {
+        grid-column: auto;
+    }
+
+    .threat-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    .threat-hero,
+    .controls {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    /* En móvil sigue siendo cuadrada,
+       pero con un tamaño cómodo */
+    .threat-card__visual {
+        aspect-ratio: 1 / 1;
+        min-height: 280px;
+    }
+
+    .threat-card__visual img {
+        padding: .75rem;
+    }
 }
