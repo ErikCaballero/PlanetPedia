@@ -342,16 +342,55 @@ const experimentos = [
 
                     {
                         id:
-                            "CC-015",
+                            "SG-001",
 
                         nombre:
-                            "El organismo quimera",
+                            "La nueva humanidad",
 
                         imagen:
-                            "img/OrganismoQuimera.webp",
+                            "img/BrainiacHumanoH.webp",
 
                         categoria:
-                            "Biología y genética",
+                            "Social y genética",
+
+                        estado:
+                            "Finalizado",
+
+                        resultadoCorto:
+                            "Éxito",
+
+                        responsable:
+                            "Buran Queri",
+
+                        resumen:
+                            "El experimento ha ido muy bien, pues se ha mejorado la génetica humana ligeramente además de que esta segunda humanidad ha mejorado enormemente socialmente a la de la tierra.",
+
+                        objetivo:
+                            "Crear una segunda humanidad para comprobar si evoluciona y avanza más rápido que en la tierra, el objetivo es ver cuanto afecta el entorno al desarrollo de una especie.",
+
+                        resultado:
+                            "Un éxito, la segunda humanidad ha desbloqueado el viaje espacial más rápido que la humanidad de la tierra además de que genéticamente es mejor.",
+
+                        observaciones:
+                            "Se ha descubierto que la genética humana es muy moldeable y adaptable a estímulos externos, de hecho hasta el momento es la raza con ADN más moldeable que hayamos conocido."
+                    },
+
+                    /* =====================================================
+                    EXPERIMENTO 10
+                    ===================================================== */
+
+                    {
+                        id:
+                            "WR-012",
+
+                        nombre:
+                            "Megarlox",
+
+                        imagen:
+                            "img/MegarloxExp.webp",
+
+                        categoria:
+                            "Bioingeniería y genética",
 
                         estado:
                             "Finalizado",
@@ -360,20 +399,293 @@ const experimentos = [
                             "Éxito parcial",
 
                         responsable:
-                            "Meron verinas",
+                            "Scan Miun",
 
                         resumen:
-                            "Pese a que el experimento haya obtenido resultados positivos, no se considera útil.",
+                            "El experimento ha ido bien, pues la raza es muy resistente, fuerte y posee una regeneración sin igual, como raza guerrera es muy buena, de hecho es superior a cualquiera creada hasta el momento, pero, no cumple los objetivos.",
 
                         objetivo:
-                            "Crear un ser que pueda reescribir su código genético adaptando habilidades y cosas útiles de los seres de su al rededor, mejorandose a sí mismo para poder convertirse en el ser más poderoso de su ecosistema.",
+                            "Crear una raza guerrera perfecta para la protección de todo el universo sobre cualquier amenaza.",
 
                         resultado:
-                            "Un éxito parcial, pese a que el sujeto realiza lo esperado no se considera un éxito total, puesto a que puede llegar a ser asesinado por cualquier organismo del ecosistema si llega a toparse con un peligro superior en una etapa temprana de desarrollo.",
+                            "Un éxito parcial, pues aunque se ha conseguido crear una raza guerrera de altas capacidades no se ha conseguido lo que se deseaba.",
 
                         observaciones:
-                            "Considero que el experimento ha salido bien, solo que no ha resultado en un arma, no quería crear un arma, solo una criatura capaz de vivir en cualquier planeta adaptando las capacidades de supervivencia de su entorno."
+                            "Vamos por buen camino, pues estamos llegando a las capacidades físicas que deseamos, pero, aún no estamos donde queremos, pero, siento que estamos cerca de conseguir nuestro objetivo."
+                    },
+
+                    /* =====================================================
+                    EXPERIMENTO 11
+                    ===================================================== */
+
+                     {
+                        id: "WR-004",
+
+                        nombre: "Varyths",
+
+                        imagen:
+                            "../../../Especies alienigenas/Varyths/Varyths guerra.webp",
+
+                        categoria:
+                            "Bioingeniería",
+
+                        estado:
+                            "Finalizado",
+
+                        resultadoCorto:
+                            "Fracaso",
+
+                        responsable:
+                            "Desconocido",
+
+                        resumen:
+                            "Se ha creado una raza guerrera de grandes capacidades físicas y una habilidad para el combate innata.",
+
+                        objetivo:
+                            "Crear una raza guerrera perfecta para la protección de todo el universo sobre cualquier amenaza.",
+
+                        resultado:
+                            "El experimento es considerado un fracaso, ya que no ha cumplido con el objetivo deseado.",
+
+                        observaciones:
+                            "Son una buena raza guerrera pero, lo que buscamos es la perfección, y no son aptos."
+                    },
+
+                    /* =====================================================
+                    EXPERIMENTO 12
+                    ===================================================== */
+
+                    {
+                        id:
+                            "AI-001",
+
+                        nombre:
+                            "AENOX",
+
+                        imagen:
+                            "img/AENOX.webp",
+
+                        categoria:
+                            "Informática",
+
+                        estado:
+                            "Finalizado",
+
+                        resultadoCorto:
+                            "Éxito parcial",
+
+                        responsable:
+                            "Naleb Maeri",
+
+                        resumen:
+                            "Se ha creado a la inteligencia artificial más potente del universo conocido, lo malo es que se salió de control y ahora busca ser la única inteligencia existente.",
+
+                        objetivo:
+                            "Crear una inteligencia artificial poderosa que permita a la raza Brainiac progresar muchísimo más en todo y en un futuro mejorarla para poder hackear a toda red de información informática.",
+
+                        resultado:
+                            "En el apartado de crear una IA super potente podríamos decir que es un Éxito Excepcional, pero es un fracaso la parte de ayudar a la raza Brainiac, pues tras eso busca destruirla.",
+
+                        observaciones:
+                            "Trás este acontecimiento estará prohibido crear más inteligencias artificiales pues representan un gran peligro, además AENOX ha eliminado al experto en inteligencia artificial e informática; Naleb Maeri."
+                    },
+
+                    /* =====================================================
+                    EXPERIMENTO 13
+                    ===================================================== */
+
+                    {
+                        id:
+                            "MD-003",
+
+                        nombre:
+                            "Borrador Mental",
+
+                        imagen:
+                            "img/Borrador de Recuerdos.webp",
+
+                        categoria:
+                            "Neurociencia",
+
+                        estado:
+                            "Finalizado",
+
+                        resultadoCorto:
+                            "Éxito",
+
+                        responsable:
+                            "Naleb Maeri",
+
+                        resumen:
+                            "Se ha creado un borrador mental exitoso que permite eliminar un recuerdo a elección de un usuario, este experimento es de alta seguridad por la peligrosidad que tiene al eliminar recuerdos vitales del cerebro de un ser vivo.",
+
+                        objetivo:
+                            "Crear un borrador mental para eliminar un recuerdo en concreto de un cerebro.",
+
+                        resultado:
+                            "Éxito, este experimento ha sido un éxito.",
+
+                        observaciones:
+                            "Con este experimento se pueden hacer grandes cosas en la modificación de seres vivos."
+                    },
+
+                    /* =====================================================
+                    EXPERIMENTO 14
+                    ===================================================== */
+
+                    {
+                        id:
+                            "EG-036",
+
+                        nombre:
+                            "Estrella Artificial",
+
+                        imagen:
+                            "img/SolArtificial.webp",
+
+                        categoria:
+                            "Energía",
+
+                        estado:
+                            "Finalizado",
+
+                        resultadoCorto:
+                            "Éxito",
+
+                        responsable:
+                            "Maro Sean",
+
+                        resumen:
+                            "Se ha creado una estrella artificial de manera exitosa, esta estrella genera una cantidad de energía brutal, aunque por la inestabilidad de haber estado a punto de estallar en varias ocasiones se acabó por descatalogar.",
+
+                        objetivo:
+                            "Crear una estrella artificial de pequeño tamaño de la que extraer energía de manera casi ilimitada.",
+
+                        resultado:
+                            "Éxito, este experimento ha sido un éxito, aunque no se vaya a utilizar, quedará en segundo plano.",
+
+                        observaciones:
+                            "La estrella genera una cantidad de energía ridículamente elevada."
+                    },
+
+                    /* =====================================================
+                    EXPERIMENTO 15
+                    ===================================================== */
+
+                    {
+                        id:
+                            "SS-014",
+
+                        nombre:
+                            "Nave Hiperlumínica",
+
+                        imagen:
+                            "img/NaveHiperluminica.webp",
+
+                        categoria:
+                            "Energía, ingeniería e ingeniería aeroespacial",
+
+                        estado:
+                            "Finalizado",
+
+                        resultadoCorto:
+                            "Éxito excepcional",
+
+                        responsable:
+                            "Aelix Cerebron",
+
+                        resumen:
+                            "Se ha creado una nave con un motor hiperlumínico que te permite surcar el espacio en cuestión de horas, es solo que es complicado y caro de utilizar por la gran cantidad de energía que necesita.",
+
+                        objetivo:
+                            "Crear una nave con la capacidad de cruzar el universo con gran velocidad.",
+
+                        resultado:
+                            "El experimento es un Éxito excepcional, dado a que la nave puede pasar de un planeta a otro en cuestión de muy poco minutos.",
+
+                        observaciones:
+                            "La nave cumple con lo deseado pero, gasta una cantidad de energía excesiva, tendré que crear una forma de generar energía fácilmente y en grandes cantidades."
+                    },
+
+                    /* =====================================================
+                    EXPERIMENTO 16
+                    ===================================================== */
+
+                    {
+                        id:
+                            "TM-001",
+
+                        nombre:
+                            "Máquina del tiempo",
+
+                        imagen:
+                            "img/MaquinaTiempo.webp",
+
+                        categoria:
+                            "Ingeniería y Cronociencia",
+
+                        estado:
+                            "Finalizado",
+
+                        resultadoCorto:
+                            "Éxito excepcional",
+
+                        responsable:
+                            "Magus Mantos",
+
+                        resumen:
+                            "Se ha creado exitosamente una máquina del tiempo con la que se puede viajar a través del tiempo al pasado, pero, un ser de poder cósmico y temporal amenazó con eliminar a toda la raza si se seguía jugando con el tiempo, por lo que destruímos la máquina y prohibimos todo lo relacionado con la alteración temporal.",
+
+                        objetivo:
+                            "Crear una máquina del tiempo que nos permita viajar a traves del tiempo.",
+
+                        resultado:
+                            "El experimento es un Éxito excepcional, pues la máquina permite el viaje temporal.",
+
+                        observaciones:
+                            "Parece ser que tarde o temprano, avances lo que avances siempre te toparás con algo que te impida avanzar más."
+                    },
+
+
+                    /* =====================================================
+                    EXPERIMENTO 17
+                    ===================================================== */
+
+                    {
+                        id:
+                            "SS-014",
+
+                        nombre:
+                            "Nave Hiperlumínica",
+
+                        imagen:
+                            "img/NaveHiperluminica.webp",
+
+                        categoria:
+                            "Energía, ingeniería e ingeniería aeroespacial",
+
+                        estado:
+                            "Finalizado",
+
+                        resultadoCorto:
+                            "Éxito excepcional",
+
+                        responsable:
+                            "Aelix Cerebron",
+
+                        resumen:
+                            "Se ha creado una nave con un motor hiperlumínico que te permite surcar el espacio en cuestión de horas, es solo que es complicado y caro de utilizar por la gran cantidad de energía que necesita.",
+
+                        objetivo:
+                            "Crear una nave con la capacidad de cruzar el universo con gran velocidad.",
+
+                        resultado:
+                            "El experimento es un Éxito excepcional, dado a que la nave puede pasar de un planeta a otro en cuestión de muy poco minutos.",
+
+                        observaciones:
+                            "La nave cumple con lo deseado pero, gasta una cantidad de energía excesiva, tendré que crear una forma de generar energía fácilmente y en grandes cantidades."
                     }
+
 ];
 
 

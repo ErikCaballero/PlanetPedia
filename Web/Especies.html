@@ -199,6 +199,37 @@
         #species-search::placeholder {
             color: rgba(255, 255, 255, 0.4);
         }
+
+        /* Contador de especies */
+        .species-counter {
+            max-width: 1200px;
+            margin: 0 auto 1.5rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .species-counter-box {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.4rem;
+            border: 1px solid rgba(79, 251, 223, 0.25);
+            border-radius: 8px;
+            background-color: rgba(22, 27, 44, 0.85);
+            box-shadow: 0 0 12px rgba(79, 251, 223, 0.08);
+        }
+
+        .species-counter-number {
+            color: var(--accent-neon);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .species-counter-label {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
     </style>
 </head>
 <body>
@@ -209,6 +240,13 @@
     <div class="section-header">
         <h1>Catálogo de Especies</h1>
         <p>Índice biológico y cultural de las formas de vida conocidas en la galaxia.</p>
+    </div>
+    
+    <div class="species-counter" aria-live="polite">
+        <div class="species-counter-box">
+            <span id="species-count" class="species-counter-number">0</span>
+            <span class="species-counter-label">especies registradas</span>
+        </div>
     </div>
     
     <!-- Controles de búsqueda y filtrado -->
@@ -265,10 +303,21 @@
             </div>
         </a>
 
+        <a href="razas/Drexales.html" class="species-card" data-category="estandar">
+            <div class="card-img-wrapper">
+                <img src="../Especies alienigenas/Drexales/Drexal.webp" alt="Especie 4">
+            </div>
+            <div class="card-info">
+                <h2>Drexales</h2>
+                <span class="homeworld">Planeta: Warrum</span>
+                <span class="view-btn">Ver Expediente</span>
+            </div>
+        </a>
+
         <!-- CARTA DE ESPECIE 4 -->
         <a href="razas/Foxers.html" class="species-card" data-category="tecnologica">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Los Foxers/Los Foxers.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Los Foxers/Los Foxers.webp" alt="Especie 5">
             </div>
             <div class="card-info">
                 <h2>Foxers</h2>
@@ -279,7 +328,7 @@
         
         <a href="razas/Grolux.html" class="species-card" data-category="primitiva">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Los Grolux/Los Grolux.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Los Grolux/Los Grolux.webp" alt="Especie 6">
             </div>
             <div class="card-info">
                 <h2>Grolux</h2>
@@ -290,7 +339,7 @@
 
         <a href="razas/Kaelish.html" class="species-card" data-category="estandar">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Los Kaelish/Kaelish (verde).webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Los Kaelish/Kaelish (verde).webp" alt="Especie 7">
             </div>
             <div class="card-info">
                 <h2>Kaelish</h2>
@@ -301,7 +350,7 @@
 
         <a href="razas/Ultramitas.html" class="species-card" data-category="superior">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Ultramitas/Ultramita.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Ultramitas/Ultramita.webp" alt="Especie 8">
             </div>
             <div class="card-info">
                 <h2>Ultramitas</h2>
@@ -312,7 +361,7 @@
 
         <a href="razas/Ceruleanos.html" class="species-card" data-category="estandar">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Ceruleanos/Ceruleano.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Ceruleanos/Ceruleano.webp" alt="Especie 9">
             </div>
             <div class="card-info">
                 <h2>Ceruleanos</h2>
@@ -323,7 +372,7 @@
 
         <a href="razas/Garbilos.html" class="species-card" data-category="estandar">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Garbilos/Garbilo.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Garbilos/Garbilo.webp" alt="Especie 10">
             </div>
             <div class="card-info">
                 <h2>Garbilos</h2>
@@ -334,7 +383,7 @@
         
         <a href="razas/Klagors.html" class="species-card" data-category="estandar">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Klagors/Klagor.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Klagors/Klagor.webp" alt="Especie 11">
             </div>
             <div class="card-info">
                 <h2>Klagors</h2>
@@ -345,7 +394,7 @@
         
         <a href="razas/Garguleans.html" class="species-card" data-category="salvaje">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Garguleans/Garguleano.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Garguleans/Garguleano.webp" alt="Especie 12">
             </div>
             <div class="card-info">
                 <h2>Garguleans</h2>
@@ -356,7 +405,7 @@
         
         <a href="razas/Xel'thorianos.html" class="species-card" data-category="avanzada">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Xelthorianos/Xelthoriano.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Xelthorianos/Xelthoriano.webp" alt="Especie 13">
             </div>
             <div class="card-info">
                 <h2>Xel'thorianos</h2>
@@ -367,7 +416,7 @@
         
         <a href="razas/Velorians.html" class="species-card" data-category="estandar">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Velorians/Velorian.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Velorians/Velorian.webp" alt="Especie 14">
             </div>
             <div class="card-info">
                 <h2>Velorians</h2>
@@ -378,7 +427,7 @@
         
         <a href="razas/Sterons.html" class="species-card" data-category="estandar">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Sterons/Steron.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Sterons/Steron.webp" alt="Especie 15">
             </div>
             <div class="card-info">
                 <h2>Sterons</h2>
@@ -389,7 +438,7 @@
         
         <a href="razas/Bazofios.html" class="species-card" data-category="primitiva">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Bazofios/Bazofio.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Bazofios/Bazofio.webp" alt="Especie 16">
             </div>
             <div class="card-info">
                 <h2>Bazofios</h2>
@@ -400,7 +449,7 @@
         
         <a href="razas/Gigantodones.html" class="species-card" data-category="primitiva">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Gigantodones/Gigantodon.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Gigantodones/Gigantodon.webp" alt="Especie 17">
             </div>
             <div class="card-info">
                 <h2>Gigantodones</h2>
@@ -411,7 +460,7 @@
         
         <a href="razas/Sharkinors.html" class="species-card" data-category="primitiva">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Sharkinors/Sharkinor.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Sharkinors/Sharkinor.webp" alt="Especie 18">
             </div>
             <div class="card-info">
                 <h2>Sharkinors</h2>
@@ -422,7 +471,7 @@
         
         <a href="razas/AracnoSephus.html" class="species-card" data-category="avanzada">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/AracnoSephus/AracnoSephus.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/AracnoSephus/AracnoSephus.webp" alt="Especie 19">
             </div>
             <div class="card-info">
                 <h2>AracnoSephus</h2>
@@ -433,7 +482,7 @@
         
         <a href="razas/Brinix.html" class="species-card" data-category="avanzada">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Brinix/Brinix.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Brinix/Brinix.webp" alt="Especie 20">
             </div>
             <div class="card-info">
                 <h2>Brinix</h2>
@@ -444,7 +493,7 @@
 
         <a href="razas/Xil'vath.html" class="species-card" data-category="superior">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Xilvath/Xilvath.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Xilvath/Xilvath.webp" alt="Especie 21">
             </div>
             <div class="card-info">
                 <h2>Xil'vath</h2>
@@ -455,7 +504,7 @@
 
         <a href="razas/Friggits.html" class="species-card" data-category="primitiva">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Friggits/Friggit.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Friggits/Friggit.webp" alt="Especie 22">
             </div>
             <div class="card-info">
                 <h2>Friggits</h2>
@@ -466,7 +515,7 @@
 
         <a href="razas/Permians.html" class="species-card" data-category="estandar">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Permians/Permian.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Permians/Permian.webp" alt="Especie 23">
             </div>
             <div class="card-info">
                 <h2>Permians</h2>
@@ -477,7 +526,7 @@
 
         <a href="razas/Tortanks.html" class="species-card" data-category="primitiva">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Tortanks/Tortank.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Tortanks/Tortank.webp" alt="Especie 24">
             </div>
             <div class="card-info">
                 <h2>Tortanks</h2>
@@ -488,7 +537,7 @@
 
         <a href="razas/Blukeys.html" class="species-card" data-category="primitiva">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Blukeys/Blukey.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Blukeys/Blukey.webp" alt="Especie 25">
             </div>
             <div class="card-info">
                 <h2>Blukeys</h2>
@@ -499,7 +548,7 @@
 
         <a href="razas/Bulinos.html" class="species-card" data-category="estandar">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Bulinos/Bulino.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Bulinos/Bulino.webp" alt="Especie 26">
             </div>
             <div class="card-info">
                 <h2>Bulinos</h2>
@@ -509,7 +558,7 @@
         </a>
         <a href="razas/Thanatofos.html" class="species-card" data-category="superior">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Thanatofos/Thanatofo.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Thanatofos/Thanatofo.webp" alt="Especie 27">
             </div>
             <div class="card-info">
                 <h2>Thanatofos</h2>
@@ -520,7 +569,7 @@
 
         <a href="razas/Hongers.html" class="species-card" data-category="primitiva">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Hongers/Honger.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Hongers/Honger.webp" alt="Especie 28">
             </div>
             <div class="card-info">
                 <h2>Hongers</h2>
@@ -531,7 +580,7 @@
 
         <a href="razas/Zornicos.html" class="species-card" data-category="estandar">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Zornicos/Zornico.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Zornicos/Zornico.webp" alt="Especie 29">
             </div>
             <div class="card-info">
                 <h2>Zornicos</h2>
@@ -542,7 +591,7 @@
 
         <a href="razas/Malerianos.html" class="species-card" data-category="estandar">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Malerianos/Maleriano.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Malerianos/Maleriano.webp" alt="Especie 30">
             </div>
             <div class="card-info">
                 <h2>Malerianos</h2>
@@ -553,7 +602,7 @@
 
         <a href="razas/Orrs.html" class="species-card" data-category="primitiva">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Orrs/Orr.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Orrs/Orr.webp" alt="Especie 31">
             </div>
             <div class="card-info">
                 <h2>Orrs</h2>
@@ -564,7 +613,7 @@
 
         <a href="razas/Magnitios.html" class="species-card" data-category="estandar">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Magnitios/Magnitio.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Magnitios/Magnitio.webp" alt="Especie 32">
             </div>
             <div class="card-info">
                 <h2>Magnitio</h2>
@@ -574,7 +623,7 @@
         </a>
         <a href="razas/Porvils.html" class="species-card" data-category="primitiva">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Porvils/Porvil.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Porvils/Porvil.webp" alt="Especie 33">
             </div>
             <div class="card-info">
                 <h2>Porvils</h2>
@@ -584,7 +633,7 @@
         </a>
         <a href="razas/Varyths.html" class="species-card" data-category="estandar">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Varyths/Varyth.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Varyths/Varyth.webp" alt="Especie 34">
             </div>
             <div class="card-info">
                 <h2>Varyths</h2>
@@ -594,7 +643,7 @@
         </a>
         <a href="razas/Grimoriums.html" class="species-card" data-category="superior">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Grimoriums/Grimorium.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Grimoriums/Grimorium.webp" alt="Especie 35">
             </div>
             <div class="card-info">
                 <h2>Grimoriums</h2>
@@ -604,7 +653,7 @@
         </a>
         <a href="razas/Samyatis.html" class="species-card" data-category="estandar">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Samyatis/Samyati.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Samyatis/Samyati.webp" alt="Especie 36">
             </div>
             <div class="card-info">
                 <h2>Samyatis</h2>
@@ -614,7 +663,7 @@
         </a>
         <a href="razas/Vorlaks.html" class="species-card" data-category="estandar">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Vorlaks/Vorlak.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Vorlaks/Vorlak.webp" alt="Especie 37">
             </div>
             <div class="card-info">
                 <h2>Vorlaks</h2>
@@ -624,7 +673,7 @@
         </a>
         <a href="razas/Thaldrins.html" class="species-card" data-category="avanzada">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Thaldrins/Thaldrin.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Thaldrins/Thaldrin.webp" alt="Especie 38">
             </div>
             <div class="card-info">
                 <h2>Thaldrins</h2>
@@ -634,7 +683,7 @@
         </a>
         <a href="razas/Grynthars.html" class="species-card" data-category="estandar">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Grynthars/Grynthar.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Grynthars/Grynthar.webp" alt="Especie 39">
             </div>
             <div class="card-info">
                 <h2>Grynthars</h2>
@@ -644,7 +693,7 @@
         </a>
         <a href="razas/Kothars.html" class="species-card" data-category="estandar">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Kothars/Kothar.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Kothars/Kothar.webp" alt="Especie 40">
             </div>
             <div class="card-info">
                 <h2>Kothars</h2>
@@ -654,7 +703,7 @@
         </a>
         <a href="razas/Albirions.html" class="species-card" data-category="estandar">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Albirions/Albirion.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Albirions/Albirion.webp" alt="Especie 41">
             </div>
             <div class="card-info">
                 <h2>Albirions</h2>
@@ -664,7 +713,7 @@
         </a>
         <a href="razas/Bulnaris.html" class="species-card" data-category="estandar">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Bulnaris/Bulnari.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Bulnaris/Bulnari.webp" alt="Especie 42">
             </div>
             <div class="card-info">
                 <h2>Bulnaris</h2>
@@ -675,7 +724,7 @@
 
         <a href="razas/Orakais.html" class="species-card" data-category="estandar">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Orakais/Orakai.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Orakais/Orakai.webp" alt="Especie 43">
             </div>
             <div class="card-info">
                 <h2>Orakais</h2>
@@ -686,7 +735,7 @@
 
         <a href="razas/Syrilus.html" class="species-card" data-category="estandar">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/Syrilus/Syrilu.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/Syrilus/Syrilu.webp" alt="Especie 44">
             </div>
             <div class="card-info">
                 <h2>Syrilus</h2>
@@ -697,10 +746,21 @@
 
         <a href="razas/LithoSanguineos.html" class="species-card" data-category="estandar">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/LithoSanguineos/LithoSanguineo.webp" alt="Especie 4">
+                <img src="../Especies alienigenas/LithoSanguineos/LithoSanguineo.webp" alt="Especie 45">
             </div>
             <div class="card-info">
                 <h2>Lithos Sanguineos</h2>
+                <span class="homeworld">Planeta: Quarum</span>
+                <span class="view-btn">Ver Expediente</span>
+            </div>
+        </a>
+
+        <a href="razas/Warhounds.html" class="species-card" data-category="estandar">
+            <div class="card-img-wrapper">
+                <img src="../Especies alienigenas/Warhounds/Warhound.webp" alt="Especie 46">
+            </div>
+            <div class="card-info">
+                <h2>Warhounds</h2>
                 <span class="homeworld">Planeta: Quarum</span>
                 <span class="view-btn">Ver Expediente</span>
             </div>
@@ -773,8 +833,17 @@
         ordenarEspecies();
     }
 
-    // Al cargar, se mantiene el comportamiento original: orden alfabético por nombre.
-    document.addEventListener('DOMContentLoaded', ordenarEspecies);
+    // Actualiza el contador con el número real de razas del catálogo.
+    function actualizarContadorEspecies() {
+        const total = document.querySelectorAll('#species-grid .species-card').length;
+        document.getElementById('species-count').textContent = total;
+    }
+
+    // Al cargar, se ordenan las especies y se actualiza el contador.
+    document.addEventListener('DOMContentLoaded', () => {
+        ordenarEspecies();
+        actualizarContadorEspecies();
+    });
 
     // Función combinada para filtrar por texto y por categoría seleccionada
     function filtrarEspecies() {
@@ -801,7 +870,6 @@
     <script src="../components/voiceController.js" data-planetpedia-voice></script>
   <script src="../components/backToTop.js" data-planetpedia-back-to-top></script>
 </html>
-
 
 
 

@@ -63,7 +63,15 @@ const baseDatosEspecies = {
         fuerza: 3,
         agilidad: 4,
         resistencia: 4,
-        velocidad: 1,
+        velocidad: 2,
+        inteligencia: 3,
+        habilidad: 0
+    },
+    Drexales: {
+        fuerza: 3,
+        agilidad: 6,
+        resistencia: 5,
+        velocidad: 2,
         inteligencia: 4,
         habilidad: 0
     },

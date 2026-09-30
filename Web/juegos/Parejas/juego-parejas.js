@@ -191,7 +191,11 @@ const availableImages = [
 
     "../../../Especies alienigenas/LithoSanguineos/LithoSanguineo icono.webp",
 
-    "../../../Especies alienigenas/Warhounds/Warhounds icono.png"
+    "../../../Especies alienigenas/Warhounds/Warhounds icono.webp",
+
+    "../../../Especies alienigenas/Drexales/Drexal icono.webp"
+
+
 ];
 
 

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Expediente Drexales</title>
+    <link favicon rel="icon" type="image/png" href="../../Especies alienigenas/Drexales/Drexal icono.webp">
+    <link rel="stylesheet" href="../plantilla.css">
+    <link rel="stylesheet" href="especiesindiv.css">
+</head>
+
+<body>
+    <div id="planetpedia-header"></div>
+    <script src="../../components/header.js"></script>
+<main>
+<div class="container">
+    <!-- Bloque superior: Imagen + Nombre + Características -->
+    <div class="top-section">
+        <div class="img-box">
+            <!-- Aquí irá tu imagen -->
+            <a href="../../Especies alienigenas/Drexales/Drexal.webp">
+                <img src="../../Especies alienigenas/Drexales/Drexal.webp"  alt="Imagen de la especie" style="width:100%; height:100%; object-fit:cover;">
+            </a>
+        </div>
+        <div class="header-box">
+            <h1>Los Drexales</h1>
+            <h2>Características físicas</h2>
+            <p>Los Drexales son una raza humanoide de piel escamosa de piel rojiza, lo más reconocible de la raza es su protuberancia corónica de la cabeza, la cual es voluminosa y aparentemente agresiva, esta corona está reforzada por lo que se protege la cabeza bastante bien, tienen 2 ojos pequeños de color amarillo, dos orejas medianamente grandes una nariz grande y una boca. Tienen dos brazos acabados en cinco dedos y dos piernas acabadas en tres grandes dedos de pezuñas afiladas.</p>
+            <p>Miden entre 1.7 y 2 metros de altura y 95 kg de peso.</p>
+            <p>Esperanza de vida: 100 años.</p>
+            <h2>Planeta de origen</h2>
+            <p>Warrum</p>
+            <h2>Idioma</h2>
+            <p><i>Drexio</i></p>
+        </div>
+    </div>
+
+    <!-- Bloque inferior: Habilidades y otros -->
+    <div class="bottom-section">
+        <h2>Características sociales</h2>
+        <p>Los Drexales son una raza guerrera, de gran habilidad de combate y una gran pasión por hacerlo, como en Warrum las guerras son constantes, los Drexales pueden disfrutar constantemente de su mayor pasatiempo. Los Drexales suelen pelear siempre con armas cuerpo a cuerpo ya que para ellos es lo que da honor.</p>
+        
+        <div class="especializaciones">
+        <button class="especializaciones-btn" type="button">
+            <span>Áreas de especialización</span>
+            <span class="especializaciones-icono">+</span>
+        </button>
+
+         <div class="especializaciones-contenido">
+            <div class="especializaciones-grid">
+
+                <div class="especializacion">Guerra</div>
+                <div class="especializacion">Estrategia militar</div>
+
+            </div>
+        </div>
+    </div>
+        <div class="foto1">
+            <div class="fotos-div1">
+            <a href="../../Especies alienigenas/Drexales/Drexales peleando.webp">
+                <img src="../../Especies alienigenas/Drexales/Drexales peleando.webp" alt="Grupo de Drexales" class="species-image">
+            </a>
+            <figcaption class="texto-fotos">Grupo de Drexales.</figcaption>
+            </div>
+            <p>En los campamentos y ciudades de los Drexales lo más común es verlos pelear entre sí, pues a parte de que es así como solucionan los conflictos, lo hacen por varias razones, pues al vivir en un planeta de guerras constantes necesitan entrenar para estar a la altura de las otras razas, otra de las razones, por que les encanta, luchan por pasión y cada victoria los hace sentir aún más poderosos.</p>
+        </div>
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Gran resistencia</li>
+            <li>Expertos en combate cuerpo a cuerpo</li>
+        </ul>
+        <div class="container" data-especie="Drexales">
+        <!-- Botón para desplegar/ocultar estadísticas -->
+        <button type="button" class="btn-desplegar-stats" id="btnStats">
+            <span>Ver Estadísticas de la Especie</span>
+            <span class="flecha" id="flechaStats">▼</span>
+        </button>
+
+        <!-- Contenedor oculto por defecto mediante la clase 'oculto' -->
+        <div class="stats-container oculto" id="panelStats">
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Fuerza</span>
+                    <span class="stat-value" id="val-fuerza">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-fuerza"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Agilidad</span>
+                    <span class="stat-value" id="val-agilidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-agilidad"></div>
+                </div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Resistencia</span>
+                    <span class="stat-value" id="val-resistencia">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-resistencia"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Velocidad</span>
+                    <span class="stat-value" id="val-velocidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-velocidad"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Inteligencia</span>
+                    <span class="stat-value" id="val-inteligencia">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-inteligencia"></div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Habilidades</span>
+                    <span class="stat-value" id="val-habilidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-habilidad"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- Enlace al archivo JavaScript externo (Asegúrate de ajustar la ruta si es necesario) -->
+        <script src="Stats.js"></script>
+        <h2>Dificultad de derrotar</h2>
+        <div class="contenedor-completo">
+            <div class="bloque-dificultad">
+            <div class="dificultad-barra" id="barra">
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+            </div>
+            <span id="texto-dificultad" class="texto-nivel"></span>
+            </div>
+            <img id="icono-dificultad" src="" alt="Icono">
+        </div>
+        <h2>Creencias</h2>
+        <p>Creen en la guerra, la lucha y el combate, la guerra es su vida, pues durante todo el año solo dejan de combatir con otras razas durante 1 mes, para recuperar sus fuerzas y no extingirse. No le temen a la muerte en combate, pues piensan que morir en combate es la forma más honorable y digna de morir.</p>
+        
+
+        <h2>Jerarquía</h2>
+        <ul>
+            <li class="emperador">Rey supremo</li>
+            <li>Rey</li>
+            <li>Los 7</li>
+            <li>Guerreros de élite</li>
+            <li>Soldados</li>
+            <li>Ciudadanos</li>
+        </ul><br>
+        <p>Viven en castillos, en cada uno hay un rey que gobierna absolutamente en todo el castillo, por encima de ellos está el Rey Supremo el cual organiza a toda la raza y es quien decide como solucionar las diferencias entre ellos. Bajo los reyes están los 7, que son los siete mejores guerreros de cada castillo los cuales hacen cumplir los mandatos del rey y por ello mandan más que el resto.</p>        
+        
+        <h2>Historia</h2>
+        <h3>El comienzo</h3>
+        <p>El comienzo de la raza no dista mucho de la actualidad, pues la única diferencia eran las armas pues, eran prácticamente iguales que a día de hoy.</p>
+        <h3>La gran guerra</h3>
+        <p>Los Drexales lucharon en la gran guerra, la cual fue una guerra en conjunto de varias razas para derrotar de una vez a la raza más dominante del planeta, los <!-- WikiLinks --> <a href="Warhounds.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Warhounds/Warhound.webp"><div><strong>Los Warhounds</strong><p>Los Warhounds una raza guerrera que aman la guerra, la realizan con honor, sin extinguir a ninguna raza, pues lo que aman es tener guerras constantes.</p></div></div>'>Warhounds</a> a los cuales casi extinguen, pero, ellos se rindieron y así tuvieron la primera gran victoria tanto los Drexales como el resto de las razas de Warrum.</p>
+
+        <h3>El gran ejército</h3>
+        <p>Tras vencer a los <!-- WikiLinks --> <a href="Warhounds.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Warhounds/Warhound.webp"><div><strong>Los Warhounds</strong><p>Los Warhounds una raza guerrera que aman la guerra, la realizan con honor, sin extinguir a ninguna raza, pues lo que aman es tener guerras constantes.</p></div></div>'>Warhounds</a> en la gran guerra los Drexales se dedicaron a aumentar sus fuerzas de forma descomunal para que pudieran plantar cara a cualquier raza incluyendo a los <!-- WikiLinks --> <a href="Warhounds.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Warhounds/Warhound.webp"><div><strong>Los Warhounds</strong><p>Los Warhounds una raza guerrera que aman la guerra, la realizan con honor, sin extinguir a ninguna raza, pues lo que aman es tener guerras constantes.</p></div></div>'>Warhounds</a> a los cuales les dieron mejores peleas tras este receso que tuvieron mientras toda la raza se recuperaba de la aniquilación. Durante la recuperación de la gran guerra los Drexales pasaron a ser la raza dominante de Warrum pues su gran poder individual sumado a su descomunal número.</p>
+        <a href="../../Especies alienigenas/Drexales/Ejercito Drexal.webp">
+            <img src="../../Especies alienigenas/Drexales/Ejercito Drexal.webp" alt="El gran Ejército Drexal" class="species-image">
+        </a>
+        <figcaption class="texto-fotos">El gran Ejército</figcaption>
+
+    </div>
+
+</div>
+</main>
+<script src="../../components/search.js" data-planetpedia-search></script>
+<script src="../../components/voiceController.js" data-planetpedia-voice></script>
+<script src="../../components/backToTop.js" data-planetpedia-back-to-top></script>
+</body>
+<script src="especialidad.js"></script>
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+<script src="wikilink.js"></script>
+<script src="dificultadvencer.js"></script>
+<script src="Stats.js"></script>
+<script>
+    // Nivel de dificultad
+    actualizarDificultad(4);
+  </script>
+
+</body>
+</html>
