@@ -653,7 +653,7 @@ const experimentos = [
 
                     {
                         id:
-                            "SS-014",
+                            "SS-016",
 
                         nombre:
                             "Nave Hiperlumínica",
