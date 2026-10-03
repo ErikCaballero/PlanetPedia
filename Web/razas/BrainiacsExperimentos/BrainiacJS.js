@@ -653,13 +653,13 @@ const experimentos = [
 
                     {
                         id:
-                            "SS-016",
+                            "SG-024",
 
                         nombre:
-                            "Nave Hiperlumínica",
+                            "Suero de la Eternidad",
 
                         imagen:
-                            "img/NaveHiperluminica.webp",
+                            "img/SueroInmortal.png",
 
                         categoria:
                             "Energía, ingeniería e ingeniería aeroespacial",
@@ -668,22 +668,61 @@ const experimentos = [
                             "Finalizado",
 
                         resultadoCorto:
-                            "Éxito excepcional",
+                            "Éxito",
 
                         responsable:
-                            "Aelix Cerebron",
+                            "Milnon Bren",
 
                         resumen:
-                            "Se ha creado una nave con un motor hiperlumínico que te permite surcar el espacio en cuestión de horas, es solo que es complicado y caro de utilizar por la gran cantidad de energía que necesita.",
+                            "Tras 4 intentos se ha logrado no solo ralentizar el envejecimiento celular, si no detenerlo completamente haciendo al consumidor Eterno .",
 
                         objetivo:
-                            "Crear una nave con la capacidad de cruzar el universo con gran velocidad.",
+                            "Crear un suero que al consumirlo detiene completamente el deteriodo y envejecimiento celular.",
 
                         resultado:
-                            "El experimento es un Éxito excepcional, dado a que la nave puede pasar de un planeta a otro en cuestión de muy poco minutos.",
+                            "Éxito, el experimento ha hecho exactamente lo que se deseaba, pues el sujeto sigue con la misma edad celular.",
 
                         observaciones:
-                            "La nave cumple con lo deseado pero, gasta una cantidad de energía excesiva, tendré que crear una forma de generar energía fácilmente y en grandes cantidades."
+                            "El sujeto de prueba al que se le ha administrado el suero está puesto en observación para asegurar de que no tiene ningún defecto antes de administrarlo masivamente."
+                    },
+
+                    /* =====================================================
+                    EXPERIMENTO 18
+                    ===================================================== */
+
+                    {
+                        id:
+                            "PW-058",
+
+                        nombre:
+                            "Guante Gravitatorio",
+
+                        imagen:
+                            "img/GuanteGravitatorio.png",
+
+                        categoria:
+                            "Energía, ingeniería e ingeniería aeroespacial",
+
+                        estado:
+                            "Finalizado",
+
+                        resultadoCorto:
+                            "Éxito",
+
+                        responsable:
+                            "Milnon Bren",
+
+                        resumen:
+                            "Tras 4 intentos se ha logrado no solo ralentizar el envejecimiento celular, si no detenerlo completamente haciendo al consumidor Eterno .",
+
+                        objetivo:
+                            "Crear un suero que al consumirlo detiene completamente el deteriodo y envejecimiento celular.",
+
+                        resultado:
+                            "Éxito, el experimento ha hecho exactamente lo que se deseaba, pues el sujeto sigue con la misma edad celular.",
+
+                        observaciones:
+                            "El sujeto de prueba al que se le ha administrado el suero está puesto en observación para asegurar de que no tiene ningún defecto antes de administrarlo masivamente."
                     }
 
 ];
