@@ -701,28 +701,28 @@ const experimentos = [
                             "img/GuanteGravitatorio.png",
 
                         categoria:
-                            "Energía, ingeniería e ingeniería aeroespacial",
+                            "Ingeniería y armamentística",
 
                         estado:
                             "Finalizado",
 
                         resultadoCorto:
-                            "Éxito",
+                            "Éxito excepcional",
 
                         responsable:
-                            "Milnon Bren",
+                            "Aelix Cerebron",
 
                         resumen:
-                            "Tras 4 intentos se ha logrado no solo ralentizar el envejecimiento celular, si no detenerlo completamente haciendo al consumidor Eterno .",
+                            "Se ha conseguido crear satisfactoriamente la versión mejorada del arma gravitatoria, un guante gravitatorio que otorga las mismas capacidades pero de una forma más manejable.",
 
                         objetivo:
-                            "Crear un suero que al consumirlo detiene completamente el deteriodo y envejecimiento celular.",
+                            "Crear un guante con la capacidad de mover objetos a distancia, (simulando la telequinesis).",
 
                         resultado:
-                            "Éxito, el experimento ha hecho exactamente lo que se deseaba, pues el sujeto sigue con la misma edad celular.",
+                            "Éxito excepcional, el experimento es absolutamente brutal, ya que su sencillez de fabricación, su gran habilidad y su gran portabilidad hacen de este guante un objeto muy útil.",
 
                         observaciones:
-                            "El sujeto de prueba al que se le ha administrado el suero está puesto en observación para asegurar de que no tiene ningún defecto antes de administrarlo masivamente."
+                            "Estós guantes son sencillamente geniales."
                     }
 
 ];
