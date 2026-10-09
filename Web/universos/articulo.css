@@ -1,0 +1,72 @@
+/* Artículos de universos: mismo lenguaje visual que las fichas de especies.
+   El selector de universos conserva sus estilos independientes en estilos.css. */
+.universe-detail { background: #0b0d17; color: #f4f5f6; font-family: 'Courier New', monospace; }
+.universe-detail .universe-breadcrumb { padding-top: 24px; padding-bottom: 24px; font-family: 'Courier New', monospace; }
+.universe-detail .universe-article {
+    border: 2px solid #333;
+    background: #161b2c;
+    padding: clamp(18px, 3vw, 34px);
+    margin-bottom: 65px;
+    max-width: 1190px;
+}
+.universe-article__top { display: flex; align-items: flex-start; gap: 26px; margin-bottom: 29px; }
+.universe-article__image {
+    flex: 0 0 min(38%, 395px);
+    margin: 0;
+    border: 2px solid #4ffbdf;
+    position: relative;
+    overflow: hidden;
+    background: #0b0d17;
+    aspect-ratio: 1 / 1;
+}
+.universe-article__image a { display: block; height: 100%; }
+.universe-article__image img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.universe-article__image figcaption { position: absolute; bottom: 0; left: 0; padding: 10px 15px; color: #4ffbdf; background: rgba(11,13,23,.89); font-size: .77rem; letter-spacing: .08em; }
+.universe-article__intro { flex: 1; min-width: 0; }
+.universe-article__intro h1 { margin: 4px 0 17px; color: #4ffbdf; font-size: clamp(2.1rem, 4.2vw, 3.2rem); line-height: 1.16; }
+.universe-article__intro h2 { color: #33ff99; margin: 20px 0 5px; font-size: 1.2rem; }
+.universe-article__intro p { color: #d1d5db; font-size: 1rem; line-height: 1.65; margin: 0; }
+.universe-article__intro .universe-article__number { color: #a1eddc; font-size: .82rem; font-weight: 700; letter-spacing: .07em; margin-bottom: 8px; }
+.universe-article__intro .universe-article__summary { color: #f4f5f6; font-size: 1.07rem; }
+.universe-article__body section { scroll-margin-top: 80px; }
+.universe-article__body h2 { color: #33ff99; font-size: 1.52rem; line-height: 1.3; border-bottom: 1px solid #333; margin: 0 0 19px; padding: 0 0 11px; }
+.universe-article__body p { color: #d1d5db; line-height: 1.84; font-size: .98rem; margin: 0 0 16px; }
+.universe-change { padding-bottom: 29px; margin-bottom: 31px; border-bottom: 1px solid #343949; }
+.universe-change__comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.universe-change__panel { padding: 19px 22px; background: #101522; border: 1px solid #424956; }
+.universe-change__panel--alternate { border-color: #4ffbdf; background: #102927; }
+.universe-change__panel h3 { color: #4ffbdf; margin: 0 0 10px; font-size: 1rem; }
+.universe-change__panel p { margin-bottom: 0; }
+.universe-chapter { margin-bottom: 32px; }
+.universe-chapter__text { min-width: 0; }
+.universe-chapter__text p:last-child { margin-bottom: 0; }
+/* La imagen flota y los párrafos continúan debajo cuando acaba. */
+.universe-chapter__content.has-illustration { display: flow-root; }
+.universe-chapter__content.has-illustration > .universe-illustration {
+    float: left;
+    width: 36%;
+    margin: 0 24px 14px 0;
+}
+.universe-chapter__content.has-illustration > .universe-chapter__text { display: contents; }
+.universe-illustration { margin: 0; }
+.universe-illustration a { display: block; border: 2px solid #4ffbdf; background: #0b0d17; }
+.universe-illustration img { width: 100%; display: block; max-height: 280px; object-fit: cover; }
+.universe-illustration figcaption { padding-top: 8px; font-size: .82rem; color: #a7b5c6; line-height: 1.4; font-style: italic; }
+.universe-article__navigation { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; border-top: 1px solid #343949; margin-top: 28px; padding-top: 25px; }
+.universe-article__navigation .multiverse-button { font-family: inherit; border-radius: 6px; }
+.universe-next { font-size: .9rem; text-decoration: none; color: #4ffbdf !important; }
+.universe-next:hover { text-decoration: underline; }
+@media (max-width: 760px) {
+    .universe-article__top { flex-direction: column; }
+    .universe-article__image { flex: none; width: min(100%, 420px); aspect-ratio: 5 / 4; }
+    .universe-change__comparison { grid-template-columns: 1fr; }
+    .universe-chapter__content.has-illustration > .universe-illustration {
+        float: none;
+        width: 100%;
+        max-width: 470px;
+        margin: 0 0 20px;
+    }
+    .universe-article__body h2 { font-size: 1.3rem; }
+    .universe-change__panel { padding: 16px; }
+    .universe-article__navigation { align-items: flex-start; }
+}

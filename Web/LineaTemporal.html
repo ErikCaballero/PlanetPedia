@@ -125,6 +125,20 @@
             50% { transform: scale(1.12); filter: brightness(1.25); }
         }
 
+        .multiverse-timeline-link {
+            background: linear-gradient(125deg, rgba(20, 41, 64, .95), rgba(38, 25, 75, .82));
+            border: 1px solid rgba(94, 242, 255, .3);
+            padding: 1.8rem;
+            border-radius: 15px;
+            margin-top: 2.7rem;
+        }
+        .multiverse-timeline-link h2 { color: var(--accent-neon); margin-bottom: .7rem; }
+        .multiverse-timeline-link p { line-height: 1.65; color: var(--text-muted); margin-bottom: 1.3rem; }
+        .multiverse-timeline-link a {
+            display: inline-block; padding: .85rem 1.2rem; border-radius: 8px;
+            background: var(--accent-neon); color: #0b1220; text-decoration: none; font-weight: bold;
+        }
+        .multiverse-timeline-link a:focus-visible { outline: 3px solid white; outline-offset: 4px; }
         @media (max-width: 700px) {
             .timeline-track {
                 padding-left: 1.6rem;
@@ -181,10 +195,15 @@
                 <p>Las civilizaciones más grandes acuerdan nuevas reglas para convivir en paz.</p>
             </article>
         </section>
+        <aside class="multiverse-timeline-link">
+            <h2>¿Y si la historia hubiera cambiado?</h2>
+            <p>La fundación de la Unión, el destino del trono Ultramita y la guerra de Sapphire Crest tienen otras versiones en el Multiverso.</p>
+            <a href="Multiverso.html">Explorar las líneas alternativas ↗</a>
+        </aside>
     </main>
+  <script src="../components/backToTop.js" data-planetpedia-back-to-top></script>
     <script src="../components/search.js" data-planetpedia-search></script>
     <script src="../components/voiceController.js" data-planetpedia-voice></script>
-  <script src="../components/backToTop.js" data-planetpedia-back-to-top></script>
 </body>
 </html>
 

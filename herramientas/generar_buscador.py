@@ -108,6 +108,8 @@ def clean_title(value: str) -> str:
 
 def category_for(relative_path: str) -> str:
     p = relative_path.lower().replace("\\", "/")
+    if "/universos/" in f"/{p}" or p.endswith("/multiverso.html"):
+        return "Multiverso"
     if "/razas/" in f"/{p}" or p.endswith("/especies.html"):
         return "Especies"
     if "/planetas/" in f"/{p}" or p.endswith("/planetas.html"):

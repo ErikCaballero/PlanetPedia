@@ -659,7 +659,7 @@ const experimentos = [
                             "Suero de la Eternidad",
 
                         imagen:
-                            "img/SueroInmortal.png",
+                            "img/SueroInmortal.webp",
 
                         categoria:
                             "Energía, ingeniería e ingeniería aeroespacial",
@@ -698,7 +698,7 @@ const experimentos = [
                             "Guante Gravitatorio",
 
                         imagen:
-                            "img/GuanteGravitatorio.png",
+                            "img/GuanteGravitatorio.webp",
 
                         categoria:
                             "Ingeniería y armamentística",

@@ -45,6 +45,8 @@
                 path.endsWith("/web/personajes.html")
             ) {
                 activePage = "personajes";
+            } else if (path.includes("/web/universos/") || path.endsWith("/web/multiverso.html")) {
+                activePage = "multiverso";
             } else if (path.endsWith("/web/lineatemporal.html")) {
                 activePage = "linea-temporal";
             } else if (

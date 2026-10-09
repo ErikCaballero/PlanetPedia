@@ -24,6 +24,7 @@
         { names: ['especies', 'razas', 'catalogo de especies', 'catálogo de especies'], path: 'Web/Especies.html' },
         { names: ['planetas', 'catalogo de planetas', 'catálogo de planetas'], path: 'Web/Planetas.html' },
         { names: ['linea temporal', 'línea temporal', 'cronologia', 'cronología'], path: 'Web/LineaTemporal.html' },
+        { names: ['multiverso', 'universos alternativos', 'otras realidades'], path: 'Web/Multiverso.html' },
         { names: ['juegos', 'minijuegos'], path: 'Web/Juegos.html' },
         { names: ['grupos', 'facciones'], path: 'Web/Grupos.html' },
         { names: ['amenazas'], path: 'Web/Amenazas.html' },

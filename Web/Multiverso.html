@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explora los universos alternativos de PlanetPedia. Cada gran cambio de la historia abre una nueva realidad con su propio expediente.">
+    <title>Multiverso | PlanetPedia</title>
+    <link rel="stylesheet" href="plantilla.css">
+    <link rel="stylesheet" href="universos/estilos.css">
+</head>
+<body class="multiverse-body">
+    <div id="planetpedia-header"></div>
+    <script src="../components/header.js"></script>
+    <main>
+        <section class="multiverse-hero">
+            <div class="multiverse-hero__orb" aria-hidden="true"><div class="multiverse-hero__core"></div></div>
+            <div class="multiverse-hero__content">
+                <p class="eyebrow"><span class="signal-dot"></span> ARCHIVO DE REALIDADES ALTERNATIVAS</p>
+                <h1>El <span>Multiverso</span></h1>
+                <p class="multiverse-hero__lead">Una decisión. Una batalla. Un cambio irrepetible. Cada acontecimiento que altera el rumbo de la historia puede dar origen a un universo diferente.</p>
+                <div class="hero-actions">
+                    <a href="#selector" class="multiverse-button multiverse-button--solid">Explorar universos <span aria-hidden="true">↓</span></a>
+                </div>
+            </div>
+            <div class="hero-marker" aria-hidden="true">MÚLTIPLES MUNDOS <span>≋</span> INFINITAS HISTORIAS</div>
+        </section>
+
+        <section class="multiverse-intro multiverse-container" aria-label="Cómo funciona el multiverso">
+            <div class="intro-lead">
+                <p class="eyebrow">PROTOCOLO DE RAMIFICACIÓN</p>
+                <h2>El mismo origen.<br><span>Distintos destinos.</span></h2>
+            </div>
+            <div class="intro-copy">
+                <p>El <strong>Universo 000</strong> representa la historia principal de PlanetPedia. Cuando un acontecimiento decisivo cambia —como la caída de un gobernante, el resultado de una guerra o la fundación de una alianza— surge una nueva rama independiente.</p>
+                <p>Tras ese cambio, cada universo desarrolla su propia historia, sus personajes, conflictos, pueblos y lugares. En sus páginas encontrarás una breve explicación del origen de cada realidad y, sobre todo, la historia que se vive en ella.</p>
+            </div>
+        </section>
+
+        <section class="selector-section multiverse-container" id="selector" aria-labelledby="selector-titulo">
+            <div class="selector-heading">
+                <div>
+                    <p class="eyebrow">ELIGE TU REALIDAD</p>
+                    <h2 id="selector-titulo">Selector de universos<span class="heading-star" aria-hidden="true"> ✳</span></h2>
+                    <p>Descubre las historias y características de cada realidad.</p>
+                </div>
+                <span class="archive-label">EXPEDIENTES / MULTIVERSO</span>
+            </div>
+            <div class="selector-controls">
+                <label class="universe-search">
+                    <span aria-hidden="true">⌕</span>
+                    <span class="sr-only">Buscar universo por número, nombre o descripción</span>
+                    <input id="universos-buscar" type="search" placeholder="Buscar por nombre, número o acontecimiento..." autocomplete="off">
+                </label>
+                <div id="universos-filtros" class="universe-filters" role="group" aria-label="Filtrar universos por tipo"></div>
+            </div>
+            <p class="results-count" id="universos-contador" role="status" aria-live="polite"></p>
+            <div id="universos-lista" class="universe-grid"></div>
+            <div id="universos-vacio" class="universe-empty" hidden>
+                <h3>Ninguna realidad coincide con la búsqueda</h3>
+                <p>Prueba con otro nombre, un número de universo o una categoría distinta.</p>
+            </div>
+            <noscript><p>Para utilizar el selector interactivo, habilita JavaScript. También puedes acceder directamente a los expedientes:
+              <a href="universos/la-union-rota.html">U-001</a>,
+              <a href="universos/el-trono-de-cleimus.html">U-002</a> y
+              <a href="universos/el-pacto-de-sapphire.html">U-003</a>.</p></noscript>
+        </section>
+
+    </main>
+    <footer><p>&copy; 2026 Planet Pedia. Archivo de Lore del Universo en construcción.</p></footer>
+    <script src="universos/catalogo.js"></script>
+    <script src="universos/selector.js"></script>
+    <script src="../components/backToTop.js" data-planetpedia-back-to-top></script>
+    <script src="../components/search.js" data-planetpedia-search></script>
+    <script src="../components/voiceController.js" data-planetpedia-voice></script>
+</body>
+</html>

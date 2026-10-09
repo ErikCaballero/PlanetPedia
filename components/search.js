@@ -151,7 +151,7 @@
         const countEl = overlay.querySelector(".pp-search-count");
         const closeBtn = overlay.querySelector(".pp-search-close");
 
-        const categoryOrder = ["Especies", "Planetas", "Personajes", "Amenazas", "Grupos", "Cazarrecompensas", "Juegos", "Pilares", "General"];
+        const categoryOrder = ["Especies", "Planetas", "Personajes", "Amenazas", "Grupos", "Cazarrecompensas", "Juegos", "Pilares", "Multiverso", "General"];
         const available = new Set(entries.map(e => e.categoria));
         const categories = ["Todos", ...categoryOrder.filter(c => available.has(c)), ...[...available].filter(c => !categoryOrder.includes(c)).sort()];
         let activeCategory = "Todos";

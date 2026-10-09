@@ -1,0 +1,189 @@
+[
+  {
+    "numero": "001",
+    "slug": "la-union-rota",
+    "nombre": "La Unión Rota",
+    "categoria": "Política",
+    "etiqueta": "El pacto que nunca existió",
+    "evento_original": "En la cronología principal, los planetas independientes forman una coalición para proteger su autonomía frente a los imperios y las amenazas externas.",
+    "divergencia": "La asamblea fundacional fracasa cuando los mundos más poderosos rechazan compartir recursos y mando militar. La Unión de Planetas Independientes nunca llega a constituirse.",
+    "descripcion": "La Unión de Planetas Independientes nunca se forma. Los mundos libres sobreviven entre pactos frágiles y nuevas amenazas.",
+    "imagen": "Planetas/Kalagor/Kalagor.webp",
+    "resumen": "Una galaxia sin una alianza común, donde cada planeta decide cuánto está dispuesto a sacrificar para seguir siendo libre.",
+    "territorio": "Sistemas y colonias independientes",
+    "poder": "Gobiernos planetarios y acuerdos locales",
+    "conflicto": "Defender la autonomía sin un mando común",
+    "historia": [
+      {
+        "titulo": "Historia",
+        "parrafos": [
+          "La asamblea que debía reunir a los planetas independientes acaba dividida por las mismas diferencias que pretendía superar. Los representantes regresan a sus mundos sin un compromiso de defensa mutua. Los dirigentes más influyentes celebran haber conservado el control de sus flotas y recursos; los planetas pequeños entienden que, ante una invasión, no habrá nadie obligado a acudir en su ayuda.",
+          "La ruptura no provoca un único desastre, sino incontables decisiones tomadas en soledad. Un gobierno cede sus rutas comerciales a cambio de protección; otro fortifica los accesos a su sistema y rechaza toda nave desconocida. Los comerciantes aprenden a cruzar fronteras con permisos distintos y las comunidades alejadas descubren que recibir noticias de un vecino puede ser tan difícil como recibir sus refuerzos."
+        ]
+      },
+      {
+        "titulo": "Gobiernos y alianzas",
+        "parrafos": [
+          "No existe una capital galáctica ni una autoridad capaz de hablar en nombre de los mundos libres. Algunos planetas forman pequeñas ligas defensivas; otros prefieren firmar acuerdos privados con las potencias de su entorno. Cada tratado tiene sus propias condiciones y puede romperse cuando cambian los intereses de un gobernante.",
+          "Los embajadores se vuelven tan importantes como los militares. Una negociación sobre combustible, una estación de reparaciones o el paso de un convoy puede decidir el destino de toda una población. La diplomacia consiste menos en defender ideales comunes que en conseguir aliados suficientes para sobrevivir a la siguiente crisis."
+        ],
+        "imagen": "Planetas/Kalagor/Kalagor.webp",
+        "pie": "Los mundos aislados deben decidir por sí mismos cómo proteger sus fronteras."
+      },
+      {
+        "titulo": "La vida en las fronteras",
+        "parrafos": [
+          "Las regiones más alejadas de los grandes centros comerciales viven bajo la amenaza constante de saqueadores y ejércitos oportunistas. Los asentamientos conservan reservas de emergencia, rutas de evacuación y señales de alarma que transmiten entre colonias vecinas. Viajar deja de ser una simple cuestión de distancia: importa quién controla cada paso y a qué bando pertenece.",
+          "Aun así, la ausencia de una gran organización también permite que florezcan culturas y formas de gobierno muy distintas. Hay mundos que abren sus puertos a cualquiera que necesite refugio y otros que no permiten entrar a extranjeros. La libertad, en esta realidad, es una conquista cotidiana que no todos pueden ejercer del mismo modo."
+        ]
+      },
+      {
+        "titulo": "Las redes de ayuda mutua",
+        "parrafos": [
+          "Entre las colonias aparecen organizaciones de pilotos, médicos, mecánicos y mensajeros que se niegan a esperar la autorización de sus gobiernos para ayudarse. Transportan suministros a lugares sitiados, esconden refugiados en cargueros comerciales y comparten información sobre movimientos militares. Nadie los considera un ejército, pero sus rutas llegan donde las flotas oficiales no se atreven a entrar.",
+          "Su mayor dificultad es la confianza. Algunas autoridades sospechan de estos grupos porque cruzan fronteras sin permiso; otras intentan utilizarlos para sus propios fines. Los integrantes de la red saben que perder una sola estación de abastecimiento puede dejar incomunicados a varios mundos, por lo que su resistencia depende tanto de la discreción como de la valentía."
+        ]
+      },
+      {
+        "titulo": "Potencias y amenazas",
+        "parrafos": [
+          "Los grandes imperios encuentran una galaxia fragmentada. En vez de enfrentarse a una flota conjunta, pueden presionar a cada sistema con ultimátums diferentes. Algunas conquistas se consuman sin disparar un arma: basta con imponer un tratado desigual sobre un planeta que no tiene aliados.",
+          "Sin embargo, la fragmentación también dificulta el dominio absoluto. No hay un único gobierno que pueda rendirse en nombre de todos. Los movimientos de resistencia surgen en lugares inesperados y las invasiones se enfrentan a territorios que conocen mejor sus habitantes que los conquistadores."
+        ]
+      },
+      {
+        "titulo": "La situación de la galaxia",
+        "parrafos": [
+          "Una nueva generación de representantes comienza a reunirse en secreto para compartir mapas de amenazas, rutas seguras y reservas de emergencia. No están de acuerdo en fundar otra gran Unión: algunos temen repetir la disputa que arruinó el primer intento y otros se niegan a entregar autoridad a un consejo lejano.",
+          "Su propuesta es más pequeña y más difícil de destruir: compromisos concretos entre mundos vecinos, sin promesas de poder absoluto. Todavía no saben si esa red bastará para protegerlos, pero por primera vez la colaboración empieza a parecer una elección posible y no una imposición."
+        ]
+      }
+    ]
+  },
+  {
+    "numero": "002",
+    "slug": "el-trono-de-cleimus",
+    "nombre": "El Trono de Cleimus",
+    "categoria": "Imperio",
+    "etiqueta": "La conquista que no comenzó",
+    "evento_original": "En el relato principal, un Ultramita de identidad desconocida derrota a Cleimus, asciende como emperador y levanta la prohibición de abandonar Ultra Prime.",
+    "divergencia": "Cleimus vence a su desafiante. Conserva el poder y mantiene el aislamiento de los Ultramitas, impidiendo la campaña interestelar que en la historia original dio forma a su imperio.",
+    "descripcion": "Cleimus conserva el trono y prohíbe abandonar Ultra Prime. La fuerza ultramita se concentra en un mundo dividido por su futuro.",
+    "imagen": "Planetas/Ultra Prime/Ultra Prime.webp",
+    "resumen": "El imperio que nunca se extendió más allá de Ultra Prime: una civilización invencible enfrentada a sus propias ambiciones.",
+    "territorio": "Ultra Prime",
+    "poder": "Cleimus y la jerarquía de los Ultramitas",
+    "conflicto": "El enfrentamiento entre aislamiento y conquista",
+    "historia": [
+      {
+        "titulo": "Historia",
+        "parrafos": [
+          "Cleimus sale vencedor del desafío que parecía destinado a acabar con su reinado. El aspirante derrotado desaparece de la vida política ultramita y la prohibición de abandonar Ultra Prime permanece intacta. Para el emperador, la victoria demuestra que su autoridad y su decisión de mantener a la especie en su mundo siguen siendo incuestionables.",
+          "Pero el duelo tiene un efecto inesperado: muestra a los guerreros más poderosos que el trono puede volver a ser desafiado. Cleimus conserva el mando de una especie extraordinariamente fuerte, acostumbrada a medir el valor de cada individuo por su capacidad de imponerse en combate. La amenaza ya no procede del exterior; crece dentro de las propias filas del imperio."
+        ]
+      },
+      {
+        "titulo": "Ultra Prime, un mundo cerrado",
+        "parrafos": [
+          "La vida ultramita transcurre en un planeta que ha forjado criaturas poderosas y guerreros todavía más temibles. Las antiguas amenazas de su superficie fueron derrotadas, pero el peligro continúa formando parte de su cultura. El entrenamiento y los duelos ocupan el lugar que en otras civilizaciones tendrían los viajes, el comercio o la exploración.",
+          "La frontera más importante no está marcada por murallas sino por una orden imperial: nadie debe partir hacia las estrellas. La vigilancia se concentra en los lugares desde los que una expedición podría abandonar el planeta. Incluso quienes respetan al emperador se preguntan qué sentido tiene alcanzar un poder inmenso si está prohibido ponerlo a prueba fuera de Ultra Prime."
+        ],
+        "imagen": "Planetas/Ultra Prime/Ultra Prime.webp",
+        "pie": "Ultra Prime sigue siendo el centro de la vida política y militar ultramita."
+      },
+      {
+        "titulo": "El gobierno de Cleimus",
+        "parrafos": [
+          "Cleimus gobierna mediante una mezcla de respeto, temor y tradición. Su autoridad se sostiene en la victoria sobre cualquiera que pretenda arrebatarle el trono. Los consejeros y capitanes organizan el adiestramiento de los soldados y hacen cumplir las órdenes, mientras el emperador observa con atención a quienes ganan demasiada influencia.",
+          "El aislamiento no vuelve pacífica a la sociedad. Los ultramitas continúan compitiendo entre ellos, y los enfrentamientos por prestigio o rango pueden tener consecuencias brutales. Cleimus intenta canalizar esa agresividad hacia pruebas de resistencia y combates controlados, aunque muchos ven esas restricciones como otro límite impuesto a su naturaleza guerrera."
+        ]
+      },
+      {
+        "titulo": "Los partidarios de la expansión",
+        "parrafos": [
+          "Entre los guerreros surge una corriente que considera Ultra Prime una prisión construida por su propio emperador. Creen que su fuerza les da derecho a explorar, conquistar y decidir qué mundos merecen resistirse. Algunos reclaman que se permita viajar a pequeños grupos; otros están dispuestos a desafiar a Cleimus para cambiar el destino de toda la especie.",
+          "Sus adversarios no son necesariamente pacifistas. Muchos veteranos apoyan el aislamiento porque temen que una guerra interminable divida a los ultramitas y desgaste el poder conseguido en su mundo natal. La discusión no enfrenta a débiles y fuertes, sino a distintas ideas sobre lo que significa demostrar superioridad."
+        ],
+        "imagen": "Especies alienigenas/Ultramitas/Ultramitas.webp",
+        "pie": "La sociedad ultramita sigue organizada alrededor de la fuerza y el rango."
+      },
+      {
+        "titulo": "Una galaxia que desconoce su amenaza",
+        "parrafos": [
+          "Fuera de Ultra Prime, numerosas civilizaciones mantienen sus propias disputas y alianzas sin haber conocido una campaña de conquista ultramita. Los gobernantes concentran sus esfuerzos en amenazas cercanas, sin imaginar la magnitud del poder que permanece inmóvil en aquel planeta.",
+          "El aislamiento convierte a los ultramitas en una fuerza difícil de comprender. Algunos relatos los describen como un pueblo de guerreros casi invencibles; otros los consideran un mito nacido de expediciones que nunca regresaron. El emperador no muestra interés en aclarar esas historias, porque su prioridad es conservar el orden dentro de sus fronteras."
+        ]
+      },
+      {
+        "titulo": "La tensión que amenaza el trono",
+        "parrafos": [
+          "Cleimus ha evitado una expansión galáctica, pero todavía debe responder a una pregunta que nadie se atreve a plantearle directamente: ¿qué ocurrirá cuando un guerrero tan fuerte como él decida que Ultra Prime ya no es suficiente? El emperador refuerza la lealtad de sus consejeros, mientras sus rivales buscan aliados entre los soldados descontentos.",
+          "El destino de este universo se concentra en un solo mundo. Una nueva victoria de Cleimus podría prolongar el aislamiento; una derrota bastaría para abrir las puertas de una civilización cuyo poder nadie en la galaxia está preparado para medir."
+        ]
+      }
+    ]
+  },
+  {
+    "numero": "003",
+    "slug": "el-pacto-de-sapphire",
+    "nombre": "El Pacto de Sapphire",
+    "categoria": "Guerra",
+    "etiqueta": "Una tregua cambia el planeta",
+    "evento_original": "En el relato principal, tras una guerra devastadora y pese a las hazañas de Grimlon, los Ceruleanos renuncian al dominio de Sapphire Crest ante la superioridad física de los Orrs.",
+    "divergencia": "Antes de la rendición, Grimlon logra que se pacte una tregua con los líderes Orrs. La guerra termina mediante un acuerdo para compartir el gobierno y el territorio.",
+    "descripcion": "Grimlon logra una tregua entre Ceruleanos y Orrs. Sapphire Crest se convierte en un mundo compartido cuya paz aún debe construirse.",
+    "imagen": "Planetas/SapphireCrest/Sapphire crest.webp",
+    "resumen": "Dos pueblos enemigos gobiernan Sapphire Crest juntos, bajo un pacto frágil que cambia la vida en todo el planeta.",
+    "territorio": "Sapphire Crest",
+    "poder": "Consejo compartido Ceruleano-Orr",
+    "conflicto": "Mantener la paz entre antiguos enemigos",
+    "historia": [
+      {
+        "titulo": "Historia",
+        "parrafos": [
+          "La guerra entre Ceruleanos y Orrs parece conducir a una derrota inevitable para los primeros. La fuerza de los Orrs les permite imponerse en muchos enfrentamientos, mientras la resistencia ceruleana depende de la técnica, la coordinación y la habilidad de combatientes excepcionales como Grimlon.",
+          "Grimlon aprovecha su reputación entre ambos bandos para proponer una salida distinta: detener los ataques y negociar el reparto de los territorios disputados. Los dirigentes aceptan con desconfianza, convencidos de que un nuevo enfrentamiento podría destruir mucho más de lo que cualquiera conseguiría conquistar. La tregua no borra las pérdidas, pero abre la posibilidad de un gobierno que no pertenezca a un solo pueblo."
+        ]
+      },
+      {
+        "titulo": "El pacto de los dos pueblos",
+        "parrafos": [
+          "Los territorios más discutidos se administran mediante un consejo en el que participan representantes Ceruleanos y Orrs. Las decisiones sobre rutas de abastecimiento, uso del agua y protección de asentamientos deben contar con el apoyo de ambos. Ninguna de las dos comunidades renuncia a sus costumbres ni a la memoria de sus caídos, pero ambas aceptan que una paz imperfecta es preferible a una guerra interminable.",
+          "Las reuniones del consejo suelen ser tensas. Los Orrs desconfían de las soluciones excesivamente técnicas y muchos Ceruleanos consideran que negociar con antiguos adversarios es una humillación. Los mediadores deben traducir no solo las palabras, sino formas de entender el honor, la fuerza y el compromiso."
+        ],
+        "imagen": "Especies alienigenas/Orrs/Orr vs Ceruleans.webp",
+        "pie": "La rivalidad entre los dos pueblos continúa marcando las decisiones del consejo."
+      },
+      {
+        "titulo": "La vida en Sapphire Crest",
+        "parrafos": [
+          "Los caminos que antes conectaban posiciones militares empiezan a utilizarse para transportar alimentos y materiales de construcción. Los comerciantes cruzan zonas que habían permanecido cerradas y algunas aldeas establecen mercados compartidos. La convivencia cotidiana avanza más rápido que los discursos de los gobernantes: una familia necesita agua, refugio y seguridad con independencia de la especie de sus vecinos.",
+          "Esa convivencia no es igual en todas partes. En los lugares más castigados por la guerra siguen existiendo comunidades que prohíben la entrada de antiguos enemigos. Otras, en cambio, han aprendido a organizar patrullas mixtas para protegerse de criaturas peligrosas y de grupos que pretenden aprovechar la debilidad del nuevo gobierno."
+        ]
+      },
+      {
+        "titulo": "Grimlon y los guardianes del acuerdo",
+        "parrafos": [
+          "Grimlon continúa formando a los guerreros ceruleanos, aunque su responsabilidad ha cambiado. Ya no entrena únicamente para vencer a los Orrs, sino para evitar que una escaramuza se convierta en otra guerra. Su palabra tiene peso entre los soldados que lo respetan y entre algunos líderes Orrs que conocen su valentía.",
+          "Junto a él aparecen defensores de la tregua de ambas especies. Los Orrs aportan una fuerza extraordinaria y un conocimiento profundo del terreno; los Ceruleanos contribuyen con organización y tácticas de combate. Trabajar juntos exige renunciar a viejos prejuicios, pero también demuestra que sus capacidades pueden complementarse."
+        ],
+        "imagen": "Especies alienigenas/Ceruleanos/Grimlon vs 4 orrs.webp",
+        "pie": "Grimlon conserva su prestigio como combatiente y lo emplea para defender el acuerdo."
+      },
+      {
+        "titulo": "Las heridas de la guerra",
+        "parrafos": [
+          "La paz no elimina el deseo de venganza. Algunos veteranos consideran que el consejo ha traicionado a quienes lucharon por la victoria. Hay comunidades que se niegan a devolver territorios ocupados y guerreros jóvenes que buscan prestigio provocando a sus vecinos. Cada incidente pone a prueba la paciencia de los dirigentes.",
+          "El pacto establece mediadores para resolver disputas y responsabilidades compartidas cuando una patrulla comete abusos. No siempre funciona: hay decisiones que se incumplen y ataques cuya autoría nadie logra demostrar. La continuidad de la tregua depende de que los dos pueblos sigan encontrando motivos para defenderla incluso cuando hacerlo resulta doloroso."
+        ]
+      },
+      {
+        "titulo": "El futuro del planeta",
+        "parrafos": [
+          "Sapphire Crest se transforma poco a poco en un territorio donde la pertenencia a una especie ya no determina por completo quién puede vivir o trabajar en cada lugar. Los nuevos asentamientos mezclan construcciones, costumbres y formas de defensa. Sus habitantes aún discuten cómo llamar a esta convivencia: alianza, tregua prolongada o nacimiento de un pueblo compartido.",
+          "Ninguno de esos nombres garantiza que la paz sobreviva. El acuerdo seguirá siendo frágil mientras los recuerdos del conflicto pesen más que las experiencias de cooperación. Pero en un planeta acostumbrado a decidir su destino mediante la fuerza, aprender a convivir se ha convertido en el desafío más importante."
+        ]
+      }
+    ]
+  }
+]
