@@ -33,6 +33,26 @@
         /* Apartados inferiores */
         .bottom-section h2 { color: #33ff99; margin-top: 20px; border-bottom: 1px solid #333; }
         .bottom-section h3 { color: #4ffbdf; margin-top: 15px; margin-bottom: 5px; }
+        .bottom-section h4 {
+            color: #74e6ad;
+            font-size: 1.05rem;
+            margin: 12px 0 5px;
+            padding-left: 10px;
+            border-left: 2px solid #33ff99;
+        }
+
+        .bottom-section h5 {
+            color: #4ffbdf;
+            font-size: 0.95rem;
+            margin: 10px 0 4px;
+        }
+
+        .bottom-section h6 {
+            color: #8fd8cf;
+            font-size: 0.85rem;
+            margin: 8px 0 4px;
+            letter-spacing: 0.03em;
+        }
         .bottom-section p { color: #d1d5db; }
         .bottom-section img { width: 40%; height: auto; border: 2px solid #4ffbdf; margin-top: 10px; }
         ul { list-style-type: disc; padding-left: 20px; }
