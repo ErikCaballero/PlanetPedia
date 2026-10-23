@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Expediente Blogar</title>
+    <link favicon rel="icon" type="image/png" href="../../../Especies alienigenas/Blogars/Blogar icono.webp">
+    <link rel="stylesheet" href="../plantilla.css">
+    <link rel="stylesheet" href="especiesindiv.css">
+</head>
+
+<body>
+    <div id="planetpedia-header"></div>
+    <script src="../../components/header.js"></script>
+<div class="container">
+    <!-- Bloque superior: Imagen + Nombre + Características -->
+    <div class="top-section">
+        <div class="img-box">
+            <!-- Aquí irá tu imagen -->
+            <a href="../../Especies alienigenas/Blogars/Blogar.png">
+                <img src="../../Especies alienigenas/Blogars/Blogar.png" style="width:100%; height:100%; object-fit:cover;">
+            </a>
+        </div>
+        <div class="header-box">
+            <h1>Los Blogars</h1>
+            <h2>Características físicas</h2>
+            <p>Los Blogars son una raza alada que está cubierta de escamas que actuan como coraza natural, pues son capaces de protegerlos de muchos daños como golpes y disparos con municiones comunes. Tienen dos alas que tienen esa misma encama cubriendo la parte superior del ala y luego lo otro son resistentes membranas que aguantan grandes ráfagas de viento. Tienen dos ojos de color azul claro, una pequeña nariz y una pequeña boca y unas orejas grandes. </p>
+            <p>Miden entre 1.5 y 2.0 metros de altura y aproximadamente 70 kg de peso.</p>
+            <p>Esperanza de vida: 120 años.</p>
+            <h2>Planeta de origen</h2>
+            <p>Guerilia</p>
+            <h2>Idioma</h2>
+            <p><i>Albio</i></p>
+        </div>
+    </div>
+
+    <!-- Bloque inferior: Habilidades y otros -->
+    <div class="bottom-section">
+        <h2>Características sociales</h2>
+        <p>Los Blogars son una raza muy territorial que en algún punto llegó a ser agresiva y trató de conquistar otros planetas. Esta raza puede hablar con otras razas pero, no son muy entusiastas de la convivencia habitual con otras razas, si no que </p>
+        <div class="especializaciones">
+        <button class="especializaciones-btn" type="button">
+            <span>Áreas de especialización</span>
+            <span class="especializaciones-icono">+</span>
+        </button>
+
+        <div class="especializaciones-contenido">
+            <div class="especializaciones-grid">
+
+                <div class="especializacion">Guerra</div>
+                <div class="especializacion">Metalurgia</div>
+                <div class="especializacion">Construcción</div>
+            </div>
+        </div>
+
+    </div>
+        <div class="foto1">
+            <div class="fotos-div1">
+            <a href="../../Especies alienigenas/Blogars/Blogars.webp">
+                <img src="../../Especies alienigenas/Blogars/Blogars.webp" alt="Grupo de Blogars" class="species-image">
+            </a>
+            <figcaption class="texto-fotos">Grupo de Blogars</figcaption>
+            </div>
+            <p>.</p>        
+        </div>
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Inmunidad al veneno</li>
+            <li>Inmunidad al fuego</li>
+            <li>Grandes sentidos</li>
+            <li>Gran regeneración</li>
+        </ul>
+        <div class="container" data-especie="Blogars">
+        <!-- Botón para desplegar/ocultar estadísticas -->
+        <button type="button" class="btn-desplegar-stats" id="btnStats">
+            <span>Ver Estadísticas de la Especie</span>
+            <span class="flecha" id="flechaStats">▼</span>
+        </button>
+
+        <!-- Contenedor oculto por defecto mediante la clase 'oculto' -->
+        <div class="stats-container oculto" id="panelStats">
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Fuerza</span>
+                    <span class="stat-value" id="val-fuerza">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-fuerza"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Agilidad</span>
+                    <span class="stat-value" id="val-agilidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-agilidad"></div>
+                </div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Resistencia</span>
+                    <span class="stat-value" id="val-resistencia">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-resistencia"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Velocidad</span>
+                    <span class="stat-value" id="val-velocidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-velocidad"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Inteligencia</span>
+                    <span class="stat-value" id="val-inteligencia">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-inteligencia"></div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Habilidades</span>
+                    <span class="stat-value" id="val-habilidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-habilidad"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- Enlace al archivo JavaScript externo (Asegúrate de ajustar la ruta si es necesario) -->
+        <script src="Stats.js"></script>
+        <h2>Dificultad de derrotar</h2>
+        <div class="contenedor-completo">
+            <div class="bloque-dificultad">
+            <div class="dificultad-barra" id="barra">
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+            </div>
+            <span id="texto-dificultad" class="texto-nivel"></span>
+            </div>
+            <img id="icono-dificultad" src="" alt="Icono">
+        </div>
+        <h2>Creencias</h2>
+        <p>No creen en dioses, porque no les importan, son seres salvajes que solo ven a los seres vivos, los muertos y los robots como rivales a derrotar.</p>
+
+        <h2>Jerarquía</h2>
+        <ul>
+            <li class="emperador">Rey de la guerra</li>
+            <li>Grandes guerreros</li>
+            <li>Guerreros</li>
+        </ul>
+        <h2>Historia</h2>
+        <h3>El comienzo</h3>
+        <p>Los Blogars fueron la primera raza en aparecer en su planeta natal, por lo que no tuvieron competencia por los recursos, por lo que ellos, podían campar a sus anchas por el planeta sin miedo a enfrentarse a otras razas, solo preocupandose de la fauna local.</p>
+        <a href="../../Especies alienigenas/Blogars/monstruo Alb.webp">
+            <img src="../../Especies alienigenas/Blogars/monstruo Alb.webp" alt="Glarazog persiguiendo Blogars" class="species-image">
+        </a>
+        <figcaption class="texto-fotos">Glarazog persiguiendo Blogars</figcaption>
+
+        <h3>La metalurgia</h3>
+        <p>Cuando los Blogars entraron en la etapa de la metalurgia pudieron matar a los depredadores que tenían y empezaron a crear pueblos y aldeas grandes con fortalezas a las que los depredadores no podían acceder fácilmente, de hecho en esta etapa temprana los Blogars ya eran muy peligrosos, pues sus capacidades físicas y habilidades eran envidiables, sus fuerzas militares eran increíbles para la época en la que vivían, si esta raza tuviese alta tecnología serían un peligro para el resto.</p>
+        
+        <h3>Extinción</h3>
+        <p>Tras conquistar la cima de la cadena alimenticia solo al mismo nivel que el Galazog, la vida les dió un rival, un depredador implacable ese depredador era una raza, los <!-- WikiLinks --> <a href="Kothars.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Kothars/Kothar.webp"><div><strong>Los Kothars</strong><p>Los Kothars son una raza guerrera, catalogadas como amos de la guerra, pues son una raza muy dificil de vencer individualmente y aman la guerra.</p></div></div>'>Los Kothars</a>, esta raza aniquiló completamente a todos los Blogars en cuestión de 10 días, teniendo los Blogars una tecnología mucho mejor y una superioridad numérica de 1.250 a 1, lo cual es una auténtica locura, pues siendo 1.250 veces menos los arrasaron totalmente en una guerra que al parecer acabó siendo muy injusta para quienes aparentaban ser los ganadores.</p>
+        <a href="../../Especies alienigenas/Kothars/Muertes por Kothars.webp">
+            <img src="../../Especies alienigenas/Kothars/Muertes por Kothars.webp" alt="Masacre Blogar" class="species-image">
+        </a>
+        <figcaption class="texto-fotos">Cadaveres Blogars</figcaption>
+        <span class="extincion">EXTINTOS</span>
+    </div>
+
+</div>
+
+    <script src="../../components/search.js" data-planetpedia-search></script>
+    <script src="../../components/voiceController.js" data-planetpedia-voice></script>
+  <script src="../../components/backToTop.js" data-planetpedia-back-to-top></script>
+</body>
+<script src="especialidad.js"></script>
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+<script src="wikilink.js"></script>
+<script src="dificultadvencer.js"></script>
+<script>
+    // Nivel de dificultad
+    actualizarDificultad(8);
+  </script>
+</html>
