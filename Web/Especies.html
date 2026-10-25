@@ -768,10 +768,32 @@
 
         <a href="razas/AntiguosReptilianos.html" class="species-card" data-category="avanzada">
             <div class="card-img-wrapper">
-                <img src="../Especies alienigenas/AntiguosReptilianos/AntiguoReptiliano.png" alt="Especie 47">
+                <img src="../Especies alienigenas/AntiguosReptilianos/AntiguoReptiliano.webp" alt="Especie 47">
             </div>
             <div class="card-info">
                 <h2>Antiguos Reptilianos</h2>
+                <span class="homeworld">Planeta: Lizeria</span>
+                <span class="view-btn">Ver Expediente</span>
+            </div>
+        </a>
+
+        <a href="razas/Blogars.html" class="species-card" data-category="estandar">
+            <div class="card-img-wrapper">
+                <img src="../Especies alienigenas/Blogars/Blogar.webp" alt="Especie 48">
+            </div>
+            <div class="card-info">
+                <h2>Blogars</h2>
+                <span class="homeworld">Planeta: Lizeria</span>
+                <span class="view-btn">Ver Expediente</span>
+            </div>
+        </a>
+
+        <a id="DrokunDiv" href="razas/Drokuns.html" class="species-card" data-category="estandar">
+            <div class="card-img-wrapper">
+                <img src="../Especies alienigenas/Drokuns/Drokun.webp" alt="Especie 49">
+            </div>
+            <div class="card-info">
+                <h2>Drokuns</h2>
                 <span class="homeworld">Planeta: Lizeria</span>
                 <span class="view-btn">Ver Expediente</span>
             </div>
@@ -854,6 +876,18 @@
     document.addEventListener('DOMContentLoaded', () => {
         ordenarEspecies();
         actualizarContadorEspecies();
+
+        const drokunDiv = document.getElementById('DrokunDiv');
+        const drokunImage = drokunDiv.querySelector('img');
+        const drokunImageSrc = drokunImage.src;
+
+        drokunDiv.addEventListener('mouseenter', () => {
+            drokunImage.src = '../Especies alienigenas/Drokuns/DrokunFurio.webp';
+        });
+
+        drokunDiv.addEventListener('mouseleave', () => {
+            drokunImage.src = drokunImageSrc;
+        });
     });
 
     // Función combinada para filtrar por texto y por categoría seleccionada
@@ -881,6 +915,5 @@
     <script src="../components/voiceController.js" data-planetpedia-voice></script>
   <script src="../components/backToTop.js" data-planetpedia-back-to-top></script>
 </html>
-
 
 

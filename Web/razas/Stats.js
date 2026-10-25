@@ -11,12 +11,20 @@ const baseDatosEspecies = {
         inteligencia: 6,
         habilidad: 2
     },
+    AntiguosReptilianos: {
+        fuerza: 4,
+        agilidad: 7,
+        resistencia: 4,
+        velocidad: 2,
+        inteligencia: 7,
+        habilidad: 4
+    },
     AracnoSephus: {
         fuerza: 2,
         agilidad: 4,
         resistencia: 3,
         velocidad: 3,
-        inteligencia: 6,
+        inteligencia: 5,
         habilidad: 4
     },
     AracnoSephusGoliath: {
@@ -34,6 +42,14 @@ const baseDatosEspecies = {
         velocidad: 0,
         inteligencia: 1,
         habilidad: 2
+    },
+    Blogars: {
+        fuerza: 2,
+        agilidad: 8,
+        resistencia: 6,
+        velocidad: 5,
+        inteligencia: 4,
+        habilidad: 0
     },
     Brinix: {
         fuerza: 1,
@@ -72,6 +88,14 @@ const baseDatosEspecies = {
         agilidad: 6,
         resistencia: 5,
         velocidad: 2,
+        inteligencia: 4,
+        habilidad: 0
+    },
+    Drokuns: {
+        fuerza: 6,
+        agilidad: 4,
+        resistencia: 7,
+        velocidad: 3,
         inteligencia: 4,
         habilidad: 0
     },
@@ -146,6 +170,14 @@ const baseDatosEspecies = {
         velocidad: 0,
         inteligencia: 6,
         habilidad: 0
+    },
+    Hongers: {
+        fuerza: 1,
+        agilidad: 2,
+        resistencia: 3,
+        velocidad: 1,
+        inteligencia: 2,
+        habilidad: 5
     },
     InvasoresX: {
         fuerza: 5,
@@ -226,6 +258,22 @@ const baseDatosEspecies = {
         velocidad: 3,
         inteligencia: 3,
         habilidad: 2
+    },
+    Thaldrins: {
+        fuerza: 1,
+        agilidad: 4,
+        resistencia: 3,
+        velocidad: 1,
+        inteligencia: 6,
+        habilidad: 0
+    },
+    Thanatofos: {
+        fuerza: 2,
+        agilidad: 4,
+        resistencia: 6,
+        velocidad: 6,
+        inteligencia: 3,
+        habilidad: 8
     },
     Tortanks: {
         fuerza: 3,
