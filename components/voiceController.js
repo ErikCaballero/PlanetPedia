@@ -313,11 +313,12 @@
         style.textContent = `
             #pp-voice-root{position:fixed;right:20px;bottom:20px;z-index:99999;font-family:Arial,sans-serif}
             #pp-voice-actions{display:flex;gap:8px;align-items:center;justify-content:flex-end}
-            .pp-round-btn{width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:#0b0d17;color:#7cff6b;box-shadow:0 0 16px rgba(65,255,84,.20);font-size:21px;cursor:pointer;display:grid;place-items:center;transition:.2s transform,.2s box-shadow,.2s background}
-            #pp-voice-btn{width:58px;height:58px;font-size:25px}.pp-round-btn:hover{transform:scale(1.05);box-shadow:0 0 24px rgba(65,255,84,.42)}
+            #pp-voice-root.controls-hidden{display:none}
+            .pp-round-btn{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:#0b0d17;color:#7cff6b;box-shadow:0 0 16px rgba(65,255,84,.20);font-size:18px;cursor:pointer;display:grid;place-items:center;transition:.2s transform,.2s box-shadow,.2s background}
+            #pp-voice-btn{width:40px;height:40px;font-size:20px}.pp-round-btn:hover{transform:scale(1.05);box-shadow:0 0 24px rgba(65,255,84,.42)}
             #pp-voice-btn.listening{background:#16331c;animation:ppVoicePulse 1.1s infinite}.pp-round-btn.unsupported{opacity:.55;cursor:not-allowed;filter:grayscale(1)}
-            @keyframes ppVoicePulse{50%{box-shadow:0 0 0 12px rgba(65,255,84,.08),0 0 30px rgba(65,255,84,.55)}}
-            #pp-voice-status,#pp-voice-panel,#pp-voice-settings{position:absolute;right:0;bottom:70px;width:min(370px,calc(100vw - 40px));border:1px solid rgba(255,255,255,.14);border-radius:12px;background:rgba(8,10,18,.98);color:#f2f4f8;box-shadow:0 10px 35px rgba(0,0,0,.45);display:none}
+            @keyframes ppVoicePulse{50%{box-shadow:0 0 0 8px rgba(65,255,84,.08),0 0 30px rgba(65,255,84,.55)}}
+            #pp-voice-status,#pp-voice-panel,#pp-voice-settings{position:absolute;right:0;bottom:50px;width:min(370px,calc(100vw - 40px));border:1px solid rgba(255,255,255,.14);border-radius:12px;background:rgba(8,10,18,.98);color:#f2f4f8;box-shadow:0 10px 35px rgba(0,0,0,.45);display:none}
             #pp-voice-status{padding:11px 13px;font-size:13px;line-height:1.4}#pp-voice-status.visible,#pp-voice-panel.visible,#pp-voice-settings.visible{display:block}
             #pp-voice-panel{max-height:58vh;overflow:auto;padding:14px;border-color:rgba(124,255,107,.35)}#pp-voice-panel h3,#pp-voice-settings h3{margin:0 30px 11px 0;color:#7cff6b;font-size:17px}
             #pp-voice-panel ul{margin:0;padding-left:19px;columns:2;column-gap:24px}#pp-voice-panel li{break-inside:avoid;margin:4px 0;font-size:13px}
@@ -356,12 +357,21 @@
                 <p class="pp-translation-note">En inglés y ucraniano el lector usa la traducción integrada del navegador cuando está disponible. Los nombres de especies y planetas se intentan conservar sin traducir.</p>
             </div>
             <div id="pp-voice-status" role="status" aria-live="polite"></div>
-            <div id="pp-voice-actions">
+            <div id="pp-voice-actions" role="group" aria-label="Controles de voz. Pulsa Ctrl+Q para ocultar o mostrar.">
                 <button id="pp-settings-btn" class="pp-round-btn" type="button" aria-label="Opciones de voz" title="Opciones de voz">⚙️</button>
                 <button id="pp-voice-btn" class="pp-round-btn" type="button" aria-label="Control por voz" title="Control por voz">🎙️</button>
             </div>
         `;
         document.body.appendChild(root);
+
+        document.addEventListener('keydown', event => {
+            if (event.ctrlKey && !event.altKey && !event.shiftKey && !event.metaKey &&
+                event.key.toLowerCase() === 'q' && !event.repeat) {
+                event.preventDefault();
+                root.classList.toggle('controls-hidden');
+                root.setAttribute('aria-hidden', String(root.classList.contains('controls-hidden')));
+            }
+        });
 
         const langSelect = document.getElementById('pp-language-select');
         const rate = document.getElementById('pp-rate');

@@ -84,6 +84,10 @@
       transform: translateY(0);
     }
 
+    .pp-back-to-top.is-shortcut-hidden {
+      display: none;
+    }
+
     .pp-back-to-top.is-visible::after {
       animation: ppBackToTopRing 2.7s ease-out infinite;
     }
@@ -186,6 +190,22 @@
         top: 0,
         behavior: reduceMotion ? "auto" : "smooth"
       });
+    });
+
+    document.addEventListener("keydown", event => {
+      if (
+        event.ctrlKey &&
+        !event.altKey &&
+        !event.shiftKey &&
+        !event.metaKey &&
+        event.key.toLowerCase() === "q" &&
+        !event.repeat
+      ) {
+        event.preventDefault();
+        const hidden = button.classList.toggle("is-shortcut-hidden");
+        button.setAttribute("aria-hidden", String(hidden));
+        if (hidden) button.blur();
+      }
     });
 
     update();

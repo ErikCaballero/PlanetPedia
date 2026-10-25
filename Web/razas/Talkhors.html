@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Expediente Talkhors</title>
+    <link favicon rel="icon" type="image/png" href="../../Especies alienigenas/Los Foxers/Foxer icono.webp">
+    <link rel="stylesheet" href="../plantilla.css">
+    <link rel="stylesheet" href="especiesindiv.css">
+</head>
+
+<body>
+    <div id="planetpedia-header"></div>
+    <script src="../../components/header.js"></script>
+<div class="container">
+    <!-- Bloque superior: Imagen + Nombre + Características -->
+    <div class="top-section">
+        <div class="img-box">
+            <!-- Aquí irá tu imagen -->
+            <a href="../../Especies alienigenas/Talkhors/Talkhor.webp">
+                <img src="../../Especies alienigenas/Talkhors/Talkhor.webp" style="width:100%; height:100%; object-fit:cover;">
+            </a>
+        </div>
+        <div class="header-box">
+            <h1>Los Talkhors</h1>
+            <h2>Características físicas</h2>
+            <p>Los Talkhors son una inmensa raza con aspecto de ballenas azules de la tierra, son de colores azules y blancos, tienen dos brazos acabados en cinco dedos y dos piernas acabados en pies palmeados de cinco dedos, sus cabezas son grandes y redondas con ojos pequeños y enormes bocas.</p>
+            <p>Miden entre 4 y 10 metros y pesan más de 1 tonelada.</p>
+            <p>Esperanza de vida: 190 años</p>
+            <h2>Planeta de origen</h2>
+            <p>Thalassa Prime</p>
+            <h2>Idioma</h2>
+            <p><i>Talhorio</i></p>
+        </div>
+    </div>
+
+    <!-- Bloque inferior: Habilidades y otros -->
+    <div class="bottom-section">
+        <h2>Alimentación</h2>
+        <p>Omnívora, comen muchísima comida al día, llegando a alimentarse hasta de 4 toneladas al día.</p>
+        <h2>Características sociales</h2>
+        <p>Los Talkhors son una antigua, pacífica y tranquila raza a la que no les gusta la guerra ni los conflictos, pero cuando se enfadan son prácticamente imparables. Suelen vivir en las profundidades de Thalassa Prime, alejados del resto de las razas, pese a que no les guste el combate no implica que no estén listos para él, pues podrían quitarse de encima a cualquier raza del planeta por su enorme tamaño. Los Talkhors disfrutan mucho de las actividades relajantes y de descansar y comer, son las cosas que más adoran hacer.</p>        
+
+    
+        <div class="foto1">
+            <div class="fotos-div1">
+            <a href="../../Especies alienigenas/Talkhors/TalkhorsBulino.webp">
+                <img src="../../Especies alienigenas/Talkhors/TalkhorsBulino.webp" alt="Talkhor Saltando" class="species-image">
+            </a>
+            <figcaption class="texto-fotos">Talkhor hablando con bulinos</figcaption>
+            </div>
+            <p>Los Talkhors se comunican a veces con los <!-- WikiLinks --> <a href="Bulinos.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Bulinos/Bulino.webp"><div><strong>Los Bulinos</strong><p>Una raza de mercaderes y políticos cuya especialidad era la comunicación y resolvían los problemas mediante el habla.</p></div></div>'>Bulinos</a>, sobre todo para realizar tratos de comida a cambio de protección en momentos en la que la comida les escasea, en general ambas razas se llevan bastante bien, pues una de ellas ama la tranquilidad y la otra no suele meterse en problemas y es muy sociables.</p>
+        </div>
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Super fuerza</li>
+        </ul>
+
+        <div class="container" data-especie="Talkhors">
+        <!-- Botón para desplegar/ocultar estadísticas -->
+        <button type="button" class="btn-desplegar-stats" id="btnStats">
+            <span>Ver Estadísticas de la Especie</span>
+            <span class="flecha" id="flechaStats">▼</span>
+        </button>
+
+        <!-- Contenedor oculto por defecto mediante la clase 'oculto' -->
+        <div class="stats-container oculto" id="panelStats">
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Fuerza</span>
+                    <span class="stat-value" id="val-fuerza">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-fuerza"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Agilidad</span>
+                    <span class="stat-value" id="val-agilidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-agilidad"></div>
+                </div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Resistencia</span>
+                    <span class="stat-value" id="val-resistencia">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-resistencia"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Velocidad</span>
+                    <span class="stat-value" id="val-velocidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-velocidad"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Inteligencia</span>
+                    <span class="stat-value" id="val-inteligencia">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-inteligencia"></div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Habilidades</span>
+                    <span class="stat-value" id="val-habilidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-habilidad"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- Enlace al archivo JavaScript externo (Asegúrate de ajustar la ruta si es necesario) -->
+        <script src="Stats.js"></script>
+        <h2>Nivel de amenaza individual</h2>
+        <div class="contenedor-completo">
+            <div class="bloque-dificultad">
+            <div class="dificultad-barra" id="barra">
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+            </div>
+            <span id="texto-dificultad" class="texto-nivel"></span>
+            </div>
+            <img id="icono-dificultad" src="" alt="Icono">
+        </div>
+        <h2>Creencias</h2>
+        <p>Los Talkhors tienen una fuerte creencia en que la mejor manera de vivir es disfrutando de la paz y la tranquilidad que les brinda el universo, de la los hermosos paisajes de las profundidades marinas de Thalassa Prime, el sabor de los alimentos que consumen entre otras muchas cosas.</p>
+
+        <h2>Jerarquía</h2>
+        <ul>
+            <li class="emperador">Gran sabio</li>
+            <li>Los sabios</li>
+            <li>Ciudadanos</li>
+        </ul>
+        <h2>Historia</h2>
+        <h3>El comienzo</h3>
+        <p>El comienzo de esta raza fue casi desestabilizante, pues con su inmenso tamaño y hambre empezaron a deborar depredadores de los mares de Thalassa Prime, hasta el punto de que las criaturas que se reproducían por cientos no tuvieron cazadores naturales, cosa que se iría arreglando poco a poco con el paso del tiempo siendo estas criaturas deboradas posteriormente por los Talkhors también para saciar su gran hambre.</p>
+
+        <h3>En encontronazo con el "dominante"</h3>
+        <p>En Thalassa Prime hay una raza dominante, los <!-- WikiLinks --> <a href="Sharkinors.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Sharkinors/Sharkinor.webp"><div><strong>Los Sharkinors</strong><p>Una raza agresiva y territorial, fuerte, resistente y veloz en el agua, de las razas más dominantes conocidas.</p></div></div>'>Sharkinors</a>, pues su tamaño fuerza y resistencia hacen que sean muy difíciles de derrotar, pero aún así, en las aguas se encuentran los Talkhors, que son una raza de un mucho mayor tamaño que son capaces de rivalizar con ellos siempre y cuando los <!-- WikiLinks --> <a href="Sharkinors.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Sharkinors/Sharkinor.webp"><div><strong>Los Sharkinors</strong><p>Una raza agresiva y territorial, fuerte, resistente y veloz en el agua, de las razas más dominantes conocidas.</p></div></div>'>Sharkinors</a> no los superen en número por mucho. Pero, aunque los Talkhors sean más poderosos eso no los hace la raza dominante, pues a ellos les gusta vivir tranquilos, no competir constantemente por el dominio, de todas formas a veces se producen altercados entre ellos pues los <!-- WikiLinks --> <a href="Sharkinors.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Sharkinors/Sharkinor.webp"><div><strong>Los Sharkinors</strong><p>Una raza agresiva y territorial, fuerte, resistente y veloz en el agua, de las razas más dominantes conocidas.</p></div></div>'>Sharkinors</a> los atacan y perturban su paz o resultan una amenaza para los <!-- WikiLinks --> <a href="Bulinos.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Bulinos/Bulino.webp"><div><strong>Los Bulinos</strong><p>Una raza de mercaderes y políticos cuya especialidad era la comunicación y resolvían los problemas mediante el habla.</p></div></div>'>Bulinos</a> y ellos los ayudan.</p>
+        <div class="fotos-div1">
+            <a href="../../Especies alienigenas/Talkhors/TalkhorVsSharkinor.webp">
+                <img src="../../Especies alienigenas/Talkhors/TalkhorVsSharkinor.webp" alt="Talkhor vs Sharkinor" class="species-image">
+            </a>
+            <figcaption class="texto-fotos">Talkhor vs Sharkinor</figcaption>
+        </div>
+
+    </div>
+</div>
+
+<script src="especialidad.js"></script>
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+<script src="wikilink.js"></script>
+
+<script src="dificultadvencer.js"></script>
+<script>
+    // Nivel de dificultad
+    actualizarDificultad(5);
+
+    const drokunDiv = document.getElementById('DrokunDiv');
+    const drokunImage = drokunDiv.querySelector('img');
+    const drokunImageSrc = drokunImage.src;
+
+    drokunDiv.addEventListener('mouseenter', () => {
+        drokunImage.src = '../../Especies alienigenas/Talkhors/DrokunFurio.webp';
+    });
+
+    drokunDiv.addEventListener('mouseleave', () => {
+        drokunImage.src = drokunImageSrc;
+    });
+  </script>
+    <script src="../../components/search.js" data-planetpedia-search></script>
+    <script src="../../components/voiceController.js" data-planetpedia-voice></script>
+  <script src="../../components/backToTop.js" data-planetpedia-back-to-top></script>
+</html>
