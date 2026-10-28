@@ -7,7 +7,7 @@ window.PLANETPEDIA_UNIVERSOS = [
     "categoria": "Política",
     "etiqueta": "El pacto que nunca existió",
     "descripcion": "La Unión de Planetas Independientes nunca se forma. Por lo que cada mundo trata de sobrevivir por sí mismo en un universo repleto de amenazas sin ninguna protección adicional.",
-    "imagen": "Web/Universos/imgUniversos/FracasoUPI.webp"
+    "imagen": "Web/universos/imgUniversos/FracasoUPI.webp"
   },
   {
     "numero": "1102",
@@ -16,7 +16,7 @@ window.PLANETPEDIA_UNIVERSOS = [
     "categoria": "Imperio",
     "etiqueta": "La victoria que coronó a un imperio",
     "descripcion": "La conquista de la tierra fue todo un éxito, conquistando exitosamente a la humanidad al poner bajo su custodia a Blackrain, al cual potenciaron a tal nivel que se convirtió en un ser superior.",
-    "imagen": "Web/Universos/imgUniversos/ConquistadoresX.webp"
+    "imagen": "Web/universos/imgUniversos/ConquistadoresX.webp"
   },
   {
     "numero": "4213",
@@ -25,6 +25,6 @@ window.PLANETPEDIA_UNIVERSOS = [
     "categoria": "Guerra",
     "etiqueta": "Una tregua cambia el planeta",
     "descripcion": "Los Ceruleanos disponían de una tecnología más avanzada y llegaron a un trato con los Orrs tras el que se convirtieron en una interesante alianza para la Unión de Planetas Independientes.",
-    "imagen": "Web/Universos/imgUniversos/AlianzaSapphireCrest.webp"
+    "imagen": "Web/universos/imgUniversos/AlianzaSapphireCrest.webp"
   }
 ];

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title">
+  <title id="title">Imagen no disponible</title>
+  <rect width="640" height="360" fill="#15192b"/>
+  <circle cx="320" cy="150" r="52" fill="none" stroke="#64748b" stroke-width="3"/>
+  <ellipse cx="320" cy="150" rx="82" ry="18" fill="none" stroke="#4ffbdf" stroke-width="3" transform="rotate(-25 320 150)"/>
+  <text x="320" y="260" text-anchor="middle" fill="#94a3b8" font-family="Segoe UI,Arial,sans-serif" font-size="24">Imagen no disponible</text>
+</svg>

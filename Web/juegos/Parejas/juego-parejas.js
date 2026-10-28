@@ -79,9 +79,9 @@ let totalPairs = 0;
 
     Ejemplo:
 
-    "../Especies alienigenas/Foxers/Los Foxers.webp"
+    "../../../Especies alienigenas/Foxers/Los Foxers.webp"
 
-    "../Especies alienigenas/Otra raza/Alien.jpg"
+    "../../../Especies alienigenas/AracnoSephus/AracnoSephus.webp"
 
 
     IMPORTANTE:

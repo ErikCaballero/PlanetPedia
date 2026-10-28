@@ -66,7 +66,7 @@ const races = {
     homeworld: "Aetheria",
 
     image:
-      "assets/races/foxers.png",
+      "../../../Especies alienigenas/Foxers/Los Foxers.webp",
 
     playstyle:
       "Tecnología e ingeniería",
@@ -134,7 +134,7 @@ const races = {
     homeworld: "Webitia",
 
     image:
-      "assets/races/aracnosephus.png",
+      "../../../Especies alienigenas/AracnoSephus/AracnoSephus.webp",
 
     playstyle:
       "Expansión y guerra",
@@ -196,7 +196,7 @@ const races = {
     homeworld: "Gradius 4",
 
     image:
-      "assets/races/sterons.png",
+      "../../../Especies alienigenas/Sterons/Sterons.webp",
 
     playstyle:
       "Conquista militar",
@@ -258,7 +258,7 @@ const races = {
     homeworld: "Sabaya",
 
     image:
-      "assets/races/varyths.png",
+      "../../../Especies alienigenas/Varyths/Varyth.webp",
 
     playstyle:
       "Combate y guerra",
@@ -320,7 +320,7 @@ const races = {
     homeworld: "Sapphire Dom",
 
     image:
-      "assets/races/xelthorianos.png",
+      "../../../Especies alienigenas/Xelthorianos/Xelthoriano.webp",
 
     playstyle:
       "Energía y ciencia",
@@ -382,7 +382,7 @@ const races = {
     homeworld: "Zorn 1",
 
     image:
-      "assets/races/zornicos.png",
+      "../../../Especies alienigenas/Zornicos/Zornicos.webp",
 
     playstyle:
       "Equilibrado",

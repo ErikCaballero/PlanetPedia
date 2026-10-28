@@ -274,6 +274,68 @@
     text-decoration: none;
     color: #00e1ff;
 }
+
+/* Fichas con paneles nativos: accesibles con teclado y sin JavaScript. */
+.planet-detail {
+    width: 100%;
+}
+
+.planet-detail .catalog-link {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.planet-detail .grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+}
+
+.planet-detail .species-link,
+.planet-detail .fotos-div1,
+.planet-detail .header-box {
+    min-width: 0;
+}
+
+.planet-panel > summary {
+    list-style: none;
+}
+
+.planet-panel > summary::-webkit-details-marker {
+    display: none;
+}
+
+.planet-panel[open] > summary .flecha {
+    transform: rotate(180deg);
+}
+
+.planet-panel > summary:focus-visible,
+.planet-detail a:focus-visible {
+    outline: 2px solid var(--accent-cyan);
+    outline-offset: 4px;
+}
+
+.planet-panel > .stats-container {
+    margin-top: 10px;
+    padding: 15px;
+    border: 1px solid var(--card-border);
+    border-left: 3px solid var(--accent-cyan);
+}
+
+@media (max-width: 768px) {
+    .planet-detail .img-box {
+        flex: none;
+    }
+
+    .planet-detail .top-section,
+    .planet-detail .bottom-section {
+        padding: 18px;
+    }
+
+    .planet-detail .header-box {
+        flex: none;
+        width: 100%;
+    }
+}
 /* ==========================================================================
    Adaptabilidad / Diseño Responsivo
    ========================================================================== */

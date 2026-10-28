@@ -271,7 +271,7 @@ window.UNIVERSE_DATA = {
         "Capital del la raza de los Zornicos.",
 
       url:
-        "../planetas/Zorn1.html"
+        ""
     },
 
 
@@ -299,7 +299,7 @@ window.UNIVERSE_DATA = {
         "Un planeta desértico.",
 
       url:
-        "../planetas/Zorn2"
+        ""
     },
     {
       id: "zorn3",
@@ -325,7 +325,7 @@ window.UNIVERSE_DATA = {
         "Capital del Dominio Solar y uno de los mundos más poblados del sector.",
 
       url:
-        "mundos/aurelia.html"
+        ""
     },
 
 
@@ -354,7 +354,7 @@ window.UNIVERSE_DATA = {
         "Planeta cubierto por mares profundos y archipiélagos flotantes.",
 
       url:
-        "mundos/tethys.html"
+        ""
     },
 
     {
@@ -381,7 +381,7 @@ window.UNIVERSE_DATA = {
         "Mundo templado usado como enclave diplomático.",
 
       url:
-        "mundos/lys.html"
+        ""
     },
 
 

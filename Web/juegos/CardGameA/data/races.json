@@ -3,7 +3,7 @@
     "id": "aracnosephus",
     "name": "AracnoSephus",
     "homeworld": "Webitia",
-    "image": "../../../../Especies alienigenas/AracnoSephus/AracnoSephus.png",
+    "image": "../../../Especies alienigenas/AracnoSephus/AracnoSephus.webp",
 
     "description": "Especie arácnida inteligente, agresiva, cruel y territorial. Han desarrollado un poderoso imperio basado en la esclavitud y la obtención masiva de recursos.",
 
@@ -53,7 +53,7 @@
     "id": "foxers",
     "name": "Foxers",
     "homeworld": "Aetheria",
-    "image": "../../../../Especies alienigenas/Foxers/Los Foxers.webp",
+    "image": "../../../Especies alienigenas/Foxers/Los Foxers.webp",
 
     "description": "Pequeña especie extremadamente inteligente, especializada en ingeniería, robótica y creación de tecnología avanzada.",
 
@@ -107,7 +107,7 @@
     "id": "sterons",
     "name": "Sterons",
     "homeworld": "Gradius 4",
-    "image": "../../../../Especies alienigenas/Sterons/Steron.png",
+    "image": "../../../Especies alienigenas/Sterons/Steron.webp",
 
     "description": "Raza guerrera y conquistadora adaptada a condiciones extremas. Su sociedad es militarista y emplea la conquista y la esclavitud para ampliar su territorio.",
 
@@ -146,7 +146,7 @@
     "id": "varyths",
     "name": "Varyths",
     "homeworld": "Sabaya",
-    "image": "../../../../Especies alienigenas/Varyths/Varyth.png",
+    "image": "../../../Especies alienigenas/Varyths/Varyth.webp",
 
     "description": "Raza guerrera que considera el combate una actividad ceremonial y honorable vinculada a sus creencias.",
 
@@ -191,7 +191,7 @@
     "id": "xelthorianos",
     "name": "Xel'thorianos",
     "homeworld": "Sapphire Dom",
-    "image": "../../../../Especies alienigenas/Xelthorianos/Xelthoriano.jpeg",
+    "image": "../../../Especies alienigenas/Xelthorianos/Xelthoriano.webp",
 
     "description": "Especie generalmente pacífica, social y altruista con una gran afinidad por la energía, la biología y la medicina.",
 
@@ -246,7 +246,7 @@
     "id": "zornicos",
     "name": "Zornicos",
     "homeworld": "Zorn 1",
-    "image": "../../../../Especies alienigenas/Zornicos/Zornico.png",
+    "image": "../../../Especies alienigenas/Zornicos/Zornico.webp",
 
     "description": "Sociedad unificada a nivel planetario con grandes capacidades para la caza y el combate, además de una extraordinaria relación biológica con la energía estelar.",
 

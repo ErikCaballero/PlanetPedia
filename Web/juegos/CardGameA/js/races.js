@@ -7,7 +7,7 @@ let races = {};
 
 export async function loadRaces() {
   const response =
-    await fetch("../data/races.json");
+    await fetch(new URL("../data/races.json", import.meta.url));
 
   if (!response.ok) {
     throw new Error(

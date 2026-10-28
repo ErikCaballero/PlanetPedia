@@ -166,7 +166,7 @@
 
         @font-face {
             font-family: 'Sangrefont'; /* Pon aquí el nombre que quieras darle */
-            src: url('Fuentes/bitten.ttf') format('truetype'); /* Cambia la ruta por la de tu archivo */
+            src: url('Fuentes/Bitten.ttf') format('truetype'); /* Cambia la ruta por la de tu archivo */
         }
 
         footer {
