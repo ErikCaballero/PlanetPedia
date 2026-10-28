@@ -70,7 +70,7 @@ for src in PROJECT_ROOT.rglob("*"):
 # Antes se intentaba extraer la ruta con una expresión regular que
 # prohibía espacios. Por eso una ruta como:
 #
-#   ../../Especies alienigenas/Los Foxers/Los Foxers.png
+#   ../../Especies alienigenas/Foxers/Los Foxers.png
 #
 # se cortaba y no se podía resolver correctamente.
 #

@@ -32,7 +32,7 @@ const races = {
   foxers: {
     name: "Foxers",
     homeworld: "Aetheria",
-    image: "../../../Especies alienigenas/Los Foxers/Los Foxers.webp",
+    image: "../../../Especies alienigenas/Foxers/Los Foxers.webp",
     playstyle: "Tecnología e ingeniería",
 
     description:

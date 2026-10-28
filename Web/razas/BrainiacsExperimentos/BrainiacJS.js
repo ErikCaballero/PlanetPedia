@@ -153,7 +153,7 @@ const experimentos = [
             "Máquina de energía Material",
 
         imagen:
-            "../../../Especies alienigenas/Los Brainiac/Maquina Energicomaterial.webp",
+            "../../../Especies alienigenas/Brainiac/Maquina Energicomaterial.webp",
 
         categoria:
             "Energía",

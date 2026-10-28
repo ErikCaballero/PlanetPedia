@@ -3,7 +3,7 @@ window.SPECIES_DATA = {
     {
       "id": "foxers",
       "name": "Los Foxers",
-      "image": "../../../Especies alienigenas/Los Foxers/Los Foxers.webp",
+      "image": "../../../Especies alienigenas/Foxers/Los Foxers.webp",
       "tags": [
         "cientifica",
         "tecnologica",
@@ -125,7 +125,7 @@ window.SPECIES_DATA = {
     {
       "id": "kaelish",
       "name": "Los Kaelish",
-      "image": "../../../Especies alienigenas/Los Kaelish/Kaelish (verde).webp",
+      "image": "../../../Especies alienigenas/Kaelish/Kaelish (verde).webp",
       "tags": [
         "pacifica",
         "pequeños"
@@ -134,7 +134,7 @@ window.SPECIES_DATA = {
     {
       "id": "brainiacs",
       "name": "Los Brainiacs",
-      "image": "../../../Especies alienigenas/Los Brainiac/Brainiac.webp",
+      "image": "../../../Especies alienigenas/Brainiac/Brainiac.webp",
       "tags": [
         "cientifica",
         "tecnologica"
@@ -143,7 +143,7 @@ window.SPECIES_DATA = {
     {
       "id": "grolux",
       "name": "Los Grolux",
-      "image": "../../../Especies alienigenas/Los Grolux/Los Grolux.webp",
+      "image": "../../../Especies alienigenas/Grolux/Los Grolux.webp",
       "tags": [
         "primitiva",
         "grandes"

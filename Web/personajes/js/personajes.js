@@ -52,7 +52,7 @@
             roleLabel: "Tecnólogo",
             title: "Mente tecnológica de los Guardianes Galácticos",
             alias: "Conocido también como Foxer",
-            image: "../Especies alienigenas/Los Foxers/Los Foxers.webp",
+            image: "../Especies alienigenas/Foxers/Los Foxers.webp",
             href: "personajes/Faid-Foxer.html",
             order: 5
         },

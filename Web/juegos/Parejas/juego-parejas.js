@@ -79,7 +79,7 @@ let totalPairs = 0;
 
     Ejemplo:
 
-    "../Especies alienigenas/Los Foxers/Foxer1.jpeg"
+    "../Especies alienigenas/Foxers/Los Foxers.webp"
 
     "../Especies alienigenas/Otra raza/Alien.jpg"
 
@@ -111,7 +111,7 @@ const availableImages = [
 
     "../../../Especies alienigenas/Bazofios/Bazofio icono.webp",
 
-    "../../../Especies alienigenas/Los Foxers/Foxer icono.webp",
+    "../../../Especies alienigenas/Foxers/Foxer icono.webp",
 
     "../../../Especies alienigenas/AracnoSephus/AracnoSephus icono.webp",
 
@@ -129,9 +129,9 @@ const availableImages = [
 
     "../../../Especies alienigenas/Invasores X/InvasoresX icono.webp",
 
-    "../../../Especies alienigenas/Los Brainiac/Brainiac icono.webp",
+    "../../../Especies alienigenas/Brainiac/Brainiac icono.webp",
 
-    "../../../Especies alienigenas/Los Kaelish/Kaelish icono.webp",
+    "../../../Especies alienigenas/Kaelish/Kaelish icono.webp",
 
     "../../../Especies alienigenas/Orrs/Orr icono.webp",
 
@@ -159,7 +159,7 @@ const availableImages = [
 
     "../../../Especies alienigenas/Friggits/Friggit icono.webp",
 
-    "../../../Especies alienigenas/Los Grolux/Grolux icono.webp",
+    "../../../Especies alienigenas/Grolux/Grolux icono.webp",
 
     "../../../Especies alienigenas/Xilvath/Xilvath icono.webp",
 
