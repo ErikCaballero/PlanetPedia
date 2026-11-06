@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Expediente Avathors</title>
+    <link favicon rel="icon" type="image/png" href="../../Especies alienigenas/Foxers/Foxer icono.webp">
+    <link rel="stylesheet" href="../plantilla.css">
+    <link rel="stylesheet" href="especiesindiv.css">
+</head>
+
+<body>
+    <div id="planetpedia-header"></div>
+    <script src="../../components/header.js"></script>
+<div class="container">
+    <!-- Bloque superior: Imagen + Nombre + Características -->
+    <div class="top-section">
+        <div class="img-box">
+            <!-- Aquí irá tu imagen -->
+            <a href="../../Especies alienigenas/Avathors/Avathor.webp">
+                <img src="../../Especies alienigenas/Avathors/Avathor.webp" style="width:100%; height:100%; object-fit:cover;">
+            </a>
+        </div>
+        <div class="header-box">
+            <h1>Los Avathors</h1>
+            <h2>Características físicas</h2>
+            <p>Los Avathors son una raza de aspecto demoníaco, con cuerpos de color rojo y pinchos de color negro salidos directamente de sus cuerpos, tienen dos brazos acabados en cinco dedos con garras afiladas y dos piernas acabadas en pezuñas de animal además de una cola acabada en un extremo afilado de color negro, parecida a una lanza. En la cabeza tienen un par de grandes cuernos negros, tienen una boca llena de dientes afilados, grandes y puntiagudas orejas y unos colores de color rojo o amarillo intenso.</p>
+            <p>Miden entre 1.6 y 2.3 metros y pesan al rededor de 90 kg.</p>
+            <p>Esperanza de vida: 740 años</p>
+            <h2>Planeta de origen</h2>
+            <p>Narmun 9</p>
+            <h2>Idioma</h2>
+            <p><i>Dimus</i></p>
+        </div>
+    </div>
+
+    <!-- Bloque inferior: Habilidades y otros -->
+    <div class="bottom-section">
+        <h2>Alimentación</h2>
+        <p>Su alimentación es una de las más peculiares, pues se alimentan a base del sufrimiento de otros seres vivos, cuando hacen sufrir a cualquier ser vivo en la forma que sea, ellos se alimentan directamentes de ese dolor, al consumir grandes cantidades de sufrimiento, estos seres pueden volverse cada vez más grandes y poderosos al consumirlo, lo que hace que busquen provocar la mayor cantidad de sufrimientos a otros seres para así volverse más y más poderosos.</p>
+        <a href="../../Especies alienigenas/Avathors/AvathorSufrimiento.webp">
+            <img src="../../Especies alienigenas/Avathors/AvathorSufrimiento.webp" alt="Avathor Absorbiendo sufrimiento" class="species-image">
+        </a>
+        <figcaption class="texto-fotos">Avathor Absorbiendo sufrimiento</figcaption>
+
+        <h2>Características sociales</h2>
+            <p>Los Avathors son una especie muy cruel y sanginaria, pues el hecho de que el sufrimiento les haga más poderosos hacen que quieran hacer sufrir a cualquier ser vivo.</p>
+     
+
+    
+        <div class="foto1">
+            <div class="fotos-div1">
+            <a href="../../Especies alienigenas/Avathors/DrokunSaltando.webp">
+                <img src="../../Especies alienigenas/Avathors/DrokunSaltando.webp" alt="Avathor Saltando" class="species-image">
+            </a>
+            <figcaption class="texto-fotos">Avathor Saltando</figcaption>
+            </div>
+            <p>Cuando los Avathors están enfadados son una fuerza prácticamente imparables, de hecho todo lo que se cuente de sus hazañas en este expediente y todas sus estadísticas serán de su versión furiosa, pues en su modo normal son practicamente iguales que los humanos. Cuando sale la bestia la cosa cambia, estos seres pueden alcanzar distancias tan enormes de un salto que podrían saltar edificios o incluso pueblos enteros, algunos saltos documentados marcan hasta 1 kilómetro de distancia.</p>
+        </div>
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Super fuerza</li>
+            <li>Super resistencia</li>
+            <li>Super regeneración</li>
+            <li>Gran velocidad</li>
+            <li>Gran durabilidad</li>
+            <li>Inmunidad al fuego</li>
+            <li>Inmunidad a la radiación</li>
+        </ul>
+            <div class="fotos-div1">
+            <a href="../../Especies alienigenas/Avathors/DrokunFuerza.webp">
+                <img src="../../Especies alienigenas/Avathors/DrokunFuerza.webp" alt="Avathor levantando un objeto pesado" class="species-image">
+            </a>
+            <figcaption class="texto-fotos">Avathor levantando un objeto pesado</figcaption>
+            </div>
+
+        <div class="container" data-especie="Avathors">
+        <!-- Botón para desplegar/ocultar estadísticas -->
+        <button type="button" class="btn-desplegar-stats" id="btnStats">
+            <span>Ver Estadísticas de la Especie</span>
+            <span class="flecha" id="flechaStats">▼</span>
+        </button>
+
+        <!-- Contenedor oculto por defecto mediante la clase 'oculto' -->
+        <div class="stats-container oculto" id="panelStats">
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Fuerza</span>
+                    <span class="stat-value" id="val-fuerza">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-fuerza"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Agilidad</span>
+                    <span class="stat-value" id="val-agilidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-agilidad"></div>
+                </div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Resistencia</span>
+                    <span class="stat-value" id="val-resistencia">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-resistencia"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Velocidad</span>
+                    <span class="stat-value" id="val-velocidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-velocidad"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Inteligencia</span>
+                    <span class="stat-value" id="val-inteligencia">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-inteligencia"></div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>Habilidades</span>
+                    <span class="stat-value" id="val-habilidad">0/10</span>
+                </div>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="bar-habilidad"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- Enlace al archivo JavaScript externo (Asegúrate de ajustar la ruta si es necesario) -->
+        <script src="Stats.js"></script>
+        <h2>Nivel de amenaza individual</h2>
+        <div class="contenedor-completo">
+            <div class="bloque-dificultad">
+            <div class="dificultad-barra" id="barra">
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+                <div class="segmento"></div>
+            </div>
+            <span id="texto-dificultad" class="texto-nivel"></span>
+            </div>
+            <img id="icono-dificultad" src="" alt="Icono">
+        </div>
+        <h2>Creencias</h2>
+        <p>La mayoría de Avathors adoran la paz y la tranquilidad, no les gustan los conflictos ni meterse en problemas.</p>
+
+        <h2>Jerarquía</h2>
+        <ul>
+            <li class="emperador">Líder</li>
+            <li>Consejeros</li>
+            <li>Ciudadanos</li>
+        </ul>
+        <h2>Historia</h2>
+        <h3>El comienzo</h3>
+        <p>El comienzo de esta raza fue muy caótico aunque también fácil, pues en su planeta habían pocas formas de vida que pudieran hacer frente a un Avathor furioso y mucho menos a un grupo de ellos. Lo que más difícil les pareció a los Avathors desde el principio fue controlar su ira, pues al inicio no conocían formas de tranquilizarse y controlarse, por lo que vivir en comunidades era muy complicado, por la destrucción que podían causar en cualquier momento.</p>
+        <h3>El primer intento de invasión</h3>
+        <p>Pobre de la primera raza que trató de invadirlos, pues no creo que hubiera una manera más tonta de ir directamente a una misión suicida que tratar de conquistar a una raza cuyo cada individuo era como un destructor si se le enfurecía. Los que corrieron la mala suerte de toparse con estos destructores fueron los <!-- WikiLinks --> <a href="Sterons.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Sterons/Steron.webp"><div><strong>Los Sterons</strong><p>Una raza imperialista y esclavista, conocida por ser una de las razas más crueles del universo.</p></div></div>'>Sterons</a>. Su ejército fue completamente arrasado, pues la gran capacidad física que tenían estos seres era inigualable por el ejército de estos invasores, pero los <!-- WikiLinks --> <a href="Sterons.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Sterons/Steron.webp"><div><strong>Los Sterons</strong><p>Una raza imperialista y esclavista, conocida por ser una de las razas más crueles del universo.</p></div></div>'>Sterons</a> no querían detenerse, pues veían en los Avathors unos esclavos de guerra impecables, pero, por más que lo intentaban el resultado siempre era el mismo, una humillación tras otra, pues nadie en el campo de batalla era capaz si quiera de herirlos. Lo que acabó por hacer que se retiren y dejen en paz al planeta y a su raza.</p>
+        <div class="fotos-div1">
+            <a href="../../Especies alienigenas/Avathors/DrokunVsSterons.webp">
+                <img src="../../Especies alienigenas/Avathors/DrokunVsSterons.webp" alt="Avathor vs ejército Steron" class="species-image">
+            </a>
+            <figcaption class="texto-fotos">Avathor vs ejército Steron</figcaption>
+        </div>
+
+        <h3>Salida al espacio exterior</h3>
+        <p>Tras la destrucción de los <!-- WikiLinks --> <a href="Sterons.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Sterons/Steron.webp"><div><strong>Los Sterons</strong><p>Una raza imperialista y esclavista, conocida por ser una de las razas más crueles del universo.</p></div></div>'>Sterons</a>, los Avathors cogieron la tecnología de los Sterons y adaptaron sus naves para poder salir del planeta y así poder explorar otros mundos, en los cuales se toparon con la segunda humanidad, la cual habló con ellos pacíficamente y al descubrir el problema que tenían habló con la Unión de Planetas Independiente para que se les ayudara a poder controlar su ira y no descontrolarse, por ello los <!-- WikiLinks --> <a href="Foxers.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Foxers/Los Foxers.webp"><div><strong>Los Foxers</strong><p>Pequeña raza de expertos en ingeniería y robótica, una raza muy avanzada e inteligente.</p></div></div>'>Foxers</a> desarrollaron un cinturón para que pudieran controlar su nivel de ira o para que les ayudara, a lo cual los Avathors se vieron tremendamente agradecidos con ellos y se unieron a la Unión, teniendo de vez en cuando guerreros Avathors que lucharan en las batallas en las que se les necesitara, aunque seguían prefiriendo no hacerlo porque se les dificulta identificar a los aliados y a los enemigos.</p>
+        <div class="fotos-div1">
+            <a href="../../Especies alienigenas/Avathors/FoxersCinturon.webp">
+                <img src="../../Especies alienigenas/Avathors/FoxersCinturon.webp" alt="Foxers fabricando cinturón de control de ira" class="species-image">
+            </a>
+            <figcaption class="texto-fotos">Foxers fabricando cinturón de control de ira</figcaption>
+        </div>
+        <h3>La gran guerra</h3>
+        <p>La Unión de Planetas Independientes se enfrentó a todo el imperio de los <!-- WikiLinks --> <a href="AracnoSephus.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/AracnoSephus/AracnoSephus.webp"><div><strong>Los AracnoSephus</strong><p>Una raza imperialista que conquista planetas allá a donde van con un ejército alquilado a base de el dinero que consiguen con los esclavos que hacen en cada planeta al que van.</p></div></div>'>AracnoSephus</a> en una gran guerra que detuvo completamente la expansión de su imperio, en esta campaña la raza principal que lideraba el conflicto fue la de los <!-- WikiLinks --> <a href="Varyths.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Varyths/Varyth.webp"><div><strong>Los Varyths</strong><p>Una habilidosa raza guerrera, que adora el combate como arte, como forma de vida y como modo de medir el valor.</p></div></div>'>Varyths</a>, pero, la Unión mandó a varios Avathors para ayudarlos en el conflicto, lo cual fue una grandiosa idea pues los Avathors destruyeron todos los tanques y vehículos blindados de los enemigos además de eliminar a algunos <!-- WikiLinks --> <a href="AracnoSephus.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/AracnoSephus/AracnoSephus Goliath.webp"><div><strong>Los AracnoSephus Goliath</strong><p>Una versión de gran tamaño de la raza de los AracnoSephus, más fuertes y resistentes también.</p></div></div>'>AracnoSephus Goliath</a>.</p>
+        <a href="../../Especies alienigenas/Avathors/DrukonTanque.webp">
+            <img src="../../Especies alienigenas/Avathors/DrukonTanque.webp" alt="Avathor destruyendo tanque enemigo" class="species-image">
+        </a>
+        <figcaption class="texto-fotos">Avathor destruyendo tanque enemigo</figcaption>
+
+        <h3>Limpieza en Thalassa Prime</h3>
+        <p>En Thalassa Prime hubo un conflicto en el que los <!-- WikiLinks --> <a href="Sharkinors.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Sharkinors/Sharkinor.webp"><div><strong>Los Sharkinors</strong><p>Una raza agresiva y territorial, fuerte, resistente y veloz en el agua, de las razas más dominantes conocidas.</p></div></div>'>Sharkinors</a> trataban de cazar a todos los <!-- WikiLinks --> <a href="Bulinos.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Bulinos/Bulino.webp"><div><strong>Los Bulinos</strong><p>Una raza de mercaderes y políticos cuya especialidad era la comunicación y resolvían los problemas mediante el habla.</p></div></div>'>Bulinos</a> para comerselos, entonces la Unión de Planetas Independiente mandó a un par de Avathors al planeta para detener la masacre que estaban haciendo y aprovechar así para comprobar si los Avathors eran más fuertes que los <!-- WikiLinks --> <a href="Sharkinors.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Sharkinors/Sharkinor.webp"><div><strong>Los Sharkinors</strong><p>Una raza agresiva y territorial, fuerte, resistente y veloz en el agua, de las razas más dominantes conocidas.</p></div></div>'>Sharkinors</a> y tanto que eran más poderosos pues esos dos Avathors fueron más que suficiente para detener la masacre y devolverles a los <!-- WikiLinks --> <a href="Sharkinors.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Sharkinors/Sharkinor.webp"><div><strong>Los Sharkinors</strong><p>Una raza agresiva y territorial, fuerte, resistente y veloz en el agua, de las razas más dominantes conocidas.</p></div></div>'>Sharkinors</a> al lugar en donde se merecen estar, al fondo de los mares de Thalassa Prime. Al realizar esta misión demostraron cuanto valía esta raza, pues no cualquier raza puede derrotar cuerpo a cuerpo a una raza como los <!-- WikiLinks --> <a href="Sharkinors.html" class="especie-link" data-tippy-content='<div class="wiki-popup"><img src="../../Especies alienigenas/Sharkinors/Sharkinor.webp"><div><strong>Los Sharkinors</strong><p>Una raza agresiva y territorial, fuerte, resistente y veloz en el agua, de las razas más dominantes conocidas.</p></div></div>'>Sharkinors</a> en su propio terreno. Además de que esta acción creó a el primer enemigo de la especie, pero, eso no parecía importarles mucho, cosa que es normal, pues un solo Avathor basta para demostrarles a los sanguinarios tiburones de Thalassa Prime quién manda. </p>
+        <a href="../../Especies alienigenas/Avathors/DrokunVsSharkinor.webp">
+            <img src="../../Especies alienigenas/Avathors/DrokunVsSharkinor.webp" alt="Avathor destruyendo tanque enemigo" class="species-image">
+        </a>
+        <figcaption class="texto-fotos">Avathor destruyendo tanque enemigo</figcaption>
+
+    </div>
+</div>
+
+<script src="especialidad.js"></script>
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+<script src="wikilink.js"></script>
+
+<script src="dificultadvencer.js"></script>
+<script>
+    // Nivel de dificultad
+    actualizarDificultad(7);
+
+    const drokunDiv = document.getElementById('DrokunDiv');
+    const drokunImage = drokunDiv.querySelector('img');
+    const drokunImageSrc = drokunImage.src;
+
+    drokunDiv.addEventListener('mouseenter', () => {
+        drokunImage.src = '../../Especies alienigenas/Avathors/DrokunFurio.webp';
+    });
+
+    drokunDiv.addEventListener('mouseleave', () => {
+        drokunImage.src = drokunImageSrc;
+    });
+  </script>
+    <script src="../../components/search.js" data-planetpedia-search></script>
+    <script src="../../components/voiceController.js" data-planetpedia-voice></script>
+  <script src="../../components/backToTop.js" data-planetpedia-back-to-top></script>
+</html>

@@ -100,6 +100,97 @@
             color: var(--bg-space);
         }
 
+        /* Portada de lore: imagen inicial + descripción */
+        .lore-intro {
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            padding: 0 2rem;
+            width: 100%;
+        }
+
+        .lore-banner {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(79, 251, 223, 0.2);
+            box-shadow: 0 20px 60px rgba(121, 82, 179, 0.25);
+        }
+
+        .lore-banner img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        /* Funde la parte baja de la imagen con el fondo para enlazar con el texto */
+        .lore-banner::after {
+            content: "";
+            position: absolute;
+            inset: auto 0 0 0;
+            height: 35%;
+            background: linear-gradient(to bottom, transparent, var(--bg-space));
+            pointer-events: none;
+        }
+
+        .lore-text {
+            position: relative;
+            z-index: 1;
+            max-width: 880px;
+            margin: -4.5rem auto 0 auto;
+            padding: 1.8rem 2.2rem;
+            text-align: center;
+            background: rgba(22, 27, 44, 0.92);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(79, 251, 223, 0.2);
+            border-radius: 12px;
+        }
+
+        .lore-kicker {
+            display: block;
+            margin-bottom: 0.6rem;
+            color: var(--accent-neon);
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+        }
+
+        .lore-text h2 {
+            font-size: 1.6rem;
+            margin-bottom: 0.9rem;
+            color: var(--text-main);
+        }
+
+        .lore-text p {
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .lore-text p + p {
+            margin-top: 0.8rem;
+        }
+
+        .lore-link {
+            display: inline-block;
+            margin-top: 1.2rem;
+            color: var(--accent-neon);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .lore-link:hover,
+        .lore-link:focus-visible {
+            border-bottom-color: var(--accent-neon);
+        }
+
+        @media (max-width: 640px) {
+            .lore-intro { padding: 0 1rem; margin-top: 1rem; }
+            .lore-banner img { aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 40%; }
+            .lore-text { margin-top: -2rem; padding: 1.4rem 1.2rem; }
+            .lore-text h2 { font-size: 1.3rem; }
+        }
+
         /* Pie de página */
         
     </style>
@@ -111,7 +202,7 @@
         <div class="nav-container">
             <a href="#" class="logo">PLANET<span>PEDIA</span></a>
             <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden />
-            <label for="nav-toggle" class="menu-toggle" aria-label="Abrir men�">≡</label>
+            <label for="nav-toggle" class="menu-toggle" aria-label="Abrir menú">≡</label>
             <nav>
                 <a href="#" class="active">Inicio</a>
                 <a href="Web/Planetas.html">Planetas</a>
@@ -123,6 +214,24 @@
             </nav>
         </div>
     </header>
+
+    <!-- Portada de lore: imagen inicial y descripción del contenido -->
+    <section class="lore-intro" aria-labelledby="lore-titulo">
+        <figure class="lore-banner">
+            <img src="Web/img/portada-planetpedia.webp"
+                 width="1672" height="941"
+                 fetchpriority="high"
+                 alt="Ilustración del universo de Planet Pedia: el Guardián del Tiempo, Universe, la Muerte y Life sobre un paisaje alienígena, con un guerrero, un zorro tecnológico y un robot en primer plano.">
+        </figure>
+        <div class="lore-text">
+            <span class="lore-kicker">Archivo de lore</span>
+            <h2 id="lore-titulo">Un universo sostenido por cuatro pilares</h2>
+            <p>Planet Pedia es un archivo que almacena la información del Universo de ASTRAVERSE, un universo repleto de alienígenas, amenazas, seres cósmicos, magia dioses etc...</p>
+            <p>Bienvenido al universo ASTRAVERSE, donde encontrarás horas de contenido de un universo ficticio muy rico.</p>
+            <p>El universo inició hace ya demasiado tiempo, pues lo que conocemos como Big Bang fue la creación del primer universo, pero, un hechicero muy poderoso obtuvo el poder de los pilares de la creación con los que reconstruyó el universo instaurando nuevas reglas cósmicas. En este universo existe un equipo formado por una gran cantidad de planetas libres; la Unión de Planetas Independientes cuyo trabajo es proteger a todos los planetas y razas integrantes y a eliminar las amenazas galácticas, como los imperios Ultramitas, Sterons o AracnoSephus, pero también amenazas como el CROPT, los Insectrumidos o la Colmena Carmesí.</p>
+            <a class="lore-link" href="Web/LosPilares.html">Conocer Los Pilares &rarr;</a>
+        </div>
+    </section>
 
     <!-- Mensaje de bienvenida del universo -->
     <section class="hero">
